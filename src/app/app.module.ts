@@ -11,6 +11,7 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
 import { HeaderComponent } from './components/header/header.component';
 import { LognInComponent } from './components/Login/logn-in/logn-in.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { StudentProfileComponent } from './components/student-profile/student-profile.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
     LandingPageComponent,
     HeaderComponent,
     LognInComponent,
-    NavBarComponent
+    NavBarComponent,
+    StudentProfileComponent
   ],
   imports: [
     BrowserModule,
