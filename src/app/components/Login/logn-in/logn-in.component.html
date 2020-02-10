@@ -22,12 +22,7 @@
     <input type="password" class="form-control" name="password" [(ngModel)]="userModel.password" required placeholder="password"
     [class.is-invalid]="password.invalid && password.touched" #password="ngModel">
     <small class="text-danger" [class.d-none]="password.valid || password.untouched">Password is Required</small>
-         
-  </div>
-  
-  
-    <div class="form-check">
-    
+        
     <button type="submit" [disabled]="userForm.form.invalid" class="btn btn-login float-right" (click)="test()">LOGIN</button>
   </div>
   
