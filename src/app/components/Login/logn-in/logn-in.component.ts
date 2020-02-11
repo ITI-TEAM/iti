@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { user } from 'src/app/user';
+import { LoginService } from 'src/app/services/login.service';
+import { Router } from '@angular/router';
+import { error } from 'util';
+import { JsonPipe } from '@angular/common';
 
 
 
@@ -10,12 +14,38 @@ import { user } from 'src/app/user';
 })
 export class LognInComponent implements OnInit {
 
-  constructor() { }
-  userModel=new user('','');
+  constructor(private loginServ:LoginService,private router : Router) { }
+ public userModel=new user('','');
+ public test:boolean=true;
+ type:string="";
+ public data:any;
   ngOnInit() {
   }
-  test(){
-    console.log('test');
-    
-    }
+  login(){
+    console.log(this.userModel);
+    this.loginServ.loginUser(this.userModel).subscribe(
+      result=>{
+        this.data=result;
+        localStorage.setItem('token',result.toString() );
+        localStorage.setItem('type',result.toString());
+       console.log(this.data.type);
+        
+        if(this.data.type=='user')
+        {
+          this.router.navigate(['/student-profile']);
+
+        }
+        if(this.data.type=='admin')
+        {
+          this.router.navigate(['']);
+
+        }
+
+    },
+  error=>{
+    this.test=false;
+    console.log(error)
+  }         
+
+    )}
 }
