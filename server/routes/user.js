@@ -3,8 +3,11 @@ const router = express.Router()
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-// user Model 
+//  Models 
 const User = require('../models/user');
+const Sprofile=require('../models/sprofile');
+const Cprofile=require('../models/cprofile');
+
 
 // REGISTER NEW USER
 router.post("/signup",(req,res,next)=>{
@@ -44,6 +47,21 @@ router.post("/signup",(req,res,next)=>{
                             });
                             
                         });
+                        if(req.body.type=='student')
+                        {
+                            const sprofile=new Sprofile({
+                                ID:user._id
+                            });
+                            sprofile.save();
+                        }
+                        if(req.body.type=='comapny')
+                        {
+                            const cprofile=new Cprofile({
+                                ID:user._id
+                            });
+                            cprofile.save();
+                        }
+                        
                     }
                 });
 
