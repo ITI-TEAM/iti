@@ -10,13 +10,15 @@ import { AppComponent } from './app.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LognInComponent } from './components/Login/logn-in/logn-in.component';
+import { HomeComponent } from './components/home/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
     HeaderComponent,
-    LognInComponent
+    LognInComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
