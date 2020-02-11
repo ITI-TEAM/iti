@@ -84,7 +84,7 @@ router.post("/login",(req,res,next)=>{
                     email:user[0].email,
                     userID:user[0]._id
                 },
-                'secret',{expiresIn:'5h'}
+                'secret',{expiresIn:'1h'}
                 )
                 return res.status(200).json({
                     message:"Auth succesful",

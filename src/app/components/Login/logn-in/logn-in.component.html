@@ -1,4 +1,6 @@
-
+<app-nav-bar></app-nav-bar>
+<br>
+<br>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -9,7 +11,7 @@
 		<div class="col-md-4 login-sec">
 		    <h2 class="text-center">Login Now</h2>
 		    <form class="login-form"  #userForm="ngForm">
-                {{userForm.value |json}}
+
   <div class="form-group">
     <label for="exampleInputEmail1" class="text-uppercase">Email</label>
     <input type="email" class="form-control" name="email" [(ngModel)]="userModel.email" required placeholder="email" 
@@ -22,8 +24,12 @@
     <input type="password" class="form-control" name="password" [(ngModel)]="userModel.password" required placeholder="password"
     [class.is-invalid]="password.invalid && password.touched" #password="ngModel">
     <small class="text-danger" [class.d-none]="password.valid || password.untouched">Password is Required</small>
-        
-    <button type="submit" [disabled]="userForm.form.invalid" class="btn btn-login float-right" (click)="test()">LOGIN</button>
+        <br>
+        <strong class="text-danger" [class.d-none]="test">Incoorect email or password</strong>
+
+        <br>
+        <br>
+    <button type="submit" [disabled]="userForm.form.invalid" class="btn btn-login float-right" (click)="login()">LOGIN</button>
   </div>
   
 </form>
