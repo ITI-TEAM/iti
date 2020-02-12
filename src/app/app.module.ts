@@ -19,6 +19,7 @@ import { HomeComponent } from './components/home/home/home.component';
 import { HomeCompanyComponent } from './components/home-page-company/home-company/home-company.component';
 import { JObDetailsComponent } from './components/job-details/job-details.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { PostJobComponent } from './components/postjob/post-job/post-job.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,9 @@ import { FooterComponent } from './components/footer/footer.component';
     HomeComponent,
     HomeCompanyComponent,
     JObDetailsComponent,
-    FooterComponent
+    FooterComponent,
+    HomeCompanyComponent,
+    PostJobComponent
   ],
   imports: [
     BrowserModule,

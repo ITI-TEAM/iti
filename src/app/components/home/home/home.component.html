@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-12">
@@ -61,3 +62,113 @@
     </div>
 
   </div>
+=======
+<!-- 
+  
+    <div class="container marketing">
+       <div class="row ">
+         <div class="col-12 all">
+            <div class="card">
+               <div class="card-body allrow">FIND JOB</div>
+             </div>  
+         </div>
+          
+       </div>
+      <div class="row ">
+         <div class="col-3">
+            
+         </div>
+        <div  class="col-4 shadow">
+            <div style="margin: 10px;"> 
+               
+                  <p><img class="imgcom" src="../../../../assets/images/heba.jpg" alt=""> modern</p>
+                  
+               <h2 class="featurette-heading title">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
+               <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. </p>
+              <div class="button">
+               <button type="button" class="btn btn-outline-dark">APPLY JOB</button>
+     
+              </div>
+     </div>
+        </div> 
+        <div  class="col-4 shadow">
+         <div style="margin: 10px;"> 
+            
+               <p><img class="imgcom" src="../../../../assets/images/heba.jpg" alt=""> modern</p>
+               
+            <h2 class="featurette-heading title">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
+            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. </p>
+           <div class="button">
+            <button type="button" class="btn btn-outline-dark">APPLY JOB</button>
+  
+           </div>
+  </div>
+     </div> 
+      </div> 
+       -->
+       <div class="container-fluid">
+        <div class="row">
+           <div class="col-sm-12">
+              <div class="card">
+                  <div class="card-body">FIND JOB</div>
+              </div> 
+           </div>
+        </div>
+        <div class="row">
+           <div class="col-sm-3">
+            <div class="card shadow" >
+               <img class="card-img-top imgpro" src="../../../../assets/images/heba.jpg" alt="Card image" >
+               <div class="card-body">
+                 <h4 class="card-title titilename">John Doe</h4>
+                 <!-- <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+                 <a href="#" class="btn btn-outline-dark stretched-link">APPLY TO JOB</a> -->
+               </div>
+             </div>
+             <div class="card shadow" >
+            
+               <div class="card-body">
+                 
+                 <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+            
+               </div>
+             </div>
+             <div class="card shadow" >
+              
+               <div class="card-body">
+                
+                 <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+                
+               </div>
+             </div>
+
+
+           </div>
+         
+             <div class="col-sm-6">
+               <div class="card shadow" *ngFor="let post of posts" >
+                  <img class="card-img-top imgcom" [src]="post.photourl" alt="Card image" >
+                  <div class="card-body">
+                    <h4 class="card-title">{{post. companey |titlecase}}</h4>
+                    <p class="card-text">{{post.name}} </p>
+                    <div class="button">
+                     <button type="button" class="btn btn-outline-danger">apply to job</button>
+                    </div>
+                   
+                  </div>
+                </div>
+             </div>
+
+             <div class="col-sm-3" >
+               <div class="card-body shadow" *ngFor="let event of envents">
+                  <h3>
+                      {{event.titel}}
+                  </h3>
+                  <p class="card-text"> {{event.obj}}</p>
+             
+                </div>
+             </div>
+         
+        </div>
+       
+      
+>>>>>>> origin/postjob

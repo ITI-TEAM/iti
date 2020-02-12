@@ -1,8 +1,21 @@
 
+<<<<<<< HEAD
+=======
+/* Make the image fully responsive */
+/* .carousel-inner img {
+    width: 99%;
+    height: 500px;
+} */
+>>>>>>> origin/postjob
 
 .imgcom{
     border-radius: 50%;
     width: 50px;
+<<<<<<< HEAD
+=======
+    /* margin-top: -100px; */
+
+>>>>>>> origin/postjob
 }
 .shadow{
     z-index:50px ;

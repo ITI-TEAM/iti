@@ -1,0 +1,20 @@
+.shadow{
+    /* z-index: 50px ; */
+    margin: 30px;
+    /* border: 2px solid black; */
+    box-shadow: 60px; 
+}
+.button{
+    margin-left: 650px;
+}
+.left{
+    margin-left: 500px;
+    margin-top: -70px;
+}
+.icon{
+   float: right ;
+    
+}
+.modeel{
+    margin-right: auto;
+}
