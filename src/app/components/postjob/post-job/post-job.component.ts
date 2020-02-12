@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostJobComponent implements OnInit {
 
+  enventstocomany =[
+    {titel:'EVENT',obj:'ssssss'},
+    {titel:'eeeeeeeeee',obj:'yyyyyyy'},
+    {titel:'eeeeeeeeee',obj:'yyyyyyy'},{titel:'eeeeeeeeee',obj:'yyyyyyy'}
+  ]
   constructor() { }
 
   ngOnInit() {
