@@ -11,6 +11,7 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
 import { HeaderComponent } from './components/header/header.component';
 import { LognInComponent } from './components/Login/logn-in/logn-in.component';
 import { HomeComponent } from './components/home/home/home.component';
+import { HomeCompanyComponent } from './components/home-page-company/home-company/home-company.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HomeComponent } from './components/home/home/home.component';
     LandingPageComponent,
     HeaderComponent,
     LognInComponent,
-    HomeComponent
+    HomeComponent,
+    HomeCompanyComponent
   ],
   imports: [
     BrowserModule,
