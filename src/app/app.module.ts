@@ -15,6 +15,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { StudentProfileComponent } from './components/student-profile/student-profile.component';
 import { LoginService } from './services/login.service';
 import { AuthenticationGuardService } from './services/Auth/authentication-guard.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { AuthenticationGuardService } from './services/Auth/authentication-guard
   ],
   providers: [
     AuthenticationGuardService,
-    LoginService
+    LoginService,
+    BrowserAnimationsModule
   ],
   bootstrap: [AppComponent]
 })
