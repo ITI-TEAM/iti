@@ -15,6 +15,10 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { StudentProfileComponent } from './components/student-profile/student-profile.component';
 import { LoginService } from './services/login.service';
 import { AuthenticationGuardService } from './services/Auth/authentication-guard.service';
+import { HomeComponent } from './components/home/home/home.component';
+import { HomeCompanyComponent } from './components/home-page-company/home-company/home-company.component';
+import { JObDetailsComponent } from './components/job-details/job-details.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,10 @@ import { AuthenticationGuardService } from './services/Auth/authentication-guard
     LognInComponent,
     NavBarComponent,
     StudentProfileComponent,
-
+    HomeComponent,
+    HomeCompanyComponent,
+    JObDetailsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
