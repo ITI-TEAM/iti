@@ -22,5 +22,6 @@ export class HomeCompanyComponent implements OnInit {
 
   ngOnInit() {
   }
+ 
 
 }
