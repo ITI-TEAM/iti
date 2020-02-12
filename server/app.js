@@ -29,7 +29,7 @@ app.use(function(req, res, next) {
   // ROUTES
   app.use('/users',userRoutes);
   app.use('/sprofile',sprofileRoutes);
-  app.use('/sprofile',cprofileRoutes);
+  app.use('/cprofile',cprofileRoutes);
 
 
 
