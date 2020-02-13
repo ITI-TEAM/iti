@@ -15,6 +15,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { StudentProfileComponent } from './components/student-profile/student-profile.component';
 import { LoginService } from './services/login.service';
 import { AuthenticationGuardService } from './services/Auth/authentication-guard.service';
+import { ViewSProfileComponent } from './components/view-sprofile/view-sprofile.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { AuthenticationGuardService } from './services/Auth/authentication-guard
     LognInComponent,
     NavBarComponent,
     StudentProfileComponent,
+    ViewSProfileComponent,
 
   ],
   imports: [
