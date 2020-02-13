@@ -16,6 +16,7 @@ import { StudentProfileComponent } from './components/student-profile/student-pr
 import { LoginService } from './services/login.service';
 import { AuthenticationGuardService } from './services/Auth/authentication-guard.service';
 import { ViewSProfileComponent } from './components/view-sprofile/view-sprofile.component';
+import { AddUsersComponent } from './components/add-users/add-users.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ViewSProfileComponent } from './components/view-sprofile/view-sprofile.
     NavBarComponent,
     StudentProfileComponent,
     ViewSProfileComponent,
+    AddUsersComponent,
 
   ],
   imports: [
@@ -34,6 +36,7 @@ import { ViewSProfileComponent } from './components/view-sprofile/view-sprofile.
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule
+   
     
     
   ],
