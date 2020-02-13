@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./all-jobs.component.css']
 })
 export class AllJobsComponent implements OnInit {
-
+public jobs=["","","","",""]
   constructor() { }
 
   ngOnInit() {
