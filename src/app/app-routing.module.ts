@@ -7,6 +7,7 @@ import { AuthenticationGuardService } from './services/Auth/authentication-guard
 import { JObDetailsComponent } from './components/job-details/job-details.component';
 import { HomeComponent } from './components/home/home/home.component';
 import { HomeCompanyComponent } from './components/home-page-company/home-company/home-company.component';
+import { PostJobComponent } from './components/postjob/post-job/post-job.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path:'student-profile',component:StudentProfileComponent,canActivate:[AuthenticationGuardService]},
   {path:'job-details',component:JObDetailsComponent,canActivate:[AuthenticationGuardService]},
   {path:'home-company',component:HomeCompanyComponent,canActivate:[AuthenticationGuardService]},
+  {path:'post-job',component:PostJobComponent}
 
 ];
 
