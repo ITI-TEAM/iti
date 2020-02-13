@@ -18,6 +18,7 @@ import { JObDetailsComponent } from './components/job-details/job-details.compon
 import { FooterComponent } from './components/footer/footer.component';
 import { PostJobComponent } from './components/postjob/post-job/post-job.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SliderComponent } from './components/slider/slider.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     JObDetailsComponent,
     FooterComponent,
     HomeCompanyComponent,
-    PostJobComponent
+    PostJobComponent,
+    SliderComponent
   ],
   imports: [
     BrowserModule,
