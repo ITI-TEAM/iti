@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./all-company.component.css']
 })
 export class AllCompanyComponent implements OnInit {
-
+public companies =["","",""]
   constructor() { }
 
   ngOnInit() {
