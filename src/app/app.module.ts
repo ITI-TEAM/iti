@@ -18,6 +18,8 @@ import { AuthenticationGuardService } from './services/Auth/authentication-guard
 import { HomeComponent } from './components/home/home/home.component';
 import { HomeCompanyComponent } from './components/home-page-company/home-company/home-company.component';
 import { PostJobComponent } from './components/postjob/post-job/post-job.component';
+import { CompanyProfileComponent } from './components/company-profile/company-profile/company-profile.component';
+import { EditCompanyProfileComponent } from './components/edit-company-profile/edit-company-profile/edit-company-profile.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { PostJobComponent } from './components/postjob/post-job/post-job.compone
 
     HomeComponent,
     HomeCompanyComponent,
-    PostJobComponent
+    PostJobComponent,
+    CompanyProfileComponent,
+    EditCompanyProfileComponent
   ],
   imports: [
     BrowserModule,
