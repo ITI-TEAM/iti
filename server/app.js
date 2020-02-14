@@ -5,6 +5,9 @@ const bodyParser=require('body-parser');
 
 //MIDELWARES FOR ROUTES
 const userRoutes=require('./routes/user');
+const sprofileRoutes=require('./routes/sprofile');
+const cprofileRoutes=require('./routes/cprofile');
+
 
 //BODY-PARSER 
 app.use(bodyParser.urlencoded({extended: false}));
@@ -25,7 +28,8 @@ app.use(function(req, res, next) {
 
   // ROUTES
   app.use('/users',userRoutes);
-  
+  app.use('/sprofile',sprofileRoutes);
+  app.use('/cprofile',cprofileRoutes);
 
 
 

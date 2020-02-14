@@ -30,14 +30,14 @@ export class LognInComponent implements OnInit {
         localStorage.setItem('type',result.toString());
        console.log(this.data.type);
         
-        if(this.data.type=='user')
+        if(this.data.type=='student')
         {
-          this.router.navigate(['/student-profile']);
+          this.router.navigate(['/student-home']);
 
         }
-        if(this.data.type=='admin')
+        if(this.data.type=='company')
         {
-          this.router.navigate(['']);
+          this.router.navigate(['/home-company']);
 
         }
 

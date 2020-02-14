@@ -2,9 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms'; 
  import {FormsModule } from '@angular/forms';
-
-
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import{HttpClientModule, HttpClient} from '@angular/common/http'; 
@@ -17,6 +14,14 @@ import { LoginService } from './services/login.service';
 import { AuthenticationGuardService } from './services/Auth/authentication-guard.service';
 import { ViewSProfileComponent } from './components/view-sprofile/view-sprofile.component';
 import { AddUsersComponent } from './components/add-users/add-users.component';
+import { HomeComponent } from './components/home/home/home.component';
+import { HomeCompanyComponent } from './components/home-page-company/home-company/home-company.component';
+import { JObDetailsComponent } from './components/job-details/job-details.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { PostJobComponent } from './components/postjob/post-job/post-job.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SliderComponent } from './components/slider/slider.component';
+import { AddEventComponent } from './components/add-event/add-event.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +34,14 @@ import { AddUsersComponent } from './components/add-users/add-users.component';
     ViewSProfileComponent,
     AddUsersComponent,
 
+    HomeComponent,
+    HomeCompanyComponent,
+    JObDetailsComponent,
+    FooterComponent,
+    HomeCompanyComponent,
+    PostJobComponent,
+    SliderComponent,
+    AddEventComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +55,8 @@ import { AddUsersComponent } from './components/add-users/add-users.component';
   ],
   providers: [
     AuthenticationGuardService,
-    LoginService
+    LoginService,
+    BrowserAnimationsModule
   ],
   bootstrap: [AppComponent]
 })
