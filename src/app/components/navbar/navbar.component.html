@@ -27,7 +27,7 @@
             <a style="    margin-left: 8px;">name name</a>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" (click)="goProfile()"><i class="fa fa-envelope"></i>profile</a>
+            <a class="dropdown-item" routerLink="/student-profile" (click)="goProfile()"><i class="fa fa-envelope"></i>profile</a>
             <a class="dropdown-item" routerLink="/edit-student-profile"  (click)="editProfile()" ><i class="fa fa-gear"></i>Edit Profile</a>
             <a class="dropdown-item"(click)="logOut()" > <i class="fa fa-circle-logout"></i>Log Out</a>
           </div>

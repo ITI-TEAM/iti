@@ -10,13 +10,14 @@ import { HomeCompanyComponent } from './components/home-page-company/home-compan
 import { PostJobComponent } from './components/postjob/post-job/post-job.component';
 import { StudentsProfileSubmittedComponent } from './components/students-profile-submitted/students-profile-submitted.component';
 import { ListJobsComponent } from './components/list-jobs/list-jobs.component';
+import { ViewSProfileComponent } from './components/view-sprofile/view-sprofile.component';
 
 
 const routes: Routes = [
   {path:'',component:LandingPageComponent},
   {path:'login',component:LognInComponent},
   {path:'student-home',component:HomeComponent,canActivate:[AuthenticationGuardService]},
-  // {path:'student-profile',component:StudentsProfileSubmittedComponent,canActivate:[AuthenticationGuardService]},
+ {path:'student-profile',component:ViewSProfileComponent,canActivate:[AuthenticationGuardService]},
   {path:'edit-student-profile',component:StudentProfileComponent,canActivate:[AuthenticationGuardService]},
   {path:'job-details',component:JObDetailsComponent,canActivate:[AuthenticationGuardService]},
   {path:'list-jobs',component:ListJobsComponent},
