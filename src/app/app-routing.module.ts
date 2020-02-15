@@ -15,6 +15,9 @@ import { ManageStudentsComponent } from './components/AdminDash-board/manage-stu
 import { AllJobsComponent } from './components/AdminDash-board/all-jobs/all-jobs.component';
 import { AllCompanyComponent } from './components/AdminDash-board/all-company/all-company.component';
 import { AllEventComponent } from './components/AdminDash-board/all-event/all-event.component';
+import { AddUser } from './components/Classes/add-user';
+import { AddEvent } from './components/Classes/add-event';
+import { AddEventComponent } from './components/add-event/add-event.component';
 
 
 const routes: Routes = [
@@ -27,11 +30,18 @@ const routes: Routes = [
   {path:'list-jobs',component:ListJobsComponent},
   {path:'home-company',component:HomeCompanyComponent,canActivate:[AuthenticationGuardService]},
   {path:'post-job',component:PostJobComponent},
+  {path:'student-profile',component:StudentProfileComponent,canActivate:[AuthenticationGuardService]},
+  {path:'job-details',component:JObDetailsComponent,canActivate:[AuthenticationGuardService]},
+  {path:'home-company',component:HomeCompanyComponent,canActivate:[AuthenticationGuardService]},
+  {path:'post-job',component:PostJobComponent},
 
   {path:'admin',component:AllJobsComponent,canActivate:[AuthenticationGuardService]},
   {path:'manage-students',component:ManageStudentsComponent,canActivate:[AuthenticationGuardService]},
   {path:'manage-company',component:AllCompanyComponent,canActivate:[AuthenticationGuardService]},
-  {path:'maneg-events',component:AllEventComponent,canActivate:[AuthenticationGuardService]}
+  {path:'maneg-events',component:AllEventComponent,canActivate:[AuthenticationGuardService]},
+  {path:'add-user',component:AddEventComponent,canActivate:[AuthenticationGuardService]},
+  {path:'add-event',component:AddEventComponent,canActivate:[AuthenticationGuardService]}
+  
 ];
 
 @NgModule({

@@ -12,13 +12,6 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { StudentProfileComponent } from './components/student-profile/student-profile.component';
 import { LoginService } from './services/login.service';
 import { AuthenticationGuardService } from './services/Auth/authentication-guard.service';
-import { HomeComponent } from './components/home/home/home.component';
-import { HomeCompanyComponent } from './components/home-page-company/home-company/home-company.component';
-import { JObDetailsComponent } from './components/job-details/job-details.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { PostJobComponent } from './components/postjob/post-job/post-job.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SliderComponent } from './components/slider/slider.component';
 import { ListJobsComponent } from './components/list-jobs/list-jobs.component';
 import { StudentsProfileSubmittedComponent } from './components/students-profile-submitted/students-profile-submitted.component';
 import { ManageStudentsComponent } from './components/AdminDash-board/manage-students/manage-students.component';
@@ -29,6 +22,15 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { NavbarCompanyComponent } from './components/navbar-company/navbar-company.component';
 import { ViewSProfileComponent } from './components/view-sprofile/view-sprofile.component';
 import { AdminNavbarComponent } from './components/admin-navbar/admin-navbar.component';
+import { AddUsersComponent } from './components/add-users/add-users.component';
+import { HomeComponent } from './components/home/home/home.component';
+import { HomeCompanyComponent } from './components/home-page-company/home-company/home-company.component';
+import { JObDetailsComponent } from './components/job-details/job-details.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { PostJobComponent } from './components/postjob/post-job/post-job.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SliderComponent } from './components/slider/slider.component';
+import { AddEventComponent } from './components/add-event/add-event.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +56,16 @@ import { AdminNavbarComponent } from './components/admin-navbar/admin-navbar.com
     NavbarComponent,
     NavbarCompanyComponent,
     ViewSProfileComponent,
-    AdminNavbarComponent
+    AdminNavbarComponent,
+    AddUsersComponent,
+    HomeComponent,
+    HomeCompanyComponent,
+    JObDetailsComponent,
+    FooterComponent,
+    HomeCompanyComponent,
+    PostJobComponent,
+    SliderComponent,
+    AddEventComponent
   ],
   imports: [
     BrowserModule,
@@ -62,6 +73,7 @@ import { AdminNavbarComponent } from './components/admin-navbar/admin-navbar.com
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule
+   
     
     
   ],
