@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./all-event.component.css']
 })
 export class AllEventComponent implements OnInit {
-
+  public jobs=["","","","",""]
   constructor() { }
 
   ngOnInit() {
