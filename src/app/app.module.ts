@@ -28,6 +28,7 @@ import { AllEventComponent } from './components/AdminDash-board/all-event/all-ev
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NavbarCompanyComponent } from './components/navbar-company/navbar-company.component';
 import { ViewSProfileComponent } from './components/view-sprofile/view-sprofile.component';
+import { AdminNavbarComponent } from './components/admin-navbar/admin-navbar.component';
 
 @NgModule({
   declarations: [
@@ -52,8 +53,8 @@ import { ViewSProfileComponent } from './components/view-sprofile/view-sprofile.
     AllEventComponent,
     NavbarComponent,
     NavbarCompanyComponent,
-    ViewSProfileComponent
-
+    ViewSProfileComponent,
+    AdminNavbarComponent
   ],
   imports: [
     BrowserModule,

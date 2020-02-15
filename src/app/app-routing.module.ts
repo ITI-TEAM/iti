@@ -11,6 +11,10 @@ import { PostJobComponent } from './components/postjob/post-job/post-job.compone
 import { StudentsProfileSubmittedComponent } from './components/students-profile-submitted/students-profile-submitted.component';
 import { ListJobsComponent } from './components/list-jobs/list-jobs.component';
 import { ViewSProfileComponent } from './components/view-sprofile/view-sprofile.component';
+import { ManageStudentsComponent } from './components/AdminDash-board/manage-students/manage-students.component';
+import { AllJobsComponent } from './components/AdminDash-board/all-jobs/all-jobs.component';
+import { AllCompanyComponent } from './components/AdminDash-board/all-company/all-company.component';
+import { AllEventComponent } from './components/AdminDash-board/all-event/all-event.component';
 
 
 const routes: Routes = [
@@ -22,8 +26,12 @@ const routes: Routes = [
   {path:'job-details',component:JObDetailsComponent,canActivate:[AuthenticationGuardService]},
   {path:'list-jobs',component:ListJobsComponent},
   {path:'home-company',component:HomeCompanyComponent,canActivate:[AuthenticationGuardService]},
-  {path:'post-job',component:PostJobComponent}
+  {path:'post-job',component:PostJobComponent},
 
+  {path:'admin',component:AllJobsComponent,canActivate:[AuthenticationGuardService]},
+  {path:'manage-students',component:ManageStudentsComponent,canActivate:[AuthenticationGuardService]},
+  {path:'manage-company',component:AllCompanyComponent,canActivate:[AuthenticationGuardService]},
+  {path:'maneg-events',component:AllEventComponent,canActivate:[AuthenticationGuardService]}
 ];
 
 @NgModule({
