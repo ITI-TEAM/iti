@@ -19,6 +19,13 @@ import { FooterComponent } from './components/footer/footer.component';
 import { PostJobComponent } from './components/postjob/post-job/post-job.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SliderComponent } from './components/slider/slider.component';
+import { ListJobsComponent } from './components/list-jobs/list-jobs.component';
+import { StudentsProfileSubmittedComponent } from './components/students-profile-submitted/students-profile-submitted.component';
+import { ManageStudentsComponent } from './components/AdminDash-board/manage-students/manage-students.component';
+import { AllCompanyComponent } from './components/AdminDash-board/all-company/all-company.component';
+import { AllJobsComponent } from './components/AdminDash-board/all-jobs/all-jobs.component';
+import { AllEventComponent } from './components/AdminDash-board/all-event/all-event.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +41,14 @@ import { SliderComponent } from './components/slider/slider.component';
     FooterComponent,
     HomeCompanyComponent,
     PostJobComponent,
-    SliderComponent
+    SliderComponent,
+    ListJobsComponent,
+    StudentsProfileSubmittedComponent,
+    ManageStudentsComponent,
+    AllCompanyComponent,
+    AllJobsComponent,
+    AllEventComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
