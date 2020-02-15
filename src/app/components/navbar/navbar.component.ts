@@ -15,16 +15,16 @@ export class NavbarComponent implements OnInit {
   studentHome()
   {
     
-    this.router.navigate(['/student-home']);
+  //  this.router.navigate(['/student-home']);
 
   }
   editProfile(){
-    this.router.navigate(['/edit-student-profile']);
+   // this.router.navigate(['/edit-student-profile']);
 
   }
   listJobs(){
     
-    this.router.navigate(['/list-jobs']);
+  //  this.router.navigate(['/list-jobs']);
 
   }
 }
