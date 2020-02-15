@@ -12,6 +12,7 @@ import { ManageStudentsComponent } from './components/AdminDash-board/manage-stu
 import { AllCompanyComponent } from './components/AdminDash-board/all-company/all-company.component';
 import { AllJobsComponent } from './components/AdminDash-board/all-jobs/all-jobs.component';
 import { AllEventComponent } from './components/AdminDash-board/all-event/all-event.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AllEventComponent } from './components/AdminDash-board/all-event/all-ev
     ManageStudentsComponent,
     AllCompanyComponent,
     AllJobsComponent,
-    AllEventComponent
+    AllEventComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
