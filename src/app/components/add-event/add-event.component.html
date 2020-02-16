@@ -1,47 +1,30 @@
 
  <div class="container mx-auto" style="margin-top:100px;">
+  <h1> Add Events</h1>
     <form  #eventForm="ngForm" novalidate  (ngSubmit)="onSubmit()"  method="POST"  >
-        <!-- name -->
-            <div class="row">
-                <div class="input-field col">
-                  <i class="material-icons prefix ">mode_edit</i>
-                  <input type="text" class="validate" name="title" required [class.is-invalid]="title.invalid &&title.touched"
-                  #title="ngModel" [(ngModel)]="eventModel.title"/>
-                  <label for="name">Event Title</label>
-                </div>
-              </div>    
-            <!-- det -->
-          <div class="row">
-            <div class="input-field col">
-              <i class="material-icons prefix ">description</i>
-              <input type="text" class="validate" name="details"  required [class.is-invalid]="detai.invalid &&detai.touched"
-              #detai="ngModel" [(ngModel)]="eventModel.details"/>
-              <label for="name"> Details</label>
+        
+          <form>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Event Title:</label>
+              <input type="text" class="form-control"  name="title" required [class.is-invalid]="title.invalid &&title.touched"
+              #title="ngModel" [(ngModel)]="eventModel.title" >
             </div>
-          </div> 
-          <!-- date -->
-          <div class="row">
-            <div class="input-field col">
-              <i class="material-icons prefix ">event</i>
-              <input type="text" id="date" class="validate" name="date" #price="ngModel" [(ngModel)]="eventModel.date"/>
-              <label for="price">Event Date</label>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Event Date</label>
+              <input  class="form-control" type="date" id="date"  name="date" #date="ngModel" [(ngModel)]="eventModel.date" >
             </div>
-          </div>
-          
-          
-          <!-- img -->
-          <div class="row">
-            <div class="input-field col">
-              <i class="material-icons prefix ">image</i>
-              <input type="text" id="img" class="validate" name="img" #img="ngModel" [(ngModel)]="eventModel.img"/>
-              <label for="img">Image</label>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Event Image</label>
+              <input  class="form-control" type="text" id="img"  name="img" #img="ngModel" [(ngModel)]="eventModel.img">
             </div>
-          </div>
-          
-         
-          <button class="btn f44336 red-effect f44336 red  " type="submit" name="action">Post 
-            <i class="material-icons right">send</i>
-          </button>
+            
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Details</label>
+              <textarea class="form-control" type="text" name="details"  required [class.is-invalid]="detai.invalid &&detai.touched"
+              #detai="ngModel" [(ngModel)]="eventModel.details" rows="5"></textarea>
+            </div>
+            <button type="submit" name="action"  class="btn btn-success">Submit</button>
+          </form>
     </form>
  </div>
 
