@@ -31,6 +31,8 @@ import { PostJobComponent } from './components/postjob/post-job/post-job.compone
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SliderComponent } from './components/slider/slider.component';
 import { AddEventComponent } from './components/add-event/add-event.component';
+import { CompanyProfileComponent } from './components/company-profile/company-profile/company-profile.component';
+import { EditCompanyProfileComponent } from './components/edit-company-profile/edit-company-profile/edit-company-profile.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +67,10 @@ import { AddEventComponent } from './components/add-event/add-event.component';
     HomeCompanyComponent,
     PostJobComponent,
     SliderComponent,
-    AddEventComponent
+    AddEventComponent,
+    PostJobComponent,
+    CompanyProfileComponent,
+    EditCompanyProfileComponent
   ],
   imports: [
     BrowserModule,

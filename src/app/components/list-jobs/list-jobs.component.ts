@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-jobs',
@@ -8,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 export class ListJobsComponent implements OnInit {
   public jobs=["","",""]
   public sectionsProfile=["",""]
-  constructor() { }
+  constructor(private router : Router) { }
 
   ngOnInit() {
+  }
+  goDetails(){
+    this.router.navigate(['/job-details']);
+
   }
 
 }
