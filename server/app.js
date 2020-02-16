@@ -3,11 +3,14 @@ const app= express();
 const mongoose=require('mongoose');
 const bodyParser=require('body-parser');
 
+
+
+
 //MIDELWARES FOR ROUTES
 const userRoutes=require('./routes/user');
 const sprofileRoutes=require('./routes/sprofile');
 const cprofileRoutes=require('./routes/cprofile');
-
+const allJobRoutes=require('./routes/allJob');
 
 //BODY-PARSER 
 app.use(bodyParser.urlencoded({extended: false}));
@@ -26,10 +29,13 @@ app.use(function(req, res, next) {
     next();
 });
 
+    app.use('/uploads',express.static('uploads'));
+
   // ROUTES
   app.use('/users',userRoutes);
   app.use('/sprofile',sprofileRoutes);
   app.use('/cprofile',cprofileRoutes);
+  app.use('/allJob',allJobRoutes);
 
 
 
