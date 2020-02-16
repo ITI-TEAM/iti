@@ -40,6 +40,11 @@ export class LognInComponent implements OnInit {
           this.router.navigate(['/home-company']);
 
         }
+        if(this.data.type=='admin')
+        {
+          this.router.navigate(['/admin']);
+
+        }
 
     },
   error=>{
