@@ -1,282 +1,259 @@
-
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/v4-shims.css">
 <app-navbar-company></app-navbar-company>
 <br><br>
+<div class="container">
 
-    <div class="container">
+  <form #jobForm="ngForm" novalidate (ngSubmit)="onSubmit()"> 
+    
       <div class="row ">
-         <div class="col-9">
-          <div class="card shadow" >
-                
-            <div class="card-body">
-              <h5 class="card-title">JOB
-                <i class="fas fa-pencil-alt icon"  data-toggle="modal" data-target="#myModal0"></i>
-                                           <!-- The Modal -->
-   <div class="modal" id="myModal0">
-    <div class="modal-dialog">
-      <div class="modal-content">
+    <div class="col-9">
       
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h1 class="modal-title"> JOB</h1>
-          <button type="button" class="close" data-dismiss="modal">×</button>
-        </div>
-        
-        <!-- Modal body -->
-        <div class="modal-body">
-          <input type="text" placeholder="Company Place">
-          <br>
-          <br>
-        
-        
-        
-          <input type="text" placeholder="member">
+      <div class="card shadow">
 
-        </div>
-      
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">save</button>
-        </div>
-        
-      </div>
-    </div>
-  </div> 
+        <div class="card-body">
+          <h5 class="card-title">JOB
+            <i class="fas fa-pencil-alt icon" data-toggle="modal" data-target="#myModal0"></i>
+            <!-- The Modal -->
+            <div class="modal" id="myModal0">
+              <div class="modal-dialog">
+                <div class="modal-content">
 
-              </h5>
-              <hr>
-              <div class="card-text">
-                <h5>
-                  Job title:
-              </h5> 
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <h1 class="modal-title"> JOB</h1>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                  </div>
+
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                    <input type="text" placeholder="Job Title" name="title"
+                     #title="ngModel" [(ngModel)]="jobModel.title" 
+                     required   [class.isinvalid]="title.invalid"
+                     class="form-control"  >
+                    <br>
+                    <br>
+                    <small style="color: red;" [class.d-none]=" title.valid || title.untouched">Title is Required</small> 
+<input type="text" placeholder="location" name="location"
+                     #location="ngModel" [(ngModel)]="jobModel.location" 
+                     required   [class.isinvalid]="location.invalid"
+                     class="form-control"  >
+                     <small style="color: red;" [class.d-none]=" location.valid || location.untouched">location is Required</small> 
+
+                  </div>
+
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">save</button>
+                  </div>
+
+                </div>
+              </div>
             </div>
-            
-  
-            <h5 class="card-text">Company Place :</h5>
-            <div class="card-text">
-              <h5>
-                 Date:
-            </h5>
-          </div>
+
+          </h5>
+          <hr>
           <div class="card-text">
             <h5>
-               member:
+              Job title:{{jobModel.title}}
+            </h5>
+            <br>
+            <h5>
+              location:{{jobModel.location}}
             </h5>
           </div>
-         
-              
-             
-            </div>
-          </div>
-            <!--  -->    
-          <div class="card shadow" >
-       
-              <div class="card-body">
-                <h5 class="card-title">Job requirements
-                  <i class="fas fa-pencil-alt icon"  data-toggle="modal" data-target="#myModal1"></i>
-                               
-   <div class="modal" id="myModal1">
-    <div class="modal-dialog">
-      <div class="modal-content">
-      
-      
-        <div class="modal-header">
-          <h1 class="modal-title"> Job requirements</h1>
-          <button type="button" class="close" data-dismiss="modal">×</button>
         </div>
-        
-        
-        <div class="modal-body">
+      </div>
+      <!--  -->
+      <div class="card shadow">
+
+        <div class="card-body">
+          <h5 class="card-title">Job requirements
+            <i class="fas fa-pencil-alt icon" data-toggle="modal" data-target="#myModal1"></i>
+
+            <div class="modal" id="myModal1">
+              <div class="modal-dialog">
+                <div class="modal-content">
+
+
+                  <div class="modal-header">
+                    <h1 class="modal-title"> Job requirements</h1>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                  </div>
+
+
+                  <div class="modal-body">
+
+
+
+                    <br>
+                    <br>
+                    <textarea name=""  cols="20" rows="3" placeholder="Experience" name="exper"
+                    #exper="ngModel" [(ngModel)]="jobModel.exper" >
+                    </textarea>
+                    <br>
+                    <br>
+                    <textarea name=""  cols="20" rows="3" placeholder="languages" name="languages"
+                    #languages="ngModel" [(ngModel)]="jobModel.languages" >
+                    </textarea>
+                    <br>
+                    <br>
+                    <textarea name="" i cols="20" rows="5" placeholder="Qualification" name="qual"
+                    #qual="ngModel" [(ngModel)]="jobModel.qual" >
+                    </textarea>
+
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+
+                  </div>
+
+
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">save</button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </h5>
+          <hr>
+          <div class="card-text">
+            <h5>
+              Experience:{{jobModel.exper}}
+            </h5>
+          </div>
+          <br>
+
+          <div class="card-text">
+            <h5>
+              Language:{{jobModel.languages}}
+            </h5>
+          </div>
+          <br>
+          <div class="card-text">
+            <h5>
+              Qualification:{{jobModel.qual}}
+            </h5>
+          </div>
+        </div>
         <br>
-          <textarea name="" id="" cols="30" rows="10"></textarea>
-         
-          <br>
-          <br>
-        
-
-          <input type="text" placeholder="Language">
-          <br>
-          <br>
-          <input type="text" placeholder="Yor Qualification ">
-          <br>
-          <br>
-        </div>
-        
-       
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">save</button>
-        </div>
-        
+        <br>
+        <br>
       </div>
-    </div>
-  </div> 
-                </h5>
-                <hr>
-                <div class="card-text">
-                  <h5>
-                  Experience:
-                </h5> 
+      <!--  -->
+      <div class="card shadow">
+
+        <div class="card-body">
+          <h5 class="card-title"> Price
+            <i class="fas fa-pencil-alt icon" data-toggle="modal" data-target="#myModal2"></i>
+            <!-- The Modal -->
+            <div class="modal" id="myModal2">
+              <div class="modal-dialog">
+                <div class="modal-content">
+
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <h1 class="modal-title"> Price</h1>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                  </div>
+
+                  <!-- Modal body -->
+                  <div class="modal-body">
+
+
+                    <input type="text" placeholder="salary" name="salary"
+                    #salary="ngModel" [(ngModel)]="jobModel.salary" >
+                    <br>
+                    <br>
+
+
+                    <input type="text" placeholder="type of job" name="type"
+                    #type="ngModel" [(ngModel)]="jobModel.type" >
+                    <br>
+                    <br>
+                  </div>
+
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">save</button>
+                  </div>
+
+                </div>
               </div>
-              <br>
-             
-                <div class="card-text">
-                  <h5>
-                     Language:
-                </h5>
-              </div>
-            </div>    
-            
-         
-          
-          <div class="left">
-      
+            </div>
+          </h5>
+          <hr>
           <div class="card-text">
             <h5>
-               Qualification:
+              salary:{{jobModel.salary}}
             </h5>
           </div>
-        </div> 
-       <br>
-       <br>
-
-             
-          
+          <br>
+          <div class="card-text">
+            <h5>
+              type of job:{{jobModel.type}}
+            </h5>
           </div>
-          <!--  -->
-          <div class="card shadow" >
-       
-            <div class="card-body">
-              <h5 class="card-title"> Price
-                <i class="fas fa-pencil-alt icon"  data-toggle="modal" data-target="#myModal2"></i>
-                 <!-- The Modal -->
-   <div class="modal" id="myModal2">
-    <div class="modal-dialog">
-      <div class="modal-content">
-      
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h1 class="modal-title"> Price</h1>
-          <button type="button" class="close" data-dismiss="modal">×</button>
         </div>
-        
-        <!-- Modal body -->
-        <div class="modal-body">
-        
-          
-          <input type="text" placeholder="salary">
-          <br>
-          <br>
-          
+        <br>
+      </div>
+      <!--  -->
+      <div class="card shadow">
 
-          <input type="text" placeholder="type of job">
-          <br>
-          <br>
-        </div>
-        
-        <!-- Modal footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">save</button>
-        </div>
-        
-      </div>
-    </div>
-  </div>             
-                 </h5>
-              <hr>
-              <div class="card-text">
-                <h5>
-                salary:
-              </h5> 
-            </div>
-          <br>
-              <div class="card-text">
-                <h5>
-                  type of job:
-              </h5>
-            </div>
-          </div> 
-          <br>
-        </div>
-          <!--  -->
-          <div class="card shadow" >
-       
-            <div class="card-body">
-              <h5 class="card-title">
-                Ditalis For Job
-                <i class="fas fa-pencil-alt icon " data-toggle="modal" data-target="#myModal"></i>
-   <!-- The Modal -->
-   <div class="modal" id="myModal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-      
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h1 class="modal-title"> Ditalis For Job</h1>
-          <button type="button" class="close" data-dismiss="modal">×</button>
-        </div>
-        
-        <!-- Modal body -->
-        <div class="modal-body">
-         <P>Details:</P>
-           <textarea name="Ditalis"  placeholder="Enter your Job Details"  cols="30" rows="5" > </textarea>
-        </div>
-        
-        <!-- Modal footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">save</button>
-        </div>
-        
-      </div>
-    </div>
-  </div>
-              </h5>
-              <hr>
-              <div class="card-text">
-                <div>
-                <!-- aaaaaaaaaaaaaaaaaaaaaaaaa -->
-              </div> 
-            </div>
-            <br>
-            <br>
-            <br>
-            <hr>
-      <button type="button" class="btn btn-outline-danger button" data-dismiss="modal">
-          POST
-        
-        </button>
-          
-          
-          </div> 
-          <br>
-        </div>
-      </div>
-      <div class="col-sm-3" >
-        
-          <div class="card shadow" >
-             <img class="card-img-top imgpro" src="../../../../assets/images/ahmedSalah.jpg" alt="Card image" >
-             <div class="card-body">
-               <h4 class="card-title titilename">modern</h4>
-               
-             </div>
-           </div>
-           <div class="card shadow" >
-          
-             <div class="card-body">
-               
-               <p class="card-text">Some example text so
-             </div>
-           </div>
-           <div class="card shadow" >
+        <div class="card-body">
+          <h5 class="card-title">
+            Desecreption of  Job 
             
-             <div class="card-body">
-              
-               <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-              
-             </div>
-           </div>
-         </div>
+            <i class="fas fa-pencil-alt icon " data-toggle="modal" data-target="#myModal"></i>
+            
+            <!-- The Modal -->
+            <div class="modal" id="myModal">
+              <div class="modal-dialog">
+                <div class="modal-content">
+
+                  <!-- Modal Header -->
+                  <div class="modal-header">
+                    <h1 class="modal-title"> Desecreption of  Job</h1>
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                  </div>
+
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                    <P>Details:</P>
+                    <textarea name=""  cols="30" rows="5" placeholder="Qualification" name="des"
+                    #desc="ngModel" [(ngModel)]="jobModel.desc" >
+                    </textarea>                 
+                   </div>
+
+                  <!-- Modal footer -->
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">save</button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </h5>
+          <P>{{jobModel.desc}}</P>
+          <hr>
+          
+          <br>
+          <br>
+          <br>
+          <hr>
+        </div>
+        <button type="submit" [disabled]="jobForm.form.invalid" class="btn-danger" (click)="postJob()">POST</button>
+
+        <br>
       </div>
-      
     </div>
-  
-    <app-footer></app-footer>
+ 
+  </div>
+</form>
+
+</div>
+{{jobForm.value | json}}
+{{jobModel | json}}
+
+<app-footer></app-footer>

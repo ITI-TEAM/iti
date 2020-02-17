@@ -33,6 +33,7 @@ import { SliderComponent } from './components/slider/slider.component';
 import { AddEventComponent } from './components/add-event/add-event.component';
 import { CompanyProfileComponent } from './components/company-profile/company-profile/company-profile.component';
 import { EditCompanyProfileComponent } from './components/edit-company-profile/edit-company-profile/edit-company-profile.component';
+import { JOBService } from './services/job.service';
 
 @NgModule({
   declarations: [
@@ -85,6 +86,7 @@ import { EditCompanyProfileComponent } from './components/edit-company-profile/e
   providers: [
     AuthenticationGuardService,
     LoginService,
+    JOBService,
     BrowserAnimationsModule
   ],
   bootstrap: [AppComponent]
