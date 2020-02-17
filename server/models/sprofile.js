@@ -5,7 +5,8 @@ const sprofileSchema = new mongoose.Schema({
   name:{
     type:String,
     default:"test-student"
-  },
+  }
+  ,
   age:{
     type:String,
     default:"enter your age..."
@@ -16,7 +17,7 @@ const sprofileSchema = new mongoose.Schema({
   },
   phone:{
     type:Number,
-    default:"enter your phone..." 
+    default:01000000 
   },
   skills:{
     type:String,
@@ -44,11 +45,9 @@ const sprofileSchema = new mongoose.Schema({
   },
   graduationYear:{
     type:Number,
-    default:"enter your graduationYear..."  
   },
   hourRate:{
-    type:Number,
-    default:"enter your Hour Rate..." 
+    type:Number
   }
 
 });
