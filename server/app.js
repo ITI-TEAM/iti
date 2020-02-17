@@ -29,7 +29,8 @@ app.use(function(req, res, next) {
     next();
 });
 
-    app.use('/uploads',express.static('uploads'));
+    app.use(express.static(__dirname));
+   app.use('/uploads',express.static('uploads'));
 
   // ROUTES
   app.use('/users',userRoutes);

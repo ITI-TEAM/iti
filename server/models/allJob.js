@@ -3,9 +3,18 @@ const mongoose = require('mongoose');
 
 const allJobSchema = new mongoose.Schema({
 
-    name:String,
-    desc:String
-
+    
+    //jobImage:{type:String,required:true}
+    companyID:{type:String,required:true},
+    title:{type:String},
+    salary:{type:String},
+    location:{type:String},
+    type:{type:String},
+    languages:{type:String},
+    exper:{type:String},
+    desc:{type:String},
+    qual:{type:String,},
+    applied:{type:[String],default:["1","4"]}
   
 });
 
