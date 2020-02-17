@@ -1,108 +1,65 @@
 <app-navbar-company></app-navbar-company>
 <div class="container-fluid">
-        <div class="row">
-           <div class="col-sm-12">
-              <div class="card shadow">
-                  <!-- <div class="card-body"></div> -->
-                  <!-- <p>FIND JOB</p> -->
-                  <div class="col-3">
-                      <div class="btnjob">
-                          <!-- <button type="button" class="btn btn-outline-danger">POSTJOB</button> -->
-                          <button type="button" class="btn btn-outline-danger " data-toggle="modal" data-target="#myModal">POSTJOB</button>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card shadow">
+        
+        <br><br>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3">
+      <div class="card shadow">
+        <img class="card-img-top imgpro" src="../../../../assets/images/ahmedSalah.jpg" alt="Card image">
+        <div class="card-body">
+          <h4 class="card-title titilename">modern</h4>
 
-                <!-- Modal -->
-                <div class="modal fade" id="myModal" role="dialog">
-                  <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <p class="close">YourJob</p>
-                        <button type="button" class="close" data-dismiss="modal"> &times;</button>
-                        <!-- <h4 class="modal-title">&times;</h4> -->
-                        
-                      </div>
-                      <div class="modal-body">
-                        <p>title:</p>
-                          <textarea  rows="4" cols="50"></textarea>
-
-                      </div>
-
-                      <div class="modal-body">
-                        <div >
-                          <p>DITAILS</p>
-                          <textarea  rows="6" cols="80"></textarea>
-
-                        </div>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-outline-danger alert alert-success" data-dismiss="modal">
-                          POST
-                        
-                        </button>
-                        
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                      </div>
-
-                  </div>
-              </div> 
-           </div>
         </div>
-        <div class="row">
-           <div class="col-sm-3">
-            <div class="card shadow" >
-               <img class="card-img-top imgpro" src="../../../../assets/images/ahmedSalah.jpg" alt="Card image" >
-               <div class="card-body">
-                 <h4 class="card-title titilename">modern</h4>
-                 
-               </div>
-             </div>
-             <div class="card shadow" >
-            
-               <div class="card-body">
-                 
-                 <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-            
-               </div>
-             </div>
-             <div class="card shadow" >
-              
-               <div class="card-body">
-                
-                 <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                
-               </div>
-             </div>
+      </div>
+      <div class="card shadow">
 
+        <div class="card-body">
 
-           </div>
-         
-             <div class="col-sm-6">
-               <div class="card shadow" *ngFor="let job of jobs" >
-               <p><img class="card-img-top imgcom" [src]="job.photourl" alt="Card image" > {{job.yourcompaney }}</p>
-                  <div class="card-body">
-                    <h4 class="card-title">{{job. title |titlecase}}</h4>
-                    <p class="card-text">{{job.content}} </p>
-                    <div class="button">
-                     <button type="button" class="btn btn-outline-danger">DeleteJOB</button>
-                    </div>
-                   
-                  </div>
-                </div>
-             </div>
+          <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
 
-             <div class="col-sm-3" >
-               <div class="card-body shadow" *ngFor="let event of enventstocomany">
-                  <h3>
-                      {{event.titel}}
-                  </h3>
-                  <p class="card-text"> {{event.obj}}</p>
-             
-                </div>
-             </div>
-         
         </div>
-       
-      <app-footer></app-footer>
+      </div>
+      <div class="card shadow">
+
+        <div class="card-body">
+
+          <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="col-sm-6">
+      <div class="card shadow" *ngFor="let job of jobs">
+        <div class="card-body">
+          <h4 class="card-title">{{job. title}}</h4>
+          <p class="card-text">{{job.desc}} </p>
+          <div class="button">
+            <button type="button" class="btn btn-outline-danger">See More</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="card-body shadow" *ngFor="let event of enventstocomany">
+        <h3>
+          {{event.titel}}
+        </h3>
+        <p class="card-text"> {{event.obj}}</p>
+
+      </div>
+    </div>
+
+  </div>
+
+  <app-footer></app-footer>

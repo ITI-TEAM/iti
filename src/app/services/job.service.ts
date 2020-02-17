@@ -12,4 +12,8 @@ export class JOBService {
     return this.http.post<any>('http://localhost:3000/allJob/add/'+companyID,jobModel);
 
   }
+
+  getCompanyPosts(companyID:string):Observable<any>{
+    return this.http.get('http://localhost:3000/allJob/companyjobs/'+companyID);
+  }
 }
