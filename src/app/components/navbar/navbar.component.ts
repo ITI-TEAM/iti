@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -8,23 +8,13 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private router : Router) { }
-
+  constructor(private router:Router ,private route:ActivatedRoute) { }
+  public ID;
   ngOnInit() {
+    this.route.paramMap.subscribe((params:ParamMap)=>{
+      this.ID=params.get('ID');
+    }); 
   }
-  studentHome()
-  {
-    
-  //  this.router.navigate(['/student-home']);
 
-  }
-  editProfile(){
-   // this.router.navigate(['/edit-student-profile']);
 
-  }
-  listJobs(){
-    
-  //  this.router.navigate(['/list-jobs']);
-
-  }
 }
