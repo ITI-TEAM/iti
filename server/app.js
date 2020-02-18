@@ -1,4 +1,4 @@
-const express=require('express');
+ const express=require('express');
 const app= express();
 const mongoose=require('mongoose');
 const bodyParser=require('body-parser');
@@ -7,6 +7,8 @@ const bodyParser=require('body-parser');
 const userRoutes=require('./routes/user');
 const sprofileRoutes=require('./routes/sprofile');
 const cprofileRoutes=require('./routes/cprofile');
+const eventRoutes=require('./routes/event');
+
 
 
 //BODY-PARSER 
@@ -30,6 +32,7 @@ app.use(function(req, res, next) {
   app.use('/users',userRoutes);
   app.use('/sprofile',sprofileRoutes);
   app.use('/cprofile',cprofileRoutes);
+  app.use('/event',eventRoutes);
 
 
 
