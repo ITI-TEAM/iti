@@ -14,7 +14,7 @@ const allJobSchema = new mongoose.Schema({
     exper:{type:String},
     desc:{type:String},
     qual:{type:String,},
-    applied:{type:[String],default:["1","4"]}
+    studentApplied:{type:[],default:[]}
   
 });
 
