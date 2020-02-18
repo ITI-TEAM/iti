@@ -1,9 +1,9 @@
 
  <div class="container mx-auto" style="margin-top:100px;">
   <h1> Add Events</h1>
-    <form  #eventForm="ngForm" novalidate  (ngSubmit)="onSubmit()"  method="POST"  >
+    <form  #eventForm="ngForm" novalidate   >
         
-          <form>
+          
             <div class="form-group">
               <label for="exampleFormControlInput1">Event Title:</label>
               <input type="text" class="form-control"  name="title" required [class.is-invalid]="title.invalid &&title.touched"
@@ -11,11 +11,15 @@
             </div>
             <div class="form-group">
               <label for="exampleFormControlInput1">Event Date</label>
-              <input  class="form-control" type="date" id="date"  name="date" #date="ngModel" [(ngModel)]="eventModel.date" >
+              <input  class="form-control" type="date" id="date"  name="date" #date="ngModel" [(ngModel)]="eventModel.date" required [class.is-invalid]="date.invalid &&date.touched">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Event Place</label>
+              <input  class="form-control" type="text" id="place"  name="place" #place="ngModel" [(ngModel)]="eventModel.place" required [class.is-invalid]="place.invalid &&place.touched">
             </div>
             <div class="form-group">
               <label for="exampleFormControlInput1">Event Image</label>
-              <input  class="form-control" type="text" id="img"  name="img" #img="ngModel" [(ngModel)]="eventModel.img">
+              <input  class="form-control" type="file" id="img"  name="imge" #img="ngModel" [(ngModel)]="eventModel.imge">
             </div>
             
             <div class="form-group">
@@ -23,9 +27,10 @@
               <textarea class="form-control" type="text" name="details"  required [class.is-invalid]="detai.invalid &&detai.touched"
               #detai="ngModel" [(ngModel)]="eventModel.details" rows="5"></textarea>
             </div>
-            <button type="submit" name="action"  class="btn btn-success">Submit</button>
-          </form>
+            <button type="submit"   class="btn btn-success" (click)="addEvent()">Submit</button>
+          
     </form>
+    {{eventModel|json}}
  </div>
 
 

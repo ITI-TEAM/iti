@@ -34,7 +34,8 @@ app.use(function(req, res, next) {
   app.use('/cprofile',cprofileRoutes);
   app.use('/event',eventRoutes);
 
-
+  app.use(express.static(__dirname));
+  app.use('/uploads',express.static('uploads'));
 
 
   //error handlling

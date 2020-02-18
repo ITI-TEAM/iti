@@ -35,33 +35,50 @@ const upload=multer({
 const Event = require('../models/event');
 
 //Add Event
-router.post("/addevent",upload.single('imge'), function (req, resp,next) {
-    
-    var new_event = new Event()
-    new_event.title = req.body.title
-    new_event.date = req.body.date
-    new_event.details = req.body.details
-    new_event.imge = req.file.path
-    new_event.save(function (err,data) {
-        if (!err){
-            console.log(req.body);
-             resp.json(data);
-          
-         }else{
-             console.log(err);
-             resp.json(err)
-         }
+router.post("/addevent",upload.single('imge'), function (req, res,next) {
+    console.log("asd")
+    var new_event = new Event({
+    title : req.body.title,
+    date : req.body.date,
+    details : req.body.details,
+    place : req.body.place,
+    imge : req.body.imge
+    });
+    console.log("asd")
+   
+    new_event.save()
+    .then(result => {
+      console.log(result);
+      return res.status(200).json({result})
     })
-    
-})
+    .catch(err => {
+      console.log(err);
+      res.status(501).json({
+        error: err
+      });
+    });
+
+});
 
 // List Events
-router.get('/listevent',function(req,resp){
-    Event.find(function(err,data){
-        console.log(data)
-        resp.send(data);
+
+router.get('/listevent',function(req,res){
+    Event.find()
+    .exec()
+    .then(data=>{
+      res.status(200).json(data);
     })
-})
+    .catch(err => {
+      console.log(err);
+      res.status(500).json({
+        error: err
+      });
+  
+    });
+  
+  
+  });
+  
 
 //Delete Event
 router.get('/deleteevent/:_id',function(req,resp){
