@@ -4,37 +4,42 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 //  Model 
-const Sprofile=require('../models/sprofile');
-
-const Alljobs=require('../models/allJob');
-
+const AppliedStudent=require('../models/appliedstudent');
+const User = require('../models/user');
 
 
+router.post("/apply/:studentID/:jobID",(req,res,next)=>{
 
-router.get('/test',(req,res,next)=>{
-  console.log("test");
-  
-})
-
-router.delete("/apply/:studentID",(req,res,next)=>{
-    /*
-    
-    allJob.deleteOne({_id:req.params._id})
-    .exec()
-    .then(doc=>{
-      res.status(200).json({
-        message:"job Deleted"
+ AppliedStudent.find({ jobID:req.params.jobID, studentID:req.params.studentID })
+  .exec()
+  .then(student => {
+    if (student.length >= 1) {
+      return res.status(409).json({
+        message: 'user already aplied'
       });
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json({
-        error: err
-      });
-  
-    });
-  */
-  
+    } else {
+      const newApply = new AppliedStudent({
+        studentID:req.params.studentID,
+        jobID:req.params.jobID
+       
+        });
+        newApply.save()
+        .then(doc=>{
+          res.status(200).json({
+            message:"Applied"
+          });
+        })
+        .catch(err => {
+          console.log(err);
+          res.status(500).json({
+            error: err
+          });
+      
+        });
+    }
+
+  });
+
 });
 
 
