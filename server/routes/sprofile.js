@@ -25,6 +25,7 @@ router.get("/:userID",(req,res,next)=>{
             });
 });
 
+//edit data  
 router.put('/edit/:userID',function(req,res,next){
     var item = {
         name:req.body.name,
