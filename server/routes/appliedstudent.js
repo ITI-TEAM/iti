@@ -11,7 +11,10 @@ const Alljobs=require('../models/allJob');
 
 
 
-
+router.get('/test',(req,res,next)=>{
+  console.log("test");
+  
+})
 
 router.delete("/apply/:studentID",(req,res,next)=>{
     /*
