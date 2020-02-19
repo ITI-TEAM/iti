@@ -21,17 +21,17 @@ export class HomeCompanyComponent implements OnInit {
     this.route.paramMap.subscribe((params:ParamMap)=>{
       this.companyID=params.get('ID');
     }); 
-/////////////////////////////////////////////////////////////////////////
     this.jobServ.getCompanyPosts(this.companyID).subscribe(
       result=>{
         this.jobs=result
-    //    console.log(result[0].applied);
       },
       error=>{
         console.log(error);
       }
     );    
   }
- 
-
+  onSelect(job){
+   this.router.navigate(['/submited-profiles',job._id]);
+    
+  }
 }

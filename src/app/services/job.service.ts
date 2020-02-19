@@ -6,8 +6,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class JOBService {
-
   constructor(private http :HttpClient){ }
+
+  allJobs():Observable<any>{
+    return this.http.get<any>('http://localhost:3000/allJob');
+  }
   createPost(companyID:string,jobModel):Observable<any> {
     return this.http.post<any>('http://localhost:3000/allJob/add/'+companyID,jobModel);
 

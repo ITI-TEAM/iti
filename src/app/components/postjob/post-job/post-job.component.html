@@ -88,21 +88,30 @@
                     <br>
                     <br>
                     <textarea name=""  cols="20" rows="3" placeholder="Experience" name="exper"
-                    #exper="ngModel" [(ngModel)]="jobModel.exper" >
+                    #exper="ngModel" [(ngModel)]="jobModel.exper"
+                    required   [class.isinvalid]="experinvalid" >
                     </textarea>
                     <br>
-                    <br>
-                    <textarea name=""  cols="20" rows="3" placeholder="languages" name="languages"
-                    #languages="ngModel" [(ngModel)]="jobModel.languages" >
-                    </textarea>
-                    <br>
-                    <br>
-                    <textarea name="" i cols="20" rows="5" placeholder="Qualification" name="qual"
-                    #qual="ngModel" [(ngModel)]="jobModel.qual" >
-                    </textarea>
+                    <small style="color: red;" [class.d-none]=" exper.valid || exper.untouched">Experience is Required</small> 
 
                     <br>
                     <br>
+                    <textarea name=""  cols="20" rows="3" placeholder="languages" name="languages"
+                    #languages="ngModel" [(ngModel)]="jobModel.languages"
+                    required   [class.isinvalid]="languages.invalid" >
+                    </textarea>
+                    <br>
+                    <small style="color: red;" [class.d-none]=" languages.valid || languages.untouched">languages is Required</small> 
+
+                    <br>
+                    <textarea name="" i cols="20" rows="5" placeholder="Qualification" name="qual"
+                    #qual="ngModel" [(ngModel)]="jobModel.qual"
+                    required   [class.isinvalid]="qual.invalid" >
+                    </textarea>
+                    <br>
+                    <small style="color: red;" [class.d-none]=" qual.valid || qual.untouched">Qualification is Required</small> 
+
+                    
                     <br>
                     <br>
 
@@ -163,14 +172,20 @@
 
 
                     <input type="text" placeholder="salary" name="salary"
-                    #salary="ngModel" [(ngModel)]="jobModel.salary" >
+                    #salary="ngModel" [(ngModel)]="jobModel.salary" 
+                    required   [class.isinvalid]="salary.invalid">
                     <br>
+                    <small style="color: red;" [class.d-none]=" salary.valid || salary.untouched">salary is Required</small> 
+
                     <br>
 
 
                     <input type="text" placeholder="type of job" name="type"
-                    #type="ngModel" [(ngModel)]="jobModel.type" >
+                    #type="ngModel" [(ngModel)]="jobModel.type" 
+                    required   [class.isinvalid]="type.invalid">
                     <br>
+                    <small style="color: red;" [class.d-none]=" type.valid || type.untouched">type is Required</small> 
+
                     <br>
                   </div>
 
@@ -222,8 +237,12 @@
                   <div class="modal-body">
                     <P>Details:</P>
                     <textarea name=""  cols="30" rows="5" placeholder="Qualification" name="des"
-                    #desc="ngModel" [(ngModel)]="jobModel.desc" >
-                    </textarea>                 
+                    #desc="ngModel" [(ngModel)]="jobModel.desc" 
+                    required   [class.isinvalid]="desc.invalid">
+                    </textarea>  
+                    <br>
+                    <small style="color: red;" [class.d-none]=" desc.valid || desc.untouched">Desecreption is Required</small> 
+               
                    </div>
 
                   <!-- Modal footer -->
