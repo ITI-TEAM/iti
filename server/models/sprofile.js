@@ -27,16 +27,32 @@ const sprofileSchema = new mongoose.Schema({
     type:Number,
     
   },
-  skills:{
+  englishLevel:{
     type:String,
-    default:"enter your skill..."
+    default:""
+  },
+  workLink:{
+    type:[],
+    default:""
+  },
+  availability:{
+    type:String,
+    default:""
+  },
+  Bio:{
+    type:String,
+    default:""
+  },
+  skills:{
+    type:[],
+    default:""
   },
   experience:{
-    type:String,
+    type:[],
     default:"enter your Experience..."
   },
   certifications:{
-    type:String,
+    type:[],
     default:""
   },
   university:{

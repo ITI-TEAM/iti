@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentServiseService } from 'src/app/services/student/student-servise.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Student } from '../Classes/studentClass/student';
 
 @Component({
   selector: 'app-view-sprofile',
@@ -8,8 +9,8 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
   styleUrls: ['./view-sprofile.component.css']
 })
 export class ViewSProfileComponent implements OnInit {
-  public student=[]
-  public student_id;
+  public student=new Student("","","","","","",111,"",[],"","",[],[],[],"","","",207,5,"")
+  public student_id;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
   // 5e445321b776fd1360a7373d
   constructor(private studeServise:StudentServiseService,private route:ActivatedRoute) { }
 
