@@ -29,6 +29,7 @@ app.use(function(req, res, next) {
     next();
 });
 
+//file for images
     app.use(express.static(__dirname));
    app.use('/uploads',express.static('uploads'));
 

@@ -1,28 +1,27 @@
 <app-navbar></app-navbar>
 <div class="profile-page">
-    
-    <div class="page-header header-filter" data-parallax="true" style="background-image:url('http://wallpapere.org/wp-content/uploads/2012/02/black-and-white-city-night.png');"></div>
-    <div class="main main-raised">
+  <form #studentForm="ngForm" novalidate (ngSubmit)="onSubmit()" >
+
+<div class="page-header header-filter" data-parallax="true" style="background-image:url('http://wallpapere.org/wp-content/uploads/2012/02/black-and-white-city-night.png');"></div>
+  <div class="main main-raised">
 		<div class="profile-content">
             <div class="container">
                 <div class="row">
-                   
                    <div class="col-md-4 ml-auto mr-auto">
                     <div class="profile">
                          <div class="avatar">
                              <img src="https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTU0NjQzOTk4OTQ4OTkyMzQy/ansel-elgort-poses-for-a-portrait-during-the-baby-driver-premiere-2017-sxsw-conference-and-festivals-on-march-11-2017-in-austin-texas-photo-by-matt-winkelmeyer_getty-imagesfor-sxsw-square.jpg" alt="Circle Image" class="img-raised rounded-circle img-fluid">
                          </div>
                          <div class="name">
-                             <h3 class="title">Christian Louboutin</h3>
-                             <h6>Designer</h6>
-                             
+                             <h3 class="title">{{student.name}}</h3>
+                             <h6>{{student.title}}</h6>
                          </div>
                      </div>
                    </div>
-                   
                 </div>
                 <div class="description text-center">
-                    <p>An artist of considerable range, Chet Faker — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. </p>
+                    <p>{{student.about}}
+                      {{studentModel.about}} </p>
                     <i class="fas fa-pen" style="float: right;" data-toggle="modal" data-target="#About"></i>
                 </div>
                 <!-- ml-auto mr-auto -->
@@ -37,10 +36,10 @@
                                 </div>
                                 
                                     <div style=" margin-top: 15px;">
-                                        <h5>Email :</h5>
+                                        <h5>Email : {{studentModel.email}}{{student.email}}</h5>
                                     </div>
                                     <div style=" margin-top: 15px;">
-                                        <h5>Telephone Number :</h5>
+                                        <h5>Telephone Number :{{studentModel.phone}}{{student.phone}}</h5>
                                     </div>
                                 
                             </section>
@@ -51,9 +50,10 @@
                                     <i class="fas fa-pen" style="float: right;" data-toggle="modal" data-target="#skills"></i>                            
                                 </div>
                                 <span style=" margin-top: 20px; border-radius: 5px; background-color: rgb(218, 198, 198); padding: 5px;">
-                                    ytfgb8jnbe 
+                                  {{studentModel.skills}}{{student.skills}}
                                 </span>
                             </section>
+
                             <hr class="featurette-divider">
                             <section style="  font-style: italic;">
                                 <div style="font-size: x-large; margin-top: 15px;">
@@ -61,9 +61,10 @@
                                     <i class="fas fa-pen" style="float: right;" data-toggle="modal" data-target="#Experience"></i>                             
                                 </div>
                                 <ul style=" margin-top: 15px; list-style-type: none;">
-                                  <li> gbijklfhu</li>
+                                  <li>{{studentModel.experience}}</li>
                                 </ul>
                             </section>
+
                             <hr class="featurette-divider">
                                 <section style="  font-style: italic;">
                                     <div style="font-size: x-large; margin-top: 15px;">
@@ -71,30 +72,32 @@
                                         <i class="fas fa-pen" style="float: right;" data-toggle="modal" data-target="#Certifications"></i>                             
                                     </div>
                                     <ul style=" margin-top: 15px; list-style-type: none">
-                                       <li>tygrujrij</li>
+                                       <li>{{studentModel.email}}</li>
                                     </ul>
                                 </section>
+
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="profile-tabs">
+
                                 <section style="  font-style: italic;">
                                     <div style="font-size: x-large; margin-top: 15px;">
                                         <i class="fas fa-graduation-cap"> Education </i>
                                         <i class="fas fa-pen" style="float: right;" data-toggle="modal" data-target="#Education"></i>                             
                                     </div>
                                     <div style=" margin-top: 15px;">
-                                       <h5>University :</h5>
+                                       <h5>University :{{studentModel.university}}</h5>
                                     </div>
                                     <div style=" margin-top: 7px;">
-                                        <h5>Faculty :</h5>
+                                        <h5>Faculty :{{studentModel.faculty}}</h5>
                                      </div>
                                      <div style=" margin-top: 7px;">
-                                        <h5>Grade :</h5>
+                                        <h5>Grade :{{studentModel.grade}}</h5>
                                      </div>
                                      <div style=" margin-top: 7px;">
                                         <h5> 
-                                            Graduation Year:</h5>
+                                            Graduation Year:{{studentModel.graduationYear}}</h5>
                                      </div>
                                 </section>
                                 
@@ -105,36 +108,23 @@
                                         <i class="fas fa-pen" style="float: right;" data-toggle="modal" data-target="#Rate"></i>
                                     </div>
                                     <div style=" margin-top: 15px;">
-                                        50 $
+                                      {{studentModel.hourRate + "$"}} 
                                     </div>
                                    </section>
-                                   <hr class="featurette-divider">
-                                   <section style="  font-style: italic;" >
-                                       <div style="font-size: x-large; margin-top: 15px;">
-                                        <i class="fas fa-plane-departure">
-                                            The possibility of travel</i>
-                                            <i class="fas fa-pen" style="float: right;" data-toggle="modal" data-target="#travel"></i>
-                                       </div>
-                                       <div style=" margin-top: 15px;">
-                                           <h5>Working outside Egypt :</h5>
-                                       </div>
-                                       <div style=" margin-top: 15px;">
-                                           <h5>Working in other provinces :</h5>
-                                       </div>
-                                    </section>
+
+                                   <button type="submit"  class="btn-danger">Save</button>
+
                             </div>
                         </div>
                     </div>
                     <br>
                     <br>
                 </div>
-				
-        
-          
-        
             </div>
         </div>
     </div>
+
+ 
     <div class="modal" id="myModal">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -144,16 +134,17 @@
               <h1 class="modal-title">Contact Info</h1>
               <button type="button" class="close" data-dismiss="modal">×</button>
             </div>
-            
+
+            <!-- studentModel -->
+
+
             <!-- Modal body -->
             <div class="modal-body">
                   <div class="form-group">
-                    
-                    <input type="email" class="form-control" placeholder="Enter email" id="email">
+                    <input type="email" class="form-control" placeholder="Enter email" id="email" name="email" [(ngModel)]="studentModel.email" #email="ngModel" >
                   </div>
                   <div class="form-group">
-                    
-                    <input type="number" class="form-control" placeholder="Enter Telephone Number" id="email">
+                    <input type="number" class="form-control" placeholder="Enter Telephone Number"  name="phone" [(ngModel)]="studentModel.phone" #phone="ngModel">
                   </div>
             </div>
             
@@ -165,23 +156,21 @@
           </div>
         </div>
       </div>
+      <!-- skill edit -->
       <div class="modal" id="skills">
         <div class="modal-dialog">
           <div class="modal-content">
-          
             <!-- Modal Header -->
             <div class="modal-header">
               <h1 class="modal-title">Skills</h1>
               <button type="button" class="close" data-dismiss="modal">×</button>
             </div>
-            
             <!-- Modal body -->
             <div class="modal-body">
                   <div class="form-group">
-                    
-                    <input type="text" class="form-control" placeholder="Enter skills" id="text">
+                    <input type="text" class="form-control" placeholder="Enter skills" id="text"
+                    name="skills" [(ngModel)]="studentModel.skills" #skills="ngModel">
                   </div>
-                  
             </div>
             
             <!-- Modal footer -->
@@ -192,6 +181,7 @@
           </div>
         </div>
       </div>
+      <!-- edit experince -->
       <div class="modal" id="Experience">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -205,8 +195,8 @@
             <!-- Modal body -->
             <div class="modal-body">
                   <div class="form-group">
-                    
-                    <input type="text" class="form-control" placeholder="Enter Experience" id="text">
+                    <input type="text" class="form-control" placeholder="Enter Experience" id="text"
+                    name="experience" [(ngModel)]="studentModel.experience" #experience="ngModel">
                   </div>
                   
             </div>
@@ -219,6 +209,7 @@
           </div>
         </div>
       </div>
+      <!-- update eduction -->
       <div class="modal" id="Education">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -233,15 +224,18 @@
             <div class="modal-body">
                   <div class="form-group">
                     
-                  <input type="text" class="form-control" placeholder="Enter University" id="text">
+                  <input type="text" class="form-control" placeholder="Enter University" id="text"
+                  name="university" [(ngModel)]="studentModel.university" #university="ngModel">
                   <br>
                   
-                  <input type="text" class="form-control" placeholder="Enter Faculty" id="text">
+                  <input type="text" class="form-control" placeholder="Enter Faculty" id="text"
+                  name="faculty" [(ngModel)]="studentModel.faculty" #faculty="ngModel">
                   <br>
                   
-                  <input type="text" class="form-control" placeholder="Enter Grade" id="text">
+                  <input type="text" class="form-control" placeholder="Enter Grade" id="text"
+                  name="grade" [(ngModel)]="studentModel.grade" #grade="ngModel">
                   <br>
-                  <input type="text" class="form-control" placeholder="Enter Year Graduation" id="text">
+                  <input type="text" class="form-control" placeholder="Enter Year Graduation" id="text" name="graduationYear" [(ngModel)]="studentModel.graduationYear" #graduationYear="ngModel">
                   </div>
                   
             </div>
@@ -254,6 +248,7 @@
           </div>
         </div>
       </div>
+      <!-- update rate -->
       <div class="modal" id="Rate">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -268,7 +263,8 @@
             <div class="modal-body">
                   <div class="form-group">
                     
-                    <input type="text" class="form-control" placeholder="Enter Your Rate" id="text">
+                    <input type="text" class="form-control" placeholder="Enter Your Rate" id="text"
+                    name="hourRate" [(ngModel)]="studentModel.hourRate" #hourRate="ngModel">
                   </div>
                   
             </div>
@@ -281,6 +277,7 @@
           </div>
         </div>
       </div>
+      <!-- update certification  -->
       <div class="modal" id="Certifications">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -295,7 +292,7 @@
             <div class="modal-body">
                   <div class="form-group">
                     
-                    <input type="number" class="form-control" placeholder="Enter Certifications" id="number">
+                    <input type="number" class="form-control" placeholder="Enter Certifications" id="number"  name="certifications" [(ngModel)]="studentModel.certifications" #certifications="ngModel">
                   </div>
                   
             </div>
@@ -308,36 +305,8 @@
           </div>
         </div>
       </div>
-      <div class="modal" id="travel">
-        <div class="modal-dialog">
-          <div class="modal-content">
-          
-            <!-- Modal Header -->
-            <div class="modal-header">
-              <h1 class="modal-title">The possibility of travel</h1>
-              <button type="button" class="close" data-dismiss="modal">×</button>
-            </div>
-            
-            <!-- Modal body -->
-            <div class="modal-body">
-                  <div class="form-group">
-                    
-                    <input type="text" class="form-control" placeholder="Working outside Egypt " id="travel">
-                  </div>
-                  <div class="form-group">
-                    
-                    <input type="text" class="form-control" placeholder="Working in other provinces" id="city">
-                  </div>
-            </div>
-            
-            <!-- Modal footer -->
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
-            </div>
-            
-          </div>
-        </div>
-      </div>
+      
+      <!-- update about -->
       <div class="modal" id="About">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -351,9 +320,7 @@
             <!-- Modal body -->
             <div class="modal-body">
                   <div class="form-group">
-                    
-                  
-                    <textarea class="form-control" rows="10" id="comment"></textarea>
+                    <textarea class="form-control" rows="10" id="comment"  name="about" [(ngModel)]="studentModel.about" #about="ngModel"></textarea>
                   </div>
                   
             </div>
@@ -364,11 +331,12 @@
             </div>
             
           </div>
+         
         </div>
       </div>
-	
-    
-    
+     
+    </form>
     </div>
+
     <br><br>
     <app-footer></app-footer>
