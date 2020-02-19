@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CompanyService } from 'src/app/services/Company/company.service';
 
 @Component({
   selector: 'app-admin-navbar',
@@ -10,6 +11,7 @@ export class AdminNavbarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }
