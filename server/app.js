@@ -11,6 +11,7 @@ const userRoutes=require('./routes/user');
 const sprofileRoutes=require('./routes/sprofile');
 const cprofileRoutes=require('./routes/cprofile');
 const allJobRoutes=require('./routes/allJob');
+const eventRoutes=require('./routes/event');
 
 //BODY-PARSER 
 app.use(bodyParser.urlencoded({extended: false}));
@@ -37,7 +38,7 @@ app.use(function(req, res, next) {
   app.use('/sprofile',sprofileRoutes);
   app.use('/cprofile',cprofileRoutes);
   app.use('/allJob',allJobRoutes);
-
+  app.use('/event',eventRoutes);
 
 
 
