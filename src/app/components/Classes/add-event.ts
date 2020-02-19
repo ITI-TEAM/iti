@@ -4,6 +4,7 @@ export class AddEvent {
         public details:String,
         public date:string,
         public img:String,
+        public place:String
         
     ){}
 }

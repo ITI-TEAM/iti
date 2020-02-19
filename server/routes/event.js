@@ -35,16 +35,14 @@ const upload=multer({
 const Event = require('../models/event');
 
 //Add Event
-router.post("/addevent",upload.single('imge'), function (req, res,next) {
-    console.log("asd")
+router.post("/addevent",upload.single('image'), function (req, res,next) {
     var new_event = new Event({
     title : req.body.title,
     date : req.body.date,
     details : req.body.details,
     place : req.body.place,
-    imge : req.body.imge
+    image : req.file.path
     });
-    console.log("asd")
    
     new_event.save()
     .then(result => {

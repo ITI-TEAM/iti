@@ -7,12 +7,18 @@ import { EventService } from 'src/app/services/Events/event.service';
   styleUrls: ['./all-event.component.css']
 })
 export class AllEventComponent implements OnInit {
-  public events;
+  public events:[];
   constructor(private eventser:EventService) { }
 
   ngOnInit() {
-    this.eventser.listEvent().subscribe(data=>this.events=data)
+    this.eventser.listEvent().subscribe(
 
+      data=>{
+        this.events=data;
+        
+      }
+    );
+    
   }
  DeleteEvent(event_id){
   this.eventser.deletEvent(event_id).subscribe(

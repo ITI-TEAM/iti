@@ -11,9 +11,9 @@ export class EventService {
   constructor(private http: HttpClient) { }
   
   // Add Event
-  addEvent(myEvent:AddEvent) {
+  addEvent(fd:FormData) {
    
-    return this.http.post('http://localhost:3000/event/addevent',myEvent);
+    return this.http.post('http://localhost:3000/event/addevent',fd);
   }
 
 // List Event
