@@ -1,14 +1,14 @@
 export class Company {
     constructor(
         public name: String,
-        public careerobjective: String,
+        public careerobjrctive: String,
         public content: String,
         public email: String,
         public address: String,
-        public telephonenumber: Number,
+        public telephonenumber: string,
         public field: String,
         public description: String,
-        public datecreated: Number,
+        public datecreated: string,
 
         
     ) {

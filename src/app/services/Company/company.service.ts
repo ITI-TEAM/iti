@@ -13,8 +13,8 @@ export class CompanyService {
   getCompany(_id):Observable<any>{
     return this.http.get("http://localhost:3000/cprofile/"+_id)
   }
-  updateCompany(id, company:Company):Observable<any>{
-    return this .http.put<any>('http://localhost:3000/cprofile/edit/'+ id ,company)
+  updateCompany(ID,company:Company):Observable<any>{
+    return this.http.post<any>('http://localhost:3000/cprofile/edit/'+ID, company)
 
   }
 }

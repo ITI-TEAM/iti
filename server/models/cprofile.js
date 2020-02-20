@@ -6,7 +6,7 @@ const cprofileSchema = new mongoose.Schema({
     type:String,
     default:""
   },
-  careerobjective:{
+  careerobjrctive:{
     type:String,
     default:" "
   },
@@ -24,11 +24,11 @@ const cprofileSchema = new mongoose.Schema({
   },
   telephonenumber:{
     type:Number,
-   // default:"Enter your telephonenumber"
+   
   },
   datecreated:{
     type:Number,
-    //default:"Enter your Date created"
+    
   },
   field:{
     type:String,

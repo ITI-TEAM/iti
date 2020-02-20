@@ -9,9 +9,11 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
   styleUrls: ['./edit-company-profile.component.css']
 })
 export class EditCompanyProfileComponent implements OnInit {
-  public companyModel= new Company("Enter youe name","Enter your careerobjective","Enter your content","Enter your email","Enter your address",58,"Enter your field","Enter your description",55)
-  public company=[]
+
+  public companyModel= new Company("company name ?","career objective","contetnt ?","email ?","address ?","phone ?","field ?","decreption ?","date created ?");
   public company_ID;
+  public company= new Company("","","","","","","","","");
+
   constructor(private CompanyServise:CompanyService ,private route:ActivatedRoute, private router:Router ) {}
 
   ngOnInit() {
@@ -20,22 +22,24 @@ export class EditCompanyProfileComponent implements OnInit {
 
     });
     this.CompanyServise.getCompany(this.company_ID).subscribe(data=>{
-      this.company=data[0];
-      console.log(this.company)
+      this.companyModel=data;
+      console.log(this.companyModel)
+      console.log(data);
+      
     })
    
   }
-
+  edit(){
+    this.CompanyServise.updateCompany(this.company_ID ,this.companyModel).subscribe(
+      result=>{
+        alert("changes saned")
+        this.router.navigate(['/company-profile',this.company_ID])
+      },
+      error=>{
+        console.log(error)
+      }
+      
+    )
+  }
 }
-// onsubmit(){
-//   this.companyServise.updatecompany(this.company_id,this.studentModel).subscribe(
-//     result=>{
-//       alert("changes saned")
-//       this.router.navigate(['/company-profile',this.company_ID])
-//     },
-//     error=>{
-//       console.log(error)
-//     }
-    
-//   )
-// }
+

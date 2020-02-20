@@ -28,22 +28,20 @@ const routes: Routes = [
   {path:'login',component:LognInComponent},
 
 
-  {path:'student-home',component:HomeComponent,canActivate:[AuthenticationGuardService]},
- {path:'student-profile',component:ViewSProfileComponent,canActivate:[AuthenticationGuardService]},
-  {path:'edit-student-profile',component:StudentProfileComponent,canActivate:[AuthenticationGuardService]},
-  {path:'job-details',component:JObDetailsComponent,canActivate:[AuthenticationGuardService]},
-  {path:'list-jobs',component:ListJobsComponent},
-  {path:'student-profile',component:StudentProfileComponent,canActivate:[AuthenticationGuardService]},
-  {path:'job-details',component:JObDetailsComponent,canActivate:[AuthenticationGuardService]},
+  {path:'student-home/:ID',component:HomeComponent,canActivate:[AuthenticationGuardService]},
+ {path:'student-profile/:ID',component:ViewSProfileComponent,canActivate:[AuthenticationGuardService]},
+  {path:'edit-student-profile/:ID',component:StudentProfileComponent,canActivate:[AuthenticationGuardService]},
+  {path:'job-details/:ID',component:JObDetailsComponent,canActivate:[AuthenticationGuardService]},
+  {path:'list-jobs/:ID',component:ListJobsComponent},
+  {path:'job-details/:ID',component:JObDetailsComponent,canActivate:[AuthenticationGuardService]},
 
-  {path:'home-company',component:HomeCompanyComponent,canActivate:[AuthenticationGuardService]},
-  {path:'post-job',component:PostJobComponent},
-  {path:'company-profile',component:CompanyProfileComponent,canActivate:[AuthenticationGuardService]},
-  {path:'edit-company-profile',component:EditCompanyProfileComponent,canActivate:[AuthenticationGuardService]},
-  {path:'post-job',component:PostJobComponent,canActivate:[AuthenticationGuardService]},
+  {path:'home-company/:ID',component:HomeCompanyComponent,canActivate:[AuthenticationGuardService]},
+  {path:'post-job/:ID',component:PostJobComponent,canActivate:[AuthenticationGuardService]},
+  {path:'company-profile/:ID',component:CompanyProfileComponent,canActivate:[AuthenticationGuardService]},
+  {path:'edit-company-profile/:ID',component:EditCompanyProfileComponent,canActivate:[AuthenticationGuardService]},
   
 
-  {path:'admin',component:AllJobsComponent,canActivate:[AuthenticationGuardService]},
+  {path:'admin/:ID',component:AllJobsComponent,canActivate:[AuthenticationGuardService]},
   {path:'manage-students',component:ManageStudentsComponent,canActivate:[AuthenticationGuardService]},
   {path:'manage-company',component:AllCompanyComponent,canActivate:[AuthenticationGuardService]},
   {path:'maneg-events',component:AllEventComponent,canActivate:[AuthenticationGuardService]},

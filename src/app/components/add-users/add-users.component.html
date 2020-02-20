@@ -2,41 +2,45 @@
 <div class="container mx-auto" style="margin-top:100px;">
   <div class="form">
     <h1> Add Users</h1>
+   
     <form #userForm="ngForm" method="POST" novalidate (ngSubmit)="onSubmit()">
-      <div class="form-group row">
-          <div class="input-field col s12">
-              <input id="User_name" type="text" class="validate" class="form-control" [class.is-invalid]="Username.invalid && Username.touched" #Username="ngModel" required
-              [(ngModel)]="userModel.userName" name="userName">
-              <label for="user_name">User Name</label>
-            </div>
+      <div class="form-group">
+        <label for="uname">Username:</label>
+        <input id="User_name" type="text" class="form-control" [class.is-invalid]="Username.invalid && Username.touched" #Username="ngModel" required
+        [(ngModel)]="userModel.userName" name="userName">
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
       </div>
-      <div class="form-group row">
-        <div class="input-field col s12">
-            <input id="type" type="text" class="validate"  class="form-control" [class.is-invalid]="type.invalid && type.touched"
-            #type="ngModel" required [(ngModel)]="userModel.typeName" name="typeName">
-            <label for="first_name">Type</label>
-          </div>
-    </div>
-      <div class="form-group row">
-          <div class="input-field col s12">
-              <input id="email" type="email" class="validate"  class="form-control" [class.is-invalid]="email.invalid && email.touched" #email="ngModel"
-              required [(ngModel)]="userModel.mail" name="mail">
-              <label for="email">Email</label>
-            </div>
+      <div class="form-group">
+        <label for="uname">Email:</label>
+        <input  id="email" type="email" class="form-control" [class.is-invalid]="email.invalid && email.touched" #email="ngModel"
+        required [(ngModel)]="userModel.mail" name="mail">
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+      </div>
+      <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input id="password" type="password" class="form-control" [class.is-invalid]="password.invalid && password.touched" #password="ngModel" required
+        [(ngModel)]="userModel.password" name="password">
+        <div class="valid-feedback">Valid.</div>
+        <div class="invalid-feedback">Please fill out this field.</div>
+      </div>
+      <div class="mb-3" >
+        <label>Type :</label>
+        
+        <div style="display: flex;">
+          <div class="form-check">
+            <input type="radio" value="Company" class="form-check-input" name="TtypeSelection"  ngForm required [(ngModel)]="userModel.typeSelection" #select="ngModel"/>
+            <label class="form-check-label">Company</label>
+           </div>
+           <div class="form-check">
+            <input type="radio" value="Student" class="formcheck-input" name="TtypeSelection" ngForm required [(ngModel)]="userModel.TtypeSelection" #select="ngModel"/>
+            <label class="form-check-label">Student</label>
+           </div>
+        </div>
+       </div>
        
-      </div>
-      <div class="form-group row">
-          <div class="input-field col s12">
-              <input id="password" type="password" class="validate" class="form-control" [class.is-invalid]="password.invalid && password.touched" #password="ngModel" required
-              [(ngModel)]="userModel.password" name="password">
-              <label for="password">Password</label>
-            </div>
-      </div>
-      <div class="row">
-        <button class="btn f44336 red-effect f44336 red  " type="submit" name="action" [disabled]="userForm.form.invalid || topicHasErr">Submit
-          <i class="material-icons right">send</i>
-      </button>
-        </div>    
+      <button type="submit" name="action" [disabled]="userForm.form.invalid || topicHasErr" class="btn btn-success">Submit</button>
     </form>
   </div>
 </div>

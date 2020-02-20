@@ -32,12 +32,17 @@ export class LognInComponent implements OnInit {
         
         if(this.data.type=='student')
         {
-          this.router.navigate(['/student-home']);
+          this.router.navigate(['/student-home',this.data.userID]);
 
         }
         if(this.data.type=='company')
+        { 
+          this.router.navigate(['/home-company',this.data.userID]);
+
+        }
+        if(this.data.type=='admin')
         {
-          this.router.navigate(['/home-company']);
+          this.router.navigate(['/admin',this.data.userID]);
 
         }
 

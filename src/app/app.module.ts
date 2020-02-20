@@ -34,6 +34,9 @@ import { AddEventComponent } from './components/add-event/add-event.component';
 import { CompanyProfileComponent } from './components/company-profile/company-profile/company-profile.component';
 import { EditCompanyProfileComponent } from './components/edit-company-profile/edit-company-profile/edit-company-profile.component';
 import { CompanyService } from './services/Company/company.service';
+import { JOBService } from './services/job.service';
+import { StudentServiseService } from './services/student/student-servise.service';
+
 
 @NgModule({
   declarations: [
@@ -72,6 +75,7 @@ import { CompanyService } from './services/Company/company.service';
     PostJobComponent,
     CompanyProfileComponent,
     EditCompanyProfileComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -79,15 +83,16 @@ import { CompanyService } from './services/Company/company.service';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule
-   
-    
     
   ],
   providers: [
     AuthenticationGuardService,
     LoginService,
     BrowserAnimationsModule,
-    CompanyService
+    CompanyService,
+    JOBService,
+    BrowserAnimationsModule,
+    StudentServiseService
   ],
   bootstrap: [AppComponent]
 })
