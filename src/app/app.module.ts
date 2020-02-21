@@ -37,6 +37,7 @@ import { JOBService } from './services/job.service';
 import { StudentServiseService } from './services/student/student-servise.service';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

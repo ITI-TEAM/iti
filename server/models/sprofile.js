@@ -25,7 +25,6 @@ const sprofileSchema = new mongoose.Schema({
   },
   phone:{
     type:Number,
-    
   },
   englishLevel:{
     type:String,
@@ -49,7 +48,7 @@ const sprofileSchema = new mongoose.Schema({
   },
   experience:{
     type:[],
-    default:"enter your Experience..."
+    default:""
   },
   certifications:{
     type:[],

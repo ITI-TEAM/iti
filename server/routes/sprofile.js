@@ -17,7 +17,6 @@ const storage=multer.diskStorage({
   },
   
   filename: function(req,file,cb){
-    //cb(null,new Date().toISOString()+file.originalname);
     cb(null, Date.now() + file.originalname); 
   }
 
@@ -39,8 +38,6 @@ const upload=multer({
    storage:storage,
    limits:{fieldSize: 1024*1024*5},
    fileFilter:fileFilter
- 
-
 });
 
 
