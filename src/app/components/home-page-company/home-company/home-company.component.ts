@@ -32,6 +32,6 @@ export class HomeCompanyComponent implements OnInit {
   }
   onSelect(job){
    this.router.navigate(['/submited-profiles',job._id]);
-    
+   
   }
 }

@@ -128,4 +128,26 @@ router.get("/companyjobs/:ID",(req,res,next)=>{
 
 
 
+// list job names
+router.get("/names/:jobID",(req,res,next)=>{
+    
+  allJob.find({_id:req.params.jobID})
+  .exec()
+  .then(doc=>{
+    res.status(200).json(doc);
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json({
+      error: err
+    });
+
+  });
+
+});
+
+
+
+
+
 module.exports = router;

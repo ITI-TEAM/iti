@@ -1,4 +1,4 @@
-<app-navbar></app-navbar>
+<!-- <app-navbar></app-navbar>
 
 <div class="job_listing_area plus_padding">
   <div class="container">
@@ -118,4 +118,14 @@
         </div>
       </div>
     </div>
+  </div> -->
+  <div class="col-lg-12 col-md-12" *ngFor="let job of jobs">
+    
+
+    <h4>{{job[0].companyID}}</h4>
+    <h4>{{job[0].title}}</h4>
+    <h4>{{job[0].salary}}</h4>
+
   </div>
+  <button (click)="test()">test</button>
+
