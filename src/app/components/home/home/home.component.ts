@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { JOBService } from 'src/app/services/job.service';
 
 @Component({
   selector: 'app-home',
@@ -7,24 +8,38 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  posts =[
-    {  companey: "modern",name:"aaaaaaaaaaaaaaaaaaaa", photourl:'../../../../assets/images/heba.jpg'},
-    {  companey: "iti",name:"bbbbbbbbbbbbbbbbbbbb", photourl:'../../../../assets/images/heba.jpg'},
+ 
+    jobs=[];
 
-    {  companey: "www",name:'zzzzzzzzzzzzzzzzzz', photourl:'../../../../assets/images/heba.jpg'},
-    ]
+      studentID;
+      ID=this.studentID;
+      jobID;
     envents=[
       {titel:'EVENT',obj:'ssssss'},
       {titel:'eeeeeeeeee',obj:'yyyyyyy'},
       {titel:'eeeeeeeeee',obj:'yyyyyyy'},{titel:'eeeeeeeeee',obj:'yyyyyyy'}
     ]
   
-  constructor(private router : Router) { }
+  constructor(private router : Router,private jobServ:JOBService,private route:ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.paramMap.subscribe((params:ParamMap)=>{
+      this.ID=params.get('ID');
+    }); 
+
+    this.jobServ.allJobs().subscribe(
+      data=>{
+      this.jobs=data;        
+      },
+error=>{
+  console.log(error);
+  
+}
+
+    );
   }
-  goDetails(){
-    this.router.navigate(['/job-details']);
+  goDetails(job){
+    this.router.navigate(['/job-details',this.ID,job.companyID,job._id]);
 
   }
 

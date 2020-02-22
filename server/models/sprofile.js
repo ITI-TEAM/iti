@@ -70,7 +70,7 @@ const sprofileSchema = new mongoose.Schema({
   },
  image:{
   type:String,
-  default:"uploads\default.jpg"
+  default:'uploads'+'//'+'default.jpg'
 }
 
 });

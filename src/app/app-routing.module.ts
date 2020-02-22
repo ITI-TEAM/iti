@@ -33,10 +33,11 @@ const routes: Routes = [
   {path:'edit-student-profile/:ID',component:StudentProfileComponent,canActivate:[AuthenticationGuardService]},
   {path:'job-details/:ID',component:JObDetailsComponent,canActivate:[AuthenticationGuardService]},
   {path:'list-jobs/:ID',component:ListJobsComponent},
-  {path:'job-details/:ID',component:JObDetailsComponent,canActivate:[AuthenticationGuardService]},
+  {path:'job-details/:ID/:companyID/:jobID',component:JObDetailsComponent,canActivate:[AuthenticationGuardService]},
 
   {path:'home-company/:ID',component:HomeCompanyComponent,canActivate:[AuthenticationGuardService]},
   {path:'post-job/:ID',component:PostJobComponent,canActivate:[AuthenticationGuardService]},
+  {path:'submited-profiles/:ID',component:StudentsProfileSubmittedComponent,canActivate:[AuthenticationGuardService]},
   {path:'company-profile/:ID',component:CompanyProfileComponent,canActivate:[AuthenticationGuardService]},
   {path:'edit-company-profile/:ID',component:EditCompanyProfileComponent,canActivate:[AuthenticationGuardService]},
   

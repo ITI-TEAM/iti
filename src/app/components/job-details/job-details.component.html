@@ -73,8 +73,10 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo sint ex perferendis hic quidem, necessitatibus ipsa praesentium impedit pariatur mollitia, harum nemo consectetur illo, repellendus autem sit error blanditiis cupiditate? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia provident et accusamus quia eaque reprehenderit, sed obcaecati voluptates, iure molestias quae consequuntur fuga? Quasi velit consectetur quis, deleniti deserunt quo.</p>      
                 </div>
                 <hr>
+                <strong class="text-danger" [class.d-none]="test">You Already Applied to the Job</strong>
+
                 <div class="button">
-                    <button type="button" class="btn btn-outline-danger">apply to job</button>
+                    <button type="button" class="btn btn-outline-danger" (click)="applytoJob()">apply to job</button>
                   </div>    
               </div>
             <br>

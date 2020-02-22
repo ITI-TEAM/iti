@@ -3,89 +3,12 @@ const router = express.Router()
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');  
 
-const multer=require('multer');
 
-const storage=multer.diskStorage({
-  destination: function(req,file,cb){
-    cb(null,'./uploads');
-
-  },
-  
-  filename: function(req,file,cb){
-    //cb(null,new Date().toISOString()+file.originalname);
-    cb(null, Date.now() + file.originalname); 
-  }
-
-});
-
-const fileFilter=(req,file,cb)=>{
-  //accept file
-  if (file.mimetype==='image/jpeg'|| file.mimetype==='image/png' || file.mimetype==='image/jpg')
-  {
-    cb(null,true);
-  }
-   //reject file
-  else{
-    cb(null,false);
-  }
-};
-
-const upload=multer({
-   storage:storage,
-   limits:{fieldSize: 1024*1024*5},
-   fileFilter:fileFilter
- 
-
-});
 
 //  Model 
 const allJob=require('../models/allJob');
 
-/*
-router.post("/add",upload.single('jobImage'),(req,res,next)=>{
-    
-    const newJob = new allJob({
-        name:req.body.name,
-        dec:req.body.desc,
-        jobImage:req.file.path
-      });
-      newJob.save()
-      .then(result => {
-        console.log(result);
-        return res.status(201).json({
-          message: "Job created"
-        })
-      })
-      .catch(err => {
-        console.log(err);
-        res.status(500).json({
-          error: err
-        });
 
-      });
-
-});
-
-
-router.get("/",(req,res,next)=>{
-    
-  allJob.find()
-  .select("name desc jobImage")
-  .exec()
-  .then(doc=>{
-    res.status(200).json(doc);
-  })
-  .catch(err => {
-    console.log(err);
-    res.status(500).json({
-      error: err
-    });
-
-  });
-
-
-});
-*/
 
 
 // create new job
@@ -202,6 +125,28 @@ router.get("/companyjobs/:ID",(req,res,next)=>{
 
 
 });
+
+
+
+// list job names
+router.get("/names/:jobID",(req,res,next)=>{
+    
+  allJob.find({_id:req.params.jobID})
+  .exec()
+  .then(doc=>{
+    res.status(200).json(doc);
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json({
+      error: err
+    });
+
+  });
+
+});
+
+
 
 
 
