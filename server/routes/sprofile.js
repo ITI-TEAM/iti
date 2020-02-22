@@ -64,7 +64,7 @@ router.get("/:userID",(req,res,next)=>{
 
 
 // update data 
-router.post('/edit/:userID',function(req,res,next){
+router.post('/edit/:userID',upload.single('image'),function(req,res,next){
     var item = {
         name:req.body.name,
         age:req.body.age,
@@ -79,11 +79,11 @@ router.post('/edit/:userID',function(req,res,next){
         certifications:req.body.certifications,
         university:req.body.university,
         faculty:req.body.faculty,
-        grade:req.body.grade,
         graduationYear:req.body.graduationYear,
         title:req.body.title,
-        about:req.body.about
-       // StudentImage:req.file.path
+        about:req.body.about,
+        image : req.file.path
+
     }
     Sprofile.findOneAndUpdate({ID:req.params.userID},{$set:item},{new:true})
         .then(data=>{

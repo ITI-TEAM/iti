@@ -9,9 +9,8 @@ import { Student } from '../Classes/studentClass/student';
   styleUrls: ['./view-sprofile.component.css']
 })
 export class ViewSProfileComponent implements OnInit {
-  public student = new Student("","","","","","","",[],"","",[],[],[],"","","","")
+  public student = new Student("","","","","","","",[],"","",[],[],[],"","","","");
   public student_id;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
-  // 5e445321b776fd1360a7373d
   constructor(private studeServise:StudentServiseService,private route:ActivatedRoute) { }
 
   ngOnInit() {

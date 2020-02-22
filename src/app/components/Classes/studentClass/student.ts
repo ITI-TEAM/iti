@@ -15,9 +15,10 @@ export class Student {
         public certifications:[],
         public university:String,
         public faculty:String,
-        public grade:String,
         public graduationYear:String,
-      //  public StudentImage: String
+        public image:String
+
+        
     ){}
 
     

@@ -64,16 +64,14 @@ const sprofileSchema = new mongoose.Schema({
     type:String,
     default:"what's your faculty ?"
   },
-  grade:{
-    type:String,
-    default:"Grade ?"
-  },
   graduationYear:{
     type:String,
     default:"graduationYear ?"
-  }
- 
- // StudentImage:{ type: String, required: false }
+  },
+ image:{
+  type:String,
+  default:"uploads\default.jpg"
+}
 
 });
 

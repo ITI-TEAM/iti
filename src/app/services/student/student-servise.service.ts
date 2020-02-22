@@ -11,12 +11,6 @@ export class StudentServiseService {
 
   constructor(private http:HttpClient) { }
 
-// Http Options
-  // httpOptions = {
-  //   headers: new HttpHeaders({
-  //     'Content-Type': 'application/json'
-  //   })
-  // }
 
   // student data by ID
   getStudent(_id):Observable<any>{
@@ -26,8 +20,8 @@ export class StudentServiseService {
 
 
   //update data by ID
-  updateStudent(id , student:Student): Observable<any> {
-    return this.http.post<any>('http://localhost:3000/sprofile/edit/' + id , student)
+  updateStudent(id , fd:FormData): Observable<any> {
+    return this.http.post<any>('http://localhost:3000/sprofile/edit/' + id , fd)
    
   }
 

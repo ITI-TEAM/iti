@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
 <div class="profile-page">
-  <form #studentForm="ngForm" novalidate (ngSubmit)="onSubmit()" >
+  <form #studentForm="ngForm"  (ngSubmit)="onSubmit()" >
 
 <div class="page-header header-filter" data-parallax="true" style="background-image:url('http://wallpapere.org/wp-content/uploads/2012/02/black-and-white-city-night.png');"></div>
   <div class="main main-raised">
@@ -10,8 +10,9 @@
                    <div class="col-md-4 ml-auto mr-auto">
                     <div class="profile">
                          <div class="avatar">
-                             <img src="https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTU0NjQzOTk4OTQ4OTkyMzQy/ansel-elgort-poses-for-a-portrait-during-the-baby-driver-premiere-2017-sxsw-conference-and-festivals-on-march-11-2017-in-austin-texas-photo-by-matt-winkelmeyer_getty-imagesfor-sxsw-square.jpg" alt="Circle Image" class="img-raised rounded-circle img-fluid">
+                             <img src="http://localhost:3000//{{studentModel.image}}" alt="Circle Image" class="img-raised rounded-circle img-fluid">
                          </div>
+                         
                          <div class="name">
                              <h3 class="title">{{studentModel.name}}</h3>
                              <h6>{{studentModel.title}}</h6>
@@ -131,7 +132,7 @@
                                       </div>
   
                                       <div style=" margin-top: 15px;">
-                                        <h5>Age : {{studentModel.Bio}}</h5>
+                                        <h5>Bio : {{studentModel.Bio}}</h5>
                                     </div>
                                     <div style=" margin-top: 15px;">
                                       <h5>English Level : {{studentModel.englishLevel}}</h5>
@@ -141,7 +142,10 @@
                                 <hr class="featurette-divider">
                             
 
-                                   <button type="submit"  class="btn-danger">Save</button>
+                                   <button type="submit" [disabled]="studentForm.form.invalid"  class="btn-danger">Update</button>
+                                <br>
+                                <br>
+                                <small class="text-danger" [class.d-none]="false">Please Select Image </small>
 
                             </div>
                         </div>
@@ -327,10 +331,6 @@
                   <input type="text" class="form-control" placeholder="Enter Faculty"
                   name="faculty" [(ngModel)]="studentModel.faculty" #faculty="ngModel">
                   <br>
-                  
-                  <input type="text" class="form-control" placeholder="Enter Grade" 
-                  name="grade" [(ngModel)]="studentModel.grade" #grade="ngModel">
-                  <br>
                   <input type="text" class="form-control" placeholder="Enter Year Graduation"  name="graduationYear" [(ngModel)]="studentModel.graduationYear" #graduationYear="ngModel">
                   </div>
                   
@@ -428,6 +428,14 @@
                     <textarea class="form-control" rows="5"   name="about" 
                     [(ngModel)]="studentModel.about" #about="ngModel"></textarea>
                   </div>
+
+                  <div>
+                    <label for="exampleFormControlInput1">Profile Image</label>
+                    <input class="form-control" type="file" name="image" required
+                    
+                     (change)="onfileSelected($event)" >
+                     
+                  </div>
                   
             </div>
             
@@ -440,9 +448,9 @@
          
         </div>
       </div>
-     
-    </form>
-    </div>
 
+    </form>
+
+    </div>
     <br><br>
     <app-footer></app-footer>
