@@ -4,51 +4,76 @@ const sprofileSchema = new mongoose.Schema({
   ID: String,
   name:{
     type:String,
-    default:"test-student"
+    default:""
   }
   ,
   age:{
     type:String,
-    default:"enter your age..."
+    default:""
+  },
+  title:{
+    type:String,
+    default:""
+  },
+  about:{
+    type:String,
+    default:""
   },
   email:{
     type:String,
-    default:"enter your Email..." 
+    default:"" 
   },
   phone:{
     type:Number,
-    default:01000000 
+    
+  },
+  englishLevel:{
+    type:String,
+    default:""
+  },
+  workLink:{
+    type:[],
+    default:""
+  },
+  availability:{
+    type:String,
+    default:""
+  },
+  Bio:{
+    type:String,
+    default:""
   },
   skills:{
-    type:String,
-    default:"enter your skill..."
+    type:[],
+    default:""
   },
   experience:{
-    type:String,
+    type:[],
     default:"enter your Experience..."
   },
   certifications:{
-    type:String,
-    default:"enter your Certifications..."
+    type:[],
+    default:""
   },
   university:{
     type:String,
-    default:"enter your university..."
+    default:""
   },
   faculty:{
     type:String,
-    default:"enter your faculty..."
+    default:""
   },
   grade:{
     type:String,
-    default:"enter your grade..."
+    default:""
   },
   graduationYear:{
     type:Number,
   },
   hourRate:{
     type:Number
-  }
+  },
+  StudentImage:{ type: String, required: false }
 
 });
 
