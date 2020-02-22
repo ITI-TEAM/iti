@@ -1,12 +1,11 @@
 export class Student {
     constructor(
-        public ID: String,
         public name:String,
         public age:String,
         public about:String,
         public email:String,
         public title:String,
-        public phone:Number,
+        public phone:String,
         public englishLevel: String,
         public workLink:[],
         public availability:String,
@@ -17,9 +16,8 @@ export class Student {
         public university:String,
         public faculty:String,
         public grade:String,
-        public graduationYear:Number,
-        public hourRate:Number,
-        public StudentImage: String
+        public graduationYear:String,
+      //  public StudentImage: String
     ){}
 
     

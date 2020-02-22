@@ -81,7 +81,8 @@ router.post('/edit/:userID',function(req,res,next){
         faculty:req.body.faculty,
         grade:req.body.grade,
         graduationYear:req.body.graduationYear,
-        hourRate:req.body.hourRate
+        title:req.body.title,
+        about:req.body.about
        // StudentImage:req.file.path
     }
     Sprofile.findOneAndUpdate({ID:req.params.userID},{$set:item},{new:true})

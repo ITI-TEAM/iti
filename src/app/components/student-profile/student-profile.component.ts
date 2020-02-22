@@ -9,10 +9,8 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
   styleUrls: ['./student-profile.component.css']
 })
 export class StudentProfileComponent implements OnInit {
-  public studentModel = new Student("","","enter your age","write some Info about you","enter your email"," Job title",11111111,"",[],"","",[],[],[],"enter your university","enter your faculty","enter your grade",207,5,"")
+  public studentModel = new Student("","","","","","","",[],"","",[],[],[],"","","","")
    public Student_ID;
-
-   public student=new Student("","","enter your age","write some Info about you","enter your email"," Job title",11111111,"",[],"","",[],[],[],"enter your university","enter your faculty","enter your grade",207,5,"")
 
   constructor(private studeServise:StudentServiseService,private route:ActivatedRoute,private router:Router) { }
 
@@ -22,8 +20,8 @@ export class StudentProfileComponent implements OnInit {
     }); 
     this.studeServise.getStudent(this.Student_ID).subscribe(data=>
       {
-        this.student=data[0];
-        console.log( this.student)
+        this.studentModel=data[0];
+        console.log( this.studentModel);
       }
       )
 }
