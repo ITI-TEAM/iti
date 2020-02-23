@@ -17,6 +17,14 @@ export class StudentServiseService {
     return this.http.get<any>("http://localhost:3000/sprofile/list")
   }
 
+  //  GEI ALL USER TYPE STUDENT 
+  getAllCompany():Observable<any>{
+    return this.http.get<any>("http://localhost:3000/cprofile/list")
+  }
+
+
+
+
   //  GEI STUDENT DATA BY ID
   getStudent(_id):Observable<any>{
     return this.http.get("http://localhost:3000/sprofile/"+_id)

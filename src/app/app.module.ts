@@ -76,7 +76,7 @@ import { UserServService } from './services/User/user-serv.service';
     AddEventComponent,
     PostJobComponent,
     CompanyProfileComponent,
-    EditCompanyProfileComponent,
+    EditCompanyProfileComponent
     
     
   ],
