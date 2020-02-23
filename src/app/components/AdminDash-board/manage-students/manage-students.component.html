@@ -1,4 +1,25 @@
 <app-admin-navbar></app-admin-navbar>
+
+<div class="form-group">
+    <input type="text" class="form-control" placeholder="Search Here" [(ngModel)]="term">
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of filterData | filter:term">
+            <td>{{item.firstName}}</td>
+            <td>{{item.lastName}}</td>
+            <td>{{item.address}}</td>
+        </tr>
+    </tbody>
+</table>
 <div class="job_listing_area plus_padding">
     <div class="container">
         <div class="row">
@@ -41,4 +62,5 @@
         </div>
     </div>
 </div>
+
 <app-footer></app-footer>

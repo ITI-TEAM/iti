@@ -7,7 +7,7 @@
             <div class="col-lg-11">
                 <div class="job_lists m-0">
                     <div class="row">
-                        <div class="col-lg-12 col-md-12"*ngFor="let company of companies">
+                        <div class="col-lg-12 col-md-12"*ngFor="let company of companyModel">
                             <div class="single_jobs white-bg d-flex justify-content-between">
                                 <div class="jobs_left d-flex align-items-center">
                                     <div class="thumb">
@@ -15,11 +15,11 @@
                                     </div>
                                   
                                           <div class="jobs_conetent">
-                                        <a href="job_details.html"><h4>Software Engineer</h4></a>
+                                        <a href="job_details.html"><h4>{{companyModel.name}}</h4></a>
                                         
                                         <div class="links_locat d-flex align-items-center">
                                             <div class="location">
-                                                <p> <i class="fa fa-envelope"></i><a>test17@gmail.com</a> </p>
+                                                <p> <i class="fa fa-envelope"></i><a>{{companyModel.email}}</a> </p>
                                             </div>
                                             <div class="location">
                                                 <p> <i class="fa fa-map-marker"></i> California, USA</p>
