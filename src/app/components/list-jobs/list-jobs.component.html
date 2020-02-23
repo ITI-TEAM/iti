@@ -77,7 +77,7 @@
 
           <div class="job_lists m-0">
             <div class="row">
-              <div class="col-lg-12 col-md-12" *ngFor="let item of jobs">
+              <div class="col-lg-12 col-md-12" *ngFor="let job of jobs">
                 <div class="single_jobs white-bg d-flex justify-content-between">
                   <div class="jobs_left d-flex align-items-center">
                     <div class="thumb">
@@ -85,24 +85,20 @@
                     </div>
                     <div class="jobs_conetent">
                       <a href="job_details.html">
-                        <h4>Software Engineer</h4>
+                        <h4>{{job[0].title}}</h4>
                       </a>
-                      <p style="margin-bottom: 0;
-                                        font-size: 14px;
-                                        color: #74899c;margin-left: 22px;">job title+some content</p><br>
                       <div class="links_locat d-flex align-items-center">
                         <div class="location">
-                          <p> <i class="fa fa-map-marker"></i> California, USA</p>
+                          <p> <i class="fa fa-map-marker"></i> {{job[0].location}}</p>
                         </div>
                         <div class="location">
-                          <p> <i class="fa fa-clock-o"></i> Part-time</p>
+                          <p> <i class="fa fa-clock-o"></i>{{job[0].type}}</p>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div class="jobs_right">
                     <div class="apply_now">
-                      <a (click)="goDetails()" class="boxed-btn3" style="margin-right: 26px;">More Details</a>
                       <a class="heart_mark" href="#"> <i class="fa fa-trash"></i> </a>
 
                     </div>

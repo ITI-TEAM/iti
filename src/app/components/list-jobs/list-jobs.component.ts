@@ -30,8 +30,10 @@ export class ListJobsComponent implements OnInit {
             data=>{
             
               this.jobs.push(data);
-              console.log(data);
+            //  console.log(data);
         
+            console.log(this.jobs);
+            
             },
 
             error=>{

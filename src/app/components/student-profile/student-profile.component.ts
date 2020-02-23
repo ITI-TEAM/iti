@@ -12,7 +12,7 @@ export class StudentProfileComponent implements OnInit {
   public studentModel = new Student("","","","","","","",[],"","",[],[],[],"","","","");
    public Student_ID;
   public selectedFile:File=null;
-  public test=true;
+  public test:boolean=true;
 
   constructor(private studeServise:StudentServiseService,private route:ActivatedRoute,private router:Router) { }
 
@@ -33,42 +33,50 @@ onfileSelected(event){
   console.log(event); 
   this.selectedFile=<File>event.target.files[0];
   console.log(this.selectedFile);
-    this.test=false;
 }
 
 onSubmit(){
   const fd=new FormData();
     // append image file
-    fd.append('image',this.selectedFile,this.selectedFile.name);
-    fd.append('name',this.studentModel.name.toString());
-    fd.append('title',this.studentModel.title.toString());
-    fd.append('phone',this.studentModel.phone.toString());
-    fd.append('Bio',this.studentModel.Bio.toString());
-    fd.append('about',this.studentModel.about.toString());
-    fd.append('availability',this.studentModel.availability.toString());
-    fd.append('certifications',this.studentModel.certifications.toString());
-    fd.append('email',this.studentModel.email.toString());
-    fd.append('englishLevel',this.studentModel.englishLevel.toString());
-    fd.append('experience',this.studentModel.experience.toString());
-    fd.append('faculty',this.studentModel.faculty.toString());
-    fd.append('graduationYear',this.studentModel.graduationYear.toString());
-    fd.append('skills',this.studentModel.skills.toString());
-    fd.append('university',this.studentModel.university.toString());
-    fd.append('workLink',this.studentModel.workLink.toString());
-    fd.append('age',this.studentModel.age.toString());
+    if(this.selectedFile==null){
+      this.test=false;
 
-
-
-
-   this.studeServise.updateStudent(this.Student_ID,fd).subscribe(
-    result=>{
-      alert("changes saved")
-      this.router.navigate(['/student-profile',this.Student_ID]);
-      },
-    error=>{
-      console.log(error)
     }
-    )
+    else{
+      fd.append('image',this.selectedFile,this.selectedFile.name);
+      fd.append('name',this.studentModel.name.toString());
+      fd.append('title',this.studentModel.title.toString());
+      fd.append('phone',this.studentModel.phone.toString());
+      fd.append('Bio',this.studentModel.Bio.toString());
+      fd.append('about',this.studentModel.about.toString());
+      fd.append('availability',this.studentModel.availability.toString());
+      fd.append('certifications',this.studentModel.certifications.toString());
+      fd.append('email',this.studentModel.email.toString());
+      fd.append('englishLevel',this.studentModel.englishLevel.toString());
+      fd.append('experience',this.studentModel.experience.toString());
+      fd.append('faculty',this.studentModel.faculty.toString());
+      fd.append('graduationYear',this.studentModel.graduationYear.toString());
+      fd.append('skills',this.studentModel.skills.toString());
+      fd.append('university',this.studentModel.university.toString());
+      fd.append('workLink',this.studentModel.workLink.toString());
+      fd.append('age',this.studentModel.age.toString());
+  
+  
+  
+  
+     this.studeServise.updateStudent(this.Student_ID,fd).subscribe(
+      result=>{
+        alert("changes saved")
+        this.router.navigate(['/student-profile',this.Student_ID]);
+        },
+      error=>{
+  
+        console.log(error);
+  
+      }
+      )
+    }
+    
 }
 
 

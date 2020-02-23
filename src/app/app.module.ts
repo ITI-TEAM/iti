@@ -35,6 +35,7 @@ import { CompanyProfileComponent } from './components/company-profile/company-pr
 import { EditCompanyProfileComponent } from './components/edit-company-profile/edit-company-profile/edit-company-profile.component';
 import { JOBService } from './services/job.service';
 import { StudentServiseService } from './services/student/student-servise.service';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 @NgModule({
@@ -73,7 +74,8 @@ import { StudentServiseService } from './services/student/student-servise.servic
     AddEventComponent,
     PostJobComponent,
     CompanyProfileComponent,
-    EditCompanyProfileComponent
+    EditCompanyProfileComponent,
+    
     
   ],
   imports: [
@@ -81,8 +83,8 @@ import { StudentServiseService } from './services/student/student-servise.servic
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
-    
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [
     AuthenticationGuardService,
