@@ -12,7 +12,12 @@ export class StudentServiseService {
   constructor(private http:HttpClient) { }
 
 
-  // student data by ID
+//  GEI ALL USER TYPE STUDENT 
+  getAll():Observable<any>{
+    return this.http.get<any>("http://localhost:3000/sprofile/list")
+  }
+
+  //  GEI STUDENT DATA BY ID
   getStudent(_id):Observable<any>{
     return this.http.get("http://localhost:3000/sprofile/"+_id)
     

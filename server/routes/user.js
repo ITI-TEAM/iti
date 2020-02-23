@@ -132,8 +132,6 @@ router.post("/login", (req, res, next) => {
 });
 
 
-
-
 //DELETE USER
 
 router.delete("/delete", (req, res, next) => {
@@ -171,4 +169,9 @@ router.delete("/delete", (req, res, next) => {
 
 
 });
+
+
+
+
+
 module.exports = router;

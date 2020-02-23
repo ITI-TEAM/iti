@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms'; 
- import {FormsModule } from '@angular/forms';
+import {FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import{HttpClientModule, HttpClient} from '@angular/common/http'; 
@@ -36,6 +36,8 @@ import { EditCompanyProfileComponent } from './components/edit-company-profile/e
 import { JOBService } from './services/job.service';
 import { StudentServiseService } from './services/student/student-servise.service';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { UserServService } from './services/User/user-serv.service';
 
 
 @NgModule({
@@ -84,14 +86,17 @@ import {NgxPaginationModule} from 'ngx-pagination';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    Ng2SearchPipeModule
+    
   ],
   providers: [
     AuthenticationGuardService,
     LoginService,
     JOBService,
     BrowserAnimationsModule,
-    StudentServiseService
+    StudentServiseService,
+    UserServService
   ],
   bootstrap: [AppComponent]
 })

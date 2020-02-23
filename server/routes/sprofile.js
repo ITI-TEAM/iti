@@ -17,7 +17,6 @@ const storage=multer.diskStorage({
   },
   
   filename: function(req,file,cb){
-    //cb(null,new Date().toISOString()+file.originalname);
     cb(null, Date.now() + file.originalname); 
   }
 
@@ -39,11 +38,25 @@ const upload=multer({
    storage:storage,
    limits:{fieldSize: 1024*1024*5},
    fileFilter:fileFilter
- 
-
 });
 
 
+// list all
+router.get("/list",(req,res,next)=>{
+   Sprofile.find()
+   .exec()
+   .then
+   (data => {
+     console.log(data)
+     res.status(200).json(data);
+   })
+   .catch(err => {
+     console.log(err);
+     res.status(500).json({
+       error: err
+     });
+   });
+});
 
 
 //get data from one student
@@ -97,10 +110,30 @@ router.post('/edit/:userID',upload.single('image'),function(req,res,next){
         
     });
 
-})
+});
 
 
+//LIST USER TYPE STUDENT
+// router.get('/listAll',(req,res,next)=>{
 
+
+//  /* Sprofile.find()
+//   .exec()
+//   .then
+//   (data => {
+//     console.log(data)
+//     res.status(200).json(data);
+//   })
+//   .catch(err => {
+//     console.log(err);
+//     res.status(500).json({
+//       error: err
+//     });
+//   });*/
+  
+
+
+// });
 
 
 

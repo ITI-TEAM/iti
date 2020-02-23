@@ -50,7 +50,7 @@ const sprofileSchema = new mongoose.Schema({
   },
   experience:{
     type:[],
-    default:"enter your Experience..."
+    default:""
   },
   certifications:{
     type:[],

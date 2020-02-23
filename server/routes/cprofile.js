@@ -12,6 +12,24 @@ const User = require('../models/user');
 const Cprofile=require('../models/cprofile');
 
 
+// list all
+router.get("/list",(req,res,next)=>{
+    Cprofile.find()
+    .exec()
+    .then
+    (data => {
+      console.log(data)
+      res.status(200).json(data);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json({
+        error: err
+      });
+    });
+ });
+
+
 
 router.get("/:userID",(req,res,next)=>{
 
@@ -52,6 +70,10 @@ router.put('/edit/:userID',function(req,res,next){
         
     });
 });
+
+
+
+
 
 
 module.exports = router;
