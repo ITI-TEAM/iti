@@ -29,7 +29,7 @@ const routes: Routes = [
 
 
   {path:'student-home/:ID',component:HomeComponent,canActivate:[AuthenticationGuardService]},
- {path:'student-profile/:ID',component:ViewSProfileComponent,canActivate:[AuthenticationGuardService]},
+  {path:'student-profile/:ID',component:ViewSProfileComponent,canActivate:[AuthenticationGuardService]},
   {path:'edit-student-profile/:ID',component:StudentProfileComponent,canActivate:[AuthenticationGuardService]},
   {path:'job-details/:ID',component:JObDetailsComponent,canActivate:[AuthenticationGuardService]},
   {path:'list-jobs/:ID',component:ListJobsComponent},

@@ -35,6 +35,9 @@
                                     <li class="nav-item">
                                         <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="certification-tab" data-toggle="tab" href="#certification" role="tab" aria-controls="certification" aria-selected="false">Certification</a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -95,6 +98,48 @@
                                                 </div>
                                             </div>
                                 </div>
+                                <div class="tab-pane fade show active" id="certification" role="tabpanel" aria-labelledby="certification-tab">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Certifications</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>{{student.certifications}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>University</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>{{student.university}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Faculty</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>{{student.faculty}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>Grade</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>{{student.grade}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>GraduationYear</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>{{student.graduationYear}}</p>
+                                        </div>
+                                    </div>
+                        </div>
                                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                             <div class="row">
                                                 <div class="col-md-6">

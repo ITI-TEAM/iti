@@ -1,3 +1,6 @@
+
+       
+
 <app-navbar></app-navbar>
 <div class="profile-page">
   <form #studentForm="ngForm" novalidate (ngSubmit)="onSubmit()" >
@@ -7,10 +10,10 @@
 		<div class="profile-content">
             <div class="container">
                 <div class="row">
-                   <div class="col-md-4 ml-auto mr-auto">
+                   <div class="col-md-4 ">
                     <div class="profile">
                          <div class="avatar">
-                             <img src="https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTU0NjQzOTk4OTQ4OTkyMzQy/ansel-elgort-poses-for-a-portrait-during-the-baby-driver-premiere-2017-sxsw-conference-and-festivals-on-march-11-2017-in-austin-texas-photo-by-matt-winkelmeyer_getty-imagesfor-sxsw-square.jpg" alt="Circle Image" class="img-raised rounded-circle img-fluid">
+                             <img src="https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTU0NjQzOTk4OTQ4OTkyMzQy/ansel-elgort-poses-for-a-portrait-during-the-baby-driver-premiere-2017-sxsw-conference-and-festivals-on-march-11-2017-in-austin-texas-photo-by-matt-winkelmeyer_getty-imagesfor-sxsw-square.jpg" alt="Circle Image" class="rounded-circle img-raised">
                          </div>
                          <div class="name">
                              <h3 class="title">{{student.name}}</h3>
@@ -18,15 +21,65 @@
                          </div>
                      </div>
                    </div>
-                </div>
-                <div class="description text-center">
+                   <div class="col-md-8 " style="margin: 50px;">
                     <p>{{student.about}}
                       {{studentModel.about}} </p>
                     <i class="fas fa-pen" style="float: right;" data-toggle="modal" data-target="#About"></i>
+
+                   </div>
                 </div>
+                <div class="row">
+                  <div class="col-12">
+                    <form>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <h5 class="modal-title">Contact Info</h5>
+                          <div class="form-group">
+                            <input type="text" class="form-control" placeholder="UserName" id="uname" name="uname" [(ngModel)]="studentModel.name" #uname="ngModel" >
+                          </div>
+                          <div class="form-group">
+                            <input type="number" class="form-control" placeholder="Age" id="age" name="age" [(ngModel)]="studentModel.age" #age="ngModel" >
+                          </div>
+                          <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Enter email" id="email" name="email" [(ngModel)]="studentModel.email" #email="ngModel" >
+                          </div>
+                          <div class="form-group">
+                            <input type="number" class="form-control" placeholder="Enter Telephone Number"  name="phone" [(ngModel)]="studentModel.phone" #phone="ngModel">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <h5 class="modal-title">About</h5>
+                          <div class="form-group">
+                            <textarea class="form-control" rows="7" id="comment"  name="about" [(ngModel)]="studentModel.about" #about="ngModel"></textarea>
+                          </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <h5 class="modal-title">Profession</h5>
+                          <div class="form-group">
+                            <input type="text" class="form-control"  id="title" name="title" [(ngModel)]="studentModel.title" #title="ngModel" >
+                          </div>
+                      </div>
+                      <div class="col-md-4">
+                        <h5 class="modal-title">Hourly Rate</h5>
+                        <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Enter Your Rate" id="text"
+                          name="hourRate" [(ngModel)]="studentModel.hourRate" #hourRate="ngModel">
+                        </div>
+                      </div>
+                      <div class="col-md-4"></div>
+                    </div>
+                    </form>
+                  </div>
+                </div>
+                <!-- <div class="description text-center">
+                    
+                </div> -->
                 <!-- ml-auto mr-auto -->
                 <div class="container">
-                    <div class="row">
+                  
+                    <!-- <div class="row">
                         <div class="col-md-6">
                             <div class="profile-tabs">
                               <section style="  font-style: italic;">
@@ -116,7 +169,7 @@
 
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <br>
                     <br>
                 </div>
@@ -125,20 +178,20 @@
     </div>
 
  
-    <div class="modal" id="myModal">
+    <!-- <div class="modal" id="myModal">
         <div class="modal-dialog">
           <div class="modal-content">
           
-            <!-- Modal Header -->
+            Modal Header
             <div class="modal-header">
               <h1 class="modal-title">Contact Info</h1>
               <button type="button" class="close" data-dismiss="modal">×</button>
             </div>
 
-            <!-- studentModel -->
+            studentModel
 
 
-            <!-- Modal body -->
+            Modal body
             <div class="modal-body">
                   <div class="form-group">
                     <input type="email" class="form-control" placeholder="Enter email" id="email" name="email" [(ngModel)]="studentModel.email" #email="ngModel" >
@@ -148,7 +201,7 @@
                   </div>
             </div>
             
-            <!-- Modal footer -->
+            Modal footer
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
             </div>
@@ -156,16 +209,16 @@
           </div>
         </div>
       </div>
-      <!-- skill edit -->
+      skill edit
       <div class="modal" id="skills">
         <div class="modal-dialog">
           <div class="modal-content">
-            <!-- Modal Header -->
+            Modal Header
             <div class="modal-header">
               <h1 class="modal-title">Skills</h1>
               <button type="button" class="close" data-dismiss="modal">×</button>
             </div>
-            <!-- Modal body -->
+            Modal body
             <div class="modal-body">
                   <div class="form-group">
                     <input type="text" class="form-control" placeholder="Enter skills" id="text"
@@ -173,7 +226,7 @@
                   </div>
             </div>
             
-            <!-- Modal footer -->
+            Modal footer
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
             </div>
@@ -181,18 +234,18 @@
           </div>
         </div>
       </div>
-      <!-- edit experince -->
+      edit experince
       <div class="modal" id="Experience">
         <div class="modal-dialog">
           <div class="modal-content">
           
-            <!-- Modal Header -->
+            Modal Header
             <div class="modal-header">
               <h1 class="modal-title">Experience</h1>
               <button type="button" class="close" data-dismiss="modal">×</button>
             </div>
             
-            <!-- Modal body -->
+            Modal body
             <div class="modal-body">
                   <div class="form-group">
                     <input type="text" class="form-control" placeholder="Enter Experience" id="text"
@@ -201,7 +254,7 @@
                   
             </div>
             
-            <!-- Modal footer -->
+            Modal footer
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
             </div>
@@ -209,18 +262,18 @@
           </div>
         </div>
       </div>
-      <!-- update eduction -->
+      update eduction
       <div class="modal" id="Education">
         <div class="modal-dialog">
           <div class="modal-content">
           
-            <!-- Modal Header -->
+            Modal Header
             <div class="modal-header">
               <h1 class="modal-title">Education</h1>
               <button type="button" class="close" data-dismiss="modal">×</button>
             </div>
             
-            <!-- Modal body -->
+            Modal body
             <div class="modal-body">
                   <div class="form-group">
                     
@@ -240,7 +293,7 @@
                   
             </div>
             
-            <!-- Modal footer -->
+            Modal footer
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
             </div>
@@ -248,18 +301,18 @@
           </div>
         </div>
       </div>
-      <!-- update rate -->
+      update rate
       <div class="modal" id="Rate">
         <div class="modal-dialog">
           <div class="modal-content">
           
-            <!-- Modal Header -->
+            Modal Header
             <div class="modal-header">
               <h1 class="modal-title">Hour Rate</h1>
               <button type="button" class="close" data-dismiss="modal">×</button>
             </div>
             
-            <!-- Modal body -->
+            Modal body
             <div class="modal-body">
                   <div class="form-group">
                     
@@ -269,7 +322,7 @@
                   
             </div>
             
-            <!-- Modal footer -->
+            Modal footer
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
             </div>
@@ -277,18 +330,18 @@
           </div>
         </div>
       </div>
-      <!-- update certification  -->
+      update certification 
       <div class="modal" id="Certifications">
         <div class="modal-dialog">
           <div class="modal-content">
           
-            <!-- Modal Header -->
+            Modal Header
             <div class="modal-header">
               <h1 class="modal-title">Certifications</h1>
               <button type="button" class="close" data-dismiss="modal">×</button>
             </div>
             
-            <!-- Modal body -->
+            Modal body
             <div class="modal-body">
                   <div class="form-group">
                     
@@ -297,7 +350,7 @@
                   
             </div>
             
-            <!-- Modal footer -->
+            Modal footer
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
             </div>
@@ -306,18 +359,18 @@
         </div>
       </div>
       
-      <!-- update about -->
+      update about
       <div class="modal" id="About">
         <div class="modal-dialog">
           <div class="modal-content">
           
-            <!-- Modal Header -->
+            Modal Header
             <div class="modal-header">
               <h1 class="modal-title">About</h1>
               <button type="button" class="close" data-dismiss="modal">×</button>
             </div>
             
-            <!-- Modal body -->
+            Modal body
             <div class="modal-body">
                   <div class="form-group">
                     <textarea class="form-control" rows="10" id="comment"  name="about" [(ngModel)]="studentModel.about" #about="ngModel"></textarea>
@@ -325,7 +378,7 @@
                   
             </div>
             
-            <!-- Modal footer -->
+            Modal footer
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
             </div>
@@ -334,9 +387,9 @@
          
         </div>
       </div>
-     
-    </form>
-    </div>
+    -->
+     </form>
+    </div> 
 
     <br><br>
     <app-footer></app-footer>
