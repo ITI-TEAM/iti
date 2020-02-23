@@ -131,18 +131,6 @@ router.post("/login", (req, res, next) => {
 });
 
 
-
-
-//LIST USER TYPE STUDENT
-router.get('/listStusent',(erq,resp,next)=>{
-
-})
-
-
-
-
-
-
 //DELETE USER
 
 router.delete("/delete", (req, res, next) => {

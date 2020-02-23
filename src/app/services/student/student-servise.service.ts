@@ -18,14 +18,19 @@ export class StudentServiseService {
   //   })
   // }
 
-  // student data by ID
+//  GEI ALL USER TYPE STUDENT 
+  getAll():Observable<any>{
+    return this.http.get<any>("http://localhost:3000/sprofile/list")
+  }
+
+  //  GEI STUDENT DATA BY ID
   getStudent(_id):Observable<any>{
     return this.http.get("http://localhost:3000/sprofile/"+_id)
     
   }
 
 
-  //update data by ID
+  //UPDATE STUDENT DATA BY ID
   updateStudent(id , student:Student): Observable<any> {
     return this.http.post<any>('http://localhost:3000/sprofile/edit/' + id , student)
    

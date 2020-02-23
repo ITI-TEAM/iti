@@ -41,6 +41,22 @@ const upload=multer({
 });
 
 
+// list all
+router.get("/list",(req,res,next)=>{
+   Sprofile.find()
+   .exec()
+   .then
+   (data => {
+     console.log(data)
+     res.status(200).json(data);
+   })
+   .catch(err => {
+     console.log(err);
+     res.status(500).json({
+       error: err
+     });
+   });
+});
 
 
 //get data from one student
@@ -93,10 +109,30 @@ router.post('/edit/:userID',function(req,res,next){
         
     });
 
-})
+});
 
 
+//LIST USER TYPE STUDENT
+// router.get('/listAll',(req,res,next)=>{
 
+
+//  /* Sprofile.find()
+//   .exec()
+//   .then
+//   (data => {
+//     console.log(data)
+//     res.status(200).json(data);
+//   })
+//   .catch(err => {
+//     console.log(err);
+//     res.status(500).json({
+//       error: err
+//     });
+//   });*/
+  
+
+
+// });
 
 
 
