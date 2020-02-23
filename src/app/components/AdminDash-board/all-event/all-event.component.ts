@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EventService } from 'src/app/services/Events/event.service';
+import { error } from 'protractor';
 
 @Component({
   selector: 'app-all-event',
@@ -20,10 +21,17 @@ export class AllEventComponent implements OnInit {
     );
     
   }
- DeleteEvent(event_id){
-  this.eventser.deletEvent(event_id).subscribe(
-    response => console.log('delete from db', response),
-    error => console.log('error',error)
-  )
+ DeleteEvent(event){
+  this.eventser.deletEvent(event._id).subscribe(
+    data=>{
+      console.log(data);
+      
+    },
+    error=>{
+      console.log(error);
+      
+    }
+  );
+  
  }
 }

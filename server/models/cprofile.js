@@ -24,11 +24,11 @@ const cprofileSchema = new mongoose.Schema({
   },
   telephonenumber:{
     type:Number,
-   // default:"Enter your telephonenumber"
+    default:123456789
   },
   datecreated:{
     type:Number,
-    //default:"Enter your Date created"
+    default:2020
   },
   field:{
     type:String,

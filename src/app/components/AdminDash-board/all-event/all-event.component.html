@@ -15,7 +15,7 @@
                                   </div>
                                 
                                         <div class="jobs_conetent">
-                                      <a href="job_details.html"><h4>{{event.title}}</h4></a>
+                                      <a ><h4>{{event.title}}</h4></a>
                                       <div class="links_locat d-flex align-items-center">
                                         <div class="location">
                                             
@@ -40,7 +40,7 @@
                               <div class="jobs_right">
                                   <div class="apply_now">
                                       <div class="apply_now">
-                                         <a class="heart_mark" > <i class="fa fa-trash"  (ngSubmit)="DeleteEvent(event_id)"></i> </a>
+                                         <a class="heart_mark" > <i class="fa fa-trash" (click)="DeleteEvent(event)"></i> </a>
                                       </div>
                                   </div>
                                   

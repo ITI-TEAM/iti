@@ -31,44 +31,13 @@ export class StudentServiseService {
   }
 
 
+//cancel job
+
+  cancelJob(jobID){
+    return this.http.delete('http://localhost:3000/appliedstudent/canceljob/'+jobID);
+  }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  // updateStudent(id, employee): Observable<any> {
-  //   return this.http.put<any>('http://localhost:3000/sprofile/edit/' + id, JSON.stringify(employee), this.httpOptions)
-  //   .pipe(
-  //     retry(1),
-  //     catchError(this.handleError)
-  //   )
-  // }
-
-
-  // Error handling 
-  // handleError(error) {
-  //   let errorMessage = '';
-  //   if(error.error instanceof ErrorEvent) {
-  //     // Get client-side error
-    //   errorMessage = error.error.message;
-    // } else {
-      // Get server-side error
-//       errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-//     }
-//     window.alert(errorMessage);
-//     return throwError(errorMessage);
-//  }
 
 
 }

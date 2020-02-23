@@ -97,6 +97,23 @@ router.get('/studentList/:studentID',(req,res,next)=>{
 
 });
 
+router.delete("/canceljob/:jobID",(req,res,next)=>{
+    AppliedStudent.deleteOne({jobID:req.params.jobID})
+    .exec()
+  .then(result=>{
+    res.status(200).json({
+      message:"job Canceled"
+    });
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json({
+      error: err
+    });
+
+  });
+
+});
 
 
 

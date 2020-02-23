@@ -7,6 +7,7 @@ const jwt = require('jsonwebtoken');
 
 //  Model 
 const allJob=require('../models/allJob');
+const AppliedStudent=require('../models/appliedstudent');
 
 
 
@@ -82,16 +83,21 @@ router.get("/details/:_id",(req,res,next)=>{
 });
 
 
-// delete job (post)
+// delete job (post) for company or Admin
 
 router.delete("/delete/:_id",(req,res,next)=>{
     
   allJob.deleteOne({_id:req.params._id})
   .exec()
   .then(doc=>{
-    res.status(200).json({
-      message:"job Deleted"
-    });
+
+    AppliedStudent.deleteOne({jobID:req.params._id})
+    .exec()
+    .then(data=>{
+      res.status(200).json({
+        message:"Job Deleted"
+      });
+    })
   })
   .catch(err => {
     console.log(err);
@@ -103,6 +109,8 @@ router.delete("/delete/:_id",(req,res,next)=>{
 
 
   });
+
+
 
 
 

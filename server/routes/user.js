@@ -49,13 +49,15 @@ router.post("/signup", (req, res, next) => {
               });
             if (req.body.type == 'student') {
               const sprofile = new Sprofile({
-                ID: user._id
+                ID: user._id,
+                name:req.body.name
               });
               sprofile.save();
             }
             if (req.body.type == 'company') {
               const cprofile = new Cprofile({
-                ID: user._id
+                ID: user._id,
+                name:req.body.name
               });
               cprofile.save();
             }
@@ -134,17 +136,17 @@ router.post("/login", (req, res, next) => {
 
 //DELETE USER
 
-router.delete("/delete", (req, res, next) => {
-  User.remove({
-      _id: req.body.userID
-    })
+router.delete("/delete/:userID", (req, res, next) => {
+  User.deleteOne({_id: req.params.userID})
     .exec()
-    .then(result => {
-      res.status(200).json({
-        message: "user deleted"
-      });
+    .then(
+      Sprofile.deleteOne({ID:req.params.userID}).exec(),
 
-    })
+      Cprofile.deleteOne({ID:req.params.userID}).exec(),
+      res.status(200).json({
+        message:"USER DELETED"
+      })
+    )
     .catch(err => {
       console.log(err);
       res.status(500).json({
@@ -152,20 +154,7 @@ router.delete("/delete", (req, res, next) => {
       });
     });
 
-    if (req.body.type == 'student')
-       {
-        Sprofile.remove({ID: req.body.userID})
-        .exec()
-        .then()
-        .catch();
-      }
-      if (req.body.type == 'comapny')
-       {
-        Cprofile.remove({ID: req.body.userID})
-        .exec()
-        .then()
-        .catch();
-      }
+    
 
 
 });

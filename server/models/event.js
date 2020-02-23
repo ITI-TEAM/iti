@@ -22,6 +22,10 @@ const eventSchema = new mongoose.Schema({
     
    
   }, 
+  image:{
+    type:String,
+    default:'uploads'+'//'+'default.jpg'
+  }
   
   
 });

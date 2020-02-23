@@ -43,9 +43,11 @@
           <h4 class="card-title">{{job. title}}</h4>
           <p class="card-text">{{job.desc}} </p>
           <div class="button">
-            <button type="button"class="btn btn-outline-danger" (click)="onSelect(job)">See More</button>
+            <button type="button"class="btn btn-danger" (click)="deletJob(job)">Delete</button>
           </div>
-
+          <div class="button">
+            <button type="button"class="btn btn-primary" (click)="onSelect(job)">See More</button>
+          </div>
         </div>
       </div>
     </div>
