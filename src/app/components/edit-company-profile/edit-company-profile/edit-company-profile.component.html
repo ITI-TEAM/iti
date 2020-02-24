@@ -1,6 +1,6 @@
  <app-navbar-company></app-navbar-company>
 <div class="profile-page" >
-  <form #companyForm="ngForm" novalidate>
+  
     <div class="page-header header-filter" data-parallax="true"
       style="background-image:url('http://wallpapere.org/wp-content/uploads/2012/02/black-and-white-city-night.png');">
     </div>
@@ -9,271 +9,103 @@
         <div class="container">
           <div class="row">
 
-            <div class="col-md-4 ml-auto mr-auto">
+            <div class="col-md-4">
               <div class="profile">
                 <div class="avatar">
                   <img src="../../../../assets/images/icon.png" alt="Circle Image"
-                    class="img-raised rounded-circle img-fluid">
+                    class="img-raised rounded-circle ">
                 </div>
                 <div class="name">
                   <h3 class="title">{{companyModel.name}}</h3>
                   <h6>{{companyModel.careerobjective}}</h6>
-
+                  <p> {{companyModel.content}}</p>
                 </div>
               </div>
             </div>
 
           </div>
-          <div class="description text-center">
-            <p> {{companyModel.content}}</p>
-            <i class="fas fa-pen" style="float: right;" data-toggle="modal" data-target="#About"></i>
-          </div>
-          <!-- ml-auto mr-auto -->
-          <div class="container"> 
           <div class="row">
-            <div class="col-md-6">
-              <div class="profile-tabs">
-                <section style="  font-style: italic;">
-                  <div style="font-size: x-large; margin-top: 15px;">
-                    <i class="fas fa-address-card"> Contact Info </i>
-                    <i class="fas fa-pen" style="float: right;" data-toggle="modal" data-target="#myModal"></i>
+            <div class="col-md-12 ">
+              <form #companyForm="ngForm" novalidate (ngSubmit)="onSubmit()">
+                <div class="row">
+                  <div class="col-12">
+                    <h5>User Name</h5>
+                  <div class="form-group">
+                    <input type="text" class="form-control"  id="name"
+                    name="name" [(ngModel)]="companyModel.name" #name="ngModel">
+                  </div> 
                   </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 ">
+                    <h5>Contact Info</h5>
+                  <div class="form-group">
 
-                  <div style=" margin-top: 15px;">
-                    <h5>Email :{{companyModel.email}}</h5>
+                    <input type="email" class="form-control" placeholder="Enter email" id="email" name="email"
+                      [(ngModel)]="companyModel.email" #email="ngModel">
                   </div>
-                  <div style=" margin-top: 15px;">
-                    <h5>Telephone Number :{{companyModel.telephonenumber}}</h5>
+                  <div class="form-group">
+      
+                    <input type="number" class="form-control" placeholder="Enter Telephone Number" id="telephone"
+                      name="telephonenumber" [(ngModel)]="companyModel.telephonenumber" #telephonenumber="ngModel">
                   </div>
-                  <div style=" margin-top: 15px;">
-                    <h5>adderss:{{companyModel.address}}</h5>
+                  <div class="form-group">
+      
+                    <input type="text" class="form-control" placeholder="Enter Address" id="address"
+                    name="address" [(ngModel)]="companyModel.address" #address="ngModel">
                   </div>
-
-                </section>
-
-                <hr class="featurette-divider">
-
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="profile-tabs">
-                <section style="  font-style: italic;">
-                  <div style="font-size: x-large; margin-top: 15px;">
-                    <i class="far fa-calendar-alt"> <b>Date created</b></i>
-                    <i class="fas fa-pen" style="float: right;" data-toggle="modal" data-target="#date"></i>
-                    {{companyModel.datecreated}}
                   </div>
-                  <div style=" margin-top: 15px;">
-
+                  <div class="col-md-6">
+                    <h5>Content</h5>
+                    <div class="form-group">
+                      <textarea class="form-control" rows="5" id="content" name="content" [(ngModel)]="companyModel.content"
+                        #content="ngModel"></textarea>
+                    </div>
                   </div>
-                </section>
-                <hr class="featurette-divider">
-                <section style="  font-style: italic;">
-                  <div style="font-size: x-large; margin-top: 15px;">
-                    <i class="fas fa-search-dollar"> field</i>
-                    <i class="fas fa-pen" style="float: right;" data-toggle="modal" data-target="#field"></i>
-                    {{companyModel.field}}
+                </div>
+                <div class="row">
+                  <div class="col-md-4">
+                    <h5>Date Create</h5>
+                    <div class="form-group">
+                      <input type="date" class="form-control"  id="date"
+                      name="datacreated" [(ngModel)]="companyModel.datecreated" #datacreated="ngModel">
+                    </div>
                   </div>
-                </section>
-                <br>
-                
-                <button type="submit" class="btn-danger" (click)="edit()" >EDIT</button>
-
-              </div>
+                  <div class="col-md-4">
+                    <h5>Company Field</h5>
+                    <div class="form-group">
+                      <input type="text" class="form-control"  id="field"
+                      name="companyField"  [(ngModel)]="companyModel.field" #field="ngModel">
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <h5>career Objrctive</h5>
+                    <div class="form-group">
+                      <input type="text" class="form-control" id="careerobjrctive"
+                      name="careerobjrctive"  [(ngModel)]="companyModel.careerobjrctive" #careerobjrctive="ngModel">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <h5>Description</h5>
+                    <div class="form-group">
+                      <textarea class="form-control" rows="7" id="description" name="description" [(ngModel)]="companyModel.description"
+                        #description="ngModel"></textarea>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <button type="submit" class="btn btn-danger" style="margin: auto;">Submit</button>
+                </div>
+              </form>
             </div>
           </div>
-          <div class="row">
-            <div class="col-12">
-              <h4 style="font-style: inherit; ">
-                <i class="fas fa-align-justify"> <b>Description</b></i>
-                <i class="fas fa-pen" style="float: right;" data-toggle="modal" data-target="#description"></i>
-
-              </h4>
-              <br>
-              <p>
-                {{companyModel.description}}
-              </p>
-            </div>
-
-          </div>
-          <br>
-          <br>
-          </div> 
-
-
-
-
-        </div>
-      </div>
-    </div>
-    <div class="modal" id="myModal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-
           
-          <div class="modal-header">
-            <h1 class="modal-title">Contact Info</h1>
-            <button type="button" class="close" data-dismiss="modal">×</button>
-          </div>
-
-          <div class="modal-body">
-            <div class="form-group">
-
-              <input type="email" class="form-control" placeholder="Enter email" id="email" name="email"
-                [(ngModel)]="companyModel.email" #email="ngModel">
-            </div>
-            <div class="form-group">
-
-              <input type="number" class="form-control" placeholder="Enter Telephone Number" id="telephone"
-                name="telephonenumber" [(ngModel)]="companyModel.telephonenumber" #telephonenumber="ngModel">
-            </div>
-            <div class="form-group">
-
-              <input type="text" class="form-control" placeholder="Enter Address" id="address"
-              name="address" [(ngModel)]="companyModel.address" #address="ngModel">
-            </div>
-          </div>
-
-          <!-- Modal footer -->
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-
-    <div class="modal" id="date">
-      <div class="modal-dialog">
-        <div class="modal-content">
-
-
-          <div class="modal-header">
-            <h1 class="modal-title">Date Create</h1>
-            <button type="button" class="close" data-dismiss="modal">×</button>
-          </div>
-
-
-          <div class="modal-body">
-            <div class="form-group">
-
-              <input type="date" class="form-control" placeholder="Date Create" id="date"
-              name="datacreated" [(ngModel)]="companyModel.datecreated" #datacreated="ngModel">
-            </div>
-
-          </div>
-
-
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="modal" id="field">
-      <div class="modal-dialog">
-        <div class="modal-content">
-
-         
-          <div class="modal-header">
-            <h1 class="modal-title">Company Field</h1>
-            <button type="button" class="close" data-dismiss="modal">×</button>
-          </div>
-
-         
-          <div class="modal-body">
-            <div class="form-group">
-
-              <input type="text" class="form-control" placeholder="Enter Your Field " id="field"
-              name="companyField"  [(ngModel)]="companyModel.field" #field="ngModel">
-            </div>
-
-          </div>
-
-          <!-- Modal footer -->
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
-          </div>
-
-        </div>
-      </div>
-    </div>
-    <div class="modal" id="About">
-      <div class="modal-dialog">
-        <div class="modal-content">
-
-          <!-- Modal Header -->
-          <div class="modal-header">
-            <h1 class="modal-title">About</h1>
-            <button type="button" class="close" data-dismiss="modal">×</button>
-          </div>
-
-
-          <div class="modal-body">
-            <div class="form-group">
-
-
-              <textarea class="form-control" rows="10" id="comment" name="content" [(ngModel)]="companyModel.content"
-                #content="ngModel">
-                      </textarea>
-            </div>
-
-          </div>
-
-          <!-- Modal footer -->
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
-          </div>
-
-
         </div>
         <br>
-        <br>
-        <br>
-        <br>
-
       </div>
     </div>
-    <div class="modal" id="description">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title">Description</h1>
-            <button type="button" class="close" data-dismiss="modal1">×</button>
-          </div>
-         
-          <div class="modal-header">
-            <h1 class="modal-title">About</h1>
-            <button type="button" class="close" data-dismiss="modal">×</button>
-          </div>
-
-
-          
-          <div class="modal-body">
-            <div class="form-group">
-
-
-              <textarea class="form-control" rows="10" id="comment" name="about" [(ngModel)]="companyModel.description"
-                #description="ngModel"></textarea>
-            </div>
-          </div>
-         
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
-          </div>
-        </div>
-        <br>
-        <br>
-        <br>
-        <br>
-
-      </div>
-    </div>
-
-  </form>
-</div>
-
-<app-footer></app-footer> -->
+    <br>
+    <br>
+<app-footer></app-footer>
