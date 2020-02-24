@@ -18,6 +18,7 @@ export class ListJobsComponent implements OnInit {
 
 
   ngOnInit() {
+    
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.studentID = params.get('ID');
 
