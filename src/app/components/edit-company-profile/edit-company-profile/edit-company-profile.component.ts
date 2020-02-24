@@ -29,7 +29,7 @@ export class EditCompanyProfileComponent implements OnInit {
     })
    
   }
-  edit(){
+  onSubmit(){
     this.CompanyServise.updateCompany(this.company_ID ,this.companyModel).subscribe(
       result=>{
         alert("changes saned")
@@ -41,5 +41,7 @@ export class EditCompanyProfileComponent implements OnInit {
       
     )
   }
+
+  
 }
 
