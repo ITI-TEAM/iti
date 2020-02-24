@@ -2,14 +2,48 @@ const express= require('express')
 const router = express.Router()
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const mongo =require ('mongodb').MongoClient;
-const objectId =require ('mongodb').ObjectID;
+
 
 
 
 //  Model 
 const User = require('../models/user');
 const Cprofile=require('../models/cprofile');
+
+// const multer=require('multer');
+
+const storage=multer.diskStorage({
+  destination: function(req,file,cb){
+    cb(null,'./uploads');
+
+  },
+  
+  filename: function(req,file,cb){
+    cb(null,new Date().toISOString()+file.originalname);
+    cb(null, Date.now() + file.originalname); 
+  }
+
+});
+
+const fileFilter=(req,file,cb)=>{
+  //accept file
+  if (file.mimetype==='image/jpeg'|| file.mimetype==='image/png' || file.mimetype==='image/jpg')
+  {
+    cb(null,true);
+  }
+   //reject file
+  else{
+    cb(null,false);
+  }
+};
+
+const upload=multer({
+   storage:storage,
+   limits:{fieldSize: 1024*1024*5},
+   fileFilter:fileFilter
+ 
+
+});
 
 
 // list all
@@ -46,14 +80,14 @@ router.get("/:userID",(req,res,next)=>{
             });
 });
 
-router.put('/edit/:userID',function(req,res,next){
+router.post('/edit/:userID',function(req,res,next){
     var item={
         name:req.body.name,
         telephonenumber:req.body.telephonenumber,
-        careerobjrctive:req.bady.careerobjrctive,
+        careerobjrctive:req.body.careerobjrctive,
         content:req.body.content,
-        email:req.bady.email,
-        address:req.bady.address,
+        email:req.body.email,
+        address:req.body.address,
         datecreated:req.body.datecreated,
         field:req.body.field,
         description:req.body.description
@@ -69,7 +103,7 @@ router.put('/edit/:userID',function(req,res,next){
         });
         
     });
-});
+})
 
 
 

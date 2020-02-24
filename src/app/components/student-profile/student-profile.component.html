@@ -150,27 +150,74 @@
                             </div>
                         </div>
                     </div>
-                    <br>
-                    <br>
+                    <ul style=" margin-top: 15px; list-style-type: none">
+                      <li>{{studentModel.email}}</li>
+                    </ul>
+                  </section>
+
                 </div>
+              </div>
+              <div class="col-md-6">
+                <div class="profile-tabs">
+
+                  <section style="  font-style: italic;">
+                    <div style="font-size: x-large; margin-top: 15px;">
+                      <i class="fas fa-graduation-cap"> Education </i>
+                      <i class="fas fa-pen" style="float: right;" data-toggle="modal" data-target="#Education"></i>
+                    </div>
+                    <div style=" margin-top: 15px;">
+                      <h5>University :{{studentModel.university}}</h5>
+                    </div>
+                    <div style=" margin-top: 7px;">
+                      <h5>Faculty :{{studentModel.faculty}}</h5>
+                    </div>
+                    <div style=" margin-top: 7px;">
+                      <h5>Grade :{{studentModel.grade}}</h5>
+                    </div>
+                    <div style=" margin-top: 7px;">
+                      <h5>
+                        Graduation Year:{{studentModel.graduationYear}}</h5>
+                    </div>
+                  </section>
+
+                  <hr class="featurette-divider">
+                  <section style="  font-style: italic;">
+                    <div style="font-size: x-large; margin-top: 15px;">
+                      <i class="fas fa-dollar-sign"> Hour Rate</i>
+                      <i class="fas fa-pen" style="float: right;" data-toggle="modal" data-target="#Rate"></i>
+                    </div>
+                    <div style=" margin-top: 15px;">
+                      {{studentModel.hourRate + "$"}}
+                    </div>
+                  </section>
+
+                  <button type="submit" class="btn-danger">Save</button>
+
+                </div>
+              </div>
             </div>
+            <br>
+            <br>
+          </div>
         </div>
+      </div>
     </div>
 
- 
+
     <div class="modal" id="myModal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-          
-            <!-- Modal Header -->
-            <div class="modal-header">
-              <h1 class="modal-title">Contact Info</h1>
-              <button type="button" class="close" data-dismiss="modal">×</button>
-            </div>
+      <div class="modal-dialog">
+        <div class="modal-content">
 
-            <!-- studentModel -->
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h1 class="modal-title">Contact Info</h1>
+            <button type="button" class="close" data-dismiss="modal">×</button>
+          </div>
+
+          <!-- studentModel -->
 
 
+<<<<<<< HEAD
             <!-- Modal body -->
             <div class="modal-body">
                   <div class="form-group">
@@ -182,16 +229,28 @@
                   <div class="form-group">
                     <input type="number" class="form-control" placeholder="Enter Telephone Number"  name="phone" [(ngModel)]="studentModel.phone" #phone="ngModel">
                   </div>
+=======
+          <!-- Modal body -->
+          <div class="modal-body">
+            <div class="form-group">
+              <input type="email" class="form-control" placeholder="Enter email" id="email" name="email"
+                [(ngModel)]="studentModel.email" #email="ngModel">
+>>>>>>> origin/companynode
             </div>
-            
-            <!-- Modal footer -->
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
+            <div class="form-group">
+              <input type="number" class="form-control" placeholder="Enter Telephone Number" name="phone"
+                [(ngModel)]="studentModel.phone" #phone="ngModel">
             </div>
-            
           </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
+          </div>
+
         </div>
       </div>
+<<<<<<< HEAD
 
       
     <div class="modal" id="moreinfo">
@@ -252,11 +311,34 @@
             <!-- Modal footer -->
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
-            </div>
-            
+=======
+    </div>
+    <!-- skill edit -->
+    <div class="modal" id="skills">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h1 class="modal-title">Skills</h1>
+            <button type="button" class="close" data-dismiss="modal">×</button>
           </div>
+          <!-- Modal body -->
+          <div class="modal-body">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Enter skills" id="text" name="skills"
+                [(ngModel)]="studentModel.skills" #skills="ngModel">
+>>>>>>> origin/companynode
+            </div>
+          </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
+          </div>
+
         </div>
       </div>
+<<<<<<< HEAD
       <div class="modal" id="workLink">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -304,11 +386,37 @@
             <!-- Modal footer -->
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
-            </div>
-            
+=======
+    </div>
+    <!-- edit experince -->
+    <div class="modal" id="Experience">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h1 class="modal-title">Experience</h1>
+            <button type="button" class="close" data-dismiss="modal">×</button>
           </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Enter Experience" id="text" name="experience"
+                [(ngModel)]="studentModel.experience" #experience="ngModel">
+>>>>>>> origin/companynode
+            </div>
+
+          </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
+          </div>
+
         </div>
       </div>
+<<<<<<< HEAD
       <!-- update eduction -->
       <div class="modal" id="Education">
         <div class="modal-dialog">
@@ -339,11 +447,49 @@
             <!-- Modal footer -->
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
-            </div>
-            
+=======
+    </div>
+    <!-- update eduction -->
+    <div class="modal" id="Education">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h1 class="modal-title">Education</h1>
+            <button type="button" class="close" data-dismiss="modal">×</button>
           </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <div class="form-group">
+
+              <input type="text" class="form-control" placeholder="Enter University" id="text" name="university"
+                [(ngModel)]="studentModel.university" #university="ngModel">
+              <br>
+
+              <input type="text" class="form-control" placeholder="Enter Faculty" id="text" name="faculty"
+                [(ngModel)]="studentModel.faculty" #faculty="ngModel">
+              <br>
+
+              <input type="text" class="form-control" placeholder="Enter Grade" id="text" name="grade"
+                [(ngModel)]="studentModel.grade" #grade="ngModel">
+              <br>
+              <input type="text" class="form-control" placeholder="Enter Year Graduation" id="text"
+                name="graduationYear" [(ngModel)]="studentModel.graduationYear" #graduationYear="ngModel">
+>>>>>>> origin/companynode
+            </div>
+
+          </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
+          </div>
+
         </div>
       </div>
+<<<<<<< HEAD
       <!-- update rate -->
       <div class="modal" id="Rate">
         <div class="modal-dialog">
@@ -368,11 +514,38 @@
             <!-- Modal footer -->
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
-            </div>
-            
+=======
+    </div>
+    <!-- update rate -->
+    <div class="modal" id="Rate">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h1 class="modal-title">Hour Rate</h1>
+            <button type="button" class="close" data-dismiss="modal">×</button>
           </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <div class="form-group">
+
+              <input type="text" class="form-control" placeholder="Enter Your Rate" id="text" name="hourRate"
+                [(ngModel)]="studentModel.hourRate" #hourRate="ngModel">
+>>>>>>> origin/companynode
+            </div>
+
+          </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
+          </div>
+
         </div>
       </div>
+<<<<<<< HEAD
       <!-- update certification  -->
       <div class="modal" id="Certifications">
         <div class="modal-dialog">
@@ -396,11 +569,38 @@
             <!-- Modal footer -->
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
-            </div>
-            
+=======
+    </div>
+    <!-- update certification  -->
+    <div class="modal" id="Certifications">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h1 class="modal-title">Certifications</h1>
+            <button type="button" class="close" data-dismiss="modal">×</button>
           </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <div class="form-group">
+
+              <input type="number" class="form-control" placeholder="Enter Certifications" id="number"
+                name="certifications" [(ngModel)]="studentModel.certifications" #certifications="ngModel">
+>>>>>>> origin/companynode
+            </div>
+
+          </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
+          </div>
+
         </div>
       </div>
+<<<<<<< HEAD
       
       <!-- update about -->
       <div class="modal" id="About">
@@ -442,15 +642,51 @@
             <!-- Modal footer -->
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
-            </div>
-            
+=======
+    </div>
+
+    <!-- update about -->
+    <div class="modal" id="About">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h1 class="modal-title">About</h1>
+            <button type="button" class="close" data-dismiss="modal">×</button>
           </div>
-         
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <div class="form-group">
+              <textarea class="form-control" rows="10" id="comment" name="about" [(ngModel)]="studentModel.about"
+                #about="ngModel"></textarea>
+>>>>>>> origin/companynode
+            </div>
+
+          </div>
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
+          </div>
+
         </div>
+
       </div>
+<<<<<<< HEAD
 
     </form>
 
     </div>
     <br><br>
     <app-footer></app-footer>
+=======
+    </div>
+
+  </form>
+</div>
+
+<br><br>
+<app-footer></app-footer>
+>>>>>>> origin/companynode

@@ -33,6 +33,7 @@ import { SliderComponent } from './components/slider/slider.component';
 import { AddEventComponent } from './components/add-event/add-event.component';
 import { CompanyProfileComponent } from './components/company-profile/company-profile/company-profile.component';
 import { EditCompanyProfileComponent } from './components/edit-company-profile/edit-company-profile/edit-company-profile.component';
+import { CompanyService } from './services/Company/company.service';
 import { JOBService } from './services/job.service';
 import { StudentServiseService } from './services/student/student-servise.service';
 import {NgxPaginationModule} from 'ngx-pagination';
@@ -93,6 +94,8 @@ import { UserServService } from './services/User/user-serv.service';
   providers: [
     AuthenticationGuardService,
     LoginService,
+    BrowserAnimationsModule,
+    CompanyService,
     JOBService,
     BrowserAnimationsModule,
     StudentServiseService,
