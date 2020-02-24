@@ -1,157 +1,90 @@
 <app-navbar></app-navbar>
 <div class="profile-page">
-  <form #studentForm="ngForm"  (ngSubmit)="onSubmit()" >
+  <form #studentForm="ngForm" (ngSubmit)="onSubmit()">
 
-<div class="page-header header-filter" data-parallax="true" style="background-image:url('http://wallpapere.org/wp-content/uploads/2012/02/black-and-white-city-night.png');"></div>
-  <div class="main main-raised">
-		<div class="profile-content">
-            <div class="container">
-                <div class="row">
-                   <div class="col-md-4 ml-auto mr-auto">
-                    <div class="profile">
-                         <div class="avatar">
-                             <img src="http://localhost:3000//{{studentModel.image}}" alt="Circle Image" class="img-raised rounded-circle img-fluid">
-                         </div>
-                         
-                         <div class="name">
-                             <h3 class="title">{{studentModel.name}}</h3>
-                             <h6>{{studentModel.title}}</h6>
-                         </div>
-                     </div>
-                   </div>
+    <div class="page-header header-filter" data-parallax="true"
+      style="background-image:url('http://wallpapere.org/wp-content/uploads/2012/02/black-and-white-city-night.png');">
+    </div>
+    <div class="main main-raised">
+      <div class="profile-content">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 ml-auto mr-auto">
+              <div class="profile">
+                <div class="avatar">
+                  <img src="http://localhost:3000//{{studentModel.image}}" alt="Circle Image"
+                    class="img-raised rounded-circle img-fluid">
                 </div>
-                <div class="description text-center">
-                    <p> {{studentModel.about}} </p>
-                    <i class="fas fa-pen" style="float: right;" data-toggle="modal" data-target="#About"></i>
+
+                <div class="name">
+                  <h3 class="title">{{studentModel.name}}</h3>
+                  <h6>{{studentModel.title}}</h6>
                 </div>
-                <!-- ml-auto mr-auto -->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="profile-tabs">
-                              <section style="  font-style: italic;">
-                                <div style="font-size: x-large; margin-top: 15px;">
-                                    <i class="fas fa-address-card"> Contact Info </i>
-                                    <i class="fas fa-pen" style="float: right;" data-toggle="modal" data-target="#myModal"></i>                            
-                                </div>
-                                
-                                    <div style=" margin-top: 15px;">
-                                        <h5>Email : {{studentModel.email}}</h5>
-                                    </div>
+              </div>
+            </div>
+          </div>
+          <div class="description text-center">
+            <p> {{studentModel.about}} </p>
+            <i class="fas fa-pen" style="float: right;" data-toggle="modal" data-target="#About"></i>
+          </div>
+          <!-- ml-auto mr-auto -->
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="profile-tabs">
+                  <section style="  font-style: italic;">
+                    <div style="font-size: x-large; margin-top: 15px;">
+                      <i class="fas fa-address-card"> Contact Info </i>
+                      <i class="fas fa-pen" style="float: right;" data-toggle="modal" data-target="#myModal"></i>
+                    </div>
 
-                                    <div style=" margin-top: 15px;">
-                                      <h5>Age : {{studentModel.age}}</h5>
-                                  </div>
+                    <div style=" margin-top: 15px;">
+                      <h5>Email : {{studentModel.email}}</h5>
+                    </div>
 
-                                    <div style=" margin-top: 15px;">
-                                        <h5>Telephone Number :{{studentModel.phone}}</h5>
-                                    </div>
-                                
-                            </section>
-                            <hr class="featurette-divider">
-                            <section style="  font-style: italic;">
-                                <div style="font-size: x-large; margin-top: 15px;margin-bottom: 15px;">
-                                    <i class="fas fa-icons"> Skills </i>
-                                    <i class="fas fa-pen" style="float: right;" data-toggle="modal" data-target="#skills"></i>                            
-                                </div>
-                                <span style=" margin-top: 20px; border-radius: 5px; background-color: rgb(218, 198, 198); padding: 5px;">
-                                  {{studentModel.skills}}
-                                </span>
-                            </section>
+                    <div style=" margin-top: 15px;">
+                      <h5>Age : {{studentModel.age}}</h5>
+                    </div>
 
-                            
+                    <div style=" margin-top: 15px;">
+                      <h5>Telephone Number :{{studentModel.phone}}</h5>
+                    </div>
+
+                  </section>
+                  <hr class="featurette-divider">
+                  <section style="  font-style: italic;">
+                    <div style="font-size: x-large; margin-top: 15px;margin-bottom: 15px;">
+                      <i class="fas fa-icons"> Skills </i>
+                      <i class="fas fa-pen" style="float: right;" data-toggle="modal" data-target="#skills"></i>
+                    </div>
+                    <span
+                      style=" margin-top: 20px; border-radius: 5px; background-color: rgb(218, 198, 198); padding: 5px;">
+                      {{studentModel.skills}}
+                    </span>
+                  </section>
 
 
-                            <hr class="featurette-divider">
-                            <section style="  font-style: italic;">
-                                <div style="font-size: x-large; margin-top: 15px;">
-                                    <i class="fab fa-readme"> Experience</i>
-                                    <i class="fas fa-pen" style="float: right;" data-toggle="modal" data-target="#Experience"></i>                             
-                                </div>
-                                <ul style=" margin-top: 15px; list-style-type: none;">
-                                  <li>{{studentModel.experience}}</li>
-                                </ul>
-                            </section>
 
-                            <hr class="featurette-divider">
-                                <section style="  font-style: italic;">
-                                    <div style="font-size: x-large; margin-top: 15px;">
-                                        <i class="fas fa-award"> Certifications </i>
-                                        <i class="fas fa-pen" style="float: right;" data-toggle="modal" data-target="#Certifications"></i>                             
-                                    </div>
-                                    <ul style=" margin-top: 15px; list-style-type: none">
-                                       <li>{{studentModel.certifications}}</li>
-                                    </ul>
-                                </section>
 
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="profile-tabs">
+                  <hr class="featurette-divider">
+                  <section style="  font-style: italic;">
+                    <div style="font-size: x-large; margin-top: 15px;">
+                      <i class="fab fa-readme"> Experience</i>
+                      <i class="fas fa-pen" style="float: right;" data-toggle="modal" data-target="#Experience"></i>
+                    </div>
+                    <ul style=" margin-top: 15px; list-style-type: none;">
+                      <li>{{studentModel.experience}}</li>
+                    </ul>
+                  </section>
 
-                                <section style="  font-style: italic;">
-                                    <div style="font-size: x-large; margin-top: 15px;">
-                                        <i class="fas fa-graduation-cap"> Education </i>
-                                        <i class="fas fa-pen" style="float: right;" data-toggle="modal" data-target="#Education"></i>                             
-                                    </div>
-                                    <div style=" margin-top: 15px;">
-                                       <h5>University :{{studentModel.university}}</h5>
-                                    </div>
-                                    <div style=" margin-top: 7px;">
-                                        <h5>Faculty :{{studentModel.faculty}}</h5>
-                                     </div>
-                                     <div style=" margin-top: 7px;">
-                                        <h5>Grade :{{studentModel.grade}}</h5>
-                                     </div>
-                                     <div style=" margin-top: 7px;">
-                                        <h5> 
-                                            Graduation Year:{{studentModel.graduationYear}}</h5>
-                                     </div>
-                                </section>
-                                <hr class="featurette-divider">
-                                <section style="  font-style: italic;">
-                                    <div style="font-size: x-large; margin-top: 15px;margin-bottom: 15px;">
-                                        <i class="fas fa-icons"> Work Link </i>
-                                        <i class="fas fa-pen" style="float: right;" data-toggle="modal" data-target="#workLink"></i>                            
-                                    </div>
-                                    <span style=" margin-top: 20px; border-radius: 5px; background-color: rgb(218, 198, 198); padding: 5px;">
-                                      {{studentModel.workLink}}
-                                    </span>
-                                    <hr class="featurette-divider">
-
-                                </section>
-
-                                <section style="  font-style: italic;">
-                                  <div style="font-size: x-large; margin-top: 15px;">
-                                      <i class="fas fa-address-card"> More Info </i>
-                                      <i class="fas fa-pen" style="float: right;" data-toggle="modal" data-target="#moreinfo"></i>                            
-                                  </div>
-                                  
-                                      <div style=" margin-top: 15px;">
-                                          <h5>Availability : {{studentModel.availability}}</h5>
-                                      </div>
-  
-                                      <div style=" margin-top: 15px;">
-                                        <h5>Bio : {{studentModel.Bio}}</h5>
-                                    </div>
-                                    <div style=" margin-top: 15px;">
-                                      <h5>English Level : {{studentModel.englishLevel}}</h5>
-                                  </div>
-                              </section>
-                                
-                                <hr class="featurette-divider">
-                            
-
-                                   <button type="submit" [disabled]="studentForm.form.invalid"  class="btn-danger">Update</button>
-                                <br>
-                                <br>
-                                <strong class="text-danger" [class.d-none]="test">Please Select Image </strong>
-
-                            </div>
-                        </div>
+                  <hr class="featurette-divider">
+                  <section style="  font-style: italic;">
+                    <div style="font-size: x-large; margin-top: 15px;">
+                      <i class="fas fa-award"> Certifications </i>
+                      <i class="fas fa-pen" style="float: right;" data-toggle="modal" data-target="#Certifications"></i>
                     </div>
                     <ul style=" margin-top: 15px; list-style-type: none">
-                      <li>{{studentModel.email}}</li>
+                      <li>{{studentModel.certifications}}</li>
                     </ul>
                   </section>
 
@@ -179,514 +112,438 @@
                         Graduation Year:{{studentModel.graduationYear}}</h5>
                     </div>
                   </section>
-
                   <hr class="featurette-divider">
                   <section style="  font-style: italic;">
+                    <div style="font-size: x-large; margin-top: 15px;margin-bottom: 15px;">
+                      <i class="fas fa-icons"> Work Link </i>
+                      <i class="fas fa-pen" style="float: right;" data-toggle="modal" data-target="#workLink"></i>
+                    </div>
+                    <span
+                      style=" margin-top: 20px; border-radius: 5px; background-color: rgb(218, 198, 198); padding: 5px;">
+                      {{studentModel.workLink}}
+                    </span>
+                    <hr class="featurette-divider">
+
+                  </section>
+
+                  <section style="  font-style: italic;">
                     <div style="font-size: x-large; margin-top: 15px;">
-                      <i class="fas fa-dollar-sign"> Hour Rate</i>
-                      <i class="fas fa-pen" style="float: right;" data-toggle="modal" data-target="#Rate"></i>
+                      <i class="fas fa-address-card"> More Info </i>
+                      <i class="fas fa-pen" style="float: right;" data-toggle="modal" data-target="#moreinfo"></i>
+                    </div>
+
+                    <div style=" margin-top: 15px;">
+                      <h5>Availability : {{studentModel.availability}}</h5>
+                    </div>
+
+                    <div style=" margin-top: 15px;">
+                      <h5>Bio : {{studentModel.Bio}}</h5>
                     </div>
                     <div style=" margin-top: 15px;">
-                      {{studentModel.hourRate + "$"}}
+                      <h5>English Level : {{studentModel.englishLevel}}</h5>
                     </div>
                   </section>
 
-                  <button type="submit" class="btn-danger">Save</button>
-
-                </div>
-              </div>
-            </div>
-            <br>
-            <br>
-          </div>
-        </div>
-      </div>
-    </div>
+                  <hr class="featurette-divider">
 
 
-    <div class="modal" id="myModal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-
-          <!-- Modal Header -->
-          <div class="modal-header">
-            <h1 class="modal-title">Contact Info</h1>
-            <button type="button" class="close" data-dismiss="modal">×</button>
-          </div>
-
-          <!-- studentModel -->
-
-
-<<<<<<< HEAD
-            <!-- Modal body -->
-            <div class="modal-body">
-                  <div class="form-group">
-                    <input type="email" class="form-control" placeholder="Enter email" id="email" name="email" [(ngModel)]="studentModel.email" #email="ngModel" >
-                  </div>
-                  <div class="form-group">
-                    <input type="number" class="form-control" placeholder="Enter Age"  name="age" [(ngModel)]="studentModel.age" #age="ngModel" >
-                  </div>
-                  <div class="form-group">
-                    <input type="number" class="form-control" placeholder="Enter Telephone Number"  name="phone" [(ngModel)]="studentModel.phone" #phone="ngModel">
-                  </div>
-=======
-          <!-- Modal body -->
-          <div class="modal-body">
-            <div class="form-group">
-              <input type="email" class="form-control" placeholder="Enter email" id="email" name="email"
-                [(ngModel)]="studentModel.email" #email="ngModel">
->>>>>>> origin/companynode
-            </div>
-            <div class="form-group">
-              <input type="number" class="form-control" placeholder="Enter Telephone Number" name="phone"
-                [(ngModel)]="studentModel.phone" #phone="ngModel">
-            </div>
-          </div>
-
-          <!-- Modal footer -->
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
-          </div>
-
-        </div>
-      </div>
-<<<<<<< HEAD
-
-      
-    <div class="modal" id="moreinfo">
-      <div class="modal-dialog">
-        <div class="modal-content">
-        
-          <!-- Modal Header -->
-          <div class="modal-header">
-            <h1 class="modal-title">More Info</h1>
-            <button type="button" class="close" data-dismiss="modal">×</button>
-          </div>
-
-          <!-- studentModel -->
-
-
-          <!-- Modal body -->
-          <div class="modal-body">
-                <div class="form-group">
-                  <input type="text" class="form-control" placeholder="availability ?"
-                    name="availability" [(ngModel)]="studentModel.availability" #availability="ngModel" >
-                </div>
-                <div class="form-group">
-                  <input type="text" class="form-control" placeholder="Bio ?"
-                    name="Bio" [(ngModel)]="studentModel.Bio" #Bio="ngModel" >
-                </div>
-                <div class="form-group">
-                  <input type="text" class="form-control" placeholder="English Level ?"
-                    name="englishLevel" [(ngModel)]="studentModel.englishLevel" #englishLevel="ngModel" >
-                </div>
-                
-          </div>
-          
-          <!-- Modal footer -->
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
-          </div>
-          
-        </div>
-      </div>
-    </div>
-      <!-- skill edit -->
-      <div class="modal" id="skills">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <!-- Modal Header -->
-            <div class="modal-header">
-              <h1 class="modal-title">Skills</h1>
-              <button type="button" class="close" data-dismiss="modal">×</button>
-            </div>
-            <!-- Modal body -->
-            <div class="modal-body">
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Enter skills" 
-                    name="skills" [(ngModel)]="studentModel.skills" #skills="ngModel">
-                  </div>
-            </div>
-            
-            <!-- Modal footer -->
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
-=======
-    </div>
-    <!-- skill edit -->
-    <div class="modal" id="skills">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <!-- Modal Header -->
-          <div class="modal-header">
-            <h1 class="modal-title">Skills</h1>
-            <button type="button" class="close" data-dismiss="modal">×</button>
-          </div>
-          <!-- Modal body -->
-          <div class="modal-body">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Enter skills" id="text" name="skills"
-                [(ngModel)]="studentModel.skills" #skills="ngModel">
->>>>>>> origin/companynode
-            </div>
-          </div>
-
-          <!-- Modal footer -->
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
-          </div>
-
-        </div>
-      </div>
-<<<<<<< HEAD
-      <div class="modal" id="workLink">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <!-- Modal Header -->
-            <div class="modal-header">
-              <h1 class="modal-title">workLink</h1>
-              <button type="button" class="close" data-dismiss="modal">×</button>
-            </div>
-            <!-- Modal body -->
-            <div class="modal-body">
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Enter workLink" 
-                    name="workLink" [(ngModel)]="studentModel.workLink" #workLin="ngModel">
-                  </div>
-            </div>
-            
-            <!-- Modal footer -->
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
-            </div>
-            
-          </div>
-        </div>
-      </div>
-      <!-- edit experince -->
-      <div class="modal" id="Experience">
-        <div class="modal-dialog">
-          <div class="modal-content">
-          
-            <!-- Modal Header -->
-            <div class="modal-header">
-              <h1 class="modal-title">Experience</h1>
-              <button type="button" class="close" data-dismiss="modal">×</button>
-            </div>
-            
-            <!-- Modal body -->
-            <div class="modal-body">
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Enter Experience" 
-                    name="experience" [(ngModel)]="studentModel.experience" #experience="ngModel">
-                  </div>
-                  
-            </div>
-            
-            <!-- Modal footer -->
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
-=======
-    </div>
-    <!-- edit experince -->
-    <div class="modal" id="Experience">
-      <div class="modal-dialog">
-        <div class="modal-content">
-
-          <!-- Modal Header -->
-          <div class="modal-header">
-            <h1 class="modal-title">Experience</h1>
-            <button type="button" class="close" data-dismiss="modal">×</button>
-          </div>
-
-          <!-- Modal body -->
-          <div class="modal-body">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Enter Experience" id="text" name="experience"
-                [(ngModel)]="studentModel.experience" #experience="ngModel">
->>>>>>> origin/companynode
-            </div>
-
-          </div>
-
-          <!-- Modal footer -->
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
-          </div>
-
-        </div>
-      </div>
-<<<<<<< HEAD
-      <!-- update eduction -->
-      <div class="modal" id="Education">
-        <div class="modal-dialog">
-          <div class="modal-content">
-          
-            <!-- Modal Header -->
-            <div class="modal-header">
-              <h1 class="modal-title">Education</h1>
-              <button type="button" class="close" data-dismiss="modal">×</button>
-            </div>
-            
-            <!-- Modal body -->
-            <div class="modal-body">
-                  <div class="form-group">
-                    
-                  <input type="text" class="form-control" placeholder="Enter University" 
-                  name="university" [(ngModel)]="studentModel.university" #university="ngModel">
+                  <button type="submit" [disabled]="studentForm.form.invalid" class="btn-danger">Update</button>
                   <br>
-                  
-                  <input type="text" class="form-control" placeholder="Enter Faculty"
-                  name="faculty" [(ngModel)]="studentModel.faculty" #faculty="ngModel">
                   <br>
-                  <input type="text" class="form-control" placeholder="Enter Year Graduation"  name="graduationYear" [(ngModel)]="studentModel.graduationYear" #graduationYear="ngModel">
-                  </div>
-                  
-            </div>
-            
-            <!-- Modal footer -->
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
-=======
-    </div>
-    <!-- update eduction -->
-    <div class="modal" id="Education">
-      <div class="modal-dialog">
-        <div class="modal-content">
+                  <strong class="text-danger" [class.d-none]="test">Please Select Image </strong>
 
-          <!-- Modal Header -->
-          <div class="modal-header">
-            <h1 class="modal-title">Education</h1>
-            <button type="button" class="close" data-dismiss="modal">×</button>
-          </div>
-
-          <!-- Modal body -->
-          <div class="modal-body">
-            <div class="form-group">
-
-              <input type="text" class="form-control" placeholder="Enter University" id="text" name="university"
-                [(ngModel)]="studentModel.university" #university="ngModel">
-              <br>
-
-              <input type="text" class="form-control" placeholder="Enter Faculty" id="text" name="faculty"
-                [(ngModel)]="studentModel.faculty" #faculty="ngModel">
-              <br>
-
-              <input type="text" class="form-control" placeholder="Enter Grade" id="text" name="grade"
-                [(ngModel)]="studentModel.grade" #grade="ngModel">
-              <br>
-              <input type="text" class="form-control" placeholder="Enter Year Graduation" id="text"
-                name="graduationYear" [(ngModel)]="studentModel.graduationYear" #graduationYear="ngModel">
->>>>>>> origin/companynode
-            </div>
-
-          </div>
-
-          <!-- Modal footer -->
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
-          </div>
-
-        </div>
-      </div>
-<<<<<<< HEAD
-      <!-- update rate -->
-      <div class="modal" id="Rate">
-        <div class="modal-dialog">
-          <div class="modal-content">
-          
-            <!-- Modal Header -->
-            <div class="modal-header">
-              <h1 class="modal-title">Hour Rate</h1>
-              <button type="button" class="close" data-dismiss="modal">×</button>
-            </div>
-            
-            <!-- Modal body -->
-            <div class="modal-body">
-                  <div class="form-group">
-                    
-                    <input type="text" class="form-control" placeholder="Enter Your Rate" 
-                    name="hourRate" [(ngModel)]="studentModel.hourRate" #hourRate="ngModel">
-                  </div>
-                  
-            </div>
-            
-            <!-- Modal footer -->
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
-=======
-    </div>
-    <!-- update rate -->
-    <div class="modal" id="Rate">
-      <div class="modal-dialog">
-        <div class="modal-content">
-
-          <!-- Modal Header -->
-          <div class="modal-header">
-            <h1 class="modal-title">Hour Rate</h1>
-            <button type="button" class="close" data-dismiss="modal">×</button>
-          </div>
-
-          <!-- Modal body -->
-          <div class="modal-body">
-            <div class="form-group">
-
-              <input type="text" class="form-control" placeholder="Enter Your Rate" id="text" name="hourRate"
-                [(ngModel)]="studentModel.hourRate" #hourRate="ngModel">
->>>>>>> origin/companynode
-            </div>
-
-          </div>
-
-          <!-- Modal footer -->
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
-          </div>
-
-        </div>
-      </div>
-<<<<<<< HEAD
-      <!-- update certification  -->
-      <div class="modal" id="Certifications">
-        <div class="modal-dialog">
-          <div class="modal-content">
-          
-            <!-- Modal Header -->
-            <div class="modal-header">
-              <h1 class="modal-title">Certifications</h1>
-              <button type="button" class="close" data-dismiss="modal">×</button>
-            </div>
-            
-            <!-- Modal body -->
-            <div class="modal-body">
-                  <div class="form-group">
-                    
-                    <input type="text" class="form-control" placeholder="Enter Certifications"   name="certifications" [(ngModel)]="studentModel.certifications" #certifications="ngModel">
-                  </div>
-                  
-            </div>
-            
-            <!-- Modal footer -->
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
-=======
-    </div>
-    <!-- update certification  -->
-    <div class="modal" id="Certifications">
-      <div class="modal-dialog">
-        <div class="modal-content">
-
-          <!-- Modal Header -->
-          <div class="modal-header">
-            <h1 class="modal-title">Certifications</h1>
-            <button type="button" class="close" data-dismiss="modal">×</button>
-          </div>
-
-          <!-- Modal body -->
-          <div class="modal-body">
-            <div class="form-group">
-
-              <input type="number" class="form-control" placeholder="Enter Certifications" id="number"
-                name="certifications" [(ngModel)]="studentModel.certifications" #certifications="ngModel">
->>>>>>> origin/companynode
-            </div>
-
-          </div>
-
-          <!-- Modal footer -->
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
-          </div>
-
-        </div>
-      </div>
-<<<<<<< HEAD
-      
-      <!-- update about -->
-      <div class="modal" id="About">
-        <div class="modal-dialog">
-          <div class="modal-content">
-          
-            <!-- Modal Header -->
-            <div class="modal-header">
-              <h1 class="modal-title">About</h1>
-              <button type="button" class="close" data-dismiss="modal">×</button>
-            </div>
-            
-            <!-- Modal body -->
-            <div class="modal-body">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Enter your name  ?"
-                name="name" [(ngModel)]="studentModel.name" #name="ngModel">
+                </div>
               </div>
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Enter your title  ?"
-                name="title" [(ngModel)]="studentModel.title" #title="ngModel">
-              </div>
-              
-                  <div class="form-group">
-                    <textarea class="form-control" rows="5"   name="about" 
-                    [(ngModel)]="studentModel.about" #about="ngModel"></textarea>
-                  </div>
-
-                  <div>
-                    <label for="exampleFormControlInput1">Profile Image</label>
-                    <input class="form-control" type="file" name="image" required
-                    
-                     (change)="onfileSelected($event)" >
-                     
-                  </div>
-                  
             </div>
-            
-            <!-- Modal footer -->
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
-=======
-    </div>
-
-    <!-- update about -->
-    <div class="modal" id="About">
-      <div class="modal-dialog">
-        <div class="modal-content">
-
-          <!-- Modal Header -->
-          <div class="modal-header">
-            <h1 class="modal-title">About</h1>
-            <button type="button" class="close" data-dismiss="modal">×</button>
-          </div>
-
-          <!-- Modal body -->
-          <div class="modal-body">
-            <div class="form-group">
-              <textarea class="form-control" rows="10" id="comment" name="about" [(ngModel)]="studentModel.about"
-                #about="ngModel"></textarea>
->>>>>>> origin/companynode
-            </div>
+            <ul style=" margin-top: 15px; list-style-type: none">
+              <li>{{studentModel.email}}</li>
+            </ul>
+            </section>
 
           </div>
-
-          <!-- Modal footer -->
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
-          </div>
-
         </div>
+        <div class="col-md-6">
+          <div class="profile-tabs">
 
+            <section style="  font-style: italic;">
+              <div style="font-size: x-large; margin-top: 15px;">
+                <i class="fas fa-graduation-cap"> Education </i>
+                <i class="fas fa-pen" style="float: right;" data-toggle="modal" data-target="#Education"></i>
+              </div>
+              <div style=" margin-top: 15px;">
+                <h5>University :{{studentModel.university}}</h5>
+              </div>
+              <div style=" margin-top: 7px;">
+                <h5>Faculty :{{studentModel.faculty}}</h5>
+              </div>
+              <div style=" margin-top: 7px;">
+                <h5>Grade :{{studentModel.grade}}</h5>
+              </div>
+              <div style=" margin-top: 7px;">
+                <h5>
+                  Graduation Year:{{studentModel.graduationYear}}</h5>
+              </div>
+            </section>
+
+            <hr class="featurette-divider">
+            <section style="  font-style: italic;">
+              <div style="font-size: x-large; margin-top: 15px;">
+                <i class="fas fa-dollar-sign"> Hour Rate</i>
+                <i class="fas fa-pen" style="float: right;" data-toggle="modal" data-target="#Rate"></i>
+              </div>
+              <div style=" margin-top: 15px;">
+                {{studentModel.hourRate + "$"}}
+              </div>
+            </section>
+
+            <button type="submit" class="btn-danger">Save</button>
+
+          </div>
+        </div>
       </div>
-<<<<<<< HEAD
-
-    </form>
-
+      <br>
+      <br>
     </div>
-    <br><br>
-    <app-footer></app-footer>
-=======
-    </div>
-
-  </form>
+</div>
+</div>
 </div>
 
+
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h1 class="modal-title">Contact Info</h1>
+        <button type="button" class="close" data-dismiss="modal">×</button>
+      </div>
+
+      <!-- studentModel -->
+
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="form-group">
+          <input type="email" class="form-control" placeholder="Enter email" id="email" name="email"
+            [(ngModel)]="studentModel.email" #email="ngModel">
+        </div>
+        <div class="form-group">
+          <input type="number" class="form-control" placeholder="Enter Age" name="age" [(ngModel)]="studentModel.age"
+            #age="ngModel">
+        </div>
+        <div class="form-group">
+          <input type="number" class="form-control" placeholder="Enter Telephone Number" name="phone"
+            [(ngModel)]="studentModel.phone" #phone="ngModel">
+        </div>
+      </div>
+      <div class="form-group">
+        <input type="number" class="form-control" placeholder="Enter Telephone Number" name="phone"
+          [(ngModel)]="studentModel.phone" #phone="ngModel">
+      </div>
+    </div>
+
+    <!-- Modal footer -->
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="modal" id="moreinfo">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h1 class="modal-title">More Info</h1>
+        <button type="button" class="close" data-dismiss="modal">×</button>
+      </div>
+
+      <!-- studentModel -->
+
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="availability ?" name="availability"
+            [(ngModel)]="studentModel.availability" #availability="ngModel">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Bio ?" name="Bio" [(ngModel)]="studentModel.Bio"
+            #Bio="ngModel">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="English Level ?" name="englishLevel"
+            [(ngModel)]="studentModel.englishLevel" #englishLevel="ngModel">
+        </div>
+
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- skill edit -->
+<div class="modal" id="skills">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h1 class="modal-title">Skills</h1>
+        <button type="button" class="close" data-dismiss="modal">×</button>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Enter skills" name="skills"
+            [(ngModel)]="studentModel.skills" #skills="ngModel">
+        </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
+      </div>
+    </div>
+
+    <!-- Modal footer -->
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
+    </div>
+
+  </div>
+</div>
+<div class="modal" id="workLink">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h1 class="modal-title">workLink</h1>
+        <button type="button" class="close" data-dismiss="modal">×</button>
+      </div>
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Enter workLink" name="workLink"
+            [(ngModel)]="studentModel.workLink" #workLin="ngModel">
+        </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- edit experince -->
+<div class="modal" id="Experience">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h1 class="modal-title">Experience</h1>
+        <button type="button" class="close" data-dismiss="modal">×</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Enter Experience" name="experience"
+            [(ngModel)]="studentModel.experience" #experience="ngModel">
+        </div>
+
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
+      </div>
+
+    </div>
+
+    <!-- Modal footer -->
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
+    </div>
+
+  </div>
+</div>
+<!-- update eduction -->
+<div class="modal" id="Education">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h1 class="modal-title">Education</h1>
+        <button type="button" class="close" data-dismiss="modal">×</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="form-group">
+
+          <input type="text" class="form-control" placeholder="Enter University" name="university"
+            [(ngModel)]="studentModel.university" #university="ngModel">
+          <br>
+
+          <input type="text" class="form-control" placeholder="Enter Faculty" name="faculty"
+            [(ngModel)]="studentModel.faculty" #faculty="ngModel">
+          <br>
+          <input type="text" class="form-control" placeholder="Enter Year Graduation" name="graduationYear"
+            [(ngModel)]="studentModel.graduationYear" #graduationYear="ngModel">
+        </div>
+
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
+      </div>
+
+    </div>
+
+    <!-- Modal footer -->
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
+    </div>
+
+  </div>
+</div>
+<!-- update rate -->
+<div class="modal" id="Rate">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h1 class="modal-title">Hour Rate</h1>
+        <button type="button" class="close" data-dismiss="modal">×</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="form-group">
+
+          <input type="text" class="form-control" placeholder="Enter Your Rate" name="hourRate"
+            [(ngModel)]="studentModel.hourRate" #hourRate="ngModel">
+        </div>
+
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
+      </div>
+
+    </div>
+
+    <!-- Modal footer -->
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
+    </div>
+
+  </div>
+</div>
+<!-- update certification  -->
+<div class="modal" id="Certifications">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h1 class="modal-title">Certifications</h1>
+        <button type="button" class="close" data-dismiss="modal">×</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="form-group">
+
+          <input type="text" class="form-control" placeholder="Enter Certifications" name="certifications"
+            [(ngModel)]="studentModel.certifications" #certifications="ngModel">
+        </div>
+
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
+      </div>
+
+    </div>
+
+    <!-- Modal footer -->
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- update about -->
+<div class="modal" id="About">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h1 class="modal-title">About</h1>
+        <button type="button" class="close" data-dismiss="modal">×</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Enter your name  ?" name="name"
+            [(ngModel)]="studentModel.name" #name="ngModel">
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Enter your title  ?" name="title"
+            [(ngModel)]="studentModel.title" #title="ngModel">
+        </div>
+
+        <div class="form-group">
+          <textarea class="form-control" rows="5" name="about" [(ngModel)]="studentModel.about"
+            #about="ngModel"></textarea>
+        </div>
+
+        <div>
+          <label for="exampleFormControlInput1">Profile Image</label>
+          <input class="form-control" type="file" name="image" required (change)="onfileSelected($event)">
+
+        </div>
+
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
+      </div>
+
+    </div>
+
+    <!-- Modal footer -->
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger" data-dismiss="modal">Save</button>
+    </div>
+
+  </div>
+
+</div>
+
+</form>
+
+</div>
 <br><br>
 <app-footer></app-footer>
->>>>>>> origin/companynode
