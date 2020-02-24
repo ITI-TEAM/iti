@@ -29,6 +29,9 @@
       <label for="exampleFormControlInput1">Event Image</label>
       <input class="form-control"  type="file" (change)="onfileSelected($event)" >
     </div>
+    <br>
+    <strong class="text-danger" [class.d-none]="test">Please Select Image </strong>
+
   <br>
     <button type="submit"  [disabled]="eventForm.form.invalid" class="btn btn-success" (click)="addEvent()">Submit</button>
   </form>

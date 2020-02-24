@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AddEvent } from '../Classes/add-event';
 import { EventService } from 'src/app/services/Events/event.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-event',
@@ -8,8 +9,8 @@ import { EventService } from 'src/app/services/Events/event.service';
   styleUrls: ['./add-event.component.css']
 })
 export class AddEventComponent implements OnInit {
-
-  constructor(private everntServ:EventService) { }
+  public test:boolean=true;
+  constructor(private everntServ:EventService,private router : Router) { }
   public eventModel = new AddEvent('','','','','');
   ngOnInit() {
   }
@@ -23,8 +24,13 @@ export class AddEventComponent implements OnInit {
   addEvent() {
 
     const fd=new FormData();
+    if(this.selecteFile==null){
+      this.test=false;
+
+    }
     // append image file
-    fd.append('image',this.selecteFile,this.selecteFile.name);
+    else{
+      fd.append('image',this.selecteFile,this.selecteFile.name);
 
     // add details from model
     fd.append('title',this.eventModel.title.toString());
@@ -33,17 +39,24 @@ export class AddEventComponent implements OnInit {
     fd.append('place',this.eventModel.place.toString());
     
 
+      this.everntServ.addEvent(fd).subscribe(
 
-     this.everntServ.addEvent(fd).subscribe(
+        data=>{
+          console.log(data);
+          alert("Event Added")
+          this.router.navigate(['/maneg-events']);
 
-      data=>{
-        console.log(data);
-      },
-      error=>{
-        console.log(error);
-      }
+        },
+        error=>{
+          this.test=false
+          console.log(error);
+        }
+  
+       );
+    }
+    
 
-     );
+   
      
    }
 

@@ -23,8 +23,8 @@ export class EventService {
   }
 
 //Event delete by _id
-deletEvent(Event_id):Observable<any>{
+deletEvent(ID):Observable<any>{
 
-    return this.http.get("http://localhost:3000/event/deleteevent/"+Event_id);
+    return this.http.delete("http://localhost:3000/event/deleteevent/"+ID);
   }
 }

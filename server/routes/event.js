@@ -79,8 +79,8 @@ router.get('/listevent',function(req,res){
   
 
 //Delete Event
-router.get('/deleteevent/:_id',function(req,resp){
-    Event.deleteOne({_id:req.params.id},function(err,data){
+router.delete('/deleteevent/:ID',function(req,resp){
+    Event.deleteOne({_id:req.params.ID},function(err,data){
         if(!err){
             console.log(req.params.id)
             resp.json(data)
