@@ -28,7 +28,7 @@ import { HomeCompanyComponent } from './components/home-page-company/home-compan
 import { JObDetailsComponent } from './components/job-details/job-details.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PostJobComponent } from './components/postjob/post-job/post-job.component';
- import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+//  import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SliderComponent } from './components/slider/slider.component';
 import { AddEventComponent } from './components/add-event/add-event.component';
 import { CompanyProfileComponent } from './components/company-profile/company-profile/company-profile.component';
@@ -94,7 +94,7 @@ import { UserServService } from './services/User/user-serv.service';
   providers: [
     AuthenticationGuardService,
     LoginService,
-    BrowserAnimationsModule,
+    // BrowserAnimationsModule,
     CompanyService,
     JOBService,
     StudentServiseService,
