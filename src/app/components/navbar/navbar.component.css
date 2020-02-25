@@ -8177,7 +8177,7 @@ h1, h2, h3, h4, h5,
   color: #206dfb !important; }
 
 .ftco-navbar-light {
-  background: #858df4 !important;
+  background: #858df400 !important;
   position: fixed;
   left: 0;
   right: 0;
@@ -9186,14 +9186,3 @@ textarea.form-control {
       padding: 0;
       background-color: #111;
     }
-
-
-
-
-/* .bg-custom-1 {
-    background-color: #85144b;
-  }
-  
- .bg-custom-2 {
-  background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
-  } */
