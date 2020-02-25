@@ -1,95 +1,92 @@
 <app-navbar></app-navbar>
-<br><br>
-<br><br>
-<div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="card">
-          <div class="card-body">JOB DETAILS</div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-3">
-        <div class="card shadow">
-          <img class="card-img-top imgpro" src="../../../assets/images/Prof.Dr.JurgenGausemeier.png" alt="Card image">
-          <div class="card-body">
-            <h4 class="card-title titilename">John Doe</h4>
-          </div>
-        </div>
-        <div class="card shadow">
-  
-          <div class="card-body">
-  
-            <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-  
-          </div>
-        </div>
-        <div class="card shadow">
-  
-          <div class="card-body">
-  
-            <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-  
-          </div>
-        </div>
-  
-  
-      </div>
-  
-      <div class="col-sm-9">
-        <div class="container mt-3">
-            <div class="media border p-3">
-              <div class="media-body">
-                <h4>Company Name </h4> 
-                <small><i>Posted on February 19, 2016</i></small>
-                 <div>
-                    <span  class="badge badge-danger">
-                        Applied <span class="badge badge-light">7</span>
-                    </span>
-                </div>
-                <hr>
-                <div>
-                    <span class="badge badge-danger">JOB TITLE :</span>
-                </div>
-                <div>
-                    <span class="badge badge-light">Salary:</span>
-                </div>
-                <div>
-                    <span class="badge badge-light">Location :</span>
-                </div>
-                <div>
-                    <span class="badge badge-light">Job Type :</span>
-                </div>
-                <div>
-                    <span class="badge badge-light">Languages :</span>
-                </div>
-                <div>
-                    <span class="badge badge-light">Experinces :</span>
-                </div>
-                <div>
-                    <span class="badge badge-dark">Descreption</span>
-                    <hr>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo sint ex perferendis hic quidem, necessitatibus ipsa praesentium impedit pariatur mollitia, harum nemo consectetur illo, repellendus autem sit error blanditiis cupiditate? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia provident et accusamus quia eaque reprehenderit, sed obcaecati voluptates, iure molestias quae consequuntur fuga? Quasi velit consectetur quis, deleniti deserunt quo.</p>      
-                </div>
-                <hr>
-                <strong class="text-danger" [class.d-none]="test">You Already Applied to the Job</strong>
-
-                <div class="button">
-                    <button type="button" class="btn btn-outline-danger" (click)="applytoJob()">apply to job</button>
-                  </div>    
+<div class="job_details_area">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-8">
+              <div class="job_details_header">
+                  <div class="single_jobs white-bg d-flex justify-content-between">
+                      <div class="jobs_left d-flex align-items-center">
+                          
+                          <div class="jobs_conetent">
+                              <a href="#"><h4>Software Engineer</h4></a>
+                              <div class="links_locat d-flex align-items-center">
+                                  <div class="location">
+                                      <p> <i class="fa fa-map-marker"></i> California, USA</p>
+                                  </div>
+                                  <div class="location">
+                                      <p> <i class="fa fa-clock-o"></i> Part-time</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                     
+                  </div>
               </div>
-            <br>
-              <img src="../../../assets/images/Prof.Dr.JurgenGausemeier.png" alt="John Doe" class="ml-3 mt-3 rounded-circle" style="width:60px;">
-              
-            </div>
-            
+              <div class="descript_wrap white-bg">
+                  <div class="single_wrap">
+                      <h4>Job description</h4>
+                      <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing.</p>
+                      <p>Variations of passages of lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing.</p>
+                  </div>
+                  <div class="single_wrap">
+                      <h4>Responsibility</h4>
+                      <ul>
+                          <li>The applicants should have experience in the following areas.
+                          </li>
+                          <li>Have sound knowledge of commercial activities.</li>
+                          <li>Leadership, analytical, and problem-solving abilities.</li>
+                          <li>Should have vast knowledge in IAS/ IFRS, Company Act, Income Tax, VAT.</li>
+                      </ul>
+                  </div>
+                  <div class="single_wrap">
+                      <h4>Qualifications</h4>
+                      <ul>
+                          <li>The applicants should have experience in the following areas.
+                          </li>
+                          <li>Have sound knowledge of commercial activities.</li>
+                          <li>Leadership, analytical, and problem-solving abilities.</li>
+                          <li>Should have vast knowledge in IAS/ IFRS, Company Act, Income Tax, VAT.</li>
+                      </ul>
+                  </div>
+                  <div class="single_wrap">
+                      <h4>Benefits</h4>
+                      <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing.</p>
+                  </div>
+              </div>
+              <div class="apply_job_form white-bg">
+                  <h4>Apply for the job</h4>
+                  <button class="boxed-btn3 w-100" type="submit">Apply Now</button>
+              </div>
           </div>
+          <div class="col-lg-4">
+              <div class="job_sumary">
+                  <div class="summery_header">
+                      <h3>Job Summery</h3>
+                  </div>
+                  <div class="job_content">
+                      <ul>
+                          <li>Published on: <span>12 Nov, 2019</span></li>
+                          <li>Vacancy: <span>2 Position</span></li>
+                          <li>Salary: <span>50k - 120k/y</span></li>
+                          <li>Location: <span>California, USA</span></li>
+                          <li>Job Nature: <span> Full-time</span></li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="share_wrap d-flex">
+                  <span>Share at:</span>
+                  <ul>
+                      <li><a href="#"> <i class="fa fa-facebook"></i></a> </li>
+                      <li><a href="#"> <i class="fa fa-google-plus"></i></a> </li>
+                      <li><a href="#"> <i class="fa fa-twitter"></i></a> </li>
+                      <li><a href="#"> <i class="fa fa-envelope"></i></a> </li>
+                  </ul>
+              </div>
           
+          </div>
       </div>
-      
-    </div>
-    <br>
-    <br>
+  </div>
+</div>
+
     <app-footer></app-footer>
 

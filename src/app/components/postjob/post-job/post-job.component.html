@@ -1,277 +1,124 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/v4-shims.css">
 <app-navbar-company></app-navbar-company>
-<br><br>
-<div class="container">
-
-  <form #jobForm="ngForm" novalidate > 
-    
-      <div class="row ">
-    <div class="col-9">
-      
-      <div class="card shadow">
-
-        <div class="card-body">
-          <h5 class="card-title">JOB
-            <i class="fas fa-pencil-alt icon" data-toggle="modal" data-target="#myModal0"></i>
-            <!-- The Modal -->
-            <div class="modal" id="myModal0">
-              <div class="modal-dialog">
-                <div class="modal-content">
-
-                  <!-- Modal Header -->
-                  <div class="modal-header">
-                    <h1 class="modal-title"> JOB</h1>
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                  </div>
-
-                  <!-- Modal body -->
-                  <div class="modal-body">
-                    <input type="text" placeholder="Job Title" name="title"
-                     #title="ngModel" [(ngModel)]="jobModel.title" 
-                     required   [class.isinvalid]="title.invalid"
-                     class="form-control"  >
-                    <br>
-                    <br>
-                    <small style="color: red;" [class.d-none]=" title.valid || title.untouched">Title is Required</small> 
-<input type="text" placeholder="location" name="location"
-                     #location="ngModel" [(ngModel)]="jobModel.location" 
-                     required   [class.isinvalid]="location.invalid"
-                     class="form-control"  >
-                     <small style="color: red;" [class.d-none]=" location.valid || location.untouched">location is Required</small> 
-
-                  </div>
-
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">save</button>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-
-          </h5>
-          <hr>
-          <div class="card-text">
-            <h5>
-              Job title:{{jobModel.title}}
-            </h5>
-            <br>
-            <h5>
-              location:{{jobModel.location}}
-            </h5>
-          </div>
-        </div>
-      </div>
-      <!--  -->
-      <div class="card shadow">
-
-        <div class="card-body">
-          <h5 class="card-title">Job requirements
-            <i class="fas fa-pencil-alt icon" data-toggle="modal" data-target="#myModal1"></i>
-
-            <div class="modal" id="myModal1">
-              <div class="modal-dialog">
-                <div class="modal-content">
 
 
-                  <div class="modal-header">
-                    <h1 class="modal-title"> Job requirements</h1>
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                  </div>
-
-
-                  <div class="modal-body">
-
-
-
-                    <br>
-                    <br>
-                    <textarea name=""  cols="20" rows="3" placeholder="Experience" name="exper"
-                    #exper="ngModel" [(ngModel)]="jobModel.exper"
-                    required   [class.isinvalid]="experinvalid" >
-                    </textarea>
-                    <br>
-                    <small style="color: red;" [class.d-none]=" exper.valid || exper.untouched">Experience is Required</small> 
-
-                    <br>
-                    <br>
-                    <textarea name=""  cols="20" rows="3" placeholder="languages" name="languages"
-                    #languages="ngModel" [(ngModel)]="jobModel.languages"
-                    required   [class.isinvalid]="languages.invalid" >
-                    </textarea>
-                    <br>
-                    <small style="color: red;" [class.d-none]=" languages.valid || languages.untouched">languages is Required</small> 
-
-                    <br>
-                    <textarea name="" i cols="20" rows="5" placeholder="Qualification" name="qual"
-                    #qual="ngModel" [(ngModel)]="jobModel.qual"
-                    required   [class.isinvalid]="qual.invalid" >
-                    </textarea>
-                    <br>
-                    <small style="color: red;" [class.d-none]=" qual.valid || qual.untouched">Qualification is Required</small> 
-
-                    
-                    <br>
-                    <br>
-
-                  </div>
-
-
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">save</button>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </h5>
-          <hr>
-          <div class="card-text">
-            <h5>
-              Experience:{{jobModel.exper}}
-            </h5>
-          </div>
-          <br>
-
-          <div class="card-text">
-            <h5>
-              Language:{{jobModel.languages}}
-            </h5>
-          </div>
-          <br>
-          <div class="card-text">
-            <h5>
-              Qualification:{{jobModel.qual}}
-            </h5>
-          </div>
-        </div>
-        <br>
-        <br>
-        <br>
-      </div>
-      <!--  -->
-      <div class="card shadow">
-
-        <div class="card-body">
-          <h5 class="card-title"> Price
-            <i class="fas fa-pencil-alt icon" data-toggle="modal" data-target="#myModal2"></i>
-            <!-- The Modal -->
-            <div class="modal" id="myModal2">
-              <div class="modal-dialog">
-                <div class="modal-content">
-
-                  <!-- Modal Header -->
-                  <div class="modal-header">
-                    <h1 class="modal-title"> Price</h1>
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                  </div>
-
-                  <!-- Modal body -->
-                  <div class="modal-body">
-
-
-                    <input type="text" placeholder="salary" name="salary"
-                    #salary="ngModel" [(ngModel)]="jobModel.salary" 
-                    required   [class.isinvalid]="salary.invalid">
-                    <br>
-                    <small style="color: red;" [class.d-none]=" salary.valid || salary.untouched">salary is Required</small> 
-
-                    <br>
-
-
-                    <input type="text" placeholder="type of job" name="type"
-                    #type="ngModel" [(ngModel)]="jobModel.type" 
-                    required   [class.isinvalid]="type.invalid">
-                    <br>
-                    <small style="color: red;" [class.d-none]=" type.valid || type.untouched">type is Required</small> 
-
-                    <br>
-                  </div>
-
-                  <!-- Modal footer -->
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">save</button>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </h5>
-          <hr>
-          <div class="card-text">
-            <h5>
-              salary:{{jobModel.salary}}
-            </h5>
-          </div>
-          <br>
-          <div class="card-text">
-            <h5>
-              type of job:{{jobModel.type}}
-            </h5>
-          </div>
-        </div>
-        <br>
-      </div>
-      <!--  -->
-      <div class="card shadow">
-
-        <div class="card-body">
-          <h5 class="card-title">
-            Desecreption of  Job 
-            
-            <i class="fas fa-pencil-alt icon " data-toggle="modal" data-target="#myModal"></i>
-            
-            <!-- The Modal -->
-            <div class="modal" id="myModal">
-              <div class="modal-dialog">
-                <div class="modal-content">
-
-                  <!-- Modal Header -->
-                  <div class="modal-header">
-                    <h1 class="modal-title"> Desecreption of  Job</h1>
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                  </div>
-
-                  <!-- Modal body -->
-                  <div class="modal-body">
-                    <P>Details:</P>
-                    <textarea name=""  cols="30" rows="5" placeholder="Qualification" name="des"
-                    #desc="ngModel" [(ngModel)]="jobModel.desc" 
-                    required   [class.isinvalid]="desc.invalid">
-                    </textarea>  
-                    <br>
-                    <small style="color: red;" [class.d-none]=" desc.valid || desc.untouched">Desecreption is Required</small> 
-               
-                   </div>
-
-                  <!-- Modal footer -->
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">save</button>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </h5>
-          <P>{{jobModel.desc}}</P>
-          <hr>
+<div class="site-section bg-light">
+      <div class="container">
+        <div class="row">
+       
+          <div class="col-md-12 col-lg-8 mb-5">
           
-          <br>
-          <br>
-          <br>
-          <hr>
-        </div>
-        <button type="submit" [disabled]="jobForm.form.invalid" class="btn-danger" (click)="postJob()">POST</button>
+            
+          
+            <form action="#" class="p-5 bg-white">
+              
+              <div class="row form-group">
+                <div class="col-md-12 mb-3 mb-md-0">
+                  <label for="option-price-1">
+                    <input type="checkbox" id="option-price-1"> <span class="text-success">$300</span> For 30 days
+                  </label>
+                </div>
+                <div class="col-md-12 mb-3 mb-md-0">
+                  <label for="option-price-2">
+                    <input type="checkbox" id="option-price-2"> <span class="text-success">$200</span> / Monthly Recurring
+                  </label>
+                </div>
+              </div>
 
-        <br>
+              <div class="row form-group">
+                <div class="col-md-12 mb-3 mb-md-0">
+                  <label class="font-weight-bold" for="fullname">Job Title</label>
+                  <input type="text" id="fullname" class="form-control" placeholder="eg. Full Stack Frontend">
+                </div>
+              </div>
+
+              <div class="row form-group mb-5">
+                <div class="col-md-12 mb-3 mb-md-0">
+                  <label class="font-weight-bold" for="fullname">Company</label>
+                  <input type="text" id="fullname" class="form-control" placeholder="eg. Facebook, Inc.">
+                </div>
+              </div>
+
+
+              <div class="row form-group">
+                <div class="col-md-12"><h3>Job Type</h3></div>
+                <div class="col-md-12 mb-3 mb-md-0">
+                  <label for="option-job-type-1">
+                    <input type="radio" id="option-job-type-1" name="job-type"> Full Time
+                  </label>
+                </div>
+                <div class="col-md-12 mb-3 mb-md-0">
+                  <label for="option-job-type-2">
+                    <input type="radio" id="option-job-type-2" name="job-type"> Part Time
+                  </label>
+                </div>
+
+                <div class="col-md-12 mb-3 mb-md-0">
+                  <label for="option-job-type-3">
+                    <input type="radio" id="option-job-type-3" name="job-type"> Freelance
+                </label></div>
+                <div class="col-md-12 mb-3 mb-md-0">
+                  <label for="option-job-type-4">
+                    <input type="radio" id="option-job-type-4" name="job-type"> Internship
+                  </label>
+                </div>
+                <div class="col-md-12 mb-3 mb-md-0">
+                  <label for="option-job-type-4">
+                    <input type="radio" id="option-job-type-4" name="job-type"> Termporary
+                  </label>
+                </div>
+
+              </div>
+
+              <div class="row form-group mb-4">
+                <div class="col-md-12"><h3>Location</h3></div>
+                <div class="col-md-12 mb-3 mb-md-0">
+                  <input type="text" class="form-control" placeholder="New York City">
+                </div>
+              </div>
+
+              <div class="row form-group">
+                <div class="col-md-12"><h3>Job Description</h3></div>
+                <div class="col-md-12 mb-3 mb-md-0">
+                  <textarea name="" class="form-control" id="" cols="30" rows="5"></textarea>
+                </div>
+              </div>
+
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <input type="submit" value="Post a Job" class="btn btn-primary  py-2 px-5">
+                </div>
+              </div>
+
+  
+            </form>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="p-4 mb-3 bg-white">
+              <h3 class="h5 text-black mb-3">Contact Info</h3>
+              <p class="mb-0 font-weight-bold">Address</p>
+              <p class="mb-4">203 Fake St. Mountain View, San Francisco, California, USA</p>
+
+              <p class="mb-0 font-weight-bold">Phone</p>
+              <p class="mb-4"><a href="#">+1 232 3235 324</a></p>
+
+              <p class="mb-0 font-weight-bold">Email Address</p>
+              <p class="mb-0"><a href="#">youremail@domain.com</a></p>
+
+            </div>
+            
+            <div class="p-4 mb-3 bg-white">
+              <h3 class="h5 text-black mb-3">More Info</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ad iure porro mollitia architecto hic consequuntur. Distinctio nisi perferendis dolore, ipsa consectetur</p>
+              <p><a href="#" class="btn btn-primary  py-2 px-4">Learn More</a></p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
- 
-  </div>
-</form>
 
-</div>
 {{jobForm.value | json}}
 {{jobModel | json}}
 

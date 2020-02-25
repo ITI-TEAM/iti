@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { JOBService } from 'src/app/services/job.service';
 import { StudentServiseService } from 'src/app/services/student/student-servise.service';
-
+declare var $: any;
 
 @Component({
   selector: 'app-list-jobs',
@@ -19,6 +19,7 @@ export class ListJobsComponent implements OnInit {
 
 
   ngOnInit() {
+    
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.studentID = params.get('ID');
 
@@ -43,6 +44,9 @@ export class ListJobsComponent implements OnInit {
 
       }
     );
+
+     //jquery
+    
     
 
   }
