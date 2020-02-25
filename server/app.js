@@ -2,8 +2,16 @@ const express=require('express');
 const app= express();
 const mongoose=require('mongoose');
 const bodyParser=require('body-parser');
+const http = require('http');
+const socketIO = require('socket.io');
 
 
+//models
+const User = require('./models/user');
+const allJob=require('./models/allJob');
+const AppliedStudent=require('./models/appliedstudent');
+const Sprofile = require('./models/sprofile');
+const Cprofile = require('./models/cprofile');
 
 
 //MIDELWARES FOR ROUTES
@@ -64,6 +72,35 @@ app.use((error,req,res,next)=>{
 });
 
 
-app.listen(3000,()=>{
-    console.log("SERVER RUN ON PORT : 3000");
+
+const port = process.env.PORT || 3000;
+const server = http.createServer(app);
+const io = socketIO(server);
+
+
+io.on('connection', (socket) => {
+    console.log('new connection made');
+
+
+    /*    User.find({},(err,data)=>{
+            if(!err)
+            {
+                io.emit("allUsers",data);
+            }
+            else{
+                console.log(error);
+                
+            }
+    
+        });*/
+    
+
+  });
+
+
+
+
+
+server.listen(3000, () => {
+    console.log(`SERVR RUN ON PORT : 3000`);
 });

@@ -80,7 +80,7 @@ router.get("/:userID",(req,res,next)=>{
             });
 });
 
-router.post('/edit/:userID',function(req,res,next){
+router.post('/edit/:userID',upload.single('image'),function(req,res,next){
     var item={
         name:req.body.name,
         telephonenumber:req.body.telephonenumber,
@@ -90,7 +90,9 @@ router.post('/edit/:userID',function(req,res,next){
         address:req.body.address,
         datecreated:req.body.datecreated,
         field:req.body.field,
-        description:req.body.description
+        description:req.body.description,
+        image : req.file.path
+
     }
     Cprofile.findOneAndUpdate({ID:req.params.userID}, {$set:item}, {new: true})
     .then(data=>{

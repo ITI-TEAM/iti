@@ -9,11 +9,9 @@ export class Company {
         public field: String,
         public description: String,
         public datecreated: string,
-
-        
-    ) {
-        
-        
+        public image:String
+ 
+    ) { 
      }
 }
 

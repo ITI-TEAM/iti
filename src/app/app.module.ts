@@ -28,7 +28,6 @@ import { HomeCompanyComponent } from './components/home-page-company/home-compan
 import { JObDetailsComponent } from './components/job-details/job-details.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PostJobComponent } from './components/postjob/post-job/post-job.component';
- import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SliderComponent } from './components/slider/slider.component';
 import { AddEventComponent } from './components/add-event/add-event.component';
 import { CompanyProfileComponent } from './components/company-profile/company-profile/company-profile.component';
@@ -39,7 +38,7 @@ import { StudentServiseService } from './services/student/student-servise.servic
 import {NgxPaginationModule} from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { UserServService } from './services/User/user-serv.service';
-
+import { SockectIoService } from './services/socket .io/sockect-io.service';
 
 @NgModule({
   declarations: [
@@ -94,11 +93,11 @@ import { UserServService } from './services/User/user-serv.service';
   providers: [
     AuthenticationGuardService,
     LoginService,
-    BrowserAnimationsModule,
     CompanyService,
     JOBService,
     StudentServiseService,
-    UserServService
+    UserServService,
+    SockectIoService
   ],
   bootstrap: [AppComponent]
 })
