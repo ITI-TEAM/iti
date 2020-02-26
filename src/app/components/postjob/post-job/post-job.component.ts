@@ -3,6 +3,7 @@ import { Job } from '../../Classes/job';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { JOBService } from 'src/app/services/job.service';
 import { error } from 'util';
+import { SockectIoService } from 'src/app/services/socket .io/sockect-io.service';
 
 @Component({
   selector: 'app-post-job',
@@ -11,24 +12,31 @@ import { error } from 'util';
 })
 export class PostJobComponent implements OnInit {
 
-  constructor(private router:Router ,private route:ActivatedRoute,private jobServ:JOBService) { }
-    jobModel=new Job("","","","","","","","");
+  constructor(private router:Router ,private route:ActivatedRoute,private jobServ:JOBService,private socketServ:SockectIoService) { }
+    jobModel=new Job("socket","socket","socket","socket","socket","socket","socket","socket");
     public ID;
   ngOnInit() {
     this.route.paramMap.subscribe((params:ParamMap)=>{
       this.ID=params.get('ID');
     }); 
+
+
+    this.socketServ.getPosts().subscribe(
+      data=>{
+        console.log(data);
+        
+      },
+      error=>{
+        console.log(error);
+        
+      }
+    );
+  }
+  postJob(){
+     
+    this.socketServ.newPost("post8");
+   
   }
 
-  postJob(){
-    this.jobServ.createPost(this.ID,this.jobModel).subscribe(
-      result=>{
-        alert("Job Posted")
-        this.router.navigate(['/home-company',this.ID]);
-        },
-      error=>{
-        console.log(error)
-      }
-      )
-  }
+
 }

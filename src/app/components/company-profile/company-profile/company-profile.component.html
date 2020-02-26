@@ -1,192 +1,142 @@
 <app-navbar-company></app-navbar-company>
-
-
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
 <div class="profile-page">
-    
     <div class="page-header header-filter" data-parallax="true" style="background-image:url('http://wallpapere.org/wp-content/uploads/2012/02/black-and-white-city-night.png');"></div>
     <div class="main main-raised">
 		<div class="profile-content">
-            <div class="container">
-                <div class="row">
-                   
-                   <div class="col-md-4 ml-auto mr-auto">
-                    <div class="profile">
-                         <div class="avatar">
-                             <img src="../../../../assets/images/ITI.png" alt="Circle Image" class="img-raised rounded-circle img-fluid">
-                         </div>
-                         <div class="name">
-                         <h3 class="title">{{company.name}}</h3>
-                         <h6>{{company.careerobjective}}</h6>
-                            
-                         </div>
-                     </div>
-                   </div>
-                   
-                </div>
-                <div class="description text-center">
-                <p>{{company.content}}</p>
-                </div>
-                <!-- ml-auto mr-auto -->
-                <div class="container">
+            <div class="container emp-profile">
+                <form method="post">
                     <div class="row">
-                        <div class="col-md-6">
-                            <div class="profile-tabs">
-                              <section style="  font-style: italic;">
-                                <div style="font-size: x-large; margin-top: 15px;">
-                                    <i class="fas fa-address-card"> Contact Info </i>
-                                                                 
-                                </div>
-                                
-                                    <div style=" margin-top: 15px;">
-                                        <h5>Email :
-                                          <span style=" margin-top: 20px; border-radius: 5px;  padding: 5px;">
-                                          {{company.email}}
-                                        </span>
-                                        </h5>
-                                    </div>
-                                    <!-- <br> -->
-                                    <div style=" margin-top: 15px;">
-                                        <h5>Telephone Number :</h5>
-                                        <span style=" margin-top: -200px;  border-radius: 5px; padding: 5px;">
-                                            {{company.telephonenumber}}
-
-                                        </span>
-                                    </div>
-                                    <div style=" margin-top: 15px;">
-                                        <h5>addrees :</h5>
-                                        <span style=" margin-top: -200px;  border-radius: 5px; padding: 5px;">
-                                       {{company.address}}
-                                        </span>
-                                    </div>
-                                    
-                                
-                            </section>
-                            <hr class="featurette-divider">
-                            <!-- <section style="  font-style: italic;">
-                                <div style="font-size: x-large; margin-top: 15px;margin-bottom: 15px;">
-                                    <i class="fas fa-icons"> Skills </i>                            
-                                </div>
-                                <span style=" margin-top: 20px; border-radius: 5px; background-color: rgb(218, 198, 198); padding: 5px;">
-                                    ytfgb8jnbe 
-                                </span>
-                            </section>
-                            <hr class="featurette-divider">
-                            <section style="  font-style: italic;">
-                                <div style="font-size: x-large; margin-top: 15px;">
-                                    <i class="fab fa-readme"> Experience</i>
-                                                              
-                                </div>
-                                <ul style=" margin-top: 15px; list-style-type: none;">
-                                  <li> gbijklfhu</li>
-                                </ul>
-                            </section> -->
-                            <!-- <hr class="featurette-divider">
-                                <section style="  font-style: italic;">
-                                    <div style="font-size: x-large; margin-top: 15px;">
-                                        <i class="fas fa-award"> Certifications </i>
-                                                                 
-                                    </div>
-                                    <ul style=" margin-top: 15px; list-style-type: none">
-                                       <li>tygrujrij</li>
-                                    </ul>
-                                </section> -->
+                        <div class="col-md-4">
+                            <div class="profile-img">
+                                <img src="http://localhost:3000//" alt=""/>
                             </div>
-                            <br>
-                      
                         </div>
                         <div class="col-md-6">
-                            <div class="profile-tabs">
-                                <!-- <section style="  font-style: italic;">
-                                    <div style="font-size: x-large; margin-top: 15px;">
-                                        <i class="fas fa-graduation-cap"> Education </i>
-                                                              
-                                    </div>
-                                    <div style=" margin-top: 15px;">
-                                       <h5>University :</h5>
-                                       <span style=" margin-top: -200px;  border-radius: 5px; background-color:lightgray; padding: 5px;">
-                                        fffffffffffff
-                                      </span>
-                                    </div>
-                                    <div style=" margin-top: 7px;">
-                                        <h5>Faculty :</h5>
-                                        <span style=" margin-top: -200px;  border-radius: 5px; background-color:lightgray; padding: 5px;">
-                                          1111111
-                                        </span>
-                                     </div>
-                                     <div style=" margin-top: 7px;">
-                                        <h5>Grade :</h5>
-                                        <span style=" margin-top: -200px;  border-radius: 5px; background-color:lightgray; padding: 5px;">
-                                          1111
-                                        </span>
-                                     </div>
-                                     <div style=" margin-top: 7px;">
-                                        <h5> 
-                                            Graduation Year:</h5>
-                                            <span style=" margin-top: -200px;  border-radius: 5px; background-color:lightgray; padding: 5px;">
-                                              1111111
-                                            </span>
-                                     </div>
-                                </section> -->
-                                
-                                
-                                <section style="  font-style: italic;" >
-                                    <div style="font-size: x-large; margin-top: 15px;">
-                                        <i class="far fa-calendar-alt"> <b>Date created:</b>
-                                            
-                                        </i>
-                                        
-                                    </div>
-                                    <div style=" margin-top: 15px;">
-                                      <span style=" margin-top: 20px; border-radius: 5px; padding: 5px;">
-                                        {{company.datecreated}}
-
-                                      </span>
-                                       
-                                    </div>
-                                   </section>
-                                   <br>
-                                   <hr class="featurette-divider">
-                                   <section style="  font-style: italic;" >
-                                       <div style="font-size: x-large; margin-top: 15px;">
-                                        <i class="fas fa-search-dollar">field</i>
-                                        <span style=" margin-top: 20px; border-radius: 5px; padding: 5px;">
-                                         {{company.field}}
-                                        </span>
+                            <div class="profile-head">
+                                        <h5>
                                            
-                                       </div>
-                                       
-                                    </section>
+                                        </h5>
+                                        <h6>
+                                            
+                                        </h6>
+                                        <h6>
+                                          
+                                        </h6>
+                                        <p class="proile-rating">RANKINGS : <span>8/10</span></p>
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="profile-work">
+                                <p>WORK LINK</p>
+                                <a href=""  ></a><br/>
+                                <p>SKILLS</p>
+                                <a href=""></a><br/>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="tab-content profile-tab" id="myTabContent">
+                                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>cmpany Name</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>{{company.name}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>careerobjrctive</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>{{company.careerobjrctive}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>content</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>{{company.content}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>email</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>{{company.email}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>address</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>{{company.address}}</p>
+                                                </div>
+                                            </div>
+                                </div>
+                                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label>telephonenumbe</label>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p>{{company.telephonenumber}}</p>
+                                        </div>
+                                    </div>       
+                                    <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>field</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>{{company.field}}</p>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>datecreated</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>{{company.datecreated}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <label>description</label>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p>{{company.description}}</p>
+                                                </div>
+                                            </div>
+                                   
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <br>
-                    <br>
-                </div>
-                  <div class="container">
-                      <div class="row">
-                          <div class="col-12" >
-                              <h4 style="font-style: inherit; ">
-                                <i class="fas fa-file-medical"></i> 
-                                <b>Description</b>
-                              </h4>
-                              <hr class="featurette-divider">
-                              <p>
-                                {{company.description}}
-                            </p>
-                          </div>
-                      </div>
-                  </div>
-                  <br>
-                  <br>
-                  <br>
-                  <br>
-                </div>
-          
-        
+                </form>           
             </div>
-        <!-- </div> -->
+        </div>
     </div>
-         
-
+	
+    
 
 </div>
+<app-footer></app-footer>
