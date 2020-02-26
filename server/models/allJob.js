@@ -13,7 +13,8 @@ const allJobSchema = new mongoose.Schema({
     languages:{type:String},
     exper:{type:String},
     desc:{type:String},
-    qual:{type:String,}  
+    qual:{type:[]},
+    respons:{type:[]}  
 });
 
 const allJob = mongoose.model('allJob', allJobSchema);
