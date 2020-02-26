@@ -46,7 +46,7 @@ export class AddEventComponent implements OnInit {
           console.log(data);
           alert("Event Added")
           this.router.navigate(['/maneg-events']);
-         // window.location.reload();
+          window.location.reload();
         },
         error=>{
           this.test=false

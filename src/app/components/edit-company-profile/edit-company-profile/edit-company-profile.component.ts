@@ -50,7 +50,19 @@ export class EditCompanyProfileComponent implements OnInit {
     else{
       fd.append('image',this.selectedFile,this.selectedFile.name);
 
-  
+      fd.append('name',this.companyModel.name.toString());
+      fd.append('address',this.companyModel.address.toString());
+      fd.append('careerobjrctive',this.companyModel.careerobjrctive.toString());
+      fd.append('content',this.companyModel.content.toString());
+      fd.append('datecreated',this.companyModel.datecreated.toString());
+      fd.append('description',this.companyModel.description.toString());
+      fd.append('email',this.companyModel.email.toString());
+      fd.append('field',this.companyModel.field.toString());
+      fd.append('telephonenumber',this.companyModel.telephonenumber.toString());
+
+
+
+
      this.CompanyServise.updateCompany(this.company_ID,fd).subscribe(
       result=>{
         alert("changes saved")

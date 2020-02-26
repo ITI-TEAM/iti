@@ -45,7 +45,34 @@ export class SockectIoService {
 // get all student user
 
   
+// get all student 
 
-  
+getStudent(){
+  let studetns=new Observable(observer=>{
+    this.socket.on('getStudent',data=>{
+      observer.next(data);
+    })
+  })
+  return studetns;
+}
+
+
+// deleteStudent
+deleteStudent(userID){
+  this.socket.emit('deleteStudent',userID);
+}  
+
+
+// getCompnay
+getCompnay(){
+
+  let companys=new Observable(observer=>{
+    this.socket.on('getCompnay',data=>{
+      observer.next(data);
+    })
+  })
+  return companys;
+
+}
 
 }

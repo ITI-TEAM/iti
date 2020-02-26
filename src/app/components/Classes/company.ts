@@ -8,7 +8,7 @@ export class Company {
         public telephonenumber: string,
         public field: String,
         public description: String,
-        public datecreated: string,
+        public datecreated: String,
         public image:String
  
     ) { 

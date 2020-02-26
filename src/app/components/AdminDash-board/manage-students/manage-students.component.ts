@@ -14,18 +14,43 @@ export class ManageStudentsComponent implements OnInit {
   constructor(private studeServise: StudentServiseService,private socketServ:SockectIoService) { }
 
   ngOnInit() {
+
     this.studeServise.getAll().subscribe(data => {
       this.studentsModel = data;
       console.log(this.studentsModel)
     }
     )
+
+    this.socketServ.getStudent().subscribe(
+      data=>{
+        this.studentsModel=data;
+        console.log(data);
+        
+      },
+      error=>{
+        console.log(error);
+        
+      }
+    );
   }
 
 
   DeleteUser(student){
-   
+    console.log(student.ID);
+    this.socketServ.deleteStudent(student.ID);
+    this.socketServ.getStudent().subscribe(
+      data=>{
+        console.log(data);
+        
+      },
+      error=>{
+        console.log(error);
+        
+      }
+    );
     
   }
+
 
 }
 
