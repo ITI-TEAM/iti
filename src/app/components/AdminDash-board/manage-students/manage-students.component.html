@@ -12,10 +12,10 @@
                             <div class="single_jobs white-bg d-flex justify-content-between">
                                 <div class="jobs_left d-flex align-items-center">
                                     <div class="thumb">
-                                        <img src="img/svg_icon/1.svg" alt="">
+                                        <img src="{{student.image}}" alt="">
                                     </div>
                                     <div class="jobs_conetent">
-                                        <a href="job_details.html"><h4>{{student.name}}</h4></a>
+                                        <h4>{{student.name}}</h4>
                                         <div class="links_locat d-flex align-items-center">
                                             <div class="location">
                                                 <p> <i class="fa fa-envelope"></i><a>{{student.email}}</a> </p>
@@ -26,8 +26,8 @@
                                 <div class="jobs_right">
                                     <div class="apply_now">
                                         <div class="apply_now">
-                                            <a href="job_details.html" class="boxed-btn3" style="margin-right: 26px;">More Details</a>
-                                            <a class="heart_mark" (click)="DeleteUser(student)"> <i class="fa fa-trash"></i> </a>
+                                            <a  class="boxed-btn3" style="margin-right: 26px;">More Details</a>
+                                            <a class="heart_mark" (click)="deleteStudent(student)"> <i class="fa fa-trash"></i> </a>
                                         </div>
                                     </div>
                                     
