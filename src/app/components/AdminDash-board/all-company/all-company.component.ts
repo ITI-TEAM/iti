@@ -31,8 +31,8 @@ p: number = 1;
   }
    
   
-    deleteUser(_id){
-      this.userServise.deletUser(this.User_ID).subscribe(data=>
+    deleteUser(company){
+      this.userServise.deletUser(company.ID).subscribe(data=>
         {
           alert(" user deleted")
         }
