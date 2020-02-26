@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentServiseService } from 'src/app/services/student/student-servise.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { UserServService } from 'src/app/services/User/user-serv.service';
 import { SockectIoService } from 'src/app/services/socket .io/sockect-io.service';
 
 
@@ -12,7 +13,7 @@ import { SockectIoService } from 'src/app/services/socket .io/sockect-io.service
 export class AllCompanyComponent implements OnInit {
 public companyModel=[]
 p: number = 1;
-  constructor(private studeServise:StudentServiseService,private route:ActivatedRoute) { }
+  constructor(private userServise:UserServService,private studeServise:StudentServiseService, private route:ActivatedRoute) { }
   public User_ID;
   ngOnInit() {
     this.studeServise.getAllCompany().subscribe(data=>
@@ -29,15 +30,14 @@ p: number = 1;
 
   }
    
-    
-
-    // deleteUser(_id){
-    //   this.studeServise.deleteCompany(this.User_ID).subscribe(data=>
-    //     {
-    //       alert(" user deleted")
-    //     }
-    //     )
-    //  }
+  
+    deleteUser(_id){
+      this.userServise.deletUser(this.User_ID).subscribe(data=>
+        {
+          alert(" user deleted")
+        }
+        )
+     }
    
 
 }
