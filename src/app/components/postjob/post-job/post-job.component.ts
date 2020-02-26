@@ -12,14 +12,14 @@ import { error } from 'util';
 export class PostJobComponent implements OnInit {
 
   constructor(private router:Router ,private route:ActivatedRoute,private jobServ:JOBService) { }
-    jobModel=new Job("","","","",[],"","","",[]);
+    public jobModel=new Job("","","","",[],"","","",[],"");
     public ID;
   ngOnInit() {
     this.route.paramMap.subscribe((params:ParamMap)=>{
       this.ID=params.get('ID');
     }); 
   }
-
+//post job
   postJob(){
     this.jobServ.createPost(this.ID,this.jobModel).subscribe(
       result=>{
