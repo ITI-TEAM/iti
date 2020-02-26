@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { JOBService } from 'src/app/services/job.service';
+import { SockectIoService } from 'src/app/services/socket .io/sockect-io.service';
 
 @Component({
   selector: 'app-home',
@@ -20,7 +21,7 @@ export class HomeComponent implements OnInit {
       {titel:'eeeeeeeeee',obj:'yyyyyyy'},{titel:'eeeeeeeeee',obj:'yyyyyyy'}
     ]
   
-  constructor(private router : Router,private jobServ:JOBService,private route:ActivatedRoute) { }
+  constructor(private router : Router,private jobServ:JOBService,private route:ActivatedRoute,private socketServ:SockectIoService) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe((params:ParamMap)=>{

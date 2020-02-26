@@ -21,9 +21,20 @@ export class PostJobComponent implements OnInit {
     }); 
 
 
+    this.socketServ.getPosts().subscribe(
+      data=>{
+        console.log(data);
+        
+      },
+      error=>{
+        console.log(error);
+        
+      }
+    );
   }
   postJob(){
-   console.log("CLICK ON");
+     
+    this.socketServ.newPost("post8");
    
   }
 

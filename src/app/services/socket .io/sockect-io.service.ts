@@ -12,17 +12,40 @@ export class SockectIoService {
   constructor() {
     this.socket = io('http://localhost:3000');
   }
-  /*
-  allUsers() {
-    let users=new Observable(observer=>{
-      this.socket.on('allUsers',data=>{
+ 
+   getPosts(){
+    let posts=new Observable(observer=>{
+      this.socket.on('getPosts',data=>{
         observer.next(data);
       })
     })
-    return users;
+    return posts;
    }
-*/
-   
 
+   newPost(data){
+     this.socket.emit('newPost',data)
+   }
+
+   // get all event
+   getEvents(){
+    let events=new Observable(observer=>{
+      this.socket.on('getEvents',data=>{
+        observer.next(data);
+      })
+    })
+    return events;
+   }
+
+   //delete event
+
+   deleteEvent(data){
+    this.socket.emit('deleteEvent',data);
+   }
+
+// get all student user
+
+  
+
+  
 
 }
