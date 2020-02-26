@@ -9,7 +9,7 @@ import { Student } from '../Classes/studentClass/student';
   styleUrls: ['./view-sprofile.component.css']
 })
 export class ViewSProfileComponent implements OnInit {
-  public student = new Student("","","","","","","",[],"","",[],[],[],"","","","");
+  public student=new Student("test","test","rest","test","test","test","",[],"","",[],[],[],"","","","")
   public student_id;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
   constructor(private studeServise:StudentServiseService,private route:ActivatedRoute) { }
 
@@ -17,13 +17,13 @@ export class ViewSProfileComponent implements OnInit {
     this.route.paramMap.subscribe((params:ParamMap)=>{
       this.student_id = params.get("ID")
       })
-      this.studeServise.getStudent(this.student_id).subscribe(data=>
+      /*this.studeServise.getStudent(this.student_id).subscribe(data=>
         {
           this.student=data[0];
           console.log( this.student)
         }
-        )
-      
+        )*/
+        
   }
 
 

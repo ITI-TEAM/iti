@@ -9,7 +9,7 @@ import { Company } from '../../Classes/company';
   styleUrls: ['./company-profile.component.css']
 })
 export class CompanyProfileComponent implements OnInit {
- public company= new Company("","","","","","","","","")
+ public company= new Company("","","","","","","","","",'')
   public company_id;
   constructor(private CompanyService:CompanyService, private route:ActivatedRoute ) { }
 

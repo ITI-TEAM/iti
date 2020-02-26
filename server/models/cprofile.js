@@ -6,6 +6,10 @@ const cprofileSchema = new mongoose.Schema({
     type:String,
     default:""
   },
+  image:{
+    type:String,
+    default:" "
+  },
   careerobjrctive:{
     type:String,
     default:" "

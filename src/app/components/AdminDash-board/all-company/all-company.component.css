@@ -134,7 +134,7 @@ h3 {
 
 /* line 4, ../../Arafath/CL/December/235. Job board/HTML/scss/_job_list.scss */
 .job_listing_area.plus_padding {
-  padding-top: 100px;
+  padding-top: 28px;
 }
 
 @media (max-width: 767px) {

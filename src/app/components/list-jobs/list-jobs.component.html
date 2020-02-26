@@ -1,169 +1,109 @@
- <app-navbar></app-navbar>
+<app-navbar></app-navbar>
 
-<div class="job_listing_area plus_padding">
+<div class="hero-wrap hero-wrap-2" style="background-image: url(&quot;images/bg_1.jpg&quot;); background-position: 50% 0px;" data-stellar-background-ratio="0.5">
+  <div class="overlay"></div>
   <div class="container">
-    <div class="row">
-      <div class="col-lg-3">
-        <div class="job_filter white-bg">
-          <div class="form_inner white-bg">
-            <h3>Filter</h3>
-            <form action="#">
-              <div class="row">
-
-                <div class="col-lg-12">
-                  <div class="single_field">
-                    <input type="text" placeholder="Search keyword">
-                  </div>
-                </div>
-                <div class="col-lg-12">
-                  <div class="single_field">
-                    <div class="card">
-                      <h3 style="width: 80%;
-                                            margin: 0 auto;
-                                            font-size: 19px;
-                                            margin-bottom: 19px;
-                                            padding-top: 15px;
-                                            font-weight: 600;
-                                            color: #337ab7;"> Add a new image</h3>
-                      <div class="card" style="width: 76%;
-                                        margin: 0 auto;">
-                        <img class="card-img-top"
-                          src="data:image/png;base64,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"
-                          alt="Card image cap">
-
-                      </div>
-                      <p style="color: #47637b;
-                                          margin: 0 auto;
-                                          width: 77%;
-                                          font-family: cursive;
-                                          font-size: initial;
-                                          padding-top: 8px;padding-bottom: 8px;">Adding photo increases your acceptance
-                        of jobs</p>
-                    </div>
-
-                  </div>
-                </div>
-                <div class="col-lg-12">
-                  <div class="single_field">
-
-                  </div>
-                </div>
-                <div class="col-lg-12">
-                  <div class="single_field">
-
-                  </div>
-                </div>
-
-
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-9">
-        <div class="recent_joblist_wrap">
-          <div class="recent_joblist white-bg ">
-            <div class="row align-items-center">
-              <div class="col-md-6">
-                <h4>Job Listing</h4>
-              </div>
-              <div class="col-md-6">
-                <div class="serch_cat d-flex justify-content-end">
-
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="job_lists m-0">
-            <div class="row">
-              <div class="col-lg-12 col-md-12" *ngFor="let job of jobs">
-                <div class="single_jobs white-bg d-flex justify-content-between">
-                  <div class="jobs_left d-flex align-items-center">
-                    <div class="thumb">
-                      <img src="img/svg_icon/1.svg" alt="">
-                    </div>
-                    <div class="jobs_conetent">
-                      <a href="job_details.html">
-                        <h4>{{job[0].title}}</h4>
-                      </a>
-                      <div class="links_locat d-flex align-items-center">
-                        <div class="location">
-                          <p> <i class="fa fa-map-marker"></i> {{job[0].location}}</p>
-                        </div>
-                        <div class="location">
-                          <p> <i class="fa fa-clock-o"></i>{{job[0].type}}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="jobs_right">
-                    <div class="apply_now">
-                      <a class="heart_mark" (click)="cancelJob(job)"> <i class="fa fa-trash"></i> </a>
-
-                    </div>
-                    <div class="date">
-                      <p>Date line: 31 Jan 2020</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
+    <div class="row no-gutters slider-text align-items-end justify-content-start">
+      <div class="col-md-12 ftco-animate text-center mb-5 fadeInUp ftco-animated">
+        <p class="breadcrumbs mb-0"><span class="mr-3"><a href="">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Student's jobs</span></p>
+        <h1 class="mb-3 bread">My JOB</h1>
       </div>
     </div>
-  </div> 
- 
   </div>
-
-  <!-- <div class="form-group">
-    <input type="text" class="form-control" placeholder="Search Here" [(ngModel)]="term">
 </div>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Address</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let item of filterData | filter:term">
-            <td>{{item.firstName}}</td>
-            <td>{{item.lastName}}</td>
-            <td>{{item.address}}</td>
-        </tr>
-    </tbody>
-</table> -->
 
-<!-- filterData = [
-    {
-      firstName: 'Celestine',
-      lastName: 'Schimmel',
-      address: '7687 Jadon Port'
-    },
-    {
-      firstName: 'Johan',
-      lastName: 'Ziemann PhD',
-      address: '156 Streich Ports'
-    },
-    {
-      firstName: 'Lizzie',
-      lastName: 'Schumm',
-      address: '5203 Jordon Center'
-    },
-    {
-      firstName: 'Gavin',
-      lastName: 'Leannon',
-      address: '91057 Davion Club'
-    },
-    {
-      firstName: 'Lucious',
-      lastName: 'Leuschke',
-      address: '16288 Reichel Harbor'
-    }
-  ] -->
+<div data-aos-easing="slide" data-aos-duration="800" data-aos-delay="0">
+    <section class="ftco-section bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 pr-lg-4">
+                  <div class="job_listing_area plus_padding">
+                          <div class="recent_joblist_wrap">
+                            <div class="job_lists m-0">
+                                  <div class="single_jobs white-bg d-flex justify-content-between" *ngFor="let job of jobs | filter:term | paginate: { itemsPerPage: 5, currentPage: p }">
+                                    <div class="jobs_left d-flex align-items-center">
+                                      <div class="thumb">
+                                        <img src="img/svg_icon/1.svg" alt="">
+                                      </div>
+                                      <div class="jobs_conetent">
+                                        <a href="job_details.html">
+                                          <h4>{{job[0].title}}</h4>
+                                        </a>
+                                        <div class="links_locat d-flex align-items-center">
+                                          <div class="location">
+                                            <p> <i class="fa fa-map-marker"></i> {{job[0].location}}</p>
+                                          </div>
+                                          <div class="location">
+                                            <p> <i class="fa fa-clock-o"></i>{{job[0].type}}</p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="jobs_right">
+                                      <div class="apply_now">
+                                        <a class="heart_mark" href="#"> <i class="fa fa-trash"></i> </a>
+                  
+                                      </div>
+                                      <div class="date">
+                                        <p>Date line: 31 Jan 2020</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                
+                  
+                              
+                            </div>
+                          </div>
+                       
+                     
+                    
+                  </div>
+          
+          </div>
+          <div class="col-lg-3 sidebar">
+            <div class="sidebar-box bg-white p-4 ftco-animate fadeInUp ftco-animated">
+                <h3 class="heading-sidebar">Browse Category</h3>
+                <form action="#" class="search-form mb-3">
+            <div class="form-group">
+              <span class="icon icon-search"></span>
+              <input type="text"type="text" class="form-control" placeholder="Search Here" [(ngModel)]="term">
+            </div>
+          </form>
+                <form action="#" class="browse-form">
+                          <label for="option-job-1"><input type="checkbox" id="option-job-1" name="vehicle" value="" checked=""> Website &amp; Software</label><br>
+                          <label for="option-job-2"><input type="checkbox" id="option-job-2" name="vehicle" value=""> Education &amp; Training</label><br>
+                          <label for="option-job-3"><input type="checkbox" id="option-job-3" name="vehicle" value=""> Graphics Design</label><br>
+                          <label for="option-job-4"><input type="checkbox" id="option-job-4" name="vehicle" value=""> Accounting &amp; Finance</label><br>
+                          <label for="option-job-5"><input type="checkbox" id="option-job-5" name="vehicle" value=""> Restaurant &amp; Food</label><br>
+                          <label for="option-job-6"><input type="checkbox" id="option-job-6" name="vehicle" value=""> Health &amp; Hospital</label><br>
+                        </form>
+            </div>
+
+            <div class="sidebar-box bg-white p-4 ftco-animate fadeInUp ftco-animated">
+                <h3 class="heading-sidebar">Select Location</h3>
+                <form action="#" class="search-form mb-3">
+            <div class="form-group">
+              <span class="icon icon-search"></span>
+              <input type="text" class="form-control" placeholder="Search Here" [(ngModel)]="term">
+            </div>
+          </form>
+                <form action="#" class="browse-form">
+                          <label for="option-location-1"><input type="checkbox" id="option-location-1" name="vehicle" value="" checked=""> Sydney, Australia</label><br>
+                          <label for="option-location-2"><input type="checkbox" id="option-location-2" name="vehicle" value=""> New York, United States</label><br>
+                          <label for="option-location-3"><input type="checkbox" id="option-location-3" name="vehicle" value=""> Tokyo, Japan</label><br>
+                          <label for="option-location-4"><input type="checkbox" id="option-location-4" name="vehicle" value=""> Manila, Philippines</label><br>
+                          <label for="option-location-5"><input type="checkbox" id="option-location-5" name="vehicle" value=""> Seoul, South Korea</label><br>
+                          <label for="option-location-6"><input type="checkbox" id="option-location-6" name="vehicle" value=""> Western City, UK</label><br>
+                        </form>
+            </div>
+          </div>
+            </div>
+        </div>
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </section>
+    
+<app-footer></app-footer>
+
+</div>
 

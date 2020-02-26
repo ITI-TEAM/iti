@@ -2,7 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { JOBService } from 'src/app/services/job.service';
 import { error } from 'protractor';
+// import { CompanySERvService } from 'src/app/services/company-serv.service';
+import { EventService } from 'src/app/services/Events/event.service';
 import { CompanySERvService } from 'src/app/services/company-serv.service';
+import { CompanyService } from 'src/app/services/Company/company.service';
+
 
 @Component({
   selector: 'app-home-company',
@@ -11,13 +15,13 @@ import { CompanySERvService } from 'src/app/services/company-serv.service';
 })
 export class HomeCompanyComponent implements OnInit {
   enventstocomany = [
-    { titel: 'EVENT', obj: 'ssssss' },
-    { titel: 'eeeeeeeeee', obj: 'yyyyyyy' },
-    { titel: 'eeeeeeeeee', obj: 'yyyyyyy' }, { titel: 'eeeeeeeeee', obj: 'yyyyyyy' }
-  ]
-  constructor(private router: Router, private route: ActivatedRoute, private jobServ: JOBService, private compServ: CompanySERvService) { }
+]
+  constructor(private router: Router, private route: ActivatedRoute, private jobServ: JOBService, private compServ: CompanySERvService ,private eventss:EventService ,private comp:CompanyService ) { }
   public companyID;
   public jobs = [];
+  envents=[]
+  pro=[]
+  p: number = 1;
   ngOnInit() {
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.companyID = params.get('ID');
@@ -30,6 +34,24 @@ export class HomeCompanyComponent implements OnInit {
         console.log(error);
       }
     );
+    this.eventss. listEvent().subscribe(
+      data=>{
+        console.log(data)
+      this.envents=data;        
+      },
+    error=>{
+    console.log(error);
+    
+    })
+    this.comp. getCompany(this.companyID).subscribe(
+      data=>{
+        console.log(data)
+      this.pro=data;        
+      },
+    error=>{
+    console.log(error);
+    
+    })
   }
   onSelect(job) {
     this.router.navigate(['/submited-profiles', job._id]);

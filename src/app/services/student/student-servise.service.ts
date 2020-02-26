@@ -12,14 +12,20 @@ export class StudentServiseService {
   constructor(private http:HttpClient) { }
 
 
-//  GEI ALL USER TYPE STUDENT 
+//  GEI ALL STUDENT 
   getAll():Observable<any>{
     return this.http.get<any>("http://localhost:3000/sprofile/list")
   }
 
-  //  GEI ALL USER TYPE STUDENT 
+  //  GEI ALL COMPANY
   getAllCompany():Observable<any>{
     return this.http.get<any>("http://localhost:3000/cprofile/list")
+  }
+
+
+  //  DELETE  COMPANY / STUDENT
+  deleteCompany(_id):Observable<any>{
+    return this.http.get<any>("http://localhost:3000/users/delete"+_id)
   }
 
 

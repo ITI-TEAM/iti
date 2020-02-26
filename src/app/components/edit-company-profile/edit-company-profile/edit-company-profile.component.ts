@@ -10,9 +10,9 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 })
 export class EditCompanyProfileComponent implements OnInit {
 
-  public companyModel= new Company("company name ?","career objective","contetnt ?","email ?","address ?","phone ?","field ?","decreption ?","date created ?");
+  public companyModel= new Company("company name ?","career objective","contetnt ?","email ?","address ?","phone ?","field ?","decreption ?","date created ?",'');
   public company_ID;
-  public company= new Company("","","","","","","","","");
+  public company= new Company("","","","","","","","","",'');
 
   constructor(private CompanyServise:CompanyService ,private route:ActivatedRoute, private router:Router ) {}
 
@@ -29,7 +29,7 @@ export class EditCompanyProfileComponent implements OnInit {
     })
    
   }
-  edit(){
+  onSubmit(){
     this.CompanyServise.updateCompany(this.company_ID ,this.companyModel).subscribe(
       result=>{
         alert("changes saned")
@@ -41,5 +41,7 @@ export class EditCompanyProfileComponent implements OnInit {
       
     )
   }
+
+  
 }
 
