@@ -11,6 +11,7 @@ import { CompanySERvService } from 'src/app/services/company-serv.service';
 })
 export class AllJobsComponent implements OnInit {
 public jobs=[];
+p: number = 1;
 constructor(private router: Router, private route: ActivatedRoute, private jobServ: JOBService, private studetentServ:StudentServiseService,private compServ: CompanySERvService) { }
 
   ngOnInit() {

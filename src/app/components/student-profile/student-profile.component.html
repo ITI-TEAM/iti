@@ -1,7 +1,5 @@
 <app-navbar></app-navbar>
 <div class="profile-page">
-
-
   <div class="page-header header-filter" data-parallax="true"
     style="background-image:url('http://wallpapere.org/wp-content/uploads/2012/02/black-and-white-city-night.png');">
   </div>
@@ -13,19 +11,18 @@
             <div class="profile">
               <div class="avatar">
                 <img
-                  src="https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTU0NjQzOTk4OTQ4OTkyMzQy/ansel-elgort-poses-for-a-portrait-during-the-baby-driver-premiere-2017-sxsw-conference-and-festivals-on-march-11-2017-in-austin-texas-photo-by-matt-winkelmeyer_getty-imagesfor-sxsw-square.jpg"
+                src="http://localhost:3000//{{studentModel.image}}" 
+
                   alt="Circle Image" class="rounded-circle img-raised">
               </div>
 
               <div class="name">
-                <h3 class="title">{{studentForm.name}}</h3>
-                <h6>{{studentForm.title}}</h6>
+                
               </div>
             </div>
           </div>
           <div class="col-md-8 " style="margin: 50px;">
-            <p>{{studentForm.about}}
-            </p>
+          
           </div>
         </div>
         <div class="row">
@@ -65,13 +62,6 @@
                   <div class="form-group">
                     <input type="text" class="form-control" id="title" name="title" [(ngModel)]="studentModel.title"
                       #title="ngModel">
-                  </div>
-                </div>
-                <div class="col-md-4">
-                  <h5 class="modal-title">Hourly Rate</h5>
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Enter Your Rate" id="text" name="hourRate"
-                      [(ngModel)]="studentModel.hourRate" #hourRate="ngModel">
                   </div>
                 </div>
                 <div class="col-md-4">
@@ -138,9 +128,6 @@
                       #faculty="ngModel">
                     <br>
 
-                    <input type="text" class="form-control" id="text" name="grade" [(ngModel)]="studentModel.grade"
-                      #grade="ngModel">
-                    <br>
                     <input type="text" class="form-control" id="text" name="graduationYear"
                       [(ngModel)]="studentModel.graduationYear" #graduationYear="ngModel">
                   </div>
@@ -154,8 +141,18 @@
                   </div>
                 </div>
               </div>
+
+              <div>
+                <label for="exampleFormControlInput1">Profile Image</label>
+                <input class="form-control" type="file" name="image" required
+                
+                 (change)="onfileSelected($event)" >
+                 
+              </div>
+              <strong class="text-danger" [class.d-none]="test">Please Select Image </strong>
+
               <div class="row" style="margin: 50px;">
-                <button type="submit" class="btn btn-danger" style="margin: auto;">Save</button>
+                <button type="submit"  class="btn btn-danger" style="margin: auto;">Save</button>
               </div>
             </form>
           </div>
@@ -163,12 +160,8 @@
       </div>
     </div>
   </div>
-
-
-
-
-
-
 </div>
 <br><br>
+
+{{studentModel | json}}
 <app-footer></app-footer>

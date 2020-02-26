@@ -4,23 +4,23 @@ const cprofileSchema = new mongoose.Schema({
   ID: String,
   name:{
     type:String,
-    default:""
+    default:"Your Name"
   },
   careerobjrctive:{
     type:String,
-    default:" "
+    default:"careero bjrctive ?"
   },
   content:{
     type:String,
-    default:" "
+    default:"content ? "
   },
  email:{
     type:String,
-    default:""
+    default:"content ?"
   },
   address:{
     type:String,
-    default:" "
+    default:"address ?"
   },
   telephonenumber:{
     type:Number,
@@ -32,12 +32,16 @@ const cprofileSchema = new mongoose.Schema({
   },
   field:{
     type:String,
-    default:""
+    default:"field ?"
   },
   description:{
     type:String,
-    default:""
+    default:"description"
   },
+  image:{
+    type:String,
+    default:'uploads'+'//'+'default.jpg'
+  }
 });
 
 const cprofile = mongoose.model('cprofile', cprofileSchema);

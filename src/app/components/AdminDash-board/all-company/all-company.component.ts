@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentServiseService } from 'src/app/services/student/student-servise.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { SockectIoService } from 'src/app/services/socket .io/sockect-io.service';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class AllCompanyComponent implements OnInit {
 public companyModel=[]
-
+p: number = 1;
   constructor(private studeServise:StudentServiseService,private route:ActivatedRoute) { }
   public User_ID;
   ngOnInit() {

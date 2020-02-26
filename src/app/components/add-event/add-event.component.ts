@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AddEvent } from '../Classes/add-event';
 import { EventService } from 'src/app/services/Events/event.service';
 import { Router } from '@angular/router';
+import { SockectIoService } from 'src/app/services/socket .io/sockect-io.service';
 
 @Component({
   selector: 'app-add-event',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class AddEventComponent implements OnInit {
   public test:boolean=true;
-  constructor(private everntServ:EventService,private router : Router) { }
+  constructor(private everntServ:EventService,private router : Router,private socketServ:SockectIoService) { }
   public eventModel = new AddEvent('','','','','');
   ngOnInit() {
   }
@@ -45,7 +46,7 @@ export class AddEventComponent implements OnInit {
           console.log(data);
           alert("Event Added")
           this.router.navigate(['/maneg-events']);
-
+         // window.location.reload();
         },
         error=>{
           this.test=false
