@@ -23,6 +23,7 @@ export class ViewSProfileComponent implements OnInit {
           console.log( this.student)
         }
         )
+      
   }
 
 
