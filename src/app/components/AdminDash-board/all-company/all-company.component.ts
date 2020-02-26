@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentServiseService } from 'src/app/services/student/student-servise.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { UserServService } from 'src/app/services/User/user-serv.service';
 import { SockectIoService } from 'src/app/services/socket .io/sockect-io.service';
 
 
