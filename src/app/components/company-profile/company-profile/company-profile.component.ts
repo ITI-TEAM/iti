@@ -21,7 +21,9 @@ export class CompanyProfileComponent implements OnInit {
       {
        this.company=data;
       }
-      )
+      );
+
+      
   }
 
 

@@ -47,7 +47,7 @@
               <div class="form-group">
                 <input type="text" class="form-control" placeholder="Search Here" [(ngModel)]="term">
             </div>
-               <div class="card shadow" *ngFor="let job of jobs | filter:term | paginate: { itemsPerPage: 5, currentPage: p }" >
+               <div class="card shadow" *ngFor="let job of jobs?.slice()?.reverse() | filter:term | paginate: { itemsPerPage: 5, currentPage: p }" >
                   <img class="card-img-top imgcom" src="../../../../assets/images/ITI.png" alt="Card image" >
                   <div class="card-body">
                     <h4 class="card-title">{{job.title }}</h4>

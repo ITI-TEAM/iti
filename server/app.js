@@ -205,7 +205,7 @@ io.on('connection', (socket) => {
 
     // Delete company
 
-    socket.on('deleteStudent', (userID) => {
+    socket.on('deleteCompany', (userID) => {
         Cprofile.deleteOne({ ID: userID }, (err, data) => {
             if (!err) {
                 console.log("Compnay Delete");

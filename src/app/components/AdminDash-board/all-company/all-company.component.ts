@@ -11,7 +11,7 @@ import { SockectIoService } from 'src/app/services/socket .io/sockect-io.service
   styleUrls: ['./all-company.component.css']
 })
 export class AllCompanyComponent implements OnInit {
-public companyModel=[]
+public companyModel;
 p: number = 1;
   constructor(private studeServise:StudentServiseService,private route:ActivatedRoute,private socketServ:SockectIoService) { }
   public User_ID;
@@ -26,7 +26,7 @@ p: number = 1;
     this.socketServ.getCompnay().subscribe(
       data=>{
         console.log(data);
-        
+        this.companyModel=data;
       },
       error=>{
         console.log(error);
@@ -43,6 +43,7 @@ p: number = 1;
 
      deleteUser(company){
        console.log(company.ID);
+       this.socketServ.deleteCompany(company.ID);
        this.socketServ.getCompnay().subscribe(
         data=>{
           console.log(data);
@@ -54,6 +55,10 @@ p: number = 1;
         }
       );
        
+     }
+
+     goProfile(company){
+      window.open('/show-company/'+company.ID, "_blank");
      }
    
 

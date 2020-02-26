@@ -4,7 +4,7 @@ const sprofileSchema = new mongoose.Schema({
   ID: String,
   name:{
     type:String,
-    default:"Your Name ?"
+   
   }
   ,
   age:{

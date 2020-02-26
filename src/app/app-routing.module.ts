@@ -21,6 +21,8 @@ import { AddEventComponent } from './components/add-event/add-event.component';
 import { CompanyProfileComponent } from './components/company-profile/company-profile/company-profile.component';
 import { EditCompanyProfileComponent } from './components/edit-company-profile/edit-company-profile/edit-company-profile.component';
 import { AddUsersComponent } from './components/add-users/add-users.component';
+import { ViewSComponent } from './components/view-s/view-s.component';
+import { ViewCComponent } from './view-c/view-c.component';
 
 
 const routes: Routes = [
@@ -43,11 +45,16 @@ const routes: Routes = [
   
 
   {path:'admin/:ID',component:AllJobsComponent,canActivate:[AuthenticationGuardService]},
-  {path:'manage-students',component:ManageStudentsComponent,canActivate:[AuthenticationGuardService]},
-  {path:'manage-company',component:AllCompanyComponent,canActivate:[AuthenticationGuardService]},
-  {path:'maneg-events',component:AllEventComponent,canActivate:[AuthenticationGuardService]},
-  {path:'add-user',component:AddUsersComponent,canActivate:[AuthenticationGuardService]},
-  {path:'add-event',component:AddEventComponent,canActivate:[AuthenticationGuardService]}
+  {path:'manage-students/:ID',component:ManageStudentsComponent,canActivate:[AuthenticationGuardService]},
+  {path:'manage-company/:ID',component:AllCompanyComponent,canActivate:[AuthenticationGuardService]},
+  {path:'maneg-events/:ID',component:AllEventComponent,canActivate:[AuthenticationGuardService]},
+  {path:'add-user/:ID',component:AddUsersComponent,canActivate:[AuthenticationGuardService]},
+  {path:'add-event/:ID',component:AddEventComponent,canActivate:[AuthenticationGuardService]},
+
+  {path:'show-student/:ID',component:ViewSComponent,canActivate:[AuthenticationGuardService]},
+  {path:'show-company/:ID',component:ViewCComponent,canActivate:[AuthenticationGuardService]}
+
+
   
 ];
 

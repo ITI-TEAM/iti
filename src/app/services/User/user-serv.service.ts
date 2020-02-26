@@ -27,4 +27,11 @@ export class UserServService {
 
   return this.http.delete("http://localhost:3000/users/delete/"+ID);
 }
+
+// NEW USER
+signUp(user)
+{
+  return this.http.post('http://localhost:3000/users/signup',user);
+}
+
 }

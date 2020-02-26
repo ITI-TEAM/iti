@@ -17,18 +17,18 @@
         <div class="row">
        
           <div class="col-md-12 col-lg-8 mb-5">
-            <form #userForm="ngForm" method="POST" novalidate (ngSubmit)="onSubmit()" class="p-5 bg-white">
+            <form #userForm="ngForm" method="POST" novalidate class="p-5 bg-white">
               <div class="form-group">
                 <label for="uname">Username:</label>
                 <input id="User_name" type="text" class="form-control" [class.is-invalid]="Username.invalid && Username.touched" #Username="ngModel" required
-                [(ngModel)]="userModel.userName" name="userName">
+                [(ngModel)]="userModel.name" name="userName">
                 <div class="valid-feedback">Valid.</div>
                 <div class="invalid-feedback">Please fill out this field.</div>
               </div>
               <div class="form-group">
                 <label for="uname">Email:</label>
                 <input  id="email" type="email" class="form-control" [class.is-invalid]="email.invalid && email.touched" #email="ngModel"
-                required [(ngModel)]="userModel.mail" name="mail">
+                required [(ngModel)]="userModel.email" name="mail">
                 <div class="valid-feedback">Valid.</div>
                 <div class="invalid-feedback">Please fill out this field.</div>
               </div>
@@ -44,21 +44,23 @@
                 
                 <div style="display: flex;">
                   <div class="form-check">
-                    <input type="radio" value="Company" class="form-check-input" name="TtypeSelection"  ngForm required [(ngModel)]="userModel.typeSelection" #select="ngModel"/>
+                    <input type="radio" value="company" class="form-check-input" name="TtypeSelection"  ngForm required [(ngModel)]="userModel.type" #select="ngModel"/>
                     <label class="form-check-label">Company</label>
                    </div>
                    <div class="form-check">
-                    <input type="radio" value="Student" class="formcheck-input" name="TtypeSelection" ngForm required [(ngModel)]="userModel.TtypeSelection" #select="ngModel"/>
+                    <input type="radio" value="student" class="formcheck-input" name="TtypeSelection" ngForm required [(ngModel)]="userModel.type" #select="ngModel"/>
                     <label class="form-check-label">Student</label>
                    </div>
                 </div>
+                <strong class="text-danger" [class.d-none]="test">{{error}}</strong>
+
                </div>
-               
-              <button type="submit" name="action" [disabled]="userForm.form.invalid || topicHasErr" class="btn btn-success">Submit</button>
+
+              <button type="submit" name="action" [disabled]="userForm.form.invalid || topicHasErr" class="btn btn-success" (click)="adduser()">Submit</button>
             </form>            
           </div>
 
-         
+         {{userModel | json}}
         </div>
       </div>
     </div>

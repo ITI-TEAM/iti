@@ -1,7 +1,7 @@
 <nav class="navbar navbar-dark bg-dark navbar-expand-sm" style="border-radius: 0px">
-    <a class="navbar-brand" routerLink="/admin" style="padding: 0px 15px;">
-      <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/logo_white.png" width="30" height="30" alt="logo">
-      BootstrapBay
+    <a class="navbar-brand" routerLink="/admin/{{ID}}" style="padding: 0px 15px;">
+      <img src="../../../assets/ITIAN.jpg" width="70" height="70" alt="logo">
+      ITIIAN
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-4" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -12,8 +12,8 @@
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-right:33px;margin-top: 8px;"> User
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" routerLink="/manage-students">Student</a>
-                  <a id=name class="dropdown-item" routerLink="/manage-company">Company </a>
+                  <a class="dropdown-item" routerLink="/manage-students/{{ID}}">Student</a>
+                  <a id=name class="dropdown-item" routerLink="/manage-company/{{ID}}">Company </a>
                 </div>
               </li> 
            
@@ -21,12 +21,12 @@
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-right:33px;margin-top: 8px;"> Add
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" routerLink="/add-user">User</a>
-                  <a class="dropdown-item" routerLink="/add-event">Event</a>
+                  <a class="dropdown-item" routerLink="/add-user/{{ID}}">User</a>
+                  <a class="dropdown-item" routerLink="/add-event/{{ID}}">Event</a>
                 </div>
               </li> 
               <ul class="navbar-nav" style="float:left; margin-top: 7px;">
-                <li><a class="nav-link"  routerLink="/maneg-events"  style="margin-right: 26px;margin-top: 2px;"> Events</a></li>
+                <li><a class="nav-link"  routerLink="/maneg-events/{{ID}}"  style="margin-right: 26px;margin-top: 2px;"> Events</a></li>
                </ul>
            </ul>
          
@@ -38,7 +38,7 @@
             <a style="    margin-left: 8px;">Admin</a>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#" > <i class="fa fa-circle-logout"></i>Log Out</a>
+            <a class="dropdown-item" (click)="logOut()" > <i class="fa fa-circle-logout"></i>Log Out</a>
           </div>
         </li> 
          

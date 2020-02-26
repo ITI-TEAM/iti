@@ -72,7 +72,12 @@ getCompnay(){
     })
   })
   return companys;
+}
 
+//deleteCompany
+
+deleteCompany(userID){
+  this.socket.emit('deleteCompany',userID)
 }
 
 }
