@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { JOBService } from 'src/app/services/job.service';
 import { StudentServiseService } from 'src/app/services/student/student-servise.service';
+
 declare var $: any;
 
 @Component({
@@ -12,6 +13,7 @@ declare var $: any;
 export class ListJobsComponent implements OnInit {
 
   public jobs=[];
+  p: number = 1;
   public sectionsProfile = ["", ""]
   studentID: string;
 

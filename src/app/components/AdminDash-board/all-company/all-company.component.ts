@@ -10,7 +10,7 @@ import { ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class AllCompanyComponent implements OnInit {
 public companyModel=[]
-
+p: number = 1;
   constructor(private studeServise:StudentServiseService,private route:ActivatedRoute) { }
   public User_ID;
   ngOnInit() {

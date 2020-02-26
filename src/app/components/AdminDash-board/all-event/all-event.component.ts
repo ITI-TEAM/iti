@@ -9,6 +9,7 @@ import { error } from 'protractor';
 })
 export class AllEventComponent implements OnInit {
   public events:[];
+  p: number = 1;
   constructor(private eventser:EventService) { }
 
   ngOnInit() {

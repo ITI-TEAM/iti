@@ -4,6 +4,7 @@ import { JOBService } from 'src/app/services/job.service';
 import { error } from 'protractor';
 import { CompanySERvService } from 'src/app/services/company-serv.service';
 
+
 @Component({
   selector: 'app-home-company',
   templateUrl: './home-company.component.html',
@@ -18,6 +19,7 @@ export class HomeCompanyComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute, private jobServ: JOBService, private compServ: CompanySERvService) { }
   public companyID;
   public jobs = [];
+  p: number = 1;
   ngOnInit() {
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.companyID = params.get('ID');

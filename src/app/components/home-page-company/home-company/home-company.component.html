@@ -46,7 +46,7 @@
       <div class="form-group">
         <input type="text" class="form-control" placeholder="Search Here" [(ngModel)]="term">
     </div>
-      <div class="card shadow" *ngFor="let job of jobs | filter:term">
+      <div class="card shadow" *ngFor="let job of jobs | filter:term | paginate: { itemsPerPage: 5, currentPage: p }">
         <div class="card-body">
           <h4 class="card-title">{{job. title}}</h4>
           <p class="card-text">{{job.desc}} </p>
@@ -71,5 +71,6 @@
     </div>
 
   </div>
-
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
   <app-footer></app-footer>

@@ -10,7 +10,7 @@ import { JOBService } from 'src/app/services/job.service';
 export class HomeComponent implements OnInit {
  
     jobs=[];
-
+    p: number = 1;
       studentID;
       ID=this.studentID;
       jobID;

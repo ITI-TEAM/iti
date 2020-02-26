@@ -7,7 +7,8 @@ import { StudentServiseService } from 'src/app/services/student/student-servise.
   styleUrls: ['./manage-students.component.css']
 })
 export class ManageStudentsComponent implements OnInit {
-public  studentsModel=[]
+public  studentsModel=[];
+p: number = 1;
 
 constructor(private studeServise:StudentServiseService) { }
 
