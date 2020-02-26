@@ -11,7 +11,7 @@ import { SockectIoService } from 'src/app/services/socket .io/sockect-io.service
 })
 export class AllCompanyComponent implements OnInit {
 public companyModel=[]
-
+p: number = 1;
   constructor(private studeServise:StudentServiseService,private route:ActivatedRoute) { }
   public User_ID;
   ngOnInit() {

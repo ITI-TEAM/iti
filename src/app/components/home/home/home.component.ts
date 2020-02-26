@@ -11,7 +11,7 @@ import { SockectIoService } from 'src/app/services/socket .io/sockect-io.service
 export class HomeComponent implements OnInit {
  
     jobs=[];
-
+    p: number = 1;
       studentID;
       ID=this.studentID;
       jobID;
