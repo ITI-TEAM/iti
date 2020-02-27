@@ -12,11 +12,17 @@
             <div class="col-md-4">
               <div class="profile">
                 <div class="avatar">
-                  <img src="../../../../assets/images/icon.png" alt="Circle Image"
+                  <img src="http://localhost:3000//{{companyModel.image}}" alt="Circle Image"
                     class="img-raised rounded-circle ">
                 </div>
                 <div class="name">
                   <h3 class="title">{{companyModel.name}}</h3>
+
+                  <!-- <h6>{{companyModel.careerobjective}}</h6> -->
+
+
+                  <h6>{{companyModel.careerobjective}}</h6>
+
                   <h6>{{companyModel.careerobjrctive}}</h6>
                   <p> {{companyModel.content}}</p>
                 </div>
@@ -117,5 +123,4 @@
     </div>
     <br>
     <br>
-    {{companyModel | json}}
 <app-footer></app-footer>

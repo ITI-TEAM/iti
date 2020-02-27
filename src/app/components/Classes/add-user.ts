@@ -1,8 +1,8 @@
 export class AddUser {
     constructor(
-        public userName:string,
-        public typeName:string,
-        public mail:string,
+        public name:string,
+        public type:string,
+        public email:string,
         public password:string,
     ){}
 }

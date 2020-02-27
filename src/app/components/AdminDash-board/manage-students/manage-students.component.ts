@@ -13,27 +13,66 @@ import { Router } from '@angular/router';
 export class ManageStudentsComponent implements OnInit {
   public studentsModel;
 
-  constructor(private studeServise: StudentServiseService,private userServise:UserServService,private socketServ:SockectIoService,private router :Router) { }
+  constructor(private router:Router,private studeServise: StudentServiseService,private socketServ:SockectIoService) { }
 
   ngOnInit() {
+
     this.studeServise.getAll().subscribe(data => {
       this.studentsModel = data;
       console.log(this.studentsModel)
     }
     )
+
+    this.socketServ.getStudent().subscribe(
+      data=>{
+        this.studentsModel=data;
+        console.log(data);
+        
+      },
+      error=>{
+        console.log(error);
+        
+      }
+    );
   }
 
-  deleteStudent(student){
-    this.userServise.deletUser(student.ID).subscribe(data=>
-      {
-        alert(" user deleted")
-      }
-      )
-   }
+  // deleteStudent(student){
+  //   this.userServise.deletUser(student.ID).subscribe(data=>
+  //     {
+  //       alert(" user deleted")
+  //     }
+  //     )
+  //  }
   
-   goToMoreDetails(ID)
-      {
-     window.open('student-profile/'+ID,"_blank")
-    }
+  //  goToMoreDetails(ID)
+  //     {
+  //    window.open('student-profile/'+ID,"_blank")
+  //   }
+
+  DeleteUser(student){
+    console.log(student.ID);
+    this.socketServ.deleteStudent(student.ID);
+    this.socketServ.getStudent().subscribe(
+      data=>{
+        console.log(data);
+        
+      },
+      error=>{
+        console.log(error);
+        
+      }
+    );
+    
+  }
+
+
+  goProfile(student){
+    console.log(student.ID);
+    
+  //  this.router.navigate(['/show-student',student.ID]);
+    window.open('/show-student/'+student.ID, "_blank");
+  }
+
+
 }
 

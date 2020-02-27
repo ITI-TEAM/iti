@@ -4,7 +4,10 @@ const cprofileSchema = new mongoose.Schema({
   ID: String,
   name:{
     type:String,
-    default:"Your Name"
+  },
+  image:{
+    type:String,
+    default:" "
   },
   careerobjrctive:{
     type:String,
@@ -16,7 +19,7 @@ const cprofileSchema = new mongoose.Schema({
   },
  email:{
     type:String,
-    default:"content ?"
+    default:"Email ?"
   },
   address:{
     type:String,

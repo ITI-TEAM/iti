@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 
 const allJobSchema = new mongoose.Schema({
-
+    
     
     //jobImage:{type:String,required:true}
     companyID:{type:String,required:true},
@@ -13,7 +13,9 @@ const allJobSchema = new mongoose.Schema({
     languages:{type:String},
     exper:{type:String},
     desc:{type:String},
-    qual:{type:String,}  
+    qual:{type:[]},
+    respons:{type:[]} ,
+    company: {type:String}
 });
 
 const allJob = mongoose.model('allJob', allJobSchema);

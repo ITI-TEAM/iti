@@ -39,6 +39,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { UserServService } from './services/User/user-serv.service';
 import { SockectIoService } from './services/socket .io/sockect-io.service';
+import { ViewSComponent } from './components/view-s/view-s.component';
+import { ViewCComponent } from './view-c/view-c.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +78,9 @@ import { SockectIoService } from './services/socket .io/sockect-io.service';
     AddEventComponent,
     PostJobComponent,
     CompanyProfileComponent,
-    EditCompanyProfileComponent
+    EditCompanyProfileComponent,
+    ViewSComponent,
+    ViewCComponent
     
     
   ],
