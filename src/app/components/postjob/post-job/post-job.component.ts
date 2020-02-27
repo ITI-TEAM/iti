@@ -3,6 +3,7 @@ import { Job } from '../../Classes/job';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { JOBService } from 'src/app/services/job.service';
 import { error } from 'util';
+import { CompanyService } from 'src/app/services/Company/company.service';
 
 @Component({
   selector: 'app-post-job',
@@ -11,19 +12,30 @@ import { error } from 'util';
 })
 export class PostJobComponent implements OnInit {
   time=new Date().toUTCString();
-  constructor(private router:Router ,private route:ActivatedRoute,private jobServ:JOBService) { }
+  constructor(private router:Router ,private route:ActivatedRoute,private jobServ:JOBService,private CompanyService:CompanyService) { }
+
     public jobModel=new Job("","","","",[],"","","",[],"",this.time);
     public ID;
+    public company =[];
     
   ngOnInit() {
+    //get id from url
     this.route.paramMap.subscribe((params:ParamMap)=>{
       this.ID=params.get('ID');
-    }); 
+    });
+    //get data company
+    this.CompanyService.getCompany(this.ID).subscribe(data=>
+      {
+        console.log(data)
+       this.company=data;
+      }
+      );
+    
+
   }
+
 //post job
   postJob(){
-   // console.log("test");
-    
     this.jobServ.createPost(this.ID,this.jobModel).subscribe(
       result=>{
         alert("Job Posted")

@@ -44,6 +44,14 @@
                       [(ngModel)]="studentModel.email" #email="ngModel">
                   </div>
                   <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Enter type job" id="email" name="position"
+                      [(ngModel)]="studentModel.position" #position="ngModel">
+                  </div>
+                  <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Enter location" id="email" name="location"
+                      [(ngModel)]="studentModel.location" #location="ngModel">
+                  </div>
+                  <div class="form-group">
                     <input type="number" class="form-control" placeholder="Enter Telephone Number" name="phone"
                       pattern="^\d{11}$" [(ngModel)]="studentModel.phone" #phone="ngModel">
                   </div>
