@@ -10,7 +10,7 @@ declare var $: any;
 })
 export class NavbarCompanyComponent implements OnInit {
 
-  constructor(private router:Router ,private route:ActivatedRoute,private compServ:CompanyService) { }
+  constructor(private router:Router ,private route:ActivatedRoute,private CompanyService:CompanyService) { }
   public ID;
   public company=new Company("","","","","","","","","","");
   public company_id;
@@ -23,7 +23,7 @@ export class NavbarCompanyComponent implements OnInit {
      this.route.paramMap.subscribe((params:ParamMap)=>{
        this.company_id = params.get("ID")
        })
-      this.compServ.getCompany(this.company_id).subscribe(data=>
+      this.CompanyService.getCompany(this.company_id).subscribe(data=>
         {
           this.company=data;
           console.log( this.company)
