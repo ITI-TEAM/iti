@@ -10,7 +10,7 @@ declare var $: any;
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private studeServise:StudentServiseService,private route:ActivatedRoute) { }
+  constructor(private studeServise:StudentServiseService,private route:ActivatedRoute,private router : Router) { }
   public ID;
 
   public student = new Student("","","","","","","",[],"","",[],[],[],"","","","","","");
@@ -21,9 +21,9 @@ export class NavbarComponent implements OnInit {
       this.ID=params.get('ID');
     });
     
-    this.route.paramMap.subscribe((params:ParamMap)=>{
-      this.student_id = params.get("ID")
-      })
+     this.route.paramMap.subscribe((params:ParamMap)=>{
+       this.student_id = params.get("ID")
+       })
       this.studeServise.getStudent(this.student_id).subscribe(data=>
         {
           this.student=data[0];
@@ -31,7 +31,11 @@ export class NavbarComponent implements OnInit {
         }
         )
 
+        
 
+
+
+        
         //jquery
         $(window).scroll(function(){
           var $w = $(this),
@@ -71,5 +75,10 @@ export class NavbarComponent implements OnInit {
 
   }
 
+
+  logOut(){
+    localStorage.removeItem("token")
+    this.router.navigate(['/login'])
+  }
 
 }

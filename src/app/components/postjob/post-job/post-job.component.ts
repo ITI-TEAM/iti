@@ -22,6 +22,8 @@ export class PostJobComponent implements OnInit {
   }
 //post job
   postJob(){
+   // console.log("test");
+    
     this.jobServ.createPost(this.ID,this.jobModel).subscribe(
       result=>{
         alert("Job Posted")

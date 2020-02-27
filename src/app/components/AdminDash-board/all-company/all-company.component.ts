@@ -11,9 +11,9 @@ import { SockectIoService } from 'src/app/services/socket .io/sockect-io.service
   styleUrls: ['./all-company.component.css']
 })
 export class AllCompanyComponent implements OnInit {
-public companyModel=[]
+public companyModel;
 p: number = 1;
-  constructor(private userServise:UserServService,private studeServise:StudentServiseService, private route:ActivatedRoute) { }
+  constructor(private studeServise:StudentServiseService,private route:ActivatedRoute,private socketServ:SockectIoService) { }
   public User_ID;
   ngOnInit() {
     this.studeServise.getAllCompany().subscribe(data=>
@@ -21,22 +21,44 @@ p: number = 1;
         this.companyModel=data;
         console.log(this.companyModel)
       }
-    )
-  // DELETE USER
-    // this.route.paramMap.subscribe((params:ParamMap)=>{
-    //   this.User_ID = params.get('ID');
-    // });
-    
+    );
 
+    this.socketServ.getCompnay().subscribe(
+      data=>{
+        console.log(data);
+        this.companyModel=data;
+      },
+      error=>{
+        console.log(error);
+        
+      }
+    );
+     
+
+
+  
   }
    
-  
-    deleteUser(_id){
-      this.userServise.deletUser(this.User_ID).subscribe(data=>
-        {
-          alert(" user deleted")
+    
+
+     deleteUser(company){
+       console.log(company.ID);
+       this.socketServ.deleteCompany(company.ID);
+       this.socketServ.getCompnay().subscribe(
+        data=>{
+          console.log(data);
+          
+        },
+        error=>{
+          console.log(error);
+          
         }
-        )
+      );
+       
+     }
+
+     goProfile(company){
+      window.open('/show-company/'+company.ID, "_blank");
      }
    
 
