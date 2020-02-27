@@ -13,7 +13,7 @@ import { SockectIoService } from 'src/app/services/socket .io/sockect-io.service
 export class AllCompanyComponent implements OnInit {
 public companyModel=[]
 p: number = 1;
-  constructor(private userServise:UserServService,private studeServise:StudentServiseService, private route:ActivatedRoute) { }
+  constructor(private studeServise:StudentServiseService,private route:ActivatedRoute,private socketServ:SockectIoService) { }
   public User_ID;
   ngOnInit() {
     this.studeServise.getAllCompany().subscribe(data=>
@@ -21,22 +21,39 @@ p: number = 1;
         this.companyModel=data;
         console.log(this.companyModel)
       }
-    )
-  // DELETE USER
-    // this.route.paramMap.subscribe((params:ParamMap)=>{
-    //   this.User_ID = params.get('ID');
-    // });
-    
+    );
 
+    this.socketServ.getCompnay().subscribe(
+      data=>{
+        console.log(data);
+        
+      },
+      error=>{
+        console.log(error);
+        
+      }
+    );
+     
+
+
+  
   }
    
-  
-    deleteUser(_id){
-      this.userServise.deletUser(this.User_ID).subscribe(data=>
-        {
-          alert(" user deleted")
+    
+
+     deleteUser(company){
+       console.log(company.ID);
+       this.socketServ.getCompnay().subscribe(
+        data=>{
+          console.log(data);
+          
+        },
+        error=>{
+          console.log(error);
+          
         }
-        )
+      );
+       
      }
    
 

@@ -106,8 +106,8 @@ io.on('connection', (socket) => {
 
 
 
-// Events////////////////////////////////////////////
-//List Event
+    // Events////////////////////////////////////////////
+    //List Event
     Event.find({}, (err, data) => {
         if (!err)
             io.emit("getEvents", data)
@@ -139,40 +139,107 @@ io.on('connection', (socket) => {
 
     //End Events ///////////////////////////////////
 
-//USERS////////////////////////////////////////////////
 
-
-//List Student users
-Sprofile.find({}, (err, data) => {
-    if (!err)
-        io.emit("getStudent", data)
-    else {
-        console.log(error);
-
-    }
-});
 /////////////////////////////////////////////
 
-// List Company Profile
+    // list student users
 
-Cprofile.find({}, (err, data) => {
-    if (!err)
-        io.emit("getCompany", data)
-    else {
-        console.log(error);
+    Sprofile.find({}, (err, data) => {
+        if (!err)
+            io.emit("getStudent", data)
+        else {
+            console.log(error);
 
-    }
+        }
+    });
+
+    // Delete student
+
+    socket.on('deleteStudent', (userID) => {
+        Sprofile.deleteOne({ ID: userID }, (err, data) => {
+            if (!err) {
+                console.log("Student Delete");
+
+                Sprofile.find({}, (err, data) => {
+                    if (!err)
+                    {
+                        io.emit("getStudent", data)
+                    User.deleteOne({_id:userID},(err,data)=>{
+                        if(!err)
+                        console.log("User Deleted");
+                        
+                    })
+                    }
+                    else {
+                        console.log(error);
+
+                    }
+                });
+
+
+
+            }
+            else {
+                console.log(error);
+
+            }
+        });
+    });
+
+
+////////////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////
+
+    // list company users
+
+    Cprofile.find({}, (err, data) => {
+        if (!err)
+            io.emit("getCompnay", data)
+        else {
+            console.log(error);
+
+        }
+    });
+
+    // Delete company
+
+    socket.on('deleteStudent', (userID) => {
+        Cprofile.deleteOne({ ID: userID }, (err, data) => {
+            if (!err) {
+                console.log("Compnay Delete");
+
+                Cprofile.find({}, (err, data) => {
+                    if (!err)
+                    {
+                        io.emit("getCompnay", data)
+                    User.deleteOne({_id:userID},(err,data)=>{
+                        if(!err)
+                        console.log("User Deleted");
+                        
+                    })
+                    }
+                    else {
+                        console.log(error);
+
+                    }
+                });
+            }
+            else {
+                console.log(error);
+
+            }
+        });
+    });
+
+
+
+
+
 });
 
 
-// delete user
-
-
-
-
-
-
-});
 
 
 

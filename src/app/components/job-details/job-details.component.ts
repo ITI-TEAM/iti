@@ -31,6 +31,17 @@ export class JObDetailsComponent implements OnInit {
       this.companyID=params.get('companyID');
       this.jobID=params.get('jobID');
     }); 
+
+    this.jobServ.jobDetails(this.jobID).subscribe(
+      data=>{
+        console.log(data);
+        
+      },
+      error=>{
+        console.log(error);
+        
+      }
+    );
   }
   applytoJob(){
     console.log(this.ID);

@@ -32,6 +32,10 @@ export class NavbarComponent implements OnInit {
         )
 
 
+
+
+
+        
         //jquery
         $(window).scroll(function(){
           var $w = $(this),

@@ -8,6 +8,9 @@ export class Job {
         public languages:string,
         public exper:string,
         public desc:string,
-        public respons:[]
+        public respons:[],
+        public company:string
+        
+
     ){}
 }
