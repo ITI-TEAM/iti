@@ -60,16 +60,19 @@
            
              </div>
              
-
+             <div>
+               
+             </div>
              <div class="col-sm-3" >
-              
+                <h5 style="margin-left: 15px; color:purple;">UpComing Events</h5>
                <div class="card-body shadow" *ngFor="let event of envents">
+                 
                 <h3>
                   {{event.titel}}
                 </h3>
-                <p class="card-text"> {{event.title}}</p>
+                <p class="card-text" style="font-weight: bold;"> {{event.title}}</p>
                 <p class="card-text"> {{event.place}}</p>
-                <p class="card-text"> {{event.date}}</p>
+                <p class="card-text" style="color: plum;"> {{event.date}}</p>
         
                 </div>
              </div>

@@ -234,6 +234,24 @@ io.on('connection', (socket) => {
     });
 
 
+////////End USERS //////////////////////////////////////
+
+
+// List Jobs
+allJob.find({}, (err, data) => {
+    if (!err)
+        io.emit("getJobs", data)
+    else {
+        console.log(error);
+
+    }
+});
+
+///// create new Job(post)
+
+
+
+
 
 
 

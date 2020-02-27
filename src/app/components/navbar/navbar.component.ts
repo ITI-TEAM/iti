@@ -26,7 +26,7 @@ export class NavbarComponent implements OnInit {
        })
       this.studeServise.getStudent(this.student_id).subscribe(data=>
         {
-          this.student=data[0];
+          this.student=data;
           console.log( this.student)
         }
         )
