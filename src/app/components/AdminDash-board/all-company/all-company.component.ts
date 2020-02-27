@@ -39,5 +39,9 @@ p: number = 1;
         )
      }
    
+     toMoreDetails(ID)
+      {
+     window.open('company-profile/'+ID,"_blank")
+    }
 
 }

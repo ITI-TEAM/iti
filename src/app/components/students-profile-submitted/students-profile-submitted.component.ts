@@ -44,4 +44,8 @@ export class StudentsProfileSubmittedComponent implements OnInit {
 
   }
 
+  MoreDetails(ID)
+      {
+     window.open('student-profile/'+ID,"_blank")
+    }
 }
