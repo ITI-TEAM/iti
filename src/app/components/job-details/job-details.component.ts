@@ -9,29 +9,38 @@ import { JOBService } from 'src/app/services/job.service';
 })
 export class JObDetailsComponent implements OnInit {
 
-  posts =[
-    {  companey: "modern",name:"aaaaaaaaaaaaaaaaaaaa", photourl:'../../../../assets/images/heba.jpg'},
-    {  companey: "iti",name:"bbbbbbbbbbbbbbbbbbbb", photourl:'../../../../assets/images/heba.jpg'},
+  // posts =[
+  //   {  companey: "modern",name:"aaaaaaaaaaaaaaaaaaaa", photourl:'../../../../assets/images/heba.jpg'},
+  //   {  companey: "iti",name:"bbbbbbbbbbbbbbbbbbbb", photourl:'../../../../assets/images/heba.jpg'},
 
-    {  companey: "www",name:'zzzzzzzzzzzzzzzzzz', photourl:'../../../../assets/images/heba.jpg'},
-    ]
-    envents=[
-      {titel:'EVENT',obj:'ssssss'},
-      {titel:'eeeeeeeeee',obj:'yyyyyyy'},
-      {titel:'eeeeeeeeee',obj:'yyyyyyy'},{titel:'eeeeeeeeee',obj:'yyyyyyy'}
-    ]
+  //   {  companey: "www",name:'zzzzzzzzzzzzzzzzzz', photourl:'../../../../assets/images/heba.jpg'},
+  //   ]
+  //   envents=[
+  //     {titel:'EVENT',obj:'ssssss'},
+  //     {titel:'eeeeeeeeee',obj:'yyyyyyy'},
+  //     {titel:'eeeeeeeeee',obj:'yyyyyyy'},{titel:'eeeeeeeeee',obj:'yyyyyyy'}
+  //   ]
   constructor(private router : Router,private jobServ:JOBService,private route:ActivatedRoute) { }
   public test:boolean=true;
   public ID;
   public jobID;
   public companyID;
+  public JobDetails =[]
+ 
   ngOnInit() {
     this.route.paramMap.subscribe((params:ParamMap)=>{
       this.ID=params.get('ID');
       this.companyID=params.get('companyID');
       this.jobID=params.get('jobID');
     }); 
+    this.jobServ.jobDetails(this.jobID).subscribe(data=>
+      {
+        this.JobDetails=data;
+        console.log( this.JobDetails)
+      }
+      )
   }
+
   applytoJob(){
     console.log(this.ID);
     console.log(this.companyID);

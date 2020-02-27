@@ -77,27 +77,27 @@
                 <div class="col-md-12"><h3>Job Type</h3></div>
                 <div class="col-md-12 mb-3 mb-md-0">
                   <label for="option-job-type-1">
-                    <input type="radio" id="option-job-type-1" name="type"  required [class.is-invalid]="company.invalid &&company.touched"
-                    #company="ngModel" [(ngModel)]="jobModel.company" required> Full Time
+                    <input type="radio" id="option-job-type-1" name="type" value="Full Time"
+                    #type="ngModel" [(ngModel)]="jobModel.type" required> Full Time
                   </label>
                 </div>
                 <div class="col-md-12 mb-3 mb-md-0">
                   <label for="option-job-type-2">
-                    <input type="radio" id="option-job-type-2" name="type"  [(ngModel)]="jobModel.type" #type="ngModel"> Part Time
+                    <input type="radio" value="Part Time" id="option-job-type-2" name="type"  [(ngModel)]="jobModel.type" #type="ngModel"> Part Time
                   </label>
                 </div>
                 <div class="col-md-12 mb-3 mb-md-0">
                   <label for="option-job-type-3">
-                    <input type="radio" id="option-job-type-3"  name="type"  [(ngModel)]="jobModel.type" #type="ngModel"> Freelance
+                    <input type="radio" value="Freelance" id="option-job-type-3"  name="type"  [(ngModel)]="jobModel.type" #type="ngModel"> Freelance
                 </label></div>
                 <div class="col-md-12 mb-3 mb-md-0">
                   <label for="option-job-type-4">
-                    <input type="radio" id="option-job-type-4"  name="type" [(ngModel)]="jobModel.type" #type="ngModel"> Internship
+                    <input type="radio" value="Internship" id="option-job-type-4"  name="type" [(ngModel)]="jobModel.type" #type="ngModel"> Internship
                   </label>
                 </div>
                 <div class="col-md-12 mb-3 mb-md-0">
                   <label for="option-job-type-4">
-                    <input type="radio" id="option-job-type-4"  name="type"  [(ngModel)]="jobModel.type" #type="ngModel"> Termporary
+                    <input type="radio" value="Termporary" id="option-job-type-4"  name="type"  [(ngModel)]="jobModel.type" #type="ngModel"> Termporary
                   </label>
                 </div>
                 
@@ -155,8 +155,10 @@
 
               <div class="row form-group">
                 <div class="col-md-12">
-                  <input type="submit" value="Post a Job" class="btn btn-primary  py-2 px-5"
-                  [disabled]="postForm.form.invalid" (click)="postJob()"  >
+                  <!-- <input type="submit" value="Post a Job" class="btn btn-primary  py-2 px-5"
+                  [disabled]="postForm.form.invalid" (click)="postJob()"  > -->
+                  <button class="btn btn-primary  py-2 px-5"
+                  [disabled]="postForm.form.invalid" (click)="postJob()">Post JOb</button>
                 </div>
               </div>
               

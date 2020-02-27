@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { JOBService } from 'src/app/services/job.service';
 import { error } from 'protractor';
+import { UserServService } from 'src/app/services/User/user-serv.service';
 
 @Component({
   selector: 'app-students-profile-submitted',
@@ -12,7 +13,7 @@ export class StudentsProfileSubmittedComponent implements OnInit {
   public jobs=["","",""]
   jobID: string;
   students=[];
-  constructor(private router : Router,private jobServ:JOBService,private route:ActivatedRoute) { }
+  constructor(private router : Router,private jobServ:JOBService, private userServise:UserServService,private route:ActivatedRoute) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe((params:ParamMap)=>{
@@ -40,6 +41,15 @@ export class StudentsProfileSubmittedComponent implements OnInit {
         
       }
     );
+
+    
+    // DeleteStu(student){
+    //   this.userServise.deletUser(this.User_ID).subscribe(data=>
+    //     {
+    //       alert(" user deleted")
+    //     }
+    //     )
+    //  }
 
 
   }

@@ -24,7 +24,11 @@ router.post("/add/:companyID",(req,res,next)=>{
     languages:req.body.languages,
     exper:req.body.exper,
     qual:req.body.qual,
-    desc:req.body.desc
+    desc:req.body.desc,
+    respons:req.body.respons,
+    company:req.body.company,
+    time:req.body.time
+
     });
     newJob.save()
     .then(result => {

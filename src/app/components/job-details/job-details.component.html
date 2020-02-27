@@ -1,4 +1,4 @@
-<app-navbar></app-navbar>
+    <app-navbar></app-navbar>
 <div class="hero-wrap hero-wrap-2" style="background-image: url(&quot;images/bg_1.jpg&quot;); background-position: 50% 0px;" data-stellar-background-ratio="0.5">
     <div class="overlay"></div>
     <div class="container">
@@ -19,13 +19,16 @@
                       <div class="jobs_left d-flex align-items-center">
                           
                           <div class="jobs_conetent">
-                              <a href="#"><h4>Software Engineer</h4></a>
+                     
+                              <a href="#"><h4> {{JobDetails.title}}   Software Engineer</h4></a>
+                              <a href="#"><h2> {{JobDetails.company}}  Fcebook</h2></a>
                               <div class="links_locat d-flex align-items-center">
                                   <div class="location">
-                                      <p> <i class="fa fa-map-marker"></i> California, USA</p>
+                                      <p> <i class="fa fa-map-marker"></i> {{JobDetails.location}}California, USA</p>
                                   </div>
                                   <div class="location">
-                                      <p> <i class="fa fa-clock-o"></i> Part-time</p>
+                                      <p> <i class="fa fa-clock-o"></i> 
+                                        {{JobDetails.type}}Part-time</p>
                                   </div>
                               </div>
                           </div>
@@ -36,13 +39,14 @@
               <div class="descript_wrap white-bg">
                   <div class="single_wrap">
                       <h4>Job description</h4>
+                      {{JobDetails.desc}}
                       <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing.</p>
                       <p>Variations of passages of lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing.</p>
                   </div>
                   <div class="single_wrap">
                       <h4>Responsibility</h4>
                       <ul>
-                          <li>The applicants should have experience in the following areas.
+                          <li *ngFor="let res of JobDetails.respons" >{{res}}The applicants should have experience in the following areas.
                           </li>
                           <li>Have sound knowledge of commercial activities.</li>
                           <li>Leadership, analytical, and problem-solving abilities.</li>
@@ -52,17 +56,14 @@
                   <div class="single_wrap">
                       <h4>Qualifications</h4>
                       <ul>
-                          <li>The applicants should have experience in the following areas.
+                          <li *ngFor="let item of JobDetails.qual"> {{item}} The applicants should have experience in the following areas.
                           </li>
                           <li>Have sound knowledge of commercial activities.</li>
                           <li>Leadership, analytical, and problem-solving abilities.</li>
                           <li>Should have vast knowledge in IAS/ IFRS, Company Act, Income Tax, VAT.</li>
                       </ul>
                   </div>
-                  <div class="single_wrap">
-                      <h4>Benefits</h4>
-                      <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing.</p>
-                  </div>
+                  
               </div>
               <div class="apply_job_form white-bg">
                   <h4>Apply for the job</h4>
@@ -76,11 +77,11 @@
                   </div>
                   <div class="job_content">
                       <ul>
-                          <li>Published on: <span>12 Nov, 2019</span></li>
-                          <li>Vacancy: <span>2 Position</span></li>
-                          <li>Salary: <span>50k - 120k/y</span></li>
-                          <li>Location: <span>California, USA</span></li>
-                          <li>Job Nature: <span> Full-time</span></li>
+                          <li>Published on: <span>{{JobDetails.time}} 12 Nov, 2019</span></li>
+                          <li>Experience<span>{{JobDetails.desc}}</span></li>
+                          <li>Salary: <span>{{JobDetails.salary}} 50k - 120k/y</span></li>
+                          <li>Location: <span> {{JobDetails.location}} California, USA</span></li>
+                          <li>Job Nature: <span>{{JobDetails.type}} Full-time</span></li>
                       </ul>
                   </div>
               </div>

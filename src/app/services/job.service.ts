@@ -63,4 +63,11 @@ export class JOBService {
    listSprofile(userID):Observable<any>{
     return this.http.get<any>('http://localhost:3000/sprofile/'+userID);
    }
+
+
+// job details
+  jobDetails(_id):Observable<any>{
+    return this.http.get<any>('http://localhost:3000/allJob/details/'+_id);
+  }
+
 }

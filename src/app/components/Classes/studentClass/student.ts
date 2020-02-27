@@ -16,7 +16,9 @@ export class Student {
         public university:String,
         public faculty:String,
         public graduationYear:String,
-        public image:String
+        public image:String,
+        public location:String,
+        public position:String
 
         
     ){}
