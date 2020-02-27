@@ -27,7 +27,7 @@
                                         <img src="img/svg_icon/1.svg" alt="">
                                       </div>
                                       <div class="jobs_conetent">
-                                        <a href="job_details.html">
+                                        <a href="">
                                           <h4>{{job[0].title}}</h4>
                                         </a>
                                         <div class="links_locat d-flex align-items-center">
@@ -42,11 +42,10 @@
                                     </div>
                                     <div class="jobs_right">
                                       <div class="apply_now">
-                                        <a class="heart_mark" href="#"> <i class="fa fa-trash"></i> </a>
-                  
+                                        <a class="heart_mark" > <i (click)="cancelJob(job)" class="fa fa-trash"></i> </a>
                                       </div>
                                       <div class="date">
-                                        <p>Date line: 31 Jan 2020</p>
+                                        <p> Date line: {{job[0].time}} 31 Jan 2020</p>
                                       </div>
                                     </div>
                                   </div>

@@ -4,6 +4,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { JOBService } from 'src/app/services/job.service';
 import { error } from 'util';
 import { CompanyService } from 'src/app/services/Company/company.service';
+import { Company } from '../../Classes/company';
 
 @Component({
   selector: 'app-post-job',
@@ -16,7 +17,7 @@ export class PostJobComponent implements OnInit {
 
     public jobModel=new Job("","","","",[],"","","",[],"",this.time);
     public ID;
-    public company =[];
+    public companyModel =new Company("","","","","","","","","","");
     
   ngOnInit() {
     //get id from url
@@ -27,7 +28,7 @@ export class PostJobComponent implements OnInit {
     this.CompanyService.getCompany(this.ID).subscribe(data=>
       {
         console.log(data)
-       this.company=data;
+       this.companyModel=data;
       }
       );
     

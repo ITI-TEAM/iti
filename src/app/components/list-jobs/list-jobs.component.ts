@@ -47,8 +47,7 @@ export class ListJobsComponent implements OnInit {
       }
     );
 
-     //jquery
-    
+   
     
 
   }
@@ -56,11 +55,12 @@ export class ListJobsComponent implements OnInit {
     this.router.navigate(['/job-details']);
 
   }
+
+  //cancel job after apply it
   cancelJob(job){
     this.studetentServ.cancelJob(job[0]._id).subscribe(
       data=>{
         console.log(data);
-        
       },
       error=>{
         console.log(error);
