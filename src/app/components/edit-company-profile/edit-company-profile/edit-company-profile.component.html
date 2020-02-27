@@ -18,10 +18,14 @@
                 <div class="name">
                   <h3 class="title">{{companyModel.name}}</h3>
 <<<<<<< HEAD
+<<<<<<< HEAD
                   <!-- <h6>{{companyModel.careerobjective}}</h6> -->
 
 =======
                   <h6>{{companyModel.careerobjective}}</h6>
+=======
+                  <h6>{{companyModel.careerobjrctive}}</h6>
+>>>>>>> 376641469cc9a53d1cd6ad4fe68849b937fd0237
                   <p> {{companyModel.content}}</p>
 >>>>>>> 5c6bbaecedb564d253e738d7025e985988b98417
                 </div>
@@ -99,8 +103,18 @@
                     </div>
                   </div>
                 </div>
+
+                <div>
+                  <label for="exampleFormControlInput1">Profile Image</label>
+                  <input class="form-control" type="file" name="image" required
+                  
+                   (change)="onfileSelected($event)" >
+                   
+                </div>
+                <strong class="text-danger" [class.d-none]="test">Please Select Image </strong>
+
                 <div class="row">
-                  <button type="submit" class="btn btn-danger" style="margin: auto;">Submit</button>
+                  <button type="submit" class="btn btn-danger" style="margin: auto;">Save</button>
                 </div>
               </form>
             </div>
@@ -112,4 +126,5 @@
     </div>
     <br>
     <br>
+    {{companyModel | json}}
 <app-footer></app-footer>

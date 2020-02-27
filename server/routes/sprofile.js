@@ -113,29 +113,4 @@ router.post('/edit/:userID',upload.single('image'),function(req,res,next){
 });
 
 
-//LIST USER TYPE STUDENT
-// router.get('/listAll',(req,res,next)=>{
-
-
-//  /* Sprofile.find()
-//   .exec()
-//   .then
-//   (data => {
-//     console.log(data)
-//     res.status(200).json(data);
-//   })
-//   .catch(err => {
-//     console.log(err);
-//     res.status(500).json({
-//       error: err
-//     });
-//   });*/
-  
-
-
-// });
-
-
-
-
 module.exports = router;

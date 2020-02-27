@@ -10,9 +10,10 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 })
 export class EditCompanyProfileComponent implements OnInit {
 
-  public companyModel= new Company("company name ?","career objective","contetnt ?","email ?","address ?","phone ?","field ?","decreption ?","date created ?",'');
   public company_ID;
-  public company= new Company("","","","","","","","","",'');
+  public companyModel= new Company("","","","","","","","","","");
+  public selectedFile:File=null;
+  public test:boolean=true;
 
   constructor(private CompanyServise:CompanyService ,private route:ActivatedRoute, private router:Router ) {}
 
@@ -29,17 +30,40 @@ export class EditCompanyProfileComponent implements OnInit {
     })
    
   }
+
+
+  onfileSelected(event){
+    console.log(event); 
+    this.selectedFile=<File>event.target.files[0];
+    console.log(this.selectedFile);
+  }
+
+
   onSubmit(){
-    this.CompanyServise.updateCompany(this.company_ID ,this.companyModel).subscribe(
+  
+    const fd=new FormData();
+    // append image file
+    if(this.selectedFile==null){
+      this.test=false;
+
+    }
+    else{
+      fd.append('image',this.selectedFile,this.selectedFile.name);
+
+  
+     this.CompanyServise.updateCompany(this.company_ID,fd).subscribe(
       result=>{
-        alert("changes saned")
-        this.router.navigate(['/company-profile',this.company_ID])
-      },
+        alert("changes saved")
+       this.router.navigate(['/company-profile',this.company_ID])
+  },
       error=>{
-        console.log(error)
+  
+        console.log(error);
+  
       }
-      
-    )
+      )
+    }
+    
   }
 
   

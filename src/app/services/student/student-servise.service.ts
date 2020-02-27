@@ -24,9 +24,9 @@ export class StudentServiseService {
 
 
   //  DELETE  COMPANY / STUDENT
-  deleteCompany(_id):Observable<any>{
-    return this.http.get<any>("http://localhost:3000/users/delete"+_id)
-  }
+  // deleteCompany(_id):Observable<any>{
+  //   return this.http.get<any>("http://localhost:3000/users/delete"+_id)
+  // }
 
 
 

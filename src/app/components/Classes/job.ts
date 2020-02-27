@@ -4,9 +4,10 @@ export class Job {
         public salary:string,
         public location:string,
         public type:string,
-        public qual:string,
+        public qual:[],
         public languages:string,
         public exper:string,
-        public desc:string
+        public desc:string,
+        public respons:[]
     ){}
 }

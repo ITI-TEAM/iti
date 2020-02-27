@@ -3,6 +3,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { JOBService } from 'src/app/services/job.service';
 import { EventService } from 'src/app/services/Events/event.service';
 import { StudentServiseService } from 'src/app/services/student/student-servise.service';
+import { SockectIoService } from 'src/app/services/socket .io/sockect-io.service';
 
 @Component({
   selector: 'app-home',
