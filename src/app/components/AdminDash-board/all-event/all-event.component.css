@@ -64,21 +64,6 @@ h3 {
   background: #f5f5f5;
 }
 
-/* line 131, ../../Arafath/CL/December/235. Job board/HTML/scss/theme-default.scss */
-.bg-img-1 {
-  /* background-image: url(../img/slider/slider-img-1.jpg); */
-}
-
-/* line 134, ../../Arafath/CL/December/235. Job board/HTML/scss/theme-default.scss */
-.bg-img-2 {
-  /* background-image: url(../img/background-img/bg-img-2.jpg); */
-}
-
-/* line 137, ../../Arafath/CL/December/235. Job board/HTML/scss/theme-default.scss */
-.cta-bg-1 {
-  /* background-image: url(../img/background-img/bg-img-3.jpg); */
-}
-
 
 
 /* line 284, ../../Arafath/CL/December/235. Job board/HTML/scss/theme-default.scss */
@@ -582,8 +567,6 @@ h3 {
       font-family: 'themify';
       color: #ddd; }
   
-      .nice-select.open:after {
-   }
       .nice-select.open .list {
         opacity: 1;
         pointer-events: auto;

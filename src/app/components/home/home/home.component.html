@@ -1,7 +1,6 @@
 
 
 <app-navbar></app-navbar>
-
 <div class="container-fluid">
         <div class="row">
           <br>
@@ -17,9 +16,9 @@
         <div class="row">
            <div class="col-sm-3">
             <div class="card shadow" >
-               <img class="card-img-top imgpro" src="../../../../assets/images/heba.jpg" alt="Card image" >
+               <img class="card-img-top imgpro" src="http://localhost:3000//{{prostudent.image}}" alt="Card image" >
                <div class="card-body">
-                 <h4 class="card-title titilename">John Doe</h4>
+                 <h4 class="card-title titilename">{{prostudent.name}}</h4>
               
                </div>
              </div>
@@ -27,7 +26,7 @@
             
                <div class="card-body">
                  
-                 <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+                 <p class="card-text">{{prostudent.title}}</p>
             
                </div>
              </div>
@@ -35,7 +34,7 @@
               
                <div class="card-body">
                 
-                 <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+                 <p class="card-text">{{prostudent.Bio}}</p>
                 
                </div>
              </div>
@@ -58,15 +57,20 @@
                    
                   </div>
                 </div>
+           
              </div>
+             
 
              <div class="col-sm-3" >
+              
                <div class="card-body shadow" *ngFor="let event of envents">
-                  <h3>
-                      {{event.titel}}
-                  </h3>
-                  <p class="card-text"> {{event.obj}}</p>
-             
+                <h3>
+                  {{event.titel}}
+                </h3>
+                <p class="card-text"> {{event.title}}</p>
+                <p class="card-text"> {{event.place}}</p>
+                <p class="card-text"> {{event.date}}</p>
+        
                 </div>
              </div>
          
