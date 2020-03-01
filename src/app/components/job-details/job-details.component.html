@@ -1,103 +1,103 @@
     <app-navbar></app-navbar>
-<div class="hero-wrap hero-wrap-2" style="background-image: url(&quot;images/bg_1.jpg&quot;); background-position: 50% 0px;" data-stellar-background-ratio="0.5">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row no-gutters slider-text align-items-end justify-content-start">
-        <div class="col-md-12 ftco-animate text-center mb-5 fadeInUp ftco-animated">
-          <p class="breadcrumbs mb-0"><span class="mr-3"><a href="">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Company profile</span></p>
-          <h1 class="mb-3 bread">Details Job</h1>
+    <div class="hero-wrap hero-wrap-2"
+      style="background-image: url(&quot;images/bg_1.jpg&quot;); background-position: 50% 0px;"
+      data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-end justify-content-start">
+          <div class="col-md-12 ftco-animate text-center mb-5 fadeInUp ftco-animated">
+            <p class="breadcrumbs mb-0"><span class="mr-3"><a>Home <i
+                    class="ion-ios-arrow-forward"></i></a></span> <span>Company profile</span></p>
+            <h1 class="mb-3 bread">Details Job</h1>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-<div class="job_details_area">
-  <div class="container">
-      <div class="row">
+    <div class="job_details_area">
+      <div class="container">
+        <div class="row">
           <div class="col-lg-8">
-              <div class="job_details_header">
-                  <div class="single_jobs white-bg d-flex justify-content-between">
-                      <div class="jobs_left d-flex align-items-center">
-                         
-                          <div class="jobs_conetent">
-                              <a href="#"><h4> {{JobDetails.title}}   Software Engineer</h4></a>
-                              <a href="#"><h2> {{JobDetails.company}}  Fcebook</h2></a>
-                              <div class="links_locat d-flex align-items-center">
-                                  <div class="location">
-                                      <p> <i class="fa fa-map-marker"></i> {{JobDetails.location}}California, USA</p>
-                                  </div>
-                                  <div class="location">
-                                      <p> <i class="fa fa-clock-o"></i> 
-                                        {{JobDetails.type}}Part-time</p>
-                                  </div>
-                              </div>
-                          </div>
+            <div class="job_details_header">
+              <div class="single_jobs white-bg d-flex justify-content-between">
+                <div class="jobs_left d-flex align-items-center">
+
+                  <div class="jobs_conetent">
+                    <a >
+                      <h4> {{JobDetails.title}}</h4>
+                    </a>
+                    <a>
+                      <h2> {{JobDetails.company}}</h2>
+                    </a>
+                    <div class="links_locat d-flex align-items-center">
+                      <div class="location">
+                        <p> <i class="fa fa-map-marker"></i> {{JobDetails.location}}</p>
                       </div>
-                     
+                      <div class="location">
+                        <p> <i class="fa fa-clock-o"></i>
+                          {{JobDetails.type}}</p>
+                      </div>
+                    </div>
                   </div>
+                </div>
+
               </div>
-              <div class="descript_wrap white-bg">
-                  <div class="single_wrap">
-                      <h4>Job description</h4>
-                      {{JobDetails.desc}}
-                      <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing.</p>
-                      <p>Variations of passages of lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing.</p>
-                  </div>
-                  <div class="single_wrap">
-                      <h4>Responsibility</h4>
-                      <ul>
-                          <li *ngFor="let res of JobDetails.respons" >{{res}}The applicants should have experience in the following areas.
-                          </li>
-                          <li>Have sound knowledge of commercial activities.</li>
-                          <li>Leadership, analytical, and problem-solving abilities.</li>
-                          <li>Should have vast knowledge in IAS/ IFRS, Company Act, Income Tax, VAT.</li>
-                      </ul>
-                  </div>
-                  <div class="single_wrap">
-                      <h4>Qualifications</h4>
-                      <ul>
-                          <li *ngFor="let item of JobDetails.qual"> {{item}} The applicants should have experience in the following areas.
-                          </li>
-                          <li>Have sound knowledge of commercial activities.</li>
-                          <li>Leadership, analytical, and problem-solving abilities.</li>
-                          <li>Should have vast knowledge in IAS/ IFRS, Company Act, Income Tax, VAT.</li>
-                      </ul>
-                  </div>
-                  
+            </div>
+            <div class=" descript_wrap white-bg">
+              <div class="single_wrap">
+                <h4>Job description</h4>
+                <p>{{JobDetails.desc}}</p>
+                <p></p>
               </div>
-              <div class="apply_job_form white-bg">
-                  <h4>Apply for the job</h4>
-                  <button class="boxed-btn3 w-100" type="submit" (click)="applytoJob()">Apply Now</button>
+              <div class="single_wrap">
+                <h4>Responsibility</h4>
+                <ul *ngFor="let res of JobDetails.respons">
+                  <li >{{res}}</li>
+                </ul>
               </div>
+              <div class="single_wrap">
+                <h4>Qualifications</h4>
+                <ul *ngFor="let item of JobDetails.qual">
+                  <li >{{item}}</li>
+                </ul>
+              </div>
+
+            </div>
+            <div class="apply_job_form white-bg">
+              <h4>Apply for the job</h4>
+              <button class="boxed-btn3 w-100" type="submit" (click)="applytoJob()">Apply Now</button>
+
+              <strong class="text-danger" [class.d-none]="test">You Already Applied for the job</strong>
+
+            </div>
           </div>
           <div class="col-lg-4">
-              <div class="job_sumary">
-                  <div class="summery_header">
-                      <h3>Job Summery</h3>
-                  </div>
-                  <div class="job_content">
-                      <ul>
-                          <li>Published on: <span>{{JobDetails.time}} 12 Nov, 2019</span></li>
-                          <li>Experience<span>{{JobDetails.desc}}</span></li>
-                          <li>Salary: <span>{{JobDetails.salary}} 50k - 120k/y</span></li>
-                          <li>Location: <span> {{JobDetails.location}} California, USA</span></li>
-                          <li>Job Nature: <span>{{JobDetails.type}} Full-time</span></li>
-                      </ul>
-                  </div>
+            <div class="job_sumary">
+              <div class="summery_header">
+                <h3>Job Summery</h3>
               </div>
-              <div class="share_wrap d-flex">
-                  <span>Share at:</span>
-                  <ul>
-                      <li><a href="#"> <i class="fa fa-facebook"></i></a> </li>
-                      <li><a href="#"> <i class="fa fa-google-plus"></i></a> </li>
-                      <li><a href="#"> <i class="fa fa-twitter"></i></a> </li>
-                      <li><a href="#"> <i class="fa fa-envelope"></i></a> </li>
-                  </ul>
+              <div class="job_content">
+                <ul>
+                  <li>Published on: <span>{{JobDetails.time}} </span></li>
+                  <li>Experience : <span>{{JobDetails.exper}}</span></li>
+                  <li>Salary: <span>{{JobDetails.salary}}</span></li>
+                  <li>Location: <span> {{JobDetails.location}} </span></li>
+                  <li>Job Nature: <span>{{JobDetails.type}} Full-time</span></li>
+                </ul>
               </div>
-          
+            </div>
+            <div class="share_wrap d-flex">
+              <span>Share at:</span>
+              <ul>
+                <li><a > <i class="fa fa-facebook"></i></a> </li>
+                <li><a > <i class="fa fa-google-plus"></i></a> </li>
+                <li><a > <i class="fa fa-twitter"></i></a> </li>
+                <li><a> <i class="fa fa-envelope"></i></a> </li>
+              </ul>
+            </div>
+
           </div>
+        </div>
       </div>
-  </div>
-</div>
+    </div>
 
     <app-footer></app-footer>
-

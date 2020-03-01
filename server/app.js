@@ -26,7 +26,7 @@ const cprofileRoutes = require('./routes/cprofile');
 const allJobRoutes = require('./routes/allJob');
 const eventRoutes = require('./routes/event');
 const appliedstudentRoutes = require('./routes/appliedstudent');
-const SavedJOB =require('./routes/savedJob')
+const savedRoutes =require('./routes/savedJob')
 
 //BODY-PARSER 
 app.use(bodyParser.urlencoded({
@@ -62,7 +62,7 @@ app.use('/cprofile', cprofileRoutes);
 app.use('/allJob', allJobRoutes);
 app.use('/event', eventRoutes);
 app.use('/appliedstudent', appliedstudentRoutes);
-app.use('/savedJob',SavedJOB)
+app.use('/savedJob',savedRoutes)
 
 
 
