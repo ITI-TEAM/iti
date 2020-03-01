@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const SavedJobSchema = new mongoose.Schema({
 
   time:String,
-  jobs:[{type: mongoose.Schema.Types.ObjectId , ref: 'allJob' }],
+  jobs:[{type:Schema.Types.ObjectId , ref: 'allJob' }],
   type:String
   
 });

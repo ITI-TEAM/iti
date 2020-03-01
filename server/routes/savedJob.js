@@ -7,11 +7,33 @@ const jwt = require('jsonwebtoken');
 const allJob = require('../models/allJob');
 const SavedJob=require('../models/savedJob');
 
+
+// Handle incoming GET requests to /orders
+// router.get("/", (req, res, next) => {
+//   SavedJob.find()
+//     .select("time jobs type _id")
+//     .populate('jobs', 'companyID')
+//     .exec()
+//     .then(docs => {
+//       res.status(200).json(docs);
+//     })
+//     .catch(err => {
+//       res.status(500).json({
+//         error: err
+//       });
+//     });
+// });
+
+
+
+
+
+
 //insert saved job
 
 router.post("/save", (req, res, next) => {
  
-  allJob.findById(req.body.jobId)
+  allJob.findById(req.body._id)
     .then(job => {
       if (!job) {
         return res.status(404).json({
@@ -21,7 +43,7 @@ router.post("/save", (req, res, next) => {
       const savedJob = new SavedJob({
         _id: mongoose.Types.ObjectId(),
         time: req.body.time,
-        jobs: req.body.jobId,
+        jobs: req.body._id,
         type: req.body.type
       });
       return savedJob.save();
@@ -65,9 +87,7 @@ router.get("/list/:jobId", (req, res, next) => {
             message: "job not found"
           });
         }
-        res.status(200).json({
-            job: job
-        });
+        res.status(200).json(job);
       })
       .catch(err => {
         res.status(500).json({
