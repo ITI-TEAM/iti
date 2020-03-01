@@ -15,6 +15,7 @@ const AppliedStudent = require('./models/appliedstudent');
 const Sprofile = require('./models/sprofile');
 const Cprofile = require('./models/cprofile');
 const Event = require('./models/event');
+const SavedJob=require('./models/savedJob');
 
 
 
@@ -25,6 +26,7 @@ const cprofileRoutes = require('./routes/cprofile');
 const allJobRoutes = require('./routes/allJob');
 const eventRoutes = require('./routes/event');
 const appliedstudentRoutes = require('./routes/appliedstudent');
+const SavedJOB =require('./routes/savedJob')
 
 //BODY-PARSER 
 app.use(bodyParser.urlencoded({
@@ -60,6 +62,7 @@ app.use('/cprofile', cprofileRoutes);
 app.use('/allJob', allJobRoutes);
 app.use('/event', eventRoutes);
 app.use('/appliedstudent', appliedstudentRoutes);
+app.use('/savedJob',SavedJOB)
 
 
 
@@ -256,11 +259,6 @@ allJob.find({}, (err, data) => {
 
 
 });
-
-
-
-
-
 
 
 server.listen(3000, () => {

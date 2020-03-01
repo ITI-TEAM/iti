@@ -15,11 +15,32 @@ export class ListJobsComponent implements OnInit {
   public jobs=[];
   p: number = 1;
   public sectionsProfile = ["", ""]
-  studentID: string;
+  public studentID: string;
+ filter ={Qena:true,Sohage:true,Cairo:true,Assuit:true}
+
+  filterData = [
+    {
+          firstName: 'Qena',
+        },
+        {
+          firstName: ' Sohage',
+        },
+        {
+          firstName: 'Cairo',
+        },
+        {
+          firstName: 'Assuit',
+        }
+  ]
+
 
   constructor(private router: Router, private route: ActivatedRoute, private jobServ: JOBService, private studetentServ:StudentServiseService) { }
 
-
+// filterChange(){
+//   this.filterData=this.jobs.filter(x=>(x.location=='Qena'&& this.filter.Qena)||
+//   (x.location=='Sohage'&& this.filter.Sohage)||(x.location=='Sohage'&& this.filter.Sohage)
+//   )
+// }
   ngOnInit() {
     
     this.route.paramMap.subscribe((params: ParamMap) => {
@@ -36,7 +57,6 @@ export class ListJobsComponent implements OnInit {
             },
             error=>{
               console.log(error);
-              
             }
           );
         }
@@ -46,21 +66,19 @@ export class ListJobsComponent implements OnInit {
 
       }
     );
-
-     //jquery
-    
-    
-
   }
+
+  //details 
   goDetails() {
     this.router.navigate(['/job-details']);
 
   }
+
+  //cancel job after apply it
   cancelJob(job){
     this.studetentServ.cancelJob(job[0]._id).subscribe(
       data=>{
         console.log(data);
-        
       },
       error=>{
         console.log(error);

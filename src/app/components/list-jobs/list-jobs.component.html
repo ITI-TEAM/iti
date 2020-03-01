@@ -27,7 +27,7 @@
                                         <img src="img/svg_icon/1.svg" alt="">
                                       </div>
                                       <div class="jobs_conetent">
-                                        <a href="job_details.html">
+                                        <a href="">
                                           <h4>{{job[0].title}}</h4>
                                         </a>
                                         <div class="links_locat d-flex align-items-center">
@@ -42,60 +42,60 @@
                                     </div>
                                     <div class="jobs_right">
                                       <div class="apply_now">
-                                        <a class="heart_mark" href="#"> <i class="fa fa-trash"></i> </a>
-                  
+                                        <a class="heart_mark" > <i (click)="cancelJob(job)" class="fa fa-trash"></i> </a>
                                       </div>
                                       <div class="date">
-                                        <p>Date line: 31 Jan 2020</p>
+                                        <p> Date line: {{job[0].time}} 31 Jan 2020</p>
                                       </div>
                                     </div>
                                   </div>
-                                
-                  
-                              
                             </div>
+                            
                           </div>
-                       
-                     
-                    
                   </div>
-          
           </div>
+
           <div class="col-lg-3 sidebar">
             <div class="sidebar-box bg-white p-4 ftco-animate fadeInUp ftco-animated">
                 <h3 class="heading-sidebar">Browse Category</h3>
-                <form action="#" class="search-form mb-3">
+          <div class="search-form mb-3">
             <div class="form-group">
               <span class="icon icon-search"></span>
-              <input type="text"type="text" class="form-control" placeholder="Search Here" [(ngModel)]="term">
+              <input type="text"type="text" class="form-control" placeholder="Search Here" 
+              [(ngModel)]="term">
             </div>
-          </form>
-                <form action="#" class="browse-form">
-                          <label for="option-job-1"><input type="checkbox" id="option-job-1" name="vehicle" value="" checked=""> Website &amp; Software</label><br>
-                          <label for="option-job-2"><input type="checkbox" id="option-job-2" name="vehicle" value=""> Education &amp; Training</label><br>
-                          <label for="option-job-3"><input type="checkbox" id="option-job-3" name="vehicle" value=""> Graphics Design</label><br>
-                          <label for="option-job-4"><input type="checkbox" id="option-job-4" name="vehicle" value=""> Accounting &amp; Finance</label><br>
-                          <label for="option-job-5"><input type="checkbox" id="option-job-5" name="vehicle" value=""> Restaurant &amp; Food</label><br>
-                          <label for="option-job-6"><input type="checkbox" id="option-job-6" name="vehicle" value=""> Health &amp; Hospital</label><br>
-                        </form>
+          </div>
+                <form #user1Form="ngForm" class="browse-form">
+
+                  <label for="option-job-1" ><input type="checkbox" id="option-job-1" name="vehicle" value="" checked=""> Web &amp; Designer</label><br>
+                  <label for="option-job-2"><input type="checkbox" id="option-job-2" name="vehicle" value=""> Web &amp; Deleloper</label><br>
+                  <label for="option-job-3"><input type="checkbox" id="option-job-3" name="vehicle" value=""> Graphics Design</label><br>
+             
+
+                </form>
             </div>
 
             <div class="sidebar-box bg-white p-4 ftco-animate fadeInUp ftco-animated">
                 <h3 class="heading-sidebar">Select Location</h3>
-                <form action="#" class="search-form mb-3">
+         <div class="search-form mb-3">
             <div class="form-group">
               <span class="icon icon-search"></span>
-              <input type="text" class="form-control" placeholder="Search Here" [(ngModel)]="term">
+              <input type="text" class="form-control" placeholder="Search Here" [(ngModel)]="term" >
             </div>
-          </form>
-                <form action="#" class="browse-form">
-                          <label for="option-location-1"><input type="checkbox" id="option-location-1" name="vehicle" value="" checked=""> Sydney, Australia</label><br>
-                          <label for="option-location-2"><input type="checkbox" id="option-location-2" name="vehicle" value=""> New York, United States</label><br>
-                          <label for="option-location-3"><input type="checkbox" id="option-location-3" name="vehicle" value=""> Tokyo, Japan</label><br>
-                          <label for="option-location-4"><input type="checkbox" id="option-location-4" name="vehicle" value=""> Manila, Philippines</label><br>
-                          <label for="option-location-5"><input type="checkbox" id="option-location-5" name="vehicle" value=""> Seoul, South Korea</label><br>
-                          <label for="option-location-6"><input type="checkbox" id="option-location-6" name="vehicle" value=""> Western City, UK</label><br>
-                        </form>
+          </div>
+                <form  #user2Form="ngForm" class="browse-form"> -->
+                     <div *ngFor="let item of location">    
+                   <label for="option-location-1"  ><input *ngFor="let item of location" type="checkbox" id="option-location-1" name="vehicle" value="" checked="">
+                     {{item.firstName}}</label><br>
+                    </div>  
+                       </form>
+                        <!-- <form   class="browse-form">
+                        <tr *ngFor="let item of filterData">
+                          <label for="option-location-1"  ><input  [(ngModel)]="filter.Qena" 
+                           (ngModelChange)="filterChange()" type="checkbox" id="option-location-1" name="vehicle"  >
+                           Qena</label><br>
+                      </tr>
+                      </form> -->
             </div>
           </div>
             </div>

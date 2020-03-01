@@ -18,6 +18,7 @@ export class JOBService {
   getCompanyPosts(companyID:string):Observable<any>{
     return this.http.get('http://localhost:3000/allJob/companyjobs/'+companyID);
   }
+  //delete post of job
   deleteJob(_id){
     return this.http.delete('http://localhost:3000/allJob/delete/'+_id);
   }
