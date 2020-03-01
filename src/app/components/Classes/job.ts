@@ -1,4 +1,5 @@
 export class Job {
+  filter: any;
     constructor(
         public title:String,
         public salary:string,
