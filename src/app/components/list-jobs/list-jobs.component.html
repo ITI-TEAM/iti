@@ -50,21 +50,7 @@
                                     </div>
                                   </div>
                             </div>
-                            <table class="table">
-                              <thead>
-                                  <tr>
-                                      <th scope="col">First</th>
-                                      <th scope="col">Last</th>
-                                      <th scope="col">Address</th>
-                                  </tr>
-                              </thead>
-                              <tbody>
-                                  <tr *ngFor="let item of filterData | filter:term">
-                                      <td>{{item.firstName}}</td>
-                                   
-                                  </tr>
-                              </tbody>
-                          </table>
+                            
                           </div>
                   </div>
           </div>
@@ -97,19 +83,19 @@
               <input type="text" class="form-control" placeholder="Search Here" [(ngModel)]="term" >
             </div>
           </div>
-                <!-- <form  #user2Form="ngForm" class="browse-form"> -->
-                     <!-- <div *ngFor="let item of location">    
+                <form  #user2Form="ngForm" class="browse-form"> -->
+                     <div *ngFor="let item of location">    
                    <label for="option-location-1"  ><input *ngFor="let item of location" type="checkbox" id="option-location-1" name="vehicle" value="" checked="">
                      {{item.firstName}}</label><br>
-                    </div>   -->
-                        <!-- </form> -->
-                        <form   class="browse-form">
+                    </div>  
+                       </form>
+                        <!-- <form   class="browse-form">
                         <tr *ngFor="let item of filterData">
                           <label for="option-location-1"  ><input  [(ngModel)]="filter.Qena" 
                            (ngModelChange)="filterChange()" type="checkbox" id="option-location-1" name="vehicle"  >
                            Qena</label><br>
                       </tr>
-                      </form>
+                      </form> -->
             </div>
           </div>
             </div>
