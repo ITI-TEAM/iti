@@ -1,0 +1,26 @@
+<div>
+  <div class="messaging">
+    <div class="inbox_msg">
+      <div class="inbox_people">
+        <div class="headind_srch">
+          <div class="recent_heading">
+            <h4>Recent</h4>
+          </div>
+        </div>
+        <div class="inbox_chat scroll" > 
+          <div class="chat_list" *ngFor="let chat of chats" (click)="readMore(chat)">
+            <div class="chat_people">
+              <div class="chat_img"> <img src="../../../assets/images/ITI.png" alt="sunil"> </div>
+              <div class="chat_ib">
+                 <p>{{chat.msg}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <router-outlet></router-outlet>
+
+    </div>
+  </div>
+
+</div>

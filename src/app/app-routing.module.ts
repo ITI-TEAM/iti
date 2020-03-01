@@ -23,6 +23,8 @@ import { EditCompanyProfileComponent } from './components/edit-company-profile/e
 import { AddUsersComponent } from './components/add-users/add-users.component';
 import { ViewSComponent } from './components/view-s/view-s.component';
 import { ViewCComponent } from './view-c/view-c.component';
+import { MessagesComponent } from './components/messages/messages.component';
+import { ReadMoreComponent } from './components/ReadMore/read-more/read-more.component';
 
 
 const routes: Routes = [
@@ -39,8 +41,8 @@ const routes: Routes = [
 
   {path:'home-company/:ID',component:HomeCompanyComponent,canActivate:[AuthenticationGuardService]},
   {path:'post-job/:ID',component:PostJobComponent,canActivate:[AuthenticationGuardService]},
-  {path:'submited-profiles/:ID',component:StudentsProfileSubmittedComponent,canActivate:[AuthenticationGuardService]},
-  {path:'company-profile/:ID',component:CompanyProfileComponent,canActivate:[AuthenticationGuardService]},
+  {path:'submited-profiles/:ID/:jobID',component:StudentsProfileSubmittedComponent,canActivate:[AuthenticationGuardService]},
+  {path:'company-profile/:ID/',component:CompanyProfileComponent,canActivate:[AuthenticationGuardService]},
   {path:'edit-company-profile/:ID',component:EditCompanyProfileComponent,canActivate:[AuthenticationGuardService]},
   
 
@@ -52,8 +54,13 @@ const routes: Routes = [
   {path:'add-event/:ID',component:AddEventComponent,canActivate:[AuthenticationGuardService]},
 
   {path:'show-student/:ID',component:ViewSComponent,canActivate:[AuthenticationGuardService]},
-  {path:'show-company/:ID',component:ViewCComponent,canActivate:[AuthenticationGuardService]}
+  {path:'show-company/:ID',component:ViewCComponent,canActivate:[AuthenticationGuardService]},
 
+
+  {path:'message/:ID',component:MessagesComponent,
+  children:[{path:'readMore/:companyID/:studentID',component:ReadMoreComponent}]},
+
+  
 
   
 ];

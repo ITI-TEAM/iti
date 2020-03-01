@@ -54,8 +54,9 @@ export class HomeCompanyComponent implements OnInit {
     })
   }
   onSelect(job) {
-    this.router.navigate(['/submited-profiles', job._id]);
-
+    this.router.navigate(['/submited-profiles',this.companyID ,job._id]);
+    console.log(this.companyID);
+    
   }
   deletJob(job) {
     this.compServ.deleteJob(job._id).subscribe(
