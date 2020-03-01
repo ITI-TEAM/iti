@@ -79,7 +79,10 @@ export class ListJobsComponent implements OnInit {
     this.studetentServ.cancelJob(job[0]._id).subscribe(
       data=>{
         console.log(data);
-      },
+        alert("Job Cancelld");
+        location.reload();
+
+        },
       error=>{
         console.log(error);
         

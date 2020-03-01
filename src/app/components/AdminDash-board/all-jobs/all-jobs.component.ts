@@ -17,7 +17,9 @@ constructor(private router: Router, private route: ActivatedRoute, private jobSe
   ngOnInit() {
     this.jobServ.allJobs().subscribe(
       data=>{
-      this.jobs=data;        
+      this.jobs=data;   
+      console.log(data);
+           
       },
 error=>{
   console.log(error);

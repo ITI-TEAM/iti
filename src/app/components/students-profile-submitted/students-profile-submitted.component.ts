@@ -12,12 +12,14 @@ import { UserServService } from 'src/app/services/User/user-serv.service';
 export class StudentsProfileSubmittedComponent implements OnInit {
   public jobs=["","",""]
   jobID: string;
+  ID;
   students=[];
   constructor(private router : Router,private jobServ:JOBService, private userServise:UserServService,private route:ActivatedRoute) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe((params:ParamMap)=>{
       this.jobID=params.get('ID');
+      this.ID=params.get('ID');
     }); 
    
     this.jobServ.getsubmitedStudent(this.jobID).subscribe(

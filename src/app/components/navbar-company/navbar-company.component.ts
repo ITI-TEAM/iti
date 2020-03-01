@@ -10,27 +10,25 @@ declare var $: any;
 })
 export class NavbarCompanyComponent implements OnInit {
 
-  constructor(private router:Router ,private route:ActivatedRoute,private compServ:CompanyService) { }
+  constructor(private router:Router ,private route:ActivatedRoute,private CompanyService:CompanyService) { }
   public ID;
-  public company=new Company('','','','','','','','','','');
+  public company=new Company("","","","","","","","","","");
+  public company_id;
   ngOnInit() {
+   
     this.route.paramMap.subscribe((params:ParamMap)=>{
       this.ID=params.get('ID');
     });
-
-    this.compServ.getCompany(this.ID).subscribe(
-      data=>{
-        console.log(data);
-        this.company=data;
-
-      },
-      error=>{
-        console.log(error);
-        
-      }
-    );
-
-
+    
+     this.route.paramMap.subscribe((params:ParamMap)=>{
+       this.company_id = params.get("ID")
+       })
+      this.CompanyService.getCompany(this.company_id).subscribe(data=>
+        {
+          this.company=data;
+          console.log( this.company)
+        }
+        )
     
     
     //jquery
