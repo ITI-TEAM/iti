@@ -9,8 +9,7 @@ const SavedJob = require('../models/savedJob');
 
 
 router.post("/save/:jobID/:studentID", (req, res, next)=>{
-  
-  
+
   const newSaved=new SavedJob({
       jobID:req.params.jobID,
       studentID:req.params.studentID

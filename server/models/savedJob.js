@@ -10,3 +10,4 @@ const SavedJobSchema = new mongoose.Schema({
 
 const SavedJob = mongoose.model('SavedJob', SavedJobSchema);
 
+module.exports = SavedJob;
