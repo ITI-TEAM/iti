@@ -253,6 +253,50 @@ allJob.find({}, (err, data) => {
 ///// create new Job(post)
 
 
+socket.on('newJob', (data,companyID) => {
+    const newJob = new allJob({
+        companyID:companyID,
+        title:data.title,
+        salary:data.salary,
+        location:data.location,
+        type:data.type,
+        languages:data.languages,
+        exper:data.exper,
+        qual:data.qual,
+        desc:data.desc,
+        respons:data.respons,
+        company:data.company,
+        time:data.time
+    
+    });
+    newJob.save()
+    .then(data=>{
+        allJob.find({}, (err, data) => {
+            if (!err)
+                io.emit("getJobs", data)
+            else {
+                console.log(error);
+        
+            }
+        });
+        console.log(data);
+        
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json({
+          error: err
+        });
+  
+      });
+   
+});
+
+
+
+
+
+
 
 
 

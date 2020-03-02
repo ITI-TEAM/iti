@@ -13,12 +13,8 @@ import { Job } from '../Classes/job';
 export class ListJobsComponent implements OnInit {
 
   public jobs=[];
-
-  public test;
-  
-
   public studentID: string;
-
+  test;
 
 
   constructor(private router: Router, private route: ActivatedRoute, private jobServ: JOBService, private studetentServ:StudentServiseService) { }
@@ -36,12 +32,16 @@ export class ListJobsComponent implements OnInit {
           this.jobServ.listJobNames(result[i].jobID).subscribe(
             data=>{
              this.jobs.push(data);
-            console.log(this.jobs);
+             console.log(data);
+             
             },
             error=>{
               console.log(error);
             }
+          
           );
+          console.log(result[i]);
+          
         }
       },
       error => {

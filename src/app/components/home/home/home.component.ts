@@ -11,15 +11,17 @@ import { SockectIoService } from 'src/app/services/socket .io/sockect-io.service
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
- 
-    jobs=[];
+    test;
+    jobs;
     p: number = 1;
       studentID;
       ID=this.studentID;
       jobID;
     envents=[]
     prostudent=[];
-  constructor(private router : Router,private jobServ:JOBService,private route:ActivatedRoute,private eventss:EventService,private student:StudentServiseService) { }
+  constructor(private router : Router,private jobServ:JOBService,
+    private route:ActivatedRoute,private eventss:EventService,
+    private student:StudentServiseService,private socketServ:SockectIoService) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe((params:ParamMap)=>{
@@ -47,7 +49,7 @@ error=>{
     this.student.getStudent(this.ID).subscribe(
       data=>{
         this.prostudent=data[0]
-        console.log(data);
+      //  console.log(data);
         
       },
       error=>{
@@ -55,6 +57,17 @@ error=>{
         
       }
     )
+      this.socketServ.getJobs().subscribe(
+        data=>{
+          this.jobs=data;          
+        },
+        error=>{
+          console.log(error);
+          
+        }
+      );
+
+
       
   }
   goDetails(job){
