@@ -9,24 +9,12 @@ export class ChatService {
 
   constructor(private http:HttpClient) { }
 
-  getStudetnMSG(studentID){
-   return this.http.get<any>('http://localhost:3000/chat/studentMSG/'+studentID)
+  getChats(studentID){
+    return this.http.get<any>('http://localhost:3000/chat/chats/'+studentID);
   }
 
-
-  getCompanyMSG(companyID){
-    return this.http.get<any>('http://localhost:3000/chat/studentMSG/'+companyID)
-   }
- 
-
-
-  chatMessags(companyID,studentID){
-    return this.http.get<any>('http://localhost:3000/chat/chatMSG/'+companyID+'/'+studentID)
-  }
-
-
-  newMsg(companyID,studentID,msg){
-    return this.http.post('http://localhost:3000/chat/newMSG/'+companyID+'/'+studentID,msg)
+  getChatMessages(chatID){
+    return this.http.get<any>('http://localhost:3000/message/messages/'+chatID);
   }
 
 

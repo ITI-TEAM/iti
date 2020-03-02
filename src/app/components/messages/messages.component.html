@@ -10,9 +10,9 @@
         <div class="inbox_chat scroll" > 
           <div class="chat_list" *ngFor="let chat of chats" (click)="readMore(chat)">
             <div class="chat_people">
+              <p>{{chat.companyID}}</p>
               <div class="chat_img"> <img src="../../../assets/images/ITI.png" alt="sunil"> </div>
               <div class="chat_ib">
-                 <p>{{chat.msg}}</p>
               </div>
             </div>
           </div>

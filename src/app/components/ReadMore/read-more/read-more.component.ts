@@ -11,9 +11,10 @@ import { Message } from '../../Classes/message';
 export class ReadMoreComponent implements OnInit {
 
   constructor(private route:ActivatedRoute,private router : Router,private chat:ChatService) { }
- public messges;
+ public messages;
  public studentID;
  public companyID;
+ public chatID;
  public msg=new Message('');
  
 
@@ -22,41 +23,26 @@ export class ReadMoreComponent implements OnInit {
      
       this.companyID=params.get('companyID');
       this.studentID=params.get('studentID');
+      this.chatID=this.companyID+this.studentID;
+
+      this.chat.getChatMessages(this.chatID).subscribe(
+        data=>{
+          this.messages=data.result;
+          console.log(data);
+          
+        },
+        error=>{
+          console.log(error);
+          
+        }
+      );
 
     });
-    console.log(this.studentID+"  "+this.companyID)
 
-    this.chat.chatMessags(this.companyID,this.studentID).subscribe(
-      data=>{
-      console.log(data.result);
-       console.log(data.result.length);
-       this.messges=data.result;
-
-        
-      },
-      error=>{
-        console.log(error);
-        
-      }
-    );
-   
-   
-    
 
   }
-  sendMsg(){
-    this.chat.newMsg(this.companyID,this.studentID,this.msg).subscribe(
-      data=>{
-        console.log(data);
-        
-      },
-      error=>{
-        console.log(error);
-        
-      }
-    );
-    
-  }
+
+ 
 
 
 

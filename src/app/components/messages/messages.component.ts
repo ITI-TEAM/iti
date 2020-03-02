@@ -20,7 +20,7 @@ export class MessagesComponent implements OnInit {
 
 
 
-    this.chat.getStudetnMSG(this.studentID).subscribe(
+    this.chat.getChats(this.studentID).subscribe(
       data=>{
         this.chats=data.result;
         console.log(this.chats);

@@ -27,6 +27,7 @@ const allJobRoutes = require('./routes/allJob');
 const eventRoutes = require('./routes/event');
 const appliedstudentRoutes = require('./routes/appliedstudent');
 const chatRoutes=require('./routes/chat');
+const mesageRoutes=require('./routes/message');
 
 //BODY-PARSER 
 app.use(bodyParser.urlencoded({
@@ -63,6 +64,7 @@ app.use('/allJob', allJobRoutes);
 app.use('/event', eventRoutes);
 app.use('/appliedstudent', appliedstudentRoutes);
 app.use('/chat',chatRoutes);
+app.use('/message',mesageRoutes);
 
 
 
