@@ -9,10 +9,7 @@ const SavedJob = require('../models/savedJob');
 
 
 router.post("/save/:jobID/:studentID", (req, res, next)=>{
-  // allJob.find({ID:req.params.jobID})
-  // .then(data=>{
-  //     res.status(200).json(data);
-  // })
+  
   
   const newSaved=new SavedJob({
       jobID:req.params.jobID,
