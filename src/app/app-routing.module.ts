@@ -25,6 +25,7 @@ import { ViewSComponent } from './components/view-s/view-s.component';
 import { ViewCComponent } from './view-c/view-c.component';
 import { MessagesComponent } from './components/messages/messages.component';
 import { ReadMoreComponent } from './components/ReadMore/read-more/read-more.component';
+import { SavedJobComponent } from './saved-job/saved-job.component';
 
 
 const routes: Routes = [
@@ -37,6 +38,7 @@ const routes: Routes = [
   {path:'edit-student-profile/:ID',component:StudentProfileComponent,canActivate:[AuthenticationGuardService]},
   {path:'job-details/:ID',component:JObDetailsComponent,canActivate:[AuthenticationGuardService]},
   {path:'list-jobs/:ID',component:ListJobsComponent},
+  {path:'saved-job/:ID',component:SavedJobComponent},
   {path:'job-details/:ID/:companyID/:jobID',component:JObDetailsComponent,canActivate:[AuthenticationGuardService]},
 
   {path:'home-company/:ID',component:HomeCompanyComponent,canActivate:[AuthenticationGuardService]},

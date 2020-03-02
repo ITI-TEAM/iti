@@ -60,15 +60,34 @@
                   <li >{{item}}</li>
                 </ul>
               </div>
+              <div class="apply_job_form white-bg">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <button class="boxed-btn3" type="submit" (click)="applytoJob()">Apply Now</button>
+                    <br>
+                   <strong class="text-danger" [class.d-none]="test">You Already Applied for the job</strong>
+                     
+                  </div>
+                  <div class="col-lg-6">
+                    <button class="boxed-btn3" type="submit" (click)="savedJob()"><i class="fas fa-heart"></i></button>
+                    <br>
+                   <strong class="text-danger" [class.d-none]="test1">You Already Saved this job</strong>
+                     
+                  </div>
+                </div>
+                
+  
+              </div>
+             
 
             </div>
-            <div class="apply_job_form white-bg">
+            <!-- <div class="apply_job_form white-bg">
               <h4>Apply for the job</h4>
               <button class="boxed-btn3 w-100" type="submit" (click)="applytoJob()">Apply Now</button>
 
               <strong class="text-danger" [class.d-none]="test">You Already Applied for the job</strong>
 
-            </div>
+            </div> -->
           </div>
           <div class="col-lg-4">
             <div class="job_sumary">

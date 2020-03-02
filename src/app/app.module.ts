@@ -43,6 +43,8 @@ import { ViewSComponent } from './components/view-s/view-s.component';
 import { ViewCComponent } from './view-c/view-c.component';
 import { MessagesComponent } from './components/messages/messages.component';
 import { ReadMoreComponent } from './components/ReadMore/read-more/read-more.component';
+import { SavedJobComponent } from './saved-job/saved-job.component';
+import { SavedJobService } from './services/savedJOB/saved-job.service';
 
 @NgModule({
   declarations: [
@@ -84,7 +86,8 @@ import { ReadMoreComponent } from './components/ReadMore/read-more/read-more.com
     ViewSComponent,
     ViewCComponent,
     MessagesComponent,
-    ReadMoreComponent
+    ReadMoreComponent,
+    SavedJobComponent
     
     
   ],
@@ -105,7 +108,8 @@ import { ReadMoreComponent } from './components/ReadMore/read-more/read-more.com
     JOBService,
     StudentServiseService,
     UserServService,
-    SockectIoService
+    SockectIoService,
+    SavedJobService
   ],
   bootstrap: [AppComponent]
 })
