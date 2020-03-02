@@ -9,7 +9,7 @@ const SavedJob = require('../models/savedJob');
 
 
 router.post("/save/:jobID/:studentID", (req, res, next)=>{
-
+  
   const newSaved=new SavedJob({
       jobID:req.params.jobID,
       studentID:req.params.studentID
@@ -46,8 +46,23 @@ router.get("/list/:studentID", (req, res, next)=>{
 
 });
 
+router.delete("/cancel/:jobID",(req,res,next)=>{
+  SavedJob.deleteOne({jobID:req.params.jobID})
+  .exec()
+.then(result=>{
+  res.status(200).json({
+    message:"job Canceled"
+  });
+})
+.catch(err => {
+  console.log(err);
+  res.status(500).json({
+    error: err
+  });
 
+});
 
+});
 
 
 

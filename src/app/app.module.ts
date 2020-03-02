@@ -42,6 +42,7 @@ import { SockectIoService } from './services/socket .io/sockect-io.service';
 import { ViewSComponent } from './components/view-s/view-s.component';
 import { ViewCComponent } from './view-c/view-c.component';
 import { SavedJobComponent } from './saved-job/saved-job.component';
+import { SavedJobService } from './services/savedJOB/saved-job.service';
 
 @NgModule({
   declarations: [
@@ -103,7 +104,8 @@ import { SavedJobComponent } from './saved-job/saved-job.component';
     JOBService,
     StudentServiseService,
     UserServService,
-    SockectIoService
+    SockectIoService,
+    SavedJobService
   ],
   bootstrap: [AppComponent]
 })

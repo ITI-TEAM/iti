@@ -21,8 +21,8 @@
                   <div class="job_listing_area plus_padding">
                           <div class="recent_joblist_wrap">
                             <div class="job_lists m-0">
-                                  <div class="single_jobs white-bg d-flex justify-content-between" >
-                                    <!-- *ngFor="let job of jobs | filter:term | paginate: { itemsPerPage: 5, currentPage: p }" -->
+                                  <div class="single_jobs white-bg d-flex justify-content-between" *ngFor="let job of jobs | filter:term | paginate: { itemsPerPage: 5, currentPage: p }">
+                                    
                                     <div class="jobs_left d-flex align-items-center">
                                       <div class="thumb">
                                         <img src="img/svg_icon/1.svg" alt="">
@@ -30,18 +30,18 @@
                                       <div class="jobs_conetent">
                                         <a href="">
                                           <h4>
-                                              <!-- {{job[0].title}} -->
+                                              {{job[0].title}}
                                             </h4>
                                         </a>
                                         <div class="links_locat d-flex align-items-center">
                                           <div class="location">
                                             <p> <i class="fa fa-map-marker"></i>
-                                                 <!-- {{job[0].location}} -->
+                                                 {{job[0].location}}
                                                 </p>
                                           </div>
                                           <div class="location">
                                             <p> <i class="fa fa-clock-o"></i>
-                                                <!-- {{job[0].type}} -->
+                                                {{job[0].type}}
                                             </p>
                                           </div>
                                         </div>
@@ -49,11 +49,11 @@
                                     </div>
                                     <div class="jobs_right">
                                       <div class="apply_now">
-                                        <a class="heart_mark" > <i (click)="cancelJob(job)" class="fa fa-trash"></i> </a>
+                                        <a class="heart_mark" > <i (click)="cancelSavedJob(job)" class="fa fa-trash"></i> </a>
                                       </div>
                                       <div class="date">
                                         <p> 
-                                            <!-- Date line: {{job[0].time}} 31 Jan 2020 -->
+                                            Date line: {{job[0].time}} 31 Jan 2020
                                         </p>
                                       </div>
                                     </div>
