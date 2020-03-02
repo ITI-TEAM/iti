@@ -5,6 +5,7 @@ import { JOBService } from 'src/app/services/job.service';
 import { error } from 'util';
 import { CompanyService } from 'src/app/services/Company/company.service';
 import { Company } from '../../Classes/company';
+import { SockectIoService } from 'src/app/services/socket .io/sockect-io.service';
 
 @Component({
   selector: 'app-post-job',
@@ -13,7 +14,8 @@ import { Company } from '../../Classes/company';
 })
 export class PostJobComponent implements OnInit {
   time=new Date().toUTCString();
-  constructor(private router:Router ,private route:ActivatedRoute,private jobServ:JOBService,private CompanyService:CompanyService) { }
+  constructor(private router:Router ,private route:ActivatedRoute,
+    private jobServ:JOBService,private CompanyService:CompanyService,private socketServ:SockectIoService) { }
 
     public jobModel=new Job("","","","",[],"","","",[],"",this.time);
     public ID;
@@ -36,7 +38,8 @@ export class PostJobComponent implements OnInit {
   }
 
 //post job
-  postJob(){
+  /*postJob()
+  {
     this.jobServ.createPost(this.ID,this.jobModel).subscribe(
       result=>{
         alert("Job Posted")
@@ -46,5 +49,28 @@ export class PostJobComponent implements OnInit {
         console.log(error)
       }
       )
+  }*/
+
+  postJob(){
+    this.socketServ.newJob(this.jobModel,this.ID);
+    alert("Job Posted")
+    this.router.navigate(['/home-company',this.ID]);
+    this.socketServ.getJobs().subscribe(
+      data=>{
+        console.log(data);
+        
+      },
+      error=>{
+        console.log(error);
+        
+      }
+    );
+
+
+
+
   }
+
+
+
 }

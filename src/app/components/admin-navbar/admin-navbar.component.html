@@ -1,7 +1,7 @@
 <nav class="navbar navbar-dark bg-dark navbar-expand-sm" style="border-radius: 0px">
-    <a class="navbar-brand" routerLink="/admin/{{ID}}" style="padding: 0px 15px;">
-      <img src="../../../assets/ITIAN.jpg" width="70" height="70" alt="logo">
-      ITIIAN
+    <a class="navbar-brand" routerLink="/admin/{{ID}}" style="padding: 0px 15px;margin-top: 14px;">
+     <span> ITIan</span>
+     
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-4" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -9,7 +9,7 @@
     <div class="collapse navbar-collapse" id="navbar-list-4">
         <ul class="navbar-nav" style="float:left; margin-top: 15px;">
             <li class="nav-item dropdown active"  style="padding-right: 32px;">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-right:33px;margin-top: 8px;"> User
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-top: 8px;"> User
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <a class="dropdown-item" routerLink="/manage-students/{{ID}}">Student</a>
@@ -38,7 +38,7 @@
             <a style="    margin-left: 8px;">Admin</a>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" (click)="logOut()" > <i class="fa fa-circle-logout"></i>Log Out</a>
+            <a class="dropdown-item" (click)="logOut()" > <i class="fa fa-sign-out" aria-hidden="true"></i> &nbsp; Log Out</a>
           </div>
         </li> 
          

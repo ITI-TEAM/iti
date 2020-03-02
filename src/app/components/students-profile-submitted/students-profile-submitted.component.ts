@@ -18,7 +18,7 @@ export class StudentsProfileSubmittedComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe((params:ParamMap)=>{
-      this.jobID=params.get('ID');
+      this.jobID=params.get('jobID');
       this.ID=params.get('ID');
     }); 
    
@@ -44,16 +44,14 @@ export class StudentsProfileSubmittedComponent implements OnInit {
       }
     );
 
+  }
+
+  seeProfile(student){
+    window.open('/show-student/'+student.ID+'/'+this.ID, "_blank");
+    console.log("TESSST");
+    console.log(student.ID);
     
-    // DeleteStu(student){
-    //   this.userServise.deletUser(this.User_ID).subscribe(data=>
-    //     {
-    //       alert(" user deleted")
-    //     }
-    //     )
-    //  }
-
-
+    
   }
 
 }

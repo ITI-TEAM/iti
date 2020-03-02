@@ -25,13 +25,13 @@
             <div class="recent_joblist_wrap">
               <div class="job_lists m-0">
                 <div class="single_jobs white-bg d-flex justify-content-between"
-                  *ngFor="let job of jobs | filter:term | paginate: { itemsPerPage: 5, currentPage: p }">
+                  *ngFor="let job of jobs">
                   <div class="jobs_left d-flex align-items-center">
                     <div class="thumb">
                       <img style="width: 50px; height: 50px;" src="../../../assets/ITIAN.jpg" alt="">
                     </div>
                     <div class="jobs_conetent">
-                      <a href="">
+                      <a>
                         <h4>{{job[0].title}}</h4>
                       </a>
                       <div class="links_locat d-flex align-items-center">
@@ -79,7 +79,6 @@
         
       </div>
     </div>
-    <pagination-controls (pageChange)="p = $event"></pagination-controls>
   </section>
 
   <app-footer></app-footer>

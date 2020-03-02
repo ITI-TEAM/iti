@@ -41,6 +41,8 @@ import { UserServService } from './services/User/user-serv.service';
 import { SockectIoService } from './services/socket .io/sockect-io.service';
 import { ViewSComponent } from './components/view-s/view-s.component';
 import { ViewCComponent } from './view-c/view-c.component';
+import { MessagesComponent } from './components/messages/messages.component';
+import { ReadMoreComponent } from './components/ReadMore/read-more/read-more.component';
 import { SavedJobComponent } from './saved-job/saved-job.component';
 import { SavedJobService } from './services/savedJOB/saved-job.service';
 
@@ -83,6 +85,8 @@ import { SavedJobService } from './services/savedJOB/saved-job.service';
     EditCompanyProfileComponent,
     ViewSComponent,
     ViewCComponent,
+    MessagesComponent,
+    ReadMoreComponent,
     SavedJobComponent
     
     

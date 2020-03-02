@@ -16,6 +16,7 @@ const Sprofile = require('./models/sprofile');
 const Cprofile = require('./models/cprofile');
 const Event = require('./models/event');
 const SavedJob=require('./models/savedJob');
+const Chat=require('./models/chat');
 
 
 
@@ -27,6 +28,8 @@ const allJobRoutes = require('./routes/allJob');
 const eventRoutes = require('./routes/event');
 const appliedstudentRoutes = require('./routes/appliedstudent');
 const savedRoutes =require('./routes/savedJob')
+const chatRoutes=require('./routes/chat');
+const mesageRoutes=require('./routes/message');
 
 //BODY-PARSER 
 app.use(bodyParser.urlencoded({
@@ -63,6 +66,8 @@ app.use('/allJob', allJobRoutes);
 app.use('/event', eventRoutes);
 app.use('/appliedstudent', appliedstudentRoutes);
 app.use('/savedJob',savedRoutes)
+app.use('/chat',chatRoutes);
+app.use('/message',mesageRoutes);
 
 
 
@@ -251,6 +256,50 @@ allJob.find({}, (err, data) => {
 });
 
 ///// create new Job(post)
+
+
+socket.on('newJob', (data,companyID) => {
+    const newJob = new allJob({
+        companyID:companyID,
+        title:data.title,
+        salary:data.salary,
+        location:data.location,
+        type:data.type,
+        languages:data.languages,
+        exper:data.exper,
+        qual:data.qual,
+        desc:data.desc,
+        respons:data.respons,
+        company:data.company,
+        time:data.time
+    
+    });
+    newJob.save()
+    .then(data=>{
+        allJob.find({}, (err, data) => {
+            if (!err)
+                io.emit("getJobs", data)
+            else {
+                console.log(error);
+        
+            }
+        });
+        console.log(data);
+        
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json({
+          error: err
+        });
+  
+      });
+   
+});
+
+
+
+
 
 
 

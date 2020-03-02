@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { JOBService } from 'src/app/services/job.service';
 import { StudentServiseService } from 'src/app/services/student/student-servise.service';
+import { Job } from '../Classes/job';
 
-declare var $: any;
 
 @Component({
   selector: 'app-list-jobs',
@@ -13,38 +13,17 @@ declare var $: any;
 export class ListJobsComponent implements OnInit {
 
   public jobs=[];
-  p: number = 1;
-  public sectionsProfile = ["", ""]
   public studentID: string;
- filter ={Qena:true,Sohage:true,Cairo:true,Assuit:true}
-
-  filterData = [
-    {
-          firstName: 'Qena',
-        },
-        {
-          firstName: ' Sohage',
-        },
-        {
-          firstName: 'Cairo',
-        },
-        {
-          firstName: 'Assuit',
-        }
-  ]
+  test;
 
   
   constructor(private router: Router, private route: ActivatedRoute, private jobServ: JOBService, private studetentServ:StudentServiseService) { }
-
-// filterChange(){
-//   this.filterData=this.jobs.filter(x=>(x.location=='Qena'&& this.filter.Qena)||
-//   (x.location=='Sohage'&& this.filter.Sohage)||(x.location=='Sohage'&& this.filter.Sohage)
-//   )
-// }
   ngOnInit() {
     
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.studentID = params.get('ID');
+      console.log(this.studentID);
+      
 
     });
     this.jobServ.listAppliedJobs(this.studentID).subscribe(
@@ -52,13 +31,17 @@ export class ListJobsComponent implements OnInit {
         for (var i = 0; i < result.length; i++) {
           this.jobServ.listJobNames(result[i].jobID).subscribe(
             data=>{
-              this.jobs.push(data);
-            console.log(this.jobs);
+             this.jobs.push(data);
+             console.log(data);
+             
             },
             error=>{
               console.log(error);
             }
+          
           );
+          console.log(result[i]);
+          
         }
       },
       error => {
@@ -66,6 +49,9 @@ export class ListJobsComponent implements OnInit {
 
       }
     );
+   
+    
+    //this.jobModel.location=this.jobs[0].location;
   }
 
   //details 
