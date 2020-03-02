@@ -18,6 +18,7 @@
               <a style="    margin-left: 8px;">{{student.name}}</a>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" routerLink="/message/{{ID}}"><i class="fa fa-envelope"></i>messages</a>
               <a class="dropdown-item" routerLink="/student-profile/{{ID}}"><i class="fa fa-envelope"></i>profile</a>
               <a class="dropdown-item" routerLink="/edit-student-profile/{{ID}}"  (click)="editProfile()" ><i class="fa fa-gear"></i>Edit Profile</a>
               <a class="dropdown-item" (click)="logOut()" > <i class="fa fa-circle-logout"></i>Log Out</a>

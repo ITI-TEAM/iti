@@ -47,7 +47,7 @@ export class StudentsProfileSubmittedComponent implements OnInit {
   }
 
   seeProfile(student){
-    window.open('/show-student/'+student.ID, "_blank");
+    window.open('/show-student/'+student.ID+'/'+this.ID, "_blank");
     console.log("TESSST");
     console.log(student.ID);
     

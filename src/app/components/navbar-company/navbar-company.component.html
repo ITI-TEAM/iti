@@ -19,6 +19,7 @@
             <a style="    margin-left: 8px;">{{company.name}}</a>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" routerLink="/message/{{ID}}"><i class="fa fa-envelope"></i>messages</a>
             <a class="dropdown-item" routerLink="/company-profile/{{ID}}"><i class="fa fa-envelope"></i>profile</a>
             <a class="dropdown-item" routerLink="/edit-company-profile/{{ID}}" (click)="editProfile()"><i
                 class="fa fa-gear"></i>Edit Profile</a>
@@ -43,33 +44,23 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-4" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbar-list-4">
-        <ul class="navbar-nav" style="float:left; margin-top: 15px;">
-            <li class="nav-item active" style="padding-right: 32px;">
-                <a class="nav-link" routerLink="/home-company/{{ID}}"> Home <span class="sr-only">(current)</span></a>
-            </li>
-            
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/post-job/{{ID}}">Post Job</a>
-            </li>
-           </ul>
-         
-      <ul class="navbar-nav ml-auto" style="  float: right;">
-        <ul class="navbar-nav" style="float:left; margin-top: 15px;">
-            <li><a class="nav-link" href="#" style="    margin-right: 26px;"><i class="fa fa-envelope"></i>Message</a></li>
-           </ul>
-          <li class="nav-item dropdown ">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="    margin-right: 64px;margin-top: 8px;">
-            <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg" width="40" height="40" class="rounded-circle">
-            <a style="    margin-left: 8px;">name name</a>
+    <div class="collapse navbar-collapse" id="ftco-nav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item" routerLink="/home-company/{{ID}}" ><a  class="nav-link">Home</a></li>
+        <li class="nav-item active" routerLink="/post-job/{{ID}}" (click)="listJobs()"><a  class="nav-link">Post Job </a></li>
+       </ul>
+        <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="http://localhost:3000//{{company.image}}"  width="40" height="40" class="rounded-circle">
+            <a style="    margin-left: 8px;">{{company.name}}</a>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" routerLink="/company-profile/{{ID}}"><i class="fa fa-envelope"></i>profile</a>
-            <a class="dropdown-item" routerLink="/edit-company-profile/{{ID}}"><i class="fa fa-gear"></i>Edit Profile</a>
-            <a class="dropdown-item" href="#" > <i class="fa fa-circle-logout"></i>Log Out</a>
+            <a class="dropdown-item" routerLink="/edit-company-profile/{{ID}}"  (click)="editProfile()" ><i class="fa fa-gear"></i>Edit Profile</a>
+            <a class="dropdown-item" (click)="logOut()" > <i class="fa fa-circle-logout"></i>Log Out</a>
           </div>
         </li> 
-         
       </ul>
     </div>
   </nav> -->
