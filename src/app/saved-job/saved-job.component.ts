@@ -14,6 +14,8 @@ export class SavedJobComponent implements OnInit {
   p: number = 1;
   public sectionsProfile = ["", ""]
   public studentID: string;
+
+ 
   
   constructor(private router: Router, private route: ActivatedRoute, private jobServ: JOBService, private studetentServ:StudentServiseService,private savedSer:SavedJobService) { }
 
@@ -44,7 +46,7 @@ export class SavedJobComponent implements OnInit {
 
   }
 
- //cancel job after apply it
+ //cancel job after saved
  cancelSavedJob(job){
   this.savedSer.cancelSavedJOB(job[0]._id).subscribe(
     data=>{

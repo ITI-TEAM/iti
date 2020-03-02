@@ -33,7 +33,7 @@ export class ListJobsComponent implements OnInit {
         }
   ]
 
-
+  
   constructor(private router: Router, private route: ActivatedRoute, private jobServ: JOBService, private studetentServ:StudentServiseService) { }
 
 // filterChange(){
@@ -89,5 +89,9 @@ export class ListJobsComponent implements OnInit {
       }
     );
   }
+
+ 
+
+
 
 }

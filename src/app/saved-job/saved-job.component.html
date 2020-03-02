@@ -25,7 +25,7 @@
                                     
                                     <div class="jobs_left d-flex align-items-center">
                                       <div class="thumb">
-                                        <img src="img/svg_icon/1.svg" alt="">
+                                        <img style="width: 50px; height: 50px;" src="../../../assets/ITIAN.jpg" alt="">
                                       </div>
                                       <div class="jobs_conetent">
                                         <a href="">
@@ -53,7 +53,7 @@
                                       </div>
                                       <div class="date">
                                         <p> 
-                                            Date line: {{job[0].time}} 31 Jan 2020
+                                            <!-- Date line: {{job[0].time}} 31 Jan 2020 -->
                                         </p>
                                       </div>
                                     </div>
@@ -63,50 +63,27 @@
                           </div>
                   </div>
           </div>
-
           <div class="col-lg-3 sidebar">
+           
             <div class="sidebar-box bg-white p-4 ftco-animate fadeInUp ftco-animated">
                 <h3 class="heading-sidebar">Browse Category</h3>
-          <div class="search-form mb-3">
-            <div class="form-group">
-              <span class="icon icon-search"></span>
-              <input type="text"type="text" class="form-control" placeholder="Search Here" 
-              [(ngModel)]="term">
-            </div>
-          </div>
-                <form #user1Form="ngForm" class="browse-form">
-
-                  <label for="option-job-1" ><input type="checkbox" id="option-job-1" name="vehicle" value="" checked=""> Web &amp; Designer</label><br>
-                  <label for="option-job-2"><input type="checkbox" id="option-job-2" name="vehicle" value=""> Web &amp; Deleloper</label><br>
-                  <label for="option-job-3"><input type="checkbox" id="option-job-3" name="vehicle" value=""> Graphics Design</label><br>
-             
-
-                </form>
-            </div>
-
-            <div class="sidebar-box bg-white p-4 ftco-animate fadeInUp ftco-animated">
-                <h3 class="heading-sidebar">Select Location</h3>
          <div class="search-form mb-3">
             <div class="form-group">
               <span class="icon icon-search"></span>
               <input type="text" class="form-control" placeholder="Search Here" [(ngModel)]="term" >
             </div>
           </div>
-                <form  #user2Form="ngForm" class="browse-form"> -->
-                    <label for="option-job-1" ><input type="checkbox" id="option-job-1" name="vehicle" value="" checked=""> Web &amp; Designer</label><br>
-                    <label for="option-job-2"><input type="checkbox" id="option-job-2" name="vehicle" value=""> Web &amp; Deleloper</label><br>
-                    <label for="option-job-3"><input type="checkbox" id="option-job-3" name="vehicle" value=""> Graphics Design</label><br>
+                <div  class="browse-form">
+                    <label><input type="checkbox" id="option-job-1" name="vehicle" value="Web Designer"> Web Designer</label><br>
+                    <label><input type="checkbox" id="option-job-2" name="vehicle" value="Web Deleloper"> Web Deleloper</label><br>
+                    <label><input type="checkbox" id="option-job-3" name="vehicle" value="Graphics Design"> Graphics Design</label><br>
                  
-                       </form>
-                        <!-- <form   class="browse-form">
-                        <tr *ngFor="let item of filterData">
-                          <label for="option-location-1"  ><input  [(ngModel)]="filter.Qena" 
-                           (ngModelChange)="filterChange()" type="checkbox" id="option-location-1" name="vehicle"  >
-                           Qena</label><br>
-                      </tr>
-                      </form> -->
+                </div>
+                      
+                    
             </div>
           </div>
+          
             </div>
         </div>
         <pagination-controls (pageChange)="p = $event"></pagination-controls>
