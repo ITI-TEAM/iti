@@ -39,7 +39,7 @@ const routes: Routes = [
 
   {path:'home-company/:ID',component:HomeCompanyComponent,canActivate:[AuthenticationGuardService]},
   {path:'post-job/:ID',component:PostJobComponent,canActivate:[AuthenticationGuardService]},
-  {path:'submited-profiles/:ID',component:StudentsProfileSubmittedComponent,canActivate:[AuthenticationGuardService]},
+  {path:'submited-profiles/:jobID/:ID',component:StudentsProfileSubmittedComponent,canActivate:[AuthenticationGuardService]},
   {path:'company-profile/:ID',component:CompanyProfileComponent,canActivate:[AuthenticationGuardService]},
   {path:'edit-company-profile/:ID',component:EditCompanyProfileComponent,canActivate:[AuthenticationGuardService]},
   
