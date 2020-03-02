@@ -9,33 +9,28 @@ const SavedJob = require('../models/savedJob');
 
 
 router.post("/save/:jobID/:studentID", (req, res, next)=>{
-  allJob.find({jobID:req.params.jobID})
-  .exec()
-  .then(job => {
-    if (job.length >= 1) {
-      return res.status(409).json({
-        message: 'job already saved'
-      });
-    }else{
-      const newSaved=new SavedJob({
-        jobID:req.params.jobID,
-        studentID:req.params.studentID
+  // allJob.find({ID:req.params.jobID})
+  // .then(data=>{
+  //     res.status(200).json(data);
+  // })
+  
+  const newSaved=new SavedJob({
+      jobID:req.params.jobID,
+      studentID:req.params.studentID
+  });
+  newSaved.save()
+  .then(result => {
+    console.log(result);
+    return res.status(200).json({result})
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(501).json({
+      error: err
     });
-    newSaved.save()
-    .then(result => {
-      console.log(result);
-      return res.status(200).json({result})
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(501).json({
-        error: err
-      });
-    });
-    }
- 
+  });
 });
-});
+
 
 
 router.get("/list/:studentID", (req, res, next)=>{
@@ -54,6 +49,12 @@ router.get("/list/:studentID", (req, res, next)=>{
     });
 
 });
+
+
+
+
+
+
 
 
 
