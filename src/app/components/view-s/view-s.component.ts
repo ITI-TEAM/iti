@@ -11,7 +11,7 @@ import { Message } from '../Classes/message';
   styleUrls: ['./view-s.component.css']
 })
 export class ViewSComponent implements OnInit {
-  public student = new Student("","","","","","","",[],"","",[],[],[],"","","","","","");
+  public student = new Student("","","","","","","","",[],"","",[],[],[],"","","","","","");
   public student_id;  
    public companyID;
   

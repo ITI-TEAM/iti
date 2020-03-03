@@ -80,6 +80,23 @@ deleteCompany(userID){
   this.socket.emit('deleteCompany',userID)
 }
 
+/////////////////////////
+
+//getCompanyRequist
+
+getCompanyRequist(){
+  let CompanyRequists=new Observable(observer=>{
+    this.socket.on('getcompanyrequist',data=>{
+      observer.next(data);
+    })
+  })
+  return CompanyRequists;
+}
+
+//delete CompanyRequist
+deleteCompanyRequist(companyrequistID){
+  this .socket.emit('deletecompanyrequist',companyrequistID)
+}
 
 
 //getJobs

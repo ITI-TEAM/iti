@@ -15,8 +15,14 @@ const AppliedStudent = require('./models/appliedstudent');
 const Sprofile = require('./models/sprofile');
 const Cprofile = require('./models/cprofile');
 const Event = require('./models/event');
+<<<<<<< HEAD
+const _Requist = require('./models/companyaReq');
+
+
+=======
 const SavedJob=require('./models/savedJob');
 const Chat=require('./models/chat');
+>>>>>>> bebf02ea49a85dcd012c56503e7145188f24c34b
 
 
 
@@ -27,9 +33,13 @@ const cprofileRoutes = require('./routes/cprofile');
 const allJobRoutes = require('./routes/allJob');
 const eventRoutes = require('./routes/event');
 const appliedstudentRoutes = require('./routes/appliedstudent');
+<<<<<<< HEAD
+const CompanyRequistRoutes = require('./routes/companyReq');
+=======
 const savedRoutes =require('./routes/savedJob')
 const chatRoutes=require('./routes/chat');
 const mesageRoutes=require('./routes/message');
+>>>>>>> bebf02ea49a85dcd012c56503e7145188f24c34b
 
 //BODY-PARSER 
 app.use(bodyParser.urlencoded({
@@ -65,10 +75,14 @@ app.use('/cprofile', cprofileRoutes);
 app.use('/allJob', allJobRoutes);
 app.use('/event', eventRoutes);
 app.use('/appliedstudent', appliedstudentRoutes);
+<<<<<<< HEAD
+app.use('/companyrequist', CompanyRequistRoutes);
+=======
 app.use('/savedJob',savedRoutes)
 app.use('/chat',chatRoutes);
 app.use('/message',mesageRoutes);
 
+>>>>>>> bebf02ea49a85dcd012c56503e7145188f24c34b
 
 
 
@@ -241,16 +255,54 @@ io.on('connection', (socket) => {
         });
     });
 
+///////////////////////////////////////////////////
 
+/////COMPANYREQUIST///////////////
+
+       //list companyRequist
+
+<<<<<<< HEAD
+    _Requist.find({},(err,data) =>{
+        if(!err)
+            io.emit('getcompanyrequist',data)
+         else{
+                console.log(error)
+            }
+        
+    });
+
+    //Delete companyrequist
+=======
 ////////End USERS //////////////////////////////////////
+>>>>>>> bebf02ea49a85dcd012c56503e7145188f24c34b
 
+    socket.on('deletecompanyrequist',(CompanyrequistID) =>{
+        _Requist.deleteOne({_id:CompanyrequistID},(err,data) =>{
+            if(!err){
+                console.log('companyRequist Delete');
 
+<<<<<<< HEAD
+                _Requist.find({},(err,data) =>{
+                    if(!err)
+                        io.emit('getcompanyrequist',data)
+                     else{
+                            console.log(error)
+                        }
+                    
+                });
+            }else{
+                console.log(error)
+            }
+        })
+    })
+=======
 // List Jobs
 allJob.find({}, (err, data) => {
     if (!err)
         io.emit("getJobs", data)
     else {
         console.log(error);
+>>>>>>> bebf02ea49a85dcd012c56503e7145188f24c34b
 
     }
 });

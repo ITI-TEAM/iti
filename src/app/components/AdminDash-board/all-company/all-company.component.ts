@@ -39,6 +39,11 @@ p: number = 1;
   
   }
    
+  
+    // deleteUser(company){
+    //   this.userServise.deletUser(company.ID).subscribe(data=>
+    //     {
+    //       alert(" user deleted")})}
     
 
      deleteUser(company){
@@ -61,5 +66,9 @@ p: number = 1;
       window.open('/show-company/'+company.ID, "_blank");
      }
    
+    //  toMoreDetails(ID)
+    //   {
+    //  window.open('company-profile/'+ID,"_blank")
+    // }
 
 }

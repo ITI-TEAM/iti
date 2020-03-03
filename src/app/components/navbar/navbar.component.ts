@@ -13,8 +13,8 @@ export class NavbarComponent implements OnInit {
   constructor(private studeServise:StudentServiseService,private route:ActivatedRoute,private router : Router) { }
   public ID;
 
-  public student = new Student("","","","","","","",[],"","",[],[],[],"","","","","","");
-  public student_id;
+  public student = new Student("","","","","","","","",[],"","",[],[],[],"","","","","","");
+    public student_id;
   ngOnInit() {
 
     this.route.paramMap.subscribe((params:ParamMap)=>{

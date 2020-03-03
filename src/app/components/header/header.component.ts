@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CompanyRequist } from '../Classes/requistClass/company-requist';
+import { CompanyRequistService } from 'src/app/services/CompanyRequist/company-requist.service';
 declare var $: any;
 @Component({
   selector: 'app-header',
@@ -6,8 +8,11 @@ declare var $: any;
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
-  constructor() { }
+public requistModle =  new CompanyRequist('','','');
+ topicHasErr=false;
+ errorMsg;
+ test=true;
+  constructor(private comrequist:CompanyRequistService) { }
 
   ngOnInit() {
 
@@ -61,6 +66,37 @@ export class HeaderComponent implements OnInit {
    
 
   
+  }
+
+  ValidateTopic(topicValue)
+  {
+   if(topicValue==='default')
+  {
+   this.topicHasErr=true;
+  }
+   else
+  {
+   this.topicHasErr=false;
+  }
+  }
+
+
+  addRequist(){
+    this.comrequist.addCompanyRequis(this.requistModle).subscribe(
+     data=>{
+       console.log("add Requist");
+       alert("add Requist")
+       window.location.reload();
+      
+     },
+     error=>{
+       this.test=false;
+       this.errorMsg=error.error.message;
+      // console.log(error.error.message);
+      
+     }
+    );
+    
   }
 
 }

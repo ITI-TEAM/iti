@@ -41,12 +41,14 @@ import { UserServService } from './services/User/user-serv.service';
 import { SockectIoService } from './services/socket .io/sockect-io.service';
 import { ViewSComponent } from './components/view-s/view-s.component';
 import { ViewCComponent } from './view-c/view-c.component';
-import { MessagesComponent } from './components/messages/messages.component';
+import { AllCompanyrequistComponent } from './components/AdminDash-board/all-companyRequist/all-companyrequist/all-companyrequist.component';
 import { ReadMoreComponent } from './components/ReadMore/read-more/read-more.component';
 import { SavedJobComponent } from './saved-job/saved-job.component';
 import { SavedJobService } from './services/savedJOB/saved-job.service';
 import { CarouselModule } from 'ngx-carousel-lib';
 // import { CarouselModule } from 'ngx-owl-carousel-o';
+import { MessagesComponent } from './components/messages/messages.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -86,6 +88,7 @@ import { CarouselModule } from 'ngx-carousel-lib';
     EditCompanyProfileComponent,
     ViewSComponent,
     ViewCComponent,
+    AllCompanyrequistComponent,
     MessagesComponent,
     ReadMoreComponent,
     SavedJobComponent
