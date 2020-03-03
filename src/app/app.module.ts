@@ -42,6 +42,10 @@ import { SockectIoService } from './services/socket .io/sockect-io.service';
 import { ViewSComponent } from './components/view-s/view-s.component';
 import { ViewCComponent } from './view-c/view-c.component';
 import { AllCompanyrequistComponent } from './components/AdminDash-board/all-companyRequist/all-companyrequist/all-companyrequist.component';
+import { ReadMoreComponent } from './components/ReadMore/read-more/read-more.component';
+import { SavedJobComponent } from './saved-job/saved-job.component';
+import { SavedJobService } from './services/savedJOB/saved-job.service';
+import { MessagesComponent } from './components/messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -82,7 +86,10 @@ import { AllCompanyrequistComponent } from './components/AdminDash-board/all-com
     EditCompanyProfileComponent,
     ViewSComponent,
     ViewCComponent,
-    AllCompanyrequistComponent
+    AllCompanyrequistComponent,
+    MessagesComponent,
+    ReadMoreComponent,
+    SavedJobComponent
     
     
   ],
@@ -103,7 +110,8 @@ import { AllCompanyrequistComponent } from './components/AdminDash-board/all-com
     JOBService,
     StudentServiseService,
     UserServService,
-    SockectIoService
+    SockectIoService,
+    SavedJobService
   ],
   bootstrap: [AppComponent]
 })

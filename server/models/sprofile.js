@@ -74,7 +74,15 @@ const sprofileSchema = new mongoose.Schema({
  image:{
   type:String,
   default:'uploads'+'//'+'default.jpg'
-}
+},
+location:{
+  type:String,
+  default:"location ?"
+},
+position:{
+  type:String,
+  default:"position ?"
+},
 
 });
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { JOBService } from 'src/app/services/job.service';
 import { error } from 'protractor';
+import { UserServService } from 'src/app/services/User/user-serv.service';
 
 @Component({
   selector: 'app-students-profile-submitted',
@@ -11,12 +12,14 @@ import { error } from 'protractor';
 export class StudentsProfileSubmittedComponent implements OnInit {
   public jobs=["","",""]
   jobID: string;
+  ID;
   students=[];
-  constructor(private router : Router,private jobServ:JOBService,private route:ActivatedRoute) { }
+  constructor(private router : Router,private jobServ:JOBService, private userServise:UserServService,private route:ActivatedRoute) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe((params:ParamMap)=>{
-      this.jobID=params.get('ID');
+      this.jobID=params.get('jobID');
+      this.ID=params.get('ID');
     }); 
    
     this.jobServ.getsubmitedStudent(this.jobID).subscribe(
@@ -41,7 +44,14 @@ export class StudentsProfileSubmittedComponent implements OnInit {
       }
     );
 
+  }
 
+  seeProfile(student){
+    window.open('/show-student/'+student.ID+'/'+this.ID, "_blank");
+    console.log("TESSST");
+    console.log(student.ID);
+    
+    
   }
 
   MoreDetails(ID)

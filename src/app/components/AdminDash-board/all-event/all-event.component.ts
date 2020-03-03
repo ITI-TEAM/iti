@@ -19,18 +19,7 @@ export class AllEventComponent implements OnInit {
 
     this.socketServ.getEvents().subscribe(
       data=>{
-       this.events=data;
-     if(data[0])
-     {
-       console.log("ok data");
-       
-     }
-      else{
-        console.log("ok @");
-        
-      }
-       
-        
+       this.events=data;    
       },
       error=>{
         console.log(error);

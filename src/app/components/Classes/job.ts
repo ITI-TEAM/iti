@@ -1,4 +1,5 @@
 export class Job {
+  filter: any;
     constructor(
         public title:String,
         public salary:string,
@@ -9,7 +10,8 @@ export class Job {
         public exper:string,
         public desc:string,
         public respons:[],
-        public company:string
+        public company:string,
+        public time:string
         
 
     ){}

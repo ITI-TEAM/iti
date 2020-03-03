@@ -23,6 +23,9 @@ import { EditCompanyProfileComponent } from './components/edit-company-profile/e
 import { AddUsersComponent } from './components/add-users/add-users.component';
 import { ViewSComponent } from './components/view-s/view-s.component';
 import { ViewCComponent } from './view-c/view-c.component';
+import { MessagesComponent } from './components/messages/messages.component';
+import { ReadMoreComponent } from './components/ReadMore/read-more/read-more.component';
+import { SavedJobComponent } from './saved-job/saved-job.component';
 
 
 const routes: Routes = [
@@ -35,11 +38,12 @@ const routes: Routes = [
   {path:'edit-student-profile/:ID',component:StudentProfileComponent,canActivate:[AuthenticationGuardService]},
   {path:'job-details/:ID',component:JObDetailsComponent,canActivate:[AuthenticationGuardService]},
   {path:'list-jobs/:ID',component:ListJobsComponent},
+  {path:'saved-job/:ID',component:SavedJobComponent},
   {path:'job-details/:ID/:companyID/:jobID',component:JObDetailsComponent,canActivate:[AuthenticationGuardService]},
 
   {path:'home-company/:ID',component:HomeCompanyComponent,canActivate:[AuthenticationGuardService]},
   {path:'post-job/:ID',component:PostJobComponent,canActivate:[AuthenticationGuardService]},
-  {path:'submited-profiles/:ID',component:StudentsProfileSubmittedComponent,canActivate:[AuthenticationGuardService]},
+  {path:'submited-profiles/:jobID/:ID',component:StudentsProfileSubmittedComponent,canActivate:[AuthenticationGuardService]},
   {path:'company-profile/:ID',component:CompanyProfileComponent,canActivate:[AuthenticationGuardService]},
   {path:'edit-company-profile/:ID',component:EditCompanyProfileComponent,canActivate:[AuthenticationGuardService]},
   
@@ -51,9 +55,14 @@ const routes: Routes = [
   {path:'add-user/:ID',component:AddUsersComponent,canActivate:[AuthenticationGuardService]},
   {path:'add-event/:ID',component:AddEventComponent,canActivate:[AuthenticationGuardService]},
 
-  {path:'show-student/:ID',component:ViewSComponent,canActivate:[AuthenticationGuardService]},
-  {path:'show-company/:ID',component:ViewCComponent,canActivate:[AuthenticationGuardService]}
+  {path:'show-student/:ID/:companyID',component:ViewSComponent,canActivate:[AuthenticationGuardService]},
+  {path:'show-company/:ID',component:ViewCComponent,canActivate:[AuthenticationGuardService]},
 
+
+  {path:'message/:ID',component:MessagesComponent,
+  children:[{path:'readMore/:companyID/:studentID',component:ReadMoreComponent}]},
+
+  
 
   
 ];

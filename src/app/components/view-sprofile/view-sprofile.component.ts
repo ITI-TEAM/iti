@@ -9,7 +9,7 @@ import { Student } from '../Classes/studentClass/student';
   styleUrls: ['./view-sprofile.component.css']
 })
 export class ViewSProfileComponent implements OnInit {
-  public student = new Student("","","","","","","","",[],"","",[],[],[],"","","","");
+  public student = new Student("","","","","","","","",[],"","",[],[],[],"","","","","","");
   public student_id;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
   constructor(private studeServise:StudentServiseService,private route:ActivatedRoute) { }
 

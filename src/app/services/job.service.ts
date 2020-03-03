@@ -18,6 +18,7 @@ export class JOBService {
   getCompanyPosts(companyID:string):Observable<any>{
     return this.http.get('http://localhost:3000/allJob/companyjobs/'+companyID);
   }
+  //delete post of job
   deleteJob(_id){
     return this.http.delete('http://localhost:3000/allJob/delete/'+_id);
   }
@@ -64,7 +65,13 @@ export class JOBService {
     return this.http.get<any>('http://localhost:3000/sprofile/'+userID);
    }
 
+/*
+// job details
+  jobDetails(_id):Observable<any>{
+    return this.http.get<any>('http://localhost:3000/allJob/details/'+_id);
+  }
 
+}*/
    // get job details
 
    jobDetails(jobID):Observable<any>{

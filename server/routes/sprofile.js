@@ -95,7 +95,9 @@ router.post('/edit/:userID',upload.single('image'),function(req,res,next){
         graduationYear:req.body.graduationYear,
         title:req.body.title,
         about:req.body.about,
-        image : req.file.path
+        location:req.body.location,
+        position:req.body.position,
+        image : req.file.path,
 
     }
     Sprofile.findOneAndUpdate({ID:req.params.userID},{$set:item},{new:true})

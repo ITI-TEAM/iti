@@ -1,14 +1,17 @@
 
-  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+ <!---->
+ <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container-fluid px-md-4	">
-      <a class="navbar-brand" routerLink="/student-home/{{ID}}" >ITIan</a>
+      <a class="navbar-brand" routerLink="/student-home/{{ID}}"style="cursor: pointer;" >ITIan</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item" routerLink="/student-home/{{ID}}" ><a  class="nav-link">Home</a></li>
-          <li class="nav-item active" routerLink="/list-jobs/{{ID}}" (click)="listJobs()"><a  class="nav-link">My Jobs  </a></li>
+          <li class="nav-item" routerLink="/student-home/{{ID}}" ><a  class="nav-link" style="cursor: pointer;">Home</a></li>
+          <li class="nav-item " routerLink="/list-jobs/{{ID}}" (click)="listJobs()" style="cursor: pointer;"><a  class="nav-link">My Jobs  </a></li>
+          <li class="nav-item " routerLink="/saved-job/{{ID}}" (click)="listJobs()" style="cursor: pointer;"><a  class="nav-link">Saved Jobs  </a></li>
+         
          </ul>
           <ul class="navbar-nav ml-auto">
           <li class="nav-item dropdown">
@@ -17,9 +20,10 @@
               <a style="    margin-left: 8px;">{{student.name}}</a>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" routerLink="/student-profile/{{ID}}"><i class="fa fa-envelope"></i>profile</a>
-              <a class="dropdown-item" routerLink="/edit-student-profile/{{ID}}"  (click)="editProfile()" ><i class="fa fa-gear"></i>Edit Profile</a>
-              <a class="dropdown-item" (click)="logOut()" > <i class="fa fa-circle-logout"></i>Log Out</a>
+              <a class="dropdown-item" routerLink="/message/{{ID}}"><i class="fa fa-envelope"></i> &nbsp; messages</a>
+              <a class="dropdown-item" routerLink="/student-profile/{{ID}}"><i class="fa fa-user" aria-hidden="true"></i> &nbsp; profile</a>
+              <a class="dropdown-item" routerLink="/edit-student-profile/{{ID}}"  (click)="editProfile()" ><i class="fas fa-edit"></i> &nbsp; Edit Profile</a>
+              <a class="dropdown-item" (click)="logOut()" > <i class="fa fa-sign-out" aria-hidden="true"></i> &nbsp; Log Out</a>
             </div>
           </li> 
         </ul>

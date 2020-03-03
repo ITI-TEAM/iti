@@ -15,7 +15,8 @@ const allJobSchema = new mongoose.Schema({
     desc:{type:String},
     qual:{type:[]},
     respons:{type:[]} ,
-    company: {type:String}
+    company: {type:String},
+    time:{type:String}
 });
 
 const allJob = mongoose.model('allJob', allJobSchema);
