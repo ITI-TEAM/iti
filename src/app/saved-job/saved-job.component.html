@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 
 <div class="hero-wrap hero-wrap-2"
-  style="background-image: url(&quot;images/bg_1.jpg&quot;); background-position: 50% 0px;"
+  style="background-position: 50% 0px;"
   data-stellar-background-ratio="0.5">
   <div class="overlay"></div>
   <div class="container">
@@ -70,55 +70,27 @@
 
         <div class="col-lg-3 sidebar">
           <div class="sidebar-box bg-white p-4 ftco-animate fadeInUp ftco-animated">
-            <h3 class="heading-sidebar">Browse Category</h3>
+            <h3 class="heading-sidebar">Search</h3>
             <div class="search-form mb-3">
               <div class="form-group">
                 <span class="icon icon-search"></span>
                 <input type="text" type="text" class="form-control" placeholder="Search Here" [(ngModel)]="term">
               </div>
             </div>
-            <form #user1Form="ngForm" class="browse-form">
-
-              <label for="option-job-1"><input type="checkbox" id="option-job-1" name="vehicle" value="" checked=""> Web
-                &amp; Designer</label><br>
-              <label for="option-job-2"><input type="checkbox" id="option-job-2" name="vehicle" value=""> Web &amp;
-                Deleloper</label><br>
-              <label for="option-job-3"><input type="checkbox" id="option-job-3" name="vehicle" value=""> Graphics
-                Design</label><br>
-
-
-            </form>
+           
           </div>
-
           <div class="sidebar-box bg-white p-4 ftco-animate fadeInUp ftco-animated">
-            <h3 class="heading-sidebar">Select Location</h3>
-            <div class="search-form mb-3">
-              <div class="form-group">
-                <span class="icon icon-search"></span>
-                <input type="text" class="form-control" placeholder="Search Here" [(ngModel)]="term">
-              </div>
-            </div>
-            <form #user2Form="ngForm" class="browse-form"> 
-              <label for="option-job-1"><input type="checkbox" id="option-job-1" name="vehicle" value="" checked=""> Web
-                &amp; Designer</label><br>
-              <label for="option-job-2"><input type="checkbox" id="option-job-2" name="vehicle" value=""> Web &amp;
-                Deleloper</label><br>
-              <label for="option-job-3"><input type="checkbox" id="option-job-3" name="vehicle" value=""> Graphics
-                Design</label><br>
-
-            </form>
-            <!-- <form   class="browse-form">
-                        <tr *ngFor="let item of filterData">
-                          <label for="option-location-1"  ><input  [(ngModel)]="filter.Qena" 
-                           (ngModelChange)="filterChange()" type="checkbox" id="option-location-1" name="vehicle"  >
-                           Qena</label><br>
-                      </tr>
-                      </form> -->
+            <div _ngcontent-nyy-c2="" class="top-category text-center no-border-left">
+              <h1 _ngcontent-nyy-c2=""><i _ngcontent-nyy-c2="" class="fas fa-file-code" aria-hidden="true"></i></h1><h3 _ngcontent-nyy-c2="" style="color:#e5474b"> Saved Jobs </h3><span _ngcontent-nyy-c2="" class="icon flaticon-contact">
+  
+              </span><p _ngcontent-nyy-c2=""><span _ngcontent-nyy-c2="" class="number">{{jobs.length}}</span><span _ngcontent-nyy-c2=""> job saved</span></p></div>
+  
           </div>
+          
         </div>
       </div>
     </div>
-    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    <pagination-controls (pageChange)="p = $event" style="text-align: center;"></pagination-controls>
   </section>
 
   <app-footer></app-footer>

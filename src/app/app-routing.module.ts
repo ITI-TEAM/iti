@@ -29,6 +29,8 @@ import { SavedJobComponent } from './saved-job/saved-job.component';
 import { MessageCompanyComponent } from './components/messagesCompany/message-company/message-company.component';
 import { ReadMoreCompanyComponent } from './components/ReadMoreCompany/read-more-company/read-more-company.component';
 import { PageNotFoundComponent } from './components/PageNotFound/page-not-found/page-not-found.component';
+import { AllCompanyrequistComponent } from './components/AdminDash-board/all-companyRequist/all-companyrequist/all-companyrequist.component';
+import { StudentVIEWWComponent } from './components/studentVIEW/student-vieww/student-vieww.component';
 
 
 const routes: Routes = [
@@ -57,6 +59,11 @@ const routes: Routes = [
   {path:'maneg-events/:ID',component:AllEventComponent,canActivate:[AuthenticationGuardService]},
   {path:'add-user/:ID',component:AddUsersComponent,canActivate:[AuthenticationGuardService]},
   {path:'add-event/:ID',component:AddEventComponent,canActivate:[AuthenticationGuardService]},
+  {path:'request/:ID',component:AllCompanyrequistComponent,canActivate:[AuthenticationGuardService]},
+
+
+  {path:'student/:ID',component:StudentVIEWWComponent,canActivate:[AuthenticationGuardService]},
+
 
   {path:'show-student/:ID/:companyID',component:ViewSComponent,canActivate:[AuthenticationGuardService]},
   {path:'show-company/:ID',component:ViewCComponent,canActivate:[AuthenticationGuardService]},

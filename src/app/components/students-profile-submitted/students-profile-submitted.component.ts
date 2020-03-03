@@ -10,7 +10,7 @@ import { UserServService } from 'src/app/services/User/user-serv.service';
   styleUrls: ['./students-profile-submitted.component.css']
 })
 export class StudentsProfileSubmittedComponent implements OnInit {
-  public jobs=["","",""]
+  public jobs=[]
   jobID: string;
   ID;
   students=[];
@@ -20,6 +20,15 @@ export class StudentsProfileSubmittedComponent implements OnInit {
     this.route.paramMap.subscribe((params:ParamMap)=>{
       this.jobID=params.get('jobID');
       this.ID=params.get('ID');
+      this.jobServ.getCompanyPosts(this.ID).subscribe(
+        result => {
+          this.jobs = result
+        },
+        error => {
+          console.log(error);
+        }
+      );
+      
     }); 
    
     this.jobServ.getsubmitedStudent(this.jobID).subscribe(
@@ -54,4 +63,8 @@ export class StudentsProfileSubmittedComponent implements OnInit {
     
   }
 
+  MoreDetails(ID)
+      {
+     window.open('student-profile/'+ID,"_blank")
+    }
 }

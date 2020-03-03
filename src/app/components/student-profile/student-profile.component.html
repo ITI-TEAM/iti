@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 <div class="profile-page">
   <div class="page-header header-filter" data-parallax="true"
-    style="background-image:url('http://wallpapere.org/wp-content/uploads/2012/02/black-and-white-city-night.png');">
+    style="background-image:url('../../../../assets/images/black-and-white-city-night.png');">
   </div>
   <div class="main main-raised">
     <div class="profile-content">
@@ -32,8 +32,8 @@
                 <div class="col-md-6">
                   <h5 class="modal-title">Contact Info</h5>
                   <div class="form-group">
-                    <input type="text" class="form-control" placeholder="UserName" id="uname" name="uname"
-                      [(ngModel)]="studentModel.name" #uname="ngModel">
+                    <input type="text" class="form-control" placeholder="UserName" id="name" name="name"
+                      [(ngModel)]="studentModel.name" #name="ngModel">
                   </div>
                   <div class="form-group">
                     <input type="number" class="form-control" placeholder="Age" id="age" name="age"
@@ -65,14 +65,14 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-3">
                   <h5 class="modal-title">Profession</h5>
                   <div class="form-group">
                     <input type="text" class="form-control" id="title" name="title" [(ngModel)]="studentModel.title"
                       #title="ngModel">
                   </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                   <h5 class="modal-title">English Level</h5>
                   <div class="form-group">
                     <select class="form-control" id="englishLevel" name="englishLevel"
@@ -83,43 +83,51 @@
                     </select>
                   </div>
                 </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <h5 class="modal-title">Experience</h5>
-                  <div class="form-group">
-                    <input type="text" class="form-control" id="experience" name="experience"
-                      [(ngModel)]="studentModel.experience" #experience="ngModel">
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <h5 class="modal-title">Skills</h5>
-                  <div class="form-group">
-                    <input type="text" class="form-control" id="skills" name="skills" [(ngModel)]="studentModel.skills"
-                      #skills="ngModel">
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-3">
                   <h5 class="modal-title">Availability /h</h5>
                   <div class="form-group">
                     <input type="number" class="form-control" id="availability" name="availability"
                       [(ngModel)]="studentModel.availability" #availability="ngModel">
                   </div>
                 </div>
-                <div class="col-md-4">
-                  <h5 class="modal-title">Project Link</h5>
+                <div class="col-md-3">
+                  <h5 class="modal-title">Rate $</h5>
                   <div class="form-group">
-                    <input type="text" class="form-control" id="workLink" name="workLink"
-                      [(ngModel)]="studentModel.workLink" #availability="ngModel">
+                    <input type="number" class="form-control" id="rate"
+                      [(ngModel)]="studentModel.rate" #rate="ngModel" name="rate" >
                   </div>
                 </div>
-                <div class="col-md-4">
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <h5 class="modal-title">Experience</h5>
+                  <div class="form-group">
+                    <textarea type="text" class="form-control" id="experience" name="experience"
+                      [(ngModel)]="studentModel.experience" #experience="ngModel"></textarea>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <h5 class="modal-title">Skills</h5>
+                  <div class="form-group">
+                    <textarea type="text" class="form-control" id="skills" name="skills" [(ngModel)]="studentModel.skills"
+                      #skills="ngModel"></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                
+                <div class="col-md-6">
+                  <h5 class="modal-title">Project Link</h5>
+                  <div class="form-group">
+                    <textarea type="text" class="form-control" id="workLink" name="workLink"
+                      [(ngModel)]="studentModel.workLink" #workLink="ngModel"></textarea>
+                  </div>
+                </div>
+                <div class="col-md-6">
                   <h5 class="modal-title">Certifications</h5>
                   <div class="form-group">
-                    <input type="number" class="form-control" id="number" name="certifications"
-                      [(ngModel)]="studentModel.certifications" #certifications="ngModel">
+                    <textarea type="number" class="form-control" id="number" name="certifications" role="2"
+                      [(ngModel)]="studentModel.certifications" #certifications="ngModel"></textarea>
                   </div>
                 </div>
               </div>
@@ -129,14 +137,14 @@
                   <div class="form-group">
 
                     <input type="text" class="form-control" id="text" name="university"
-                      [(ngModel)]="studentModel.university" #university="ngModel">
+                      [(ngModel)]="studentModel.university" #university="ngModel" placeholder="university">
                     <br>
 
                     <input type="text" class="form-control" id="text" name="faculty" [(ngModel)]="studentModel.faculty"
-                      #faculty="ngModel">
+                      #faculty="ngModel" placeholder="faculty">
                     <br>
 
-                    <input type="text" class="form-control" id="text" name="graduationYear"
+                    <input type="date" class="form-control" id="text" name="graduationYear" placeholder="graduationYear"
                       [(ngModel)]="studentModel.graduationYear" #graduationYear="ngModel">
                   </div>
 
@@ -151,7 +159,7 @@
               </div>
 
               <div>
-                <label for="exampleFormControlInput1">Profile Image</label>
+                <label for="exampleFormControlInput1"><h5>Profile Image</h5></label>
                 <input class="form-control" type="file" name="image" required
                 
                  (change)="onfileSelected($event)" >
@@ -171,5 +179,5 @@
 </div>
 <br><br>
 
-{{studentModel | json}}
+<!-- {{studentModel | json}} -->
 <app-footer></app-footer>

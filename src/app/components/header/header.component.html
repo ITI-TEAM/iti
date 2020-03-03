@@ -171,32 +171,44 @@
 
   <div class="cover">
     <div class="container contact-form">
-      <h1>Contact Form</h1>
-      <hr>
-      <div class="row">
-        <div class="col-md-6">
-          <address>Qena -south Value</address><br>
-          <p>E-mail : iti@info.com</p>
-          <p>phone:+20111374294</p>
-        </div>
-        <div class="col-md-6">
-          <div class="form-group" style="z-index: 1;">
-            <label>Name</label>
-            <input type="text" name="" class="form-control">
+      <form #requistForm="ngForm" method="POST" novalidate>
+        <h1>Contact Form</h1>
+        <hr>
+        <div class="row">
+          <div class="col-md-6">
+            <address>Qena -south Value</address><br>
+            <p>E-mail : iti@info.com</p>
+            <p>phone:+20111374294</p>
           </div>
-          <div class="form-group">
-            <label>E-mail</label>
-            <input type="text" name="" class="form-control">
-          </div>
-          <div class="form-group">
-            <label>Massege</label>
-            <textarea name="" id="" cols="0" rows="5" class="form-control"></textarea>
-          </div> <br>
-          <div class="form-group">
-            <button class="btn btn-danger btn-block">Send</button>
-          </div> <br><br>
+          <div class="col-md-6">
+            <div class="form-group" style="z-index: 1;">
+              <label for="uname">Name:</label>
+                <input id="User_name" type="text" class="form-control" [class.is-invalid]="Username.invalid && Username.touched" #Username="ngModel" required
+                [(ngModel)]="requistModle.name" name="userName">
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+              <label for="uname">Email:</label>
+                <input  id="email" type="email" class="form-control" [class.is-invalid]="email.invalid && email.touched" #email="ngModel"
+                required [(ngModel)]="requistModle.email" name="mail">
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group">
+              <label>Massege</label>
+              <textarea name="massege" id="massege"  rows="5" class="form-control"[class.is-invalid]="massege.invalid && massege.touched" #massege="ngModel" required
+              [(ngModel)]="requistModle.massege" ></textarea>
+              <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+            </div> <br>
+            <div class="form-group">
+              <button class="btn btn-danger btn-block" type="submit" name="action" [disabled]="requistForm.form.invalid || topicHasErr" class="btn btn-success" (click)="addRequist()">Send</button>
+            </div> 
+     <br><br>
         </div>
       </div>
+    </form>
     </div>
   </div>
 

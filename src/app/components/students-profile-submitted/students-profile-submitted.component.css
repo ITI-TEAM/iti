@@ -8609,8 +8609,8 @@ h1, h2, h3, h4, h5,
       color: #fff; }
     .top-category.active p, .top-category:hover p {
       color: rgba(255, 255, 255, 0.9); }
-  .top-category:hover {
-    background: #206dfb; }
+  /* .top-category:hover {
+    background: #206dfb; } */
 
 .category {
   padding: 0; }

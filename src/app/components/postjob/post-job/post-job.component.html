@@ -175,7 +175,6 @@
               </div>
 
             </div>
-            {{jobModel | json}}
           </div>
 
           <div class="row form-group">
@@ -193,23 +192,22 @@
         <div class="p-4 mb-3 bg-white">
           <h3 class="h5 text-black mb-3">Contact Info about Company</h3>
           <p class="mb-0 font-weight-bold">  Address</p>
-          <p class="mb-4"> {{companyModel.address}} 203 Fake St. Mountain View, San Francisco, California, USA</p>
+          <p class="mb-4"> {{companyModel.address}} </p>
 
           <p class="mb-0 font-weight-bold">Phone</p>
-          <p class="mb-4"><a href="#"> {{companyModel.telephonenumber}}  +1 232 3235 324</a></p>
+          <p class="mb-4"><a href="#"> {{companyModel.telephonenumber}}</a></p>
 
           <p class="mb-0 font-weight-bold">Email Address</p>
-          <p class="mb-0"><a href="#">{{companyModel.email}}  youremail@domain.com</a></p>
+          <p class="mb-0"><a href="#">{{companyModel.email}}</a></p>
 
         </div>
 
         <div class="p-4 mb-3 bg-white">
-          <h3 class="h5 text-black mb-3">More Info </h3>
-          <p>
-            {{companyModel.description}}
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ad iure porro mollitia architecto hic
-            consequuntur. Distinctio nisi perferendis dolore, ipsa consectetur</p>
-          <p><a href="#" class="btn btn-primary  py-2 px-4">Learn More</a></p>
+          <div _ngcontent-nyy-c2="" class="top-category text-center no-border-left">
+            <h1 _ngcontent-nyy-c2=""><i _ngcontent-nyy-c2="" class="fas fa-file-code" aria-hidden="true"></i></h1><h3 _ngcontent-nyy-c2="" style="color:#e5474b"> Company Jobs </h3><span _ngcontent-nyy-c2="" class="icon flaticon-contact">
+              
+            </span><p _ngcontent-nyy-c2=""><span _ngcontent-nyy-c2="" class="number">{{PostJobs.length}}</span><span _ngcontent-nyy-c2=""> Open position</span></p></div>
+     
         </div>
       </div>
     </div>

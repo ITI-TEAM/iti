@@ -16,7 +16,7 @@ export class ListJobsComponent implements OnInit {
   public studentID: string;
   test;
 
-
+  
   constructor(private router: Router, private route: ActivatedRoute, private jobServ: JOBService, private studetentServ:StudentServiseService) { }
   ngOnInit() {
     
@@ -75,5 +75,9 @@ export class ListJobsComponent implements OnInit {
       }
     );
   }
+
+ 
+
+
 
 }

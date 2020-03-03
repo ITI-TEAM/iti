@@ -61,7 +61,9 @@ export class HomeCompanyComponent implements OnInit {
     this.compServ.deleteJob(job._id).subscribe(
       data=>{
         console.log(data);
-        
+        alert("Job Deleted !");
+        location.reload();
+
       },
       error=>{
         console.log(error);

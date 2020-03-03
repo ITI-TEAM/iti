@@ -8,6 +8,8 @@ const jwt = require('jsonwebtoken');
 //  Model 
 const allJob=require('../models/allJob');
 const AppliedStudent=require('../models/appliedstudent');
+const SavedJob = require('../models/savedJob');
+
 
 
 
@@ -101,6 +103,13 @@ router.delete("/delete/:_id",(req,res,next)=>{
         message:"Job Deleted"
       });
     })
+    SavedJob.deleteOne({jobID:req.params._id})
+    .exec()
+    .then(data=>{
+      console.log(data);
+      
+    })
+
   })
   .catch(err => {
     console.log(err);

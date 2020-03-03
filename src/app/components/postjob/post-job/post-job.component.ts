@@ -20,11 +20,20 @@ export class PostJobComponent implements OnInit {
     public jobModel=new Job("","","","",[],"","","",[],"",this.time);
     public ID;
     public companyModel =new Company("","","","","","","","","","");
-    
+    public PostJobs=[]
   ngOnInit() {
     //get id from url
     this.route.paramMap.subscribe((params:ParamMap)=>{
       this.ID=params.get('ID');
+
+      this.jobServ.getCompanyPosts(this.ID).subscribe(
+        result => {
+          this.PostJobs = result
+        },
+        error => {
+          console.log(error);
+        }
+      );
     });
     //get data company
     this.CompanyService.getCompany(this.ID).subscribe(data=>

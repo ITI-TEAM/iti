@@ -13,7 +13,7 @@ const Cprofile = require('../models/cprofile');
 
 
 // REGISTER NEW USER
-router.post("/signup",checkAuth ,(req, res, next) => {
+router.post("/signup",(req, res, next) => {
 
   User.find({
       email: req.body.email
@@ -84,7 +84,7 @@ router.post("/signup",checkAuth ,(req, res, next) => {
 
 //LOGIN USER
 
-router.post("/login",checkAuth ,(req, res, next) => {
+router.post("/login",(req, res, next) => {
   User.find({
       email: req.body.email
     })

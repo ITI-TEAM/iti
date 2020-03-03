@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 
 <div class="hero-wrap hero-wrap-2"
-  style="background-image: url(&quot;images/bg_1.jpg&quot;); background-position: 50% 0px;"
+  style=" background-position: 50% 0px;"
   data-stellar-background-ratio="0.5">
   <div class="overlay"></div>
   <div class="container">
@@ -25,7 +25,7 @@
             <div class="recent_joblist_wrap">
               <div class="job_lists m-0">
                 <div class="single_jobs white-bg d-flex justify-content-between"
-                  *ngFor="let job of jobs">
+                  *ngFor="let job of jobs  | filter:term | paginate: { itemsPerPage: 5, currentPage: p }">
                   <div class="jobs_left d-flex align-items-center">
                     <div class="thumb">
                       <img style="width: 50px; height: 50px;" src="../../../assets/ITIAN.jpg" alt="">
@@ -46,7 +46,7 @@
                   </div>
                   <div class="jobs_right">
                     <div class="apply_now">
-                      <a class="heart_mark"> <i (click)="cancelJob(job)" class="fa fa-trash"></i> </a>
+                      <a class="heart_mark" (click)="cancelJob(job)"> <i  class="fa fa-trash"></i> </a>
                     </div>
                    
                   </div>
@@ -56,12 +56,25 @@
             </div>
           </div>
         </div>
-
+        <div class="col-lg-3 sidebar">
+           
+          <div class="sidebar-box bg-white p-4 ftco-animate fadeInUp ftco-animated">
+              <h3 class="heading-sidebar">Search</h3>
+       <div class="search-form mb-3">
+          <div class="form-group">
+            <span class="icon icon-search"></span>
+            <input type="text" class="form-control" placeholder="Search Here" [(ngModel)]="term" >
+          </div>
+        </div>
+                    
+                  
+          </div>
+        </div>
         
       </div>
     </div>
-  </section>
-
+  </section><br/>
+  <pagination-controls (pageChange)="p = $event" style="text-align: center;"></pagination-controls>
   <app-footer></app-footer>
 
 </div>

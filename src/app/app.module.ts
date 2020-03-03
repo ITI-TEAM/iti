@@ -41,13 +41,15 @@ import { UserServService } from './services/User/user-serv.service';
 import { SockectIoService } from './services/socket .io/sockect-io.service';
 import { ViewSComponent } from './components/view-s/view-s.component';
 import { ViewCComponent } from './view-c/view-c.component';
-import { MessagesComponent } from './components/messages/messages.component';
+import { AllCompanyrequistComponent } from './components/AdminDash-board/all-companyRequist/all-companyrequist/all-companyrequist.component';
 import { ReadMoreComponent } from './components/ReadMore/read-more/read-more.component';
 import { SavedJobComponent } from './saved-job/saved-job.component';
 import { SavedJobService } from './services/savedJOB/saved-job.service';
 import { MessageCompanyComponent } from './components/messagesCompany/message-company/message-company.component';
 import { ReadMoreCompanyComponent } from './components/ReadMoreCompany/read-more-company/read-more-company.component';
 import { PageNotFoundComponent } from './components/PageNotFound/page-not-found/page-not-found.component';
+import { MessagesComponent } from './components/messages/messages.component';
+import { StudentVIEWWComponent } from './components/studentVIEW/student-vieww/student-vieww.component';
 
 @NgModule({
   declarations: [
@@ -88,12 +90,14 @@ import { PageNotFoundComponent } from './components/PageNotFound/page-not-found/
     EditCompanyProfileComponent,
     ViewSComponent,
     ViewCComponent,
+    AllCompanyrequistComponent,
     MessagesComponent,
     ReadMoreComponent,
     SavedJobComponent,
     MessageCompanyComponent,
     ReadMoreCompanyComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    StudentVIEWWComponent
     
     
   ],

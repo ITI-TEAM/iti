@@ -17,6 +17,13 @@ const Cprofile = require('./models/cprofile');
 const Event = require('./models/event');
 const Message=require('./models/message');
 
+const _Requist = require('./models/companyaReq');
+
+
+
+const SavedJob=require('./models/savedJob');
+const Chat=require('./models/chat');
+
 
 
 //MIDELWARES FOR ROUTES
@@ -26,6 +33,7 @@ const cprofileRoutes = require('./routes/cprofile');
 const allJobRoutes = require('./routes/allJob');
 const eventRoutes = require('./routes/event');
 const appliedstudentRoutes = require('./routes/appliedstudent');
+const CompanyRequistRoutes = require('./routes/companyReq');
 const savedRoutes =require('./routes/savedJob')
 const chatRoutes=require('./routes/chat');
 const mesageRoutes=require('./routes/message');
@@ -64,6 +72,7 @@ app.use('/cprofile', cprofileRoutes);
 app.use('/allJob', allJobRoutes);
 app.use('/event', eventRoutes);
 app.use('/appliedstudent', appliedstudentRoutes);
+app.use('/companyrequist', CompanyRequistRoutes);
 app.use('/savedJob',savedRoutes)
 app.use('/chat',chatRoutes);
 app.use('/message',mesageRoutes);
@@ -240,9 +249,42 @@ io.on('connection', (socket) => {
         });
     });
 
+///////////////////////////////////////////////////
 
+/////COMPANYREQUIST///////////////
+
+       //list companyRequist
+
+    _Requist.find({},(err,data) =>{
+        if(!err)
+            io.emit('getcompanyrequist',data)
+         else{
+                console.log(error)
+            }
+        
+    });
+
+    //Delete companyrequist
 ////////End USERS //////////////////////////////////////
 
+    socket.on('deletecompanyrequist',(CompanyrequistID) =>{
+        _Requist.deleteOne({_id:CompanyrequistID},(err,data) =>{
+            if(!err){
+                console.log('companyRequist Delete');
+
+                _Requist.find({},(err,data) =>{
+                    if(!err)
+                        io.emit('getcompanyrequist',data)
+                     else{
+                            console.log(error)
+                        }
+                    
+                });
+            }else{
+                console.log(error)
+            }
+        })
+    })
 
 // List Jobs
 allJob.find({}, (err, data) => {
