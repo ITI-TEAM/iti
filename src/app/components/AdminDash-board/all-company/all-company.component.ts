@@ -51,11 +51,11 @@ p: number = 1;
        this.socketServ.deleteCompany(company.ID);
        this.socketServ.getCompnay().subscribe(
         data=>{
-          console.log(data);
+        //  console.log(data);
           
         },
         error=>{
-          console.log(error);
+         // console.log(error);
           
         }
       );

@@ -26,7 +26,7 @@ export class NavbarCompanyComponent implements OnInit {
       this.CompanyService.getCompany(this.company_id).subscribe(data=>
         {
           this.company=data;
-          console.log( this.company)
+        //  console.log( this.company)
         }
         )
     

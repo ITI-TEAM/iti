@@ -20,20 +20,20 @@ export class AllCompanyrequistComponent implements OnInit {
         this.companyrequists=data;
       },
       error=>{
-        console.log(error);
+       // console.log(error);
         
       }
     );
 
     this.socketServ.getCompanyRequist().subscribe(
       data=>{
-        console.log(data);
+       // console.log(data);
         this.companyrequists=data;
-        console.log(data);
+       // console.log(data);
         
       },
       error=>{
-        console.log(error);
+      //  console.log(error);
         
       }
     );

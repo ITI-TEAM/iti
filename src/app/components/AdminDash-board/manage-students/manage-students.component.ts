@@ -54,11 +54,11 @@ export class ManageStudentsComponent implements OnInit {
     this.socketServ.deleteStudent(student.ID);
     this.socketServ.getStudent().subscribe(
       data=>{
-        console.log(data);
+      //  console.log(data);
         
       },
       error=>{
-        console.log(error);
+      //  console.log(error);
         
       }
     );
@@ -67,7 +67,7 @@ export class ManageStudentsComponent implements OnInit {
 
 
   goProfile(student){
-    console.log(student.ID);
+   // console.log(student.ID);
     
     window.open('/student/'+student.ID, "_blank");
   }

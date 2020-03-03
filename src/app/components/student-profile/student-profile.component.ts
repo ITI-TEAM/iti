@@ -23,16 +23,16 @@ export class StudentProfileComponent implements OnInit {
     this.studeServise.getStudent(this.Student_ID).subscribe(data=>
       {
         this.studentModel=data[0];
-        console.log( this.studentModel);
+      //  console.log( this.studentModel);
         
         
       }
       )
 }
 onfileSelected(event){
-  console.log(event); 
+ // console.log(event); 
   this.selectedFile=<File>event.target.files[0];
-  console.log(this.selectedFile);
+ // console.log(this.selectedFile);
 }
 
 onSubmit(){
@@ -71,7 +71,7 @@ onSubmit(){
         },
       error=>{
   
-        console.log(error);
+       // console.log(error);
   
       }
       )

@@ -16,7 +16,7 @@ export class NavbarComponent implements OnInit {
   public student = new Student("","","","","","","","",[],"","",[],[],[],"","","","","","");
     public student_id;
   ngOnInit() {
-
+    
     this.route.paramMap.subscribe((params:ParamMap)=>{
       this.ID=params.get('ID');
     });
@@ -27,7 +27,7 @@ export class NavbarComponent implements OnInit {
       this.studeServise.getStudent(this.student_id).subscribe(data=>
         {
           this.student=data[0];
-          console.log( this.student)
+         // console.log( this.student)
         }
         )
 

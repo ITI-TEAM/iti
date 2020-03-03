@@ -42,14 +42,14 @@ export class AddEventComponent implements OnInit {
       this.everntServ.addEvent(fd).subscribe(
 
         data=>{
-          console.log(data);
+        //  console.log(data);
           alert("Event Added")
           window.location.reload();
           
         },
         error=>{
           this.test=false
-          console.log(error);
+        //  console.log(error);
         }
   
        );

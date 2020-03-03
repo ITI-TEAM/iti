@@ -22,7 +22,7 @@ export class AllEventComponent implements OnInit {
        this.events=data;    
       },
       error=>{
-        console.log(error);
+     //   console.log(error);
         
       }
     );
@@ -33,7 +33,7 @@ export class AllEventComponent implements OnInit {
         this.events=data;
       },
       error=>{
-        console.log(error);
+      //  console.log(error);
         
       }
     );
@@ -46,11 +46,11 @@ export class AllEventComponent implements OnInit {
   this.socketServ.deleteEvent(event._id);
   this.socketServ.getEvents().subscribe(
     data=>{
-      console.log(data);
+     // console.log(data);
       
     },
     error=>{
-      console.log(error);
+    //  console.log(error);
       
     }
   );

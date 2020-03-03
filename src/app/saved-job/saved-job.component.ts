@@ -30,18 +30,18 @@ export class SavedJobComponent implements OnInit {
           this.jobServ.listJobNames(result[i].jobID).subscribe(
             data=>{
               this.jobs.push(data);
-            console.log(this.jobs);
+          //  console.log(this.jobs);
             },
             error=>{
-              console.log(error);
+          //    console.log(error);
             }
           );
         }
-        console.log(result);
+      //  console.log(result);
         
       },
       error => {
-        console.log(error);
+       // console.log(error);
 
       }
     );
@@ -52,13 +52,13 @@ export class SavedJobComponent implements OnInit {
  cancelSavedJob(job){
   this.savedSer.cancelSavedJOB(job[0]._id).subscribe(
     data=>{
-      console.log(data);
+    //  console.log(data);
       alert("Job Cancelld");
       location.reload();
 
       },
     error=>{
-      console.log(error);
+    //  console.log(error);
       
     }
   );

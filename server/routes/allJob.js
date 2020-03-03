@@ -10,6 +10,8 @@ const allJob=require('../models/allJob');
 const AppliedStudent=require('../models/appliedstudent');
 const SavedJob = require('../models/savedJob');
 
+//
+const checkAuth=require('../middlewares/check-auth');
 
 
 

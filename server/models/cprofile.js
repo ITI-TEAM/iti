@@ -26,11 +26,11 @@ const cprofileSchema = new mongoose.Schema({
     
   },
   telephonenumber:{
-    type:Number,
+    type:String,
     
   },
   datecreated:{
-    type:Number,
+    type:String,
     
   },
   field:{

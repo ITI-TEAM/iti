@@ -28,11 +28,11 @@ export class ReadMoreComponent implements OnInit {
       this.chat.getChatMessages(this.chatID).subscribe(
         data=>{
           this.messages=data.result;
-          console.log(data);
+        //  console.log(data);
           
         },
         error=>{
-          console.log(error);
+         // console.log(error);
           
         }
       );
@@ -47,14 +47,14 @@ export class ReadMoreComponent implements OnInit {
      // console.log(this.chatID);
         this.chat.createNewMessage(this.companyID,this.studentID,this.msg).subscribe(
           data=>{
-            console.log(data);
+         //   console.log(data);
             alert("message sent");
             location.reload();
 
             
           },
           error=>{
-            console.log(error);
+         //   console.log(error);
             
           }
         );

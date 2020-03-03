@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
       this.jobs=data;        
       },
 error=>{
-  console.log(error);
+ // console.log(error);
   
 }
 
@@ -44,7 +44,7 @@ error=>{
       this.envents=data;        
       },
     error=>{
-    console.log(error);
+   // console.log(error);
     
     })
     this.student.getStudent(this.ID).subscribe(
@@ -54,7 +54,7 @@ error=>{
         
       },
       error=>{
-        console.log(error);
+    //    console.log(error);
         
       }
     )
@@ -63,7 +63,7 @@ error=>{
           this.jobs=data;          
         },
         error=>{
-          console.log(error);
+        //  console.log(error);
           
         }
       );
@@ -77,18 +77,18 @@ error=>{
   }
 
   savedJob(job){
-    console.log(this.ID);
+  //  console.log(this.ID);
     
     //console.log(this.jobID);
     this.savedSer.SavedJOB(job._id,this.ID).subscribe(
       result=>{
         alert("You saved Job ")
         this.router.navigate(['/saved-job',this.ID]);
-        console.log(result);
+     //   console.log(result);
       },
       error=>{
        
-        console.log(error);
+     //   console.log(error);
         
       }
     )

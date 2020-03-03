@@ -35,14 +35,14 @@ export class MessageCompanyComponent implements OnInit {
           this.studentServ.getStudent(data.result[i].studentID).subscribe(
             data=>{
               this.students.push(data);
-              console.log(data);
+            //  console.log(data);
               
             }
           );
         }  
       },
       error=>{
-        console.log(error);
+       // console.log(error);
         
       }
     );

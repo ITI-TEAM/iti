@@ -18,11 +18,11 @@ constructor(private router: Router, private route: ActivatedRoute, private jobSe
     this.jobServ.allJobs().subscribe(
       data=>{
       this.jobs=data;   
-      console.log(data);
+   //   console.log(data);
            
       },
 error=>{
-  console.log(error);
+ // console.log(error);
   
 }
 
@@ -31,11 +31,11 @@ error=>{
   deletJob(job) {
     this.compServ.deleteJob(job._id).subscribe(
       data=>{
-        console.log(data);
+      //  console.log(data);
         
       },
       error=>{
-        console.log(error);
+      //  console.log(error);
         
       }
     );

@@ -36,22 +36,22 @@ export class ViewSComponent implements OnInit {
   send(){
     this.chat.createNewChat(this.companyID,this.student_id).subscribe(
       data=>{
-        console.log(data);
+      //  console.log(data);
         this.chat.createNewMessage(this.companyID,this.student_id,this.msg).subscribe(
           data=>{
-            console.log(data);
+       //     console.log(data);
             alert("message sent");
             this.msg.msg="";
           },
           error=>{
-            console.log(error);
+       //     console.log(error);
           }
           
         );
         
       },
       error=>{
-        console.log(error);
+      //  console.log(error);
         
       }
     );

@@ -31,25 +31,25 @@ export class HomeCompanyComponent implements OnInit {
         this.jobs = result
       },
       error => {
-        console.log(error);
+     //   console.log(error);
       }
     );
     this.eventss. listEvent().subscribe(
       data=>{
-        console.log(data)
+      //  console.log(data)
       this.envents=data;        
       },
     error=>{
-    console.log(error);
+  //  console.log(error);
     
     })
     this.comp. getCompany(this.companyID).subscribe(
       data=>{
-        console.log(data)
+    //    console.log(data)
       this.pro=data;        
       },
     error=>{
-    console.log(error);
+  //  console.log(error);
     
     })
   }
@@ -60,13 +60,13 @@ export class HomeCompanyComponent implements OnInit {
   deletJob(job) {
     this.compServ.deleteJob(job._id).subscribe(
       data=>{
-        console.log(data);
+      //  console.log(data);
         alert("Job Deleted !");
         location.reload();
 
       },
       error=>{
-        console.log(error);
+     //   console.log(error);
         
       }
     );

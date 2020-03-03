@@ -38,7 +38,7 @@ export class PostJobComponent implements OnInit {
     //get data company
     this.CompanyService.getCompany(this.ID).subscribe(data=>
       {
-        console.log(data)
+      //  console.log(data)
        this.companyModel=data;
       }
       );
@@ -46,19 +46,7 @@ export class PostJobComponent implements OnInit {
 
   }
 
-//post job
-  /*postJob()
-  {
-    this.jobServ.createPost(this.ID,this.jobModel).subscribe(
-      result=>{
-        alert("Job Posted")
-        this.router.navigate(['/home-company',this.ID]);
-        },
-      error=>{
-        console.log(error)
-      }
-      )
-  }*/
+
 
   postJob(){
     this.socketServ.newJob(this.jobModel,this.ID);
@@ -66,11 +54,11 @@ export class PostJobComponent implements OnInit {
     this.router.navigate(['/home-company',this.ID]);
     this.socketServ.getJobs().subscribe(
       data=>{
-        console.log(data);
+     //   console.log(data);
         
       },
       error=>{
-        console.log(error);
+       // console.log(error);
         
       }
     );

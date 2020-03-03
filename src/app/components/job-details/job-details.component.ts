@@ -29,38 +29,38 @@ export class JObDetailsComponent implements OnInit {
 
     this.jobServ.jobDetails(this.jobID).subscribe(
       data=>{
-        console.log(data);
+       // console.log(data);
         this.JobDetails=data[0];
         
       },
       error=>{
-        console.log(error);
+       // console.log(error);
         
       }
     );
   }
 
   applytoJob(){
-    console.log(this.ID);
-    console.log(this.companyID);
-    console.log(this.jobID);
+    // console.log(this.ID);
+    // console.log(this.companyID);
+    // console.log(this.jobID);
     this.jobServ.applyJob(this.ID,this.jobID).subscribe(
       result=>{
         alert("You Applied To Job ")
         this.router.navigate(['/student-home',this.ID]);
-        console.log(result);
+      //  console.log(result);
       },
       error=>{
         this.test=false
-        console.log(error);
+       // console.log(error);
         
       }
     );
   }
   savedJob(){
-    console.log(this.ID);
-    console.log(this.companyID);
-    console.log(this.jobID);
+    // console.log(this.ID);
+    // console.log(this.companyID);
+    // console.log(this.jobID);
     this.savedSer.SavedJOB(this.jobID,this.ID).subscribe(
       result=>{
         alert("You saved Job ")
@@ -69,7 +69,7 @@ export class JObDetailsComponent implements OnInit {
       },
       error=>{
         this.test1=false
-        console.log(error);
+      //  console.log(error);
         
       }
     )

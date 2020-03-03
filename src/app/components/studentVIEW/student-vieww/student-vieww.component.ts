@@ -21,7 +21,7 @@ export class StudentVIEWWComponent implements OnInit {
       this.studeServise.getStudent(this.student_id).subscribe(data=>
         {
           this.student=data[0];
-          console.log( this.student)
+          //console.log( this.student)
         }
         )
         

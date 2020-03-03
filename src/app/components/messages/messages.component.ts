@@ -26,8 +26,8 @@ export class MessagesComponent implements OnInit {
     this.chat.getChats(this.studentID).subscribe(
       data=>{
         this.chats=data.result;
-       console.log(this.chats);
-        console.log(data.result[0].companyID);
+      //  console.log(this.chats);
+      //   console.log(data.result[0].companyID);
        // console.log(data.result.length);
         for (var i=0; i<data.result.length; i++){
           this.compServ.getCompany(data.result[i].companyID).subscribe(
@@ -39,7 +39,7 @@ export class MessagesComponent implements OnInit {
   
       },
       error=>{
-        console.log(error);
+       // console.log(error);
         
       }
     );
@@ -47,7 +47,7 @@ export class MessagesComponent implements OnInit {
   }
   readMore(comp){
     this.router.navigate(['readMore',comp.ID,this.studentID],{relativeTo:this.route});
-    console.log(comp.ID);
+   // console.log(comp.ID);
     
   }
 }

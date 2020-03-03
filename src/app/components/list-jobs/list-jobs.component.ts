@@ -22,7 +22,7 @@ export class ListJobsComponent implements OnInit {
     
     this.route.paramMap.subscribe((params: ParamMap) => {
       this.studentID = params.get('ID');
-      console.log(this.studentID);
+     // console.log(this.studentID);
       
 
     });
@@ -32,20 +32,20 @@ export class ListJobsComponent implements OnInit {
           this.jobServ.listJobNames(result[i].jobID).subscribe(
             data=>{
              this.jobs.push(data);
-             console.log(data);
+           //  console.log(data);
              
             },
             error=>{
-              console.log(error);
+            //  console.log(error);
             }
           
           );
-          console.log(result[i]);
+        //  console.log(result[i]);
           
         }
       },
       error => {
-        console.log(error);
+      //  console.log(error);
 
       }
     );
@@ -64,13 +64,13 @@ export class ListJobsComponent implements OnInit {
   cancelJob(job){
     this.studetentServ.cancelJob(job[0]._id).subscribe(
       data=>{
-        console.log(data);
+        //console.log(data);
         alert("Job Cancelld");
         location.reload();
 
         },
       error=>{
-        console.log(error);
+      //  console.log(error);
         
       }
     );

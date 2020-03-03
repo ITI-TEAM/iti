@@ -32,7 +32,7 @@ export class AddUsersComponent implements OnInit {
   adduser(){
     this.userSer.signUp(this.userModel).subscribe(
      data=>{
-       console.log("user Created");
+      // console.log("user Created");
        alert("User Added")
        window.location.reload();
       

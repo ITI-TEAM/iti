@@ -84,8 +84,8 @@ public requistModle =  new CompanyRequist('','','');
   addRequist(){
     this.comrequist.addCompanyRequis(this.requistModle).subscribe(
      data=>{
-       console.log("add Requist");
-       alert("add Requist");
+     //  console.log("add Requist");
+       alert("Your meesage sent ");
        window.location.reload();
       
      },

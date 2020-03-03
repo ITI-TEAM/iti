@@ -25,7 +25,7 @@ export class StudentsProfileSubmittedComponent implements OnInit {
           this.jobs = result
         },
         error => {
-          console.log(error);
+         // console.log(error);
         }
       );
       
@@ -36,11 +36,11 @@ export class StudentsProfileSubmittedComponent implements OnInit {
         for (var i=0; i<result.length; i++){
          this.jobServ.listSprofile(result[i].studentID).subscribe(
            data=>{
-             console.log(data);
+           //  console.log(data);
              this.students.push(data);
            },
            error=>{
-             console.log(error);
+            //  console.log(error);
              
            }
          );
@@ -48,7 +48,7 @@ export class StudentsProfileSubmittedComponent implements OnInit {
         }        
       },
       error=>{
-        console.log(error);
+        // console.log(error);
         
       }
     );
@@ -57,8 +57,8 @@ export class StudentsProfileSubmittedComponent implements OnInit {
 
   seeProfile(student){
     window.open('/show-student/'+student.ID+'/'+this.ID, "_blank");
-    console.log("TESSST");
-    console.log(student.ID);
+    // console.log("TESSST");
+    // console.log(student.ID);
     
     
   }

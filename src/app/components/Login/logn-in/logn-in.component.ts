@@ -22,13 +22,13 @@ export class LognInComponent implements OnInit {
   ngOnInit() {
   }
   login(){
-    console.log(this.userModel);
+   // console.log(this.userModel);
     this.loginServ.loginUser(this.userModel).subscribe(
       result=>{
         this.data=result;
         localStorage.setItem('token',result.toString() );
         localStorage.setItem('type',result.toString());
-       console.log(this.data.type);
+      // console.log(this.data.type);
         
         if(this.data.type=='student')
         {
@@ -49,7 +49,7 @@ export class LognInComponent implements OnInit {
     },
   error=>{
     this.test=false;
-    console.log(error)
+   // console.log(error)
   }         
 
     )}

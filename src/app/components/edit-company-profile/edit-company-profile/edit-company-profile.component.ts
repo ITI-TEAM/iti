@@ -24,8 +24,8 @@ export class EditCompanyProfileComponent implements OnInit {
     });
     this.CompanyServise.getCompany(this.company_ID).subscribe(data=>{
       this.companyModel=data;
-      console.log(this.companyModel)
-      console.log(data);
+     // console.log(this.companyModel)
+     // console.log(data);
       
     })
    
@@ -33,9 +33,9 @@ export class EditCompanyProfileComponent implements OnInit {
 
 
   onfileSelected(event){
-    console.log(event); 
+   // console.log(event); 
     this.selectedFile=<File>event.target.files[0];
-    console.log(this.selectedFile);
+   // console.log(this.selectedFile);
   }
 
 
@@ -70,7 +70,7 @@ export class EditCompanyProfileComponent implements OnInit {
   },
       error=>{
   
-        console.log(error);
+       // console.log(error);
   
       }
       )
