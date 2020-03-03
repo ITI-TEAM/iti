@@ -15,6 +15,9 @@ const AppliedStudent = require('./models/appliedstudent');
 const Sprofile = require('./models/sprofile');
 const Cprofile = require('./models/cprofile');
 const Event = require('./models/event');
+const _Requist = require('./models/companyaReq');
+
+
 
 
 
@@ -25,6 +28,7 @@ const cprofileRoutes = require('./routes/cprofile');
 const allJobRoutes = require('./routes/allJob');
 const eventRoutes = require('./routes/event');
 const appliedstudentRoutes = require('./routes/appliedstudent');
+const CompanyRequistRoutes = require('./routes/companyReq');
 
 //BODY-PARSER 
 app.use(bodyParser.urlencoded({
@@ -60,7 +64,7 @@ app.use('/cprofile', cprofileRoutes);
 app.use('/allJob', allJobRoutes);
 app.use('/event', eventRoutes);
 app.use('/appliedstudent', appliedstudentRoutes);
-
+app.use('/companyrequist', CompanyRequistRoutes);
 
 
 
@@ -233,9 +237,41 @@ io.on('connection', (socket) => {
         });
     });
 
+///////////////////////////////////////////////////
 
+/////COMPANYREQUIST///////////////
 
+       //list companyRequist
 
+    _Requist.find({},(err,data) =>{
+        if(!err)
+            io.emit('getcompanyrequist',data)
+         else{
+                console.log(error)
+            }
+        
+    });
+
+    //Delete companyrequist
+
+    socket.on('deletecompanyrequist',(CompanyrequistID) =>{
+        _Requist.deleteOne({_id:CompanyrequistID},(err,data) =>{
+            if(!err){
+                console.log('companyRequist Delete');
+
+                _Requist.find({},(err,data) =>{
+                    if(!err)
+                        io.emit('getcompanyrequist',data)
+                     else{
+                            console.log(error)
+                        }
+                    
+                });
+            }else{
+                console.log(error)
+            }
+        })
+    })
 
 });
 

@@ -8,7 +8,7 @@ import { Student } from '../Classes/studentClass/student';
   styleUrls: ['./view-s.component.css']
 })
 export class ViewSComponent implements OnInit {
-  public student = new Student("","","","","","","",[],"","",[],[],[],"","","","");
+  public student = new Student("","","","","","","","",[],"","",[],[],[],"","","","");
   public student_id;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
   constructor(private studeServise:StudentServiseService,private route:ActivatedRoute) { }
 

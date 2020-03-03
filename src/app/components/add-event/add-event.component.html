@@ -24,16 +24,22 @@
                 <label for="exampleFormControlInput1">Event Title:</label>
                 <input type="text" class="form-control" name="title" required [class.is-invalid]="title.invalid &&title.touched"
                   #title="ngModel" [(ngModel)]="eventModel.title" required >
+                  <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
               </div>
               <div class="form-group">
                 <label for="exampleFormControlInput1">Event Date</label>
                 <input class="form-control" type="date" id="date" name="date" #date="ngModel"
                 required [class.is-invalid]="date.invalid &&date.touched" [(ngModel)]="eventModel.date">
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
               </div>
           
               <div class="form-group">
                 <label for="exampleFormControlInput1">Event Place</label>
                 <input class="form-control" type="text" id="place" name="place" required [class.is-invalid]="place.invalid &&place.touched" #place="ngModel" [(ngModel)]="eventModel.place">
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
               </div>
           
               <div class="form-group">
@@ -41,6 +47,8 @@
                 <textarea class="form-control" type="text" name="details" required
                   [class.is-invalid]="detai.invalid &&detai.touched" #detai="ngModel" [(ngModel)]="eventModel.details"
                   rows="5"></textarea>
+                  <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
               </div>
           
               <div>

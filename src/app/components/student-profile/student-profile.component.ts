@@ -9,7 +9,7 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
   styleUrls: ['./student-profile.component.css']
 })
 export class StudentProfileComponent implements OnInit {
-  public studentModel = new Student("","","","","","","",[],"","",[],[],[],"","","","");
+  public studentModel = new Student("","","","","","","","",[],"","",[],[],[],"","","","");
    public Student_ID;
   public selectedFile:File=null;
   public test:boolean=true;

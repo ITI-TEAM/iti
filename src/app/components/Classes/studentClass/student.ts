@@ -5,6 +5,7 @@ export class Student {
         public about:String,
         public email:String,
         public title:String,
+        public rate:String,
         public phone:String,
         public englishLevel: String,
         public workLink:[],

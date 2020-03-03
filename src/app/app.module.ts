@@ -41,6 +41,7 @@ import { UserServService } from './services/User/user-serv.service';
 import { SockectIoService } from './services/socket .io/sockect-io.service';
 import { ViewSComponent } from './components/view-s/view-s.component';
 import { ViewCComponent } from './view-c/view-c.component';
+import { AllCompanyrequistComponent } from './components/AdminDash-board/all-companyRequist/all-companyrequist/all-companyrequist.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +81,8 @@ import { ViewCComponent } from './view-c/view-c.component';
     CompanyProfileComponent,
     EditCompanyProfileComponent,
     ViewSComponent,
-    ViewCComponent
+    ViewCComponent,
+    AllCompanyrequistComponent
     
     
   ],
