@@ -45,7 +45,8 @@ import { MessagesComponent } from './components/messages/messages.component';
 import { ReadMoreComponent } from './components/ReadMore/read-more/read-more.component';
 import { SavedJobComponent } from './saved-job/saved-job.component';
 import { SavedJobService } from './services/savedJOB/saved-job.service';
-
+import { CarouselModule } from 'ngx-carousel-lib';
+// import { CarouselModule } from 'ngx-owl-carousel-o';
 @NgModule({
   declarations: [
     AppComponent,
@@ -98,7 +99,9 @@ import { SavedJobService } from './services/savedJOB/saved-job.service';
     ReactiveFormsModule,
     HttpClientModule,
     NgxPaginationModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    CarouselModule,
+    // CarouselModule
     
   ],
   providers: [
