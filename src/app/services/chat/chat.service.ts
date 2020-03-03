@@ -19,7 +19,7 @@ export class ChatService {
 
   //get chats for company
   getChatc(companyID){
-    return this.http.get<any>('http://localhost:3000/chat/chats/'+companyID);
+    return this.http.get<any>('http://localhost:3000/chat/chatc/'+companyID);
   }
 
 

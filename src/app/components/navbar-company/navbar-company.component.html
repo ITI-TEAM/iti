@@ -1,7 +1,7 @@
 <!---->
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
   <div class="container-fluid px-md-4	">
-    <a class="navbar-brand" routerLink="/student-home/{{ID}}">ITIan</a>
+    <a class="navbar-brand" routerLink="/home-company/{{ID}}">ITIan</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav"
       aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -19,7 +19,7 @@
             <a style="    margin-left: 8px;">{{company.name}}</a>
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" routerLink="/message/{{ID}}"><i class="fa fa-envelope"></i>messages</a>
+            <a class="dropdown-item" routerLink="/messageCompany/{{ID}}"><i class="fa fa-envelope"></i>messages</a>
             <a class="dropdown-item" routerLink="/company-profile/{{ID}}"><i class="fa fa-envelope"></i>profile</a>
             <a class="dropdown-item" routerLink="/edit-company-profile/{{ID}}" (click)="editProfile()"><i
                 class="fa fa-gear"></i>Edit Profile</a>

@@ -3,6 +3,9 @@ const router = express.Router()
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
+// Auth
+const checkAuth=require('../middlewares/check-auth');
+
 //  Models 
 const User = require('../models/user');
 const Sprofile = require('../models/sprofile');
@@ -10,7 +13,7 @@ const Cprofile = require('../models/cprofile');
 
 
 // REGISTER NEW USER
-router.post("/signup", (req, res, next) => {
+router.post("/signup",checkAuth ,(req, res, next) => {
 
   User.find({
       email: req.body.email
@@ -81,7 +84,7 @@ router.post("/signup", (req, res, next) => {
 
 //LOGIN USER
 
-router.post("/login", (req, res, next) => {
+router.post("/login",checkAuth ,(req, res, next) => {
   User.find({
       email: req.body.email
     })

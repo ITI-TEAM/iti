@@ -40,7 +40,8 @@ export class ViewSComponent implements OnInit {
         this.chat.createNewMessage(this.companyID,this.student_id,this.msg).subscribe(
           data=>{
             console.log(data);
-            
+            alert("message sent");
+            this.msg.msg="";
           },
           error=>{
             console.log(error);

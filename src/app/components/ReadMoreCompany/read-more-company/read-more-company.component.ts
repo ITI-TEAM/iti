@@ -4,11 +4,11 @@ import { ChatService } from 'src/app/services/chat/chat.service';
 import { Message } from '../../Classes/message';
 
 @Component({
-  selector: 'app-read-more',
-  templateUrl: './read-more.component.html',
-  styleUrls: ['./read-more.component.css']
+  selector: 'app-read-more-company',
+  templateUrl: './read-more-company.component.html',
+  styleUrls: ['./read-more-company.component.css']
 })
-export class ReadMoreComponent implements OnInit {
+export class ReadMoreCompanyComponent implements OnInit {
 
   constructor(private route:ActivatedRoute,private router : Router,private chat:ChatService) { }
  public messages;

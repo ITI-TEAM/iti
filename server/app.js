@@ -15,8 +15,7 @@ const AppliedStudent = require('./models/appliedstudent');
 const Sprofile = require('./models/sprofile');
 const Cprofile = require('./models/cprofile');
 const Event = require('./models/event');
-const SavedJob=require('./models/savedJob');
-const Chat=require('./models/chat');
+const Message=require('./models/message');
 
 
 
@@ -297,7 +296,51 @@ socket.on('newJob', (data,companyID) => {
    
 });
 
+////////////////////////////////////////////////////
 
+// list chat messges
+// create new Message
+
+/*
+
+socket.on('newMessage', (data,companyID) => {
+    const newJob = new allJob({
+        companyID:companyID,
+        title:data.title,
+        salary:data.salary,
+        location:data.location,
+        type:data.type,
+        languages:data.languages,
+        exper:data.exper,
+        qual:data.qual,
+        desc:data.desc,
+        respons:data.respons,
+        company:data.company,
+        time:data.time
+    
+    });
+    newJob.save()
+    .then(data=>{
+        allJob.find({}, (err, data) => {
+            if (!err)
+                io.emit("getJobs", data)
+            else {
+                console.log(error);
+        
+            }
+        });
+        console.log(data);
+        
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json({
+          error: err
+        });
+  
+      });
+   
+});*/
 
 
 

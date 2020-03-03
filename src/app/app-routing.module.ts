@@ -26,6 +26,9 @@ import { ViewCComponent } from './view-c/view-c.component';
 import { MessagesComponent } from './components/messages/messages.component';
 import { ReadMoreComponent } from './components/ReadMore/read-more/read-more.component';
 import { SavedJobComponent } from './saved-job/saved-job.component';
+import { MessageCompanyComponent } from './components/messagesCompany/message-company/message-company.component';
+import { ReadMoreCompanyComponent } from './components/ReadMoreCompany/read-more-company/read-more-company.component';
+import { PageNotFoundComponent } from './components/PageNotFound/page-not-found/page-not-found.component';
 
 
 const routes: Routes = [
@@ -61,8 +64,11 @@ const routes: Routes = [
 
   {path:'message/:ID',component:MessagesComponent,
   children:[{path:'readMore/:companyID/:studentID',component:ReadMoreComponent}]},
-
   
+
+  {path:'messageCompany/:ID',component:MessageCompanyComponent,
+  children:[{path:'readMoreCompany/:companyID/:studentID',component:ReadMoreCompanyComponent}]},
+  {path:"**" ,component:PageNotFoundComponent} 
 
   
 ];
