@@ -48,6 +48,8 @@ import { SavedJobService } from './services/savedJOB/saved-job.service';
 import { MessageCompanyComponent } from './components/messagesCompany/message-company/message-company.component';
 import { ReadMoreCompanyComponent } from './components/ReadMoreCompany/read-more-company/read-more-company.component';
 import { PageNotFoundComponent } from './components/PageNotFound/page-not-found/page-not-found.component';
+import { CarouselModule } from 'ngx-carousel-lib';
+// import { CarouselModule } from 'ngx-owl-carousel-o';
 import { MessagesComponent } from './components/messages/messages.component';
 import { StudentVIEWWComponent } from './components/studentVIEW/student-vieww/student-vieww.component';
 
@@ -108,7 +110,9 @@ import { StudentVIEWWComponent } from './components/studentVIEW/student-vieww/st
     ReactiveFormsModule,
     HttpClientModule,
     NgxPaginationModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    CarouselModule,
+    // CarouselModule
     
   ],
   providers: [

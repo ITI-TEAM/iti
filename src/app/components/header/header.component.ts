@@ -15,21 +15,55 @@ public requistModle =  new CompanyRequist('','','');
   constructor(private comrequist:CompanyRequistService) { }
 
   ngOnInit() {
-    $('.navTrigger').click(function () {
-      $(this).toggleClass('active');
-      console.log("Clicked menu");
-      $("#mainListDiv").toggleClass("show_list");
-      $("#mainListDiv").fadeIn();
+
+
+    $(window).scroll(function() {
+      if ($(this).scrollTop() > 100) {
+        $('.back-to-top').fadeIn('slow');
+      } else {
+        $('.back-to-top').fadeOut('slow');
+      }
+    });
+    $('.back-to-top').click(function(){
+      $('html, body').animate({scrollTop : 0},1500, 'easeInOutExpo');
+      return false;
+    });
+    $(window).scroll(function() {
+      if ($(this).scrollTop() > 100) {
+        $('#header').addClass('header-scrolled');
+      } else {
+        $('#header').removeClass('header-scrolled');
+      }
+    });
   
-  });
-  $(window).scroll(function() {
-    if ($(document).scrollTop() > 50) {
-        $('.nav').addClass('affix');
-        console.log("OK");
-    } else {
-        $('.nav').removeClass('affix');
+    if ($(window).scrollTop() > 100) {
+      $('#header').addClass('header-scrolled');
     }
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+   
 
   
   }
